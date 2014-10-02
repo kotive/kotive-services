@@ -101,6 +101,53 @@
 			"readonly": false,
 			"required": true,
 			"visible": true
+		},
+		{
+			"label": "Radio Options",
+			"properties": {
+				"fieldType": "radio",
+				"choices":	[
+					{"key": "one", "value": "Option 1"},
+					{"key": "two", "value": "Option 2"},
+					{"key": "three", "value": "Option 3"}
+				],
+				"default": "two"
+			},
+			"readonly": false,
+			"required": true,
+			"visible": true
+		},
+		{
+			"label": "Check Boxes",
+			"properties": {
+				"fieldType": "check",
+				"choices": [
+					"Male",
+					"Female",
+					"Other"
+				],
+				"default": "Other",
+				"optional": {
+					"classes": "inline"
+				}
+			},
+			"readonly": false,
+			"required": true,
+			"visible": true
+		},
+		{
+			"label": "Select Input",
+			"properties": {
+				"fieldType": "select",
+				"choices":  [
+					{"key": "some", "value": "Some"},
+					{"key": "options", "value": "Options"},
+					{"key": "listed", "value": "Listed"}
+				]
+			},
+			"readonly": false,
+			"required": true,
+			"visible": true
 		}
 	],
 	"method": "POST",
