@@ -15,7 +15,8 @@
 		{
 			"label": "Invisible Input",
 			"properties": {
-				"fieldType": "text"
+				"fieldType": "text",
+				"default": "should not be displayed"
 			},
 			"readonly": false,
 			"required": true,
