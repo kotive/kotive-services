@@ -1,0 +1,8 @@
+{
+	"name": "Clickatell",
+	"description": "Simple, reliable mobile messaging cloud.",
+	"auth": {
+		"method": "API key"
+		},
+	"domain": "http://api.clickatell.com/http"
+}

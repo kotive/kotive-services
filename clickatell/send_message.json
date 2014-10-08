@@ -1,0 +1,32 @@
+{
+    "name": "Send a bulk SMS",
+    "description": "Reach any customer on any mobile phone, anywhere, using Clickatell.",
+    "documentation": "https://www.clickatell.com/downloads/http/Clickatell_HTTP.pdf",
+    "fields": [
+        {
+            "label": "to",
+            "properties": {
+                "fieldType": "textarea"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "text",
+            "properties": {
+                "fieldType": "textarea"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/sendmsg?api_id={settings.clickatell.api_id}&user={settings.clickatell.user}&password={settings.clickatell.password}&to={field.to}&text={field.text}",
+    "request": "",
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}
