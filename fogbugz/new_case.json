@@ -1,0 +1,62 @@
+{
+  "name": "Create a new case",
+  "description": "Create a new Fogbugz case.",
+  "documentation": "http://help.fogcreek.com/8202/xml-api#Creating",
+  "fields": [
+    {
+      "label": "ixBugParent",
+      "properties": {
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Subject",
+      "properties": {
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Message",
+      "properties": {
+        "fieldType": "textarea"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "endpoint": "/messages/send.json",
+  "request": {
+    "key": "{settings.mandrill.apikey}",
+    "message": {
+      "html":"{field.message}",
+      "subject":"{field.subject}",
+      "from_email":"notifications@kotive.com",
+      "from_name":"{group.label} (via Kotive)",
+      "to": "{field.to}"
+    }
+  },
+  "response": {
+    "success": [
+      {
+        "email": "recipient.email@example.com",
+        "status": "sent",
+        "reject_reason": "hard-bounce",
+        "_id": "abc123abc123abc123abc123abc123"
+      }
+    ],
+    "error": {
+      "status": "error",
+      "code": 12,
+      "name": "Unknown_Subaccount",
+      "message": "No subaccount exists with the id 'customer-123'"
+    }
+  }
+}

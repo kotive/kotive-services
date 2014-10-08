@@ -1,0 +1,10 @@
+{
+  "name": "Fogbugz",
+  "description": "FogBugz is the world's easiest bug tracking system.",
+  "auth": {
+    "method": "Basic"
+	"email": "{settings.fogbugz.email}",
+	"password": "{settings.fogbugz.password}"
+  },
+  "domain": "https://example.fogbugz.com/api.xml"
+}
