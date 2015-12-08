@@ -3,8 +3,8 @@
     "description": "A new world, and a better way to sell.",
     "auth": {
         "method": "authorization",
-	"authorization": "{settings.salesforce.token}",
-	"content-type": "application/json"
+        "authorization": "{settings.salesforce.token}",
+        "content-type": "application/json"
     },
     "domain": "https://{settings.salesforce.district}.salesforce.com/services/data/v20.0"
 }
