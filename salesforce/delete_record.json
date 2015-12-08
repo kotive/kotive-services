@@ -1,0 +1,31 @@
+{
+    "name": "Delete a record",
+    "description": "Delete a record using SalesForce.",
+    "documentation": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_delete_record.htm",
+    "fields": [
+        {
+            "label": "Record ID",
+            "properties": {
+                "parameter": "id",
+                "fieldType": "text",
+                "helptext": "The unique ID of the record that you wish to update"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "DELETE",
+    "endpoint": "/sobjects/Account/{field.id}",
+    "request": {
+        "payload": "{field.payload}"
+    },
+    "response": {
+        "success": {},
+        "error": {
+            "id": "001D000000IqhSLIAZ",
+            "errors": [],
+            "success": false
+        }
+    }
+}
