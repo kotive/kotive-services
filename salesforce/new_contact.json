@@ -1,0 +1,51 @@
+{
+    "name": "Add a new contact",
+    "description": "Add a new contact using SalesForce.",
+    "documentation": "https://developer.salesforce.com/forums/?id=906F0000000ApxUIAS",
+    "fields": [
+        {
+            "label": "First Name",
+            "properties": {
+                "parameter": "firstName",
+                "fieldType": "text",
+                "helptext": "The first name of the new contact to add"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Surname",
+            "properties": {
+                "parameter": "surname",
+                "fieldType": "text",
+                "helptext": "The surname of the new contact to add"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Account ID",
+            "properties": {
+                "parameter": "accountID",
+                "fieldType": "text",
+                "helptext": "The Account ID of the new contact to add"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/sobjects/Contact",
+    "request": {},
+    "response": {
+        "success": {  },
+        "error": {
+            "id": "001D000000IqhSLIAZ",
+            "errors": [],
+            "success": false
+        }
+    }
+}
