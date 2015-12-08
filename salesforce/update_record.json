@@ -1,0 +1,42 @@
+{
+    "name": "Update a record",
+    "description": "Update an existing record using SalesForce.",
+    "documentation": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_update_fields.htm",
+    "fields": [
+        {
+            "label": "Record ID",
+            "properties": {
+                "parameter": "id",
+                "fieldType": "text",
+                "helptext": "The unique ID of the record that you wish to update"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "payload",
+            "properties": {
+                "parameter": "payload",
+                "fieldType": "textarea",
+                "helptext": "{'Name' : 'Express Logistics and Transport'}"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "PATCH",
+    "endpoint": "/sobjects/Account/{field.id}",
+    "request": {
+        "payload": "{field.payload}"
+    },
+    "response": {
+        "success": {},
+        "error": {
+            "id": "001D000000IqhSLIAZ",
+            "errors": [],
+            "success": false
+        }
+    }
+}
