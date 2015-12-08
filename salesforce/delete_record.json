@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "id",
                 "fieldType": "text",
-                "helptext": "The unique ID of the record that you wish to update"
+                "helptext": "The unique ID of the record that you wish to delete"
             },
             "readonly": false,
             "required": true,
