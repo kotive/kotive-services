@@ -32,7 +32,7 @@
     "response": {
         "success": {
             "AccountNumber" : "CD656092",
-            "BillingPostalCode" : "27215",
+            "BillingPostalCode" : "27215"
         },
         "error": {
             "id": "001D000000IqhSLIAZ",
