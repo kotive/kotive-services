@@ -1,0 +1,85 @@
+{
+    "name": "Get a list of comanies",
+    "description": "Get a list of companies using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#list-companies",
+    "fields": [
+        {
+            "label": "Page",
+            "properties": {
+                "parameter": "page",
+                "fieldType": "number",
+                "helptext": "Which page of results to fetch"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Amount of results per page",
+            "properties": {
+                "parameter": "per_page",
+                "fieldType": "number",
+                "helptext": "The amount of results to fetch per page"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Order",
+            "properties": {
+                "parameter": "order",
+                "choices": [
+                    {"key": "asc", "value": "Ascending"},
+                    {"key": "desc", "value": "Descending"}
+                ],
+                "default": "f",
+                "helptext": "The order to sort the results in"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tag",
+            "properties": {
+                "parameter": "tag_id",
+                "fieldType": "text",
+                "helptext": "The tag to filter the users by"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Segment ID",
+            "properties": {
+                "parameter": "segment_id",
+                "fieldType": "text",
+                "helptext": "The Segment ID to filter the users by"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
