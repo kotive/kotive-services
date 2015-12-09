@@ -1,0 +1,48 @@
+{
+    "name": "View a user",
+    "description": "View information about a specific user using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#view-a-user",
+    "fields": [
+        {
+            "label": "User ID",
+            "properties": {
+                "parameter": "user_id",
+                "fieldType": "text",
+                "helptext": "The ID of the user to view"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Email Address",
+            "properties": {
+                "parameter": "email",
+                "fieldType": "email",
+                "helptext": "The email address of the user to view"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
