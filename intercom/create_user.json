@@ -1,0 +1,173 @@
+{
+    "name": "Create a new user",
+    "description": "Create a new user using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#create-or-update-user",
+    "fields": [
+        {
+            "label": "User ID",
+            "properties": {
+                "parameter": "user_id",
+                "fieldType": "text",
+                "helptext": "A unique string to identify the user if no email address is specified"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Email",
+            "properties": {
+                "parameter": "email",
+                "fieldType": "email",
+                "helptext": "The user's email address, required if no user ID is specified"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Signed up at",
+            "properties": {
+                "parameter": "signed_up_at",
+                "fieldType": "date",
+                "helptext": "The time that the user signed up at"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Name",
+            "properties": {
+                "parameter": "name",
+                "fieldType": "text",
+                "helptext": "The name of the user"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Last Seen IP Address",
+            "properties": {
+                "parameter": "last_seen_ip",
+                "fieldType": "text",
+                "helptext": "An IP address representing the last location that a user visited your application from"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Custom Attributes",
+            "properties": {
+                "parameter": "custom_attributes",
+                "fieldType": "text",
+                "helptext": "A hash of key/value pairs containing any other data about the user you want Intercom to store."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Last seen user agent",
+            "properties": {
+                "parameter": "last_seen_user_agent",
+                "fieldType": "text",
+                "helptext": "The user agent that the user last visited your application with"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Companies",
+            "properties": {
+                "parameter": "companies",
+                "fieldType": "text",
+                "helptext": "The companies that the user belongs to"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Last request time",
+            "properties": {
+                "parameter": "last_request_at",
+                "fieldType": "text",
+                "helptext": "A UNIX timestamp (in seconds) representing the date the user last visited your application."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Is the user subscribed to emails?",
+            "properties": {
+                "parameter": "unsubscribed_from_emails",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "true", "value": "No"},
+                    {"key": "false", "value": "Yes"}
+                ],
+                "default": "false",
+                "helptext": "Whether or not the user is subscribed to emails"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Update last request location?",
+            "properties": {
+                "parameter": "update_last_request_at",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "true", "value": "Yes"},
+                    {"key": "false", "value": "No"}
+                ],
+                "default": "false",
+                "helptext": "Whether or not Intercom should update the user's Last Request Location value with this request"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Is this request a session?",
+            "properties": {
+                "parameter": "new_session",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "true", "value": "Yes"},
+                    {"key": "false", "value": "No"}
+                ],
+                "default": "false",
+                "helptext": "Should Intercom register this request as a new session?"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
