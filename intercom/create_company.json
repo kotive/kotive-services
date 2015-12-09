@@ -1,0 +1,92 @@
+{
+    "name": "Create a new company",
+    "description": "Create a new company using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#create-or-update-company",
+    "fields": [
+        {
+            "label": "Created At",
+            "properties": {
+                "parameter": "remote_created_at",
+                "fieldType": "date",
+                "helptext": "The time the company was created by you"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Company ID",
+            "properties": {
+                "parameter": "company_id",
+                "fieldType": "text",
+                "helptext": "The company id you have defined for the company"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Name",
+            "properties": {
+                "parameter": "name",
+                "fieldType": "text",
+                "helptext": "The name of your company"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Monthly Revenue",
+            "properties": {
+                "parameter": "monthly_spend",
+                "fieldType": "number",
+                "helptext": "How much revenue the company generates for your business"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Plan",
+            "properties": {
+                "parameter": "plan",
+                "fieldType": "text",
+                "helptext": "The name of the plan you have associated with the company"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Custom Attributes",
+            "properties": {
+                "parameter": "custom_attributes",
+                "fieldType": "text",
+                "helptext": "A hash of key/value pairs containing any other data about the user you want Intercom to store."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
