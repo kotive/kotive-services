@@ -1,0 +1,51 @@
+{
+    "name": "Update an existing contact",
+    "description": "Update an existing contact using SalesForce.",
+    "documentation": "https://jsforce.github.io/document/#crud",
+    "fields": [
+        {
+            "label": "First Name",
+            "properties": {
+                "parameter": "firstName",
+                "fieldType": "text",
+                "helptext": "The new first name of the contact"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Surname",
+            "properties": {
+                "parameter": "surname",
+                "fieldType": "text",
+                "helptext": "The new surname of the contact"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Account ID",
+            "properties": {
+                "parameter": "accountID",
+                "fieldType": "text",
+                "helptext": "The Account ID of the contact to update"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "PATCH",
+    "endpoint": "/sobjects/Contact/{field.accountID}",
+    "request": {},
+    "response": {
+        "success": {  },
+        "error": {
+            "id": "001D000000IqhSLIAZ",
+            "errors": [],
+            "success": false
+        }
+    }
+}
