@@ -1,0 +1,48 @@
+{
+    "name": "View a company",
+    "description": "View information about a specific company using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#view-a-company",
+    "fields": [
+        {
+            "label": "Name",
+            "properties": {
+                "parameter": "name",
+                "fieldType": "text",
+                "helptext": "The name of the company to view, encoded as a URL (See: http://meyerweb.com/eric/tools/dencoder/)"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Company ID",
+            "properties": {
+                "parameter": "company_id",
+                "fieldType": "text",
+                "helptext": "The company ID of the company to view  "
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
