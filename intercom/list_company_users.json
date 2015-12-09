@@ -1,0 +1,49 @@
+{
+    "name": "List the users in a company",
+    "description": "List the users in a specific company using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#list-company-users",
+    "fields": [
+        {
+            "label": "Company ID",
+            "properties": {
+                "parameter": "company_id",
+                "fieldType": "text",
+                "helptext": "The company ID to list users in"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Type",
+            "properties": {
+                "parameter": "type",
+                "fieldType": "text",
+                "default": "user",
+                "helptext": "The type of user to list. This can only be user"
+            },
+            "readonly": true,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
