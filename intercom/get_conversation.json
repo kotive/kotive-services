@@ -1,0 +1,37 @@
+{
+    "name": "Get a conversation",
+    "description": "Get a specific conversation using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#get-a-single-conversation",
+    "fields": [
+        {
+            "label": "Conversation ID",
+            "properties": {
+                "parameter": "id",
+                "fieldType": "text",
+                "helptext": "The ID of the user to view"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
