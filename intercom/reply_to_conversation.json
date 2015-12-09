@@ -1,0 +1,138 @@
+{
+    "name": "Reply to a conversation",
+    "description": "Reply to a specific conversation using Intercom.",
+    "documentation": "https://doc.intercom.io/api/#replying-to-a-conversation",
+    "fields": [
+        {
+            "label": "Reply type",
+            "properties": {
+                "parameter": "type",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "user", "value": "User"},
+                    {"key": "admin", "value": "Admin"}
+                ],
+                "default": "user",
+                "helptext": "The type of reply that this is"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Message Type",
+            "properties": {
+                "parameter": "message_type",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "comment", "value": "Comment"},
+                    {"key": "assignment", "value": "Assignment"},
+                    {"key": "open", "value": "Open"},
+                    {"key": "close", "value": "Close"},
+                    {"key": "note", "note": "Note"}
+                ],
+                "default": "comment",
+                "helptext": "The type of message that this is"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Admin ID",
+            "properties": {
+                "parameter": "admin_id",
+                "fieldType": "text",
+                "helptext": "The ID of the admin who is issuing this comment, if applicable"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Intercom User ID",
+            "properties": {
+                "parameter": "intercom_user_id",
+                "fieldType": "text",
+                "helptext": "The Intercom defined ID representing the user"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "User ID",
+            "properties": {
+                "parameter": "user_id",
+                "fieldType": "text",
+                "helptext": "The User ID you have defined for the user"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Email Address",
+            "properties": {
+                "parameter": "email",
+                "fieldType": "email",
+                "helptext": "The email address you have defined for the user"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Body",
+            "properties": {
+                "parameter": "body",
+                "fieldType": "textarea",
+                "helptext": "The text body of the comment"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Assignee ID",
+            "properties": {
+                "parameter": "assignee_id",
+                "fieldType": "text",
+                "helptext": "Only for assignments, assigns the conversation to the given Admin ID"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Attachment URLs",
+            "properties": {
+                "parameter": "attachment_urls",
+                "fieldType": "text",
+                "helptext": "A list of up to five URLs to send as attachments. They must be in quotes, square brackets, and separated with commas, eg: [\"attachment1.example.com\", \"attachment2.example.com\"]"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/events",
+    "request": {
+        "event_name": "{field.event_name}",
+        "created_at": "{field.created_at}",
+        "user_id": "{field.user_id}",
+        "email": "{field.email}",
+        "metadata": "{field.metadata}"
+    },
+    "response": {
+        "success": {
+            "Code": 202,
+            "Message": "Accepted"
+        },
+        "error": {
+            "Code": 401,
+            "Message": "Unauthorized"
+        }
+    }
+}
