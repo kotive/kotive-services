@@ -1,0 +1,336 @@
+{
+    "name": "Create a shipment",
+    "description": "Request to ship a given package between the sender and recipient addresses",
+    "documentation": "https://goshippo.com/docs/reference#shipments",
+    "fields": [
+        {
+            "label": "Purpose",
+            "properties": {
+                "parameter": "purpose",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "QUOTE", "value": "QUOTE"},
+                    {"key": "PURCHASE", "value": "PURCHASE"}
+                ],
+                "default": "PURCHASE",
+                "classes": "inline",
+                "helptext": "Addresses to be used for purchases should be fully entered, i.e., a complete street address with all required fields."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Sender's details",
+          "properties": {
+            "fieldType": "heading"
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "Fullname of sender",
+          "properties": {
+            "parameter": "fromName",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Street name and number",
+          "properties": {
+            "parameter": "fromStreet1",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "City",
+          "properties": {
+            "parameter": "fromCity",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "State",
+          "properties": {
+            "parameter": "fromState",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "ZIP or postal code",
+          "properties": {
+            "parameter": "fromCode",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Country",
+          "properties": {
+            "parameter": "fromCountry",
+            "fieldType": "text",
+            "helptext": "The 2 character country code, e.g. US"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Phone",
+          "properties": {
+            "parameter": "fromPhone",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Email",
+          "properties": {
+            "parameter": "fromEmail",
+            "fieldType": "email"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Recipient's details",
+          "properties": {
+            "fieldType": "heading"
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "Fullname of recipient",
+          "properties": {
+            "parameter": "toName",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Street name and number",
+          "properties": {
+            "parameter": "toStreet",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "City",
+          "properties": {
+            "parameter": "toCity",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "State",
+          "properties": {
+            "parameter": "toState",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "ZIP or postal code",
+          "properties": {
+            "parameter": "toZip",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Country",
+          "properties": {
+            "parameter": "toCountry",
+            "fieldType": "text",
+            "helptext": "The 2 character country code, e.g. US"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Phone",
+          "properties": {
+            "parameter": "toPhone",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Email",
+          "properties": {
+            "parameter": "toEmail",
+            "fieldType": "email"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Parcel details",
+          "properties": {
+            "fieldType": "heading"
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "The parcel's dimensions are measured in...",
+          "properties": {
+            "parameter": "parcelDistanceUnit",
+            "fieldType": "select",
+            "choices": [
+                {"key": "cm", "value": "Centimeters"},
+                {"key": "in", "value": "Inches"},
+                {"key": "ft", "value": "Feet"},
+                {"key": "mm", "value": "Millimeters"},
+                {"key": "m", "value": "Meters"},
+                {"key": "yd", "value": "Yards"}
+            ],
+            "default": "in",
+            "helptext": "The unit used for measuring the parcel's length, width and height."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Length",
+          "properties": {
+            "parameter": "parcelLength",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Width",
+          "properties": {
+            "parameter": "parcelWidth",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Height",
+          "properties": {
+            "parameter": "parcelHeight",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "The parcel's weight is measured in...",
+          "properties": {
+            "parameter": "parcelMassUnit",
+            "fieldType": "select",
+            "choices": [
+                {"key": "g", "value": "Grams"},
+                {"key": "oz", "value": "Ounces"},
+                {"key": "lb", "value": "Pounds"},
+                {"key": "kg", "value": "Kilograms"}
+            ],
+            "default": "in",
+            "helptext": "The unit used for weighing the parcel."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Weight",
+          "properties": {
+            "parameter": "parcelWeight",
+            "fieldType": "text"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "headers": {
+        "Authorization": "ShippoToken {auth.field.authtoken}",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "method": "POST",
+    "endpoint": "/shipments",
+    "request": {
+        "object_purpose": "{field.purpose}",
+        "address_from": {
+          "object_purpose": "{field.purpose}",
+          "name": "{field.fromName}",
+          "street1": "{field.fromStreet1}",
+          "city": "{field.fromCity}",
+          "state": "{field.fromState}",
+          "zip": "{field.fromCode}",
+          "country": "{field.fromCountry}",
+          "phone": "{field.fromPhone}",
+          "email": "{field.fromEmail}"
+        },
+        "address_to": {
+          "object_purpose": "{field.purpose}",
+          "name": "{field.toName}",
+          "street1": "{field.toStreet}",
+          "city": "{field.toCity}",
+          "state": "{field.toState}",
+          "zip": "{field.toCode}",
+          "country": "{field.toCountry}",
+          "phone": "{field.toPhone}",
+          "email": "{field.toEmail}"
+        },
+        "parcel": {
+          "length": "{field.parcelLength}",
+          "width": "{field.parcelWidth}",
+          "height": "{field.parcelHeight}",
+          "distance_unit": "{field.parcelDistanceUnit}",
+          "weight": "{field.parcelWeight}",
+          "mass_unit": "{field.parcelMassUnit}"
+        },
+        "async": false
+    },
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}
