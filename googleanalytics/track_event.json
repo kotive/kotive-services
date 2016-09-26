@@ -1,0 +1,17 @@
+{
+    "name": "Track an event",
+    "description": "Record any actions your users perform",
+    "documentation": "https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event",
+    "fields": [
+    ],
+    "headers": {
+      "Content-Type": "text/plain"
+    },
+    "method": "POST",
+    "endpoint": "/collect",
+    "request": "v=1&tid=UA-XXXXX-Y&cid=555&t=event&ec=Category&ea=Action&el=Saved&ev=300",
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "name": "Google Analytics",
+    "description": "Get insights into how visitors find and use your taskflow, and how to keep them coming back.",
+    "auth": {
+        "method": "none"
+    },
+    "domain": "https://www.google-analytics.com"
+}
