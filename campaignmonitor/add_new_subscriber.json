@@ -28,7 +28,7 @@
     {
       "label": "Name",
       "properties": {
-        "parameter": "name",
+        "parameter": "subscriberName",
         "fieldType": "text"
       },
       "readonly": false,
@@ -72,7 +72,7 @@
   "endpoint": "/subscribers/{field.listId}.json",
   "request": {
     "EmailAddress": "{field.email}",
-    "Name": "{field.name}",
+    "Name": "{field.subscriberName}",
     "Resubscribe": "{string_to_boolean(field.resubscribe)}",
     "RestartSubscriptionBasedAutoresponders": "{string_to_boolean(field.restartSubscriptionBasedAutoresponders)}"
   },

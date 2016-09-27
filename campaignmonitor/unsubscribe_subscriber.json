@@ -1,0 +1,38 @@
+{
+  "name": "Unsubscribe an existing subscriber",
+  "description": "Unsubscribe a subscriber from an existing subscriber list",
+  "documentation": "https://www.campaignmonitor.com/api/subscribers/#unsubscribing_a_subscriber",
+  "fields": [
+    {
+      "label": "List ID",
+      "properties": {
+        "parameter": "listId",
+        "fieldType": "text",
+        "helptext": "The unique id of the subscriber list from which the subscriber should be unsubscribed"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Email address",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "The email address of the subscriber to be unsubscribed from your existing subscriber list."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "endpoint": "/subscribers/{field.listId}/unsubscribe.json",
+  "request": {
+    "EmailAddress": "{field.email}"
+  },
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}
