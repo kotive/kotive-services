@@ -1,0 +1,38 @@
+{
+  "name": "Delete an existing subscriber",
+  "description": "Delete a subscriber from an existing subscriber list",
+  "documentation": "https://www.campaignmonitor.com/api/subscribers/#deleting_a_subscriber",
+  "fields": [
+    {
+      "label": "List ID",
+      "properties": {
+        "parameter": "listId",
+        "fieldType": "text",
+        "helptext": "The unique id of the subscriber list from which the subscriber should be deleted"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Email address",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "The email address of the subscriber who will be deleted from the existing subscriber list."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "DELETE",
+  "endpoint": "/subscribers/{field.listId}.json?email={field.email}",
+  "request": {
+    ""
+  },
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

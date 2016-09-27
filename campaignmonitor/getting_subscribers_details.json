@@ -1,0 +1,38 @@
+{
+  "name": "Retrieve a subscriber's details",
+  "description": "Retrieves a subscriber's details including their email address, name, active/inactive state, and any custom field data.",
+  "documentation": "https://www.campaignmonitor.com/api/subscribers/#getting_a_subscribers_details",
+  "fields": [
+    {
+      "label": "List ID",
+      "properties": {
+        "parameter": "listId",
+        "fieldType": "text",
+        "helptext": "The unique id of the subscriber list to which the subscriber belongs"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Email address",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "The email address of the subscriber whose details should be retrieved"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "GET",
+  "endpoint": "/subscribers/{field.listId}.json?email={field.email}",
+  "request": {
+    ""
+  },
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}
