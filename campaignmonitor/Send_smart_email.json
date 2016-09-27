@@ -100,11 +100,11 @@
   "endpoint": "/transactional/smartEmail/{field.smartEmailID}/send",
   "request": {
     "To": [
-        "{field.to}",
+        "{comma_to_array(field.to)}",
     ],
     "CC": null,
     "BCC": [
-        "{field:bcc}"
+        "{comma_to_array(field:bcc)}"
     ],
     "Data": {"data": "{string_to_hash(field.data)}",
     "AddRecipientsToList": "{string_to_boolean(field.addRecipientsToList)}"
