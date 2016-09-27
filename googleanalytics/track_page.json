@@ -4,17 +4,6 @@
   "documentation": "https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#page",
   "fields": [
     {
-      "label": "Tracking ID",
-      "properties": {
-        "parameter": "trackingId",
-        "fieldType": "text",
-        "helptext": "The Tracking or Property ID, e.g. UA-XXXXX-Y"
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
-    {
       "label": "Document Hostname",
       "properties": {
         "parameter": "documentHostname",
@@ -52,7 +41,7 @@
   },
   "method": "POST",
   "endpoint": "/collect",
-  "request": "v=1&tid={field.trackingId}&cid={generate_uuid_v4}&t=pageview&dh={field.documentHostname}&dp={field.page}&dt={field.pageTitle}",
+  "request": "v=1&tid={auth.field.trackingId}&cid={generate_uuid_v4}&t=pageview&dh={field.documentHostname}&dp={field.page}&dt={field.pageTitle}",
   "response": {
     "success": {},
     "error": {}

@@ -2,7 +2,20 @@
     "name": "Google Analytics",
     "description": "Get insights into how people interact with and use your taskflows.",
     "auth": {
-        "method": "none"
+        "method": "Custom",
+        "fields": [
+            {
+                "label": "Tracking ID",
+                "properties": {
+                    "parameter": "trackingId",
+                    "fieldType": "text",
+                    "helptext": "The Tracking or Property ID, e.g. UA-XXXXX-Y"
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+        ]
     },
     "domain": "https://www.google-analytics.com"
 }
