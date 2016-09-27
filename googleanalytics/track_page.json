@@ -1,0 +1,60 @@
+{
+  "name": "Track a pageview",
+  "description": "Record any pageview that your customers perform",
+  "documentation": "https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#page",
+  "fields": [
+    {
+      "label": "Tracking ID",
+      "properties": {
+        "parameter": "trackingId",
+        "fieldType": "text",
+        "helptext": "The Tracking or Property ID, e.g. UA-XXXXX-Y"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Document Hostname",
+      "properties": {
+        "parameter": "documentHostname",
+        "fieldType": "text",
+        "helptext": "E.g. mycompanywebsite.com"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Page",
+      "properties": {
+        "parameter": "page",
+        "fieldType": "text",
+        "helptext": "E.g. /home or /products or /pricing"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Page title",
+      "properties": {
+        "parameter": "pageTitle",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Content-Type": "text/plain"
+  },
+  "method": "POST",
+  "endpoint": "/collect",
+  "request": "v=1&tid={field.trackingId}&cid={generate_uuid_v4}&t=pageview&dh={field.documentHostname}&dp={field.page}&dt={field.pageTitle}",
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

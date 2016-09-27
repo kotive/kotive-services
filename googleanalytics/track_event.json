@@ -53,7 +53,7 @@
       "readonly": false,
       "required": false,
       "visible": true
-    },
+    }
   ],
   "headers": {
     "Content-Type": "text/plain"
