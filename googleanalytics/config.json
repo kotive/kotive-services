@@ -1,6 +1,6 @@
 {
     "name": "Google Analytics",
-    "description": "Get insights into how visitors find and use your taskflow, and how to keep them coming back.",
+    "description": "Get insights into how people interact with and use your taskflows.",
     "auth": {
         "method": "none"
     },

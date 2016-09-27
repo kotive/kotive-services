@@ -1,17 +1,68 @@
 {
-    "name": "Track an event",
-    "description": "Record any actions your users perform",
-    "documentation": "https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event",
-    "fields": [
-    ],
-    "headers": {
-      "Content-Type": "text/plain"
+  "name": "Track an event",
+  "description": "Record any event or action that your customers perform",
+  "documentation": "https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#event",
+  "fields": [
+    {
+      "label": "Tracking ID",
+      "properties": {
+        "parameter": "trackingId",
+        "fieldType": "text",
+        "helptext": "The Tracking or Property ID, e.g. UA-XXXXX-Y"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
     },
-    "method": "POST",
-    "endpoint": "/collect",
-    "request": "v=1&tid=UA-XXXXX-Y&cid=555&t=event&ec=Category&ea=Action&el=Saved&ev=300",
-    "response": {
-        "success": {},
-        "error": {}
-    }
+    {
+      "label": "Category",
+      "properties": {
+        "parameter": "eventCategory",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Action",
+      "properties": {
+        "parameter": "eventAction",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Label",
+      "properties": {
+        "parameter": "eventLabel",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Value",
+      "properties": {
+        "parameter": "eventValue",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+  ],
+  "headers": {
+    "Content-Type": "text/plain"
+  },
+  "method": "POST",
+  "endpoint": "/collect",
+  "request": "v=1&tid={field.trackingId}&cid={generate_uuid_v4}&t=event&ec={field.eventCategory}&ea={field.eventAction}&el={field.eventLabel}&ev={field.eventValue}",
+  "response": {
+    "success": {},
+    "error": {}
+  }
 }
