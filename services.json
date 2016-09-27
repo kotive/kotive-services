@@ -49,6 +49,10 @@
             "service": "github"
         },
         {
+            "name": "Google Analytics",
+            "service": "googleanalytics"
+        },
+        {
             "name": "Google Contacts",
             "service": "googlecontacts"
         },
