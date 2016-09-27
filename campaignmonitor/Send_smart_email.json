@@ -1,0 +1,116 @@
+{
+  "name": "Send a smart email",
+  "description": "To send a smart email.",
+  "documentation": "https://www.campaignmonitor.com/api/transactional/#send_a_smart_email",
+  "fields": [
+    {
+      "label": "Smart email ID",
+      "properties": {
+        "parameter": "smartEmailId",
+        "fieldType": "text",
+        "helptext": "The unique id of the smart email to send"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "To",
+      "properties": {
+        "parameter": "to",
+        "fieldType": "text",
+        "helptext": "Enter the email address of the recipient of the smart email. Multiple emails adresses can be entered and must be seperated by a comma. For example: joesmith@example.com,jamesmith@example.com"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "CC",
+      "properties": {
+        "parameter": "cc",
+        "fieldType": "text",
+        "helptext": "Enter the email address of the  CC recipient of the smart email. Multiple emails adresses can be entered and must be seperated by a comma. For example: joesmith@example.com,jamesmith@example.com"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "BCC",
+      "properties": {
+        "parameter": "bcc",
+        "fieldType": "text",
+        "helptext": "Enter the email address of the BCC recipient of the smart email. Multiple emails adresses can be entered and must be seperated by a comma. For example: joesmith@example.com,jamesmith@example.com"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Subject",
+      "properties": {
+        "parameter": "subject",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Message",
+      "properties": {
+        "parameter": "message",
+        "fieldType": "textarea"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Data",
+      "properties": {
+        "parameter": "data",
+        "fieldType": "text",
+        "helptext": "Benodig help text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+
+    {
+      "label": "Add recipients to list",
+      "properties": {
+        "parameter": "addRecipientsToList",
+        "fieldType": "radio",
+        "choices": [
+          {"key": true, "value": "Yes"},
+          {"key": false, "value": "No"}
+        ],
+        "default": true,
+        "classes":"inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "endpoint": "/transactional/smartEmail/{field.smartEmailID}/send",
+  "request": {
+    "To": [
+        "{field.to}",
+    ],
+    "CC": null,
+    "BCC": [
+        "{field:bcc}"
+    ],
+    "Data": {"data": "{string_to_hash(field.data)}",
+    "AddRecipientsToList": "{string_to_boolean(field.addRecipientsToList)}"
+},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}
