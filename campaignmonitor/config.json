@@ -2,9 +2,7 @@
   "name": "Campaign Monitor",
   "description": "Send beautiful emails and you'll get better results.",
   "auth": {
-    "method": "Basic",
-    "username": "{settings.campaignmonitor.apikey}",
-    "password": ""
+    "method": "OAuth2"
   },
   "domain": "https://api.createsend.com/api/v3.1"
 }

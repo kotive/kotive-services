@@ -1,0 +1,83 @@
+{
+  "name": "Add a new subscriber",
+  "description": "Adds a subscriber to an existing subscriber list",
+  "documentation": "https://www.campaignmonitor.com/api/subscribers/#adding_a_subscriber",
+  "fields": [
+    {
+      "label": "List ID",
+      "properties": {
+        "parameter": "listId",
+        "fieldType": "text",
+        "helptext": "The unique id of the subscriber list to add this subscriber to"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Email address",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "The email address of the subscriber to be added to your existing subscriber list."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Name",
+      "properties": {
+        "parameter": "name",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Resubscribe",
+      "properties": {
+        "parameter": "resubscribe",
+        "fieldType": "radio",
+        "choices": [
+          {"key": true, "value": "Yes"},
+          {"key": false, "value": "No"}
+        ],
+        "default": true,
+        "classes":"inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Restart subscription-based autoresponders",
+      "properties": {
+        "parameter": "restartSubscriptionBasedAutoresponders",
+        "fieldType": "radio",
+        "choices": [
+          {"key": true, "value": "Yes"},
+          {"key": false, "value": "No"}
+        ],
+        "default": true,
+        "classes":"inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "endpoint": "/subscribers/{field.listId}.json",
+  "request": {
+    "EmailAddress": "{field.email}",
+    "Name": "{field.name}",
+    "Resubscribe": "{string_to_boolean(field.resubscribe)}",
+    "RestartSubscriptionBasedAutoresponders": "{string_to_boolean(field.restartSubscriptionBasedAutoresponders)}"
+  },
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

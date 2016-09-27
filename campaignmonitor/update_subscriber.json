@@ -1,0 +1,94 @@
+{
+  "name": "Update an existing subscriber",
+  "description": "Update a subscriber in an existing subscriber list",
+  "documentation": "https://www.campaignmonitor.com/api/subscribers/#updating_a_subscriber",
+  "fields": [
+    {
+      "label": "List ID",
+      "properties": {
+        "parameter": "listId",
+        "fieldType": "text",
+        "helptext": "The unique id of the subscriber list to add this subscriber to"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Old email address",
+      "properties": {
+        "parameter": "oldEmail",
+        "fieldType": "email",
+        "helptext": "The existing email address of the subscriber in the subscriber list."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "New email address",
+      "properties": {
+        "parameter": "newEmail",
+        "fieldType": "email",
+        "helptext": "The new email address of the subscriber that will replace the old email address."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Name",
+      "properties": {
+        "parameter": "name",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Resubscribe",
+      "properties": {
+        "parameter": "resubscribe",
+        "fieldType": "radio",
+        "choices": [
+          {"key": true, "value": "Yes"},
+          {"key": false, "value": "No"}
+        ],
+        "default": true,
+        "classes":"inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Restart subscription-based autoresponders",
+      "properties": {
+        "parameter": "restartSubscriptionBasedAutoresponders",
+        "fieldType": "radio",
+        "choices": [
+          {"key": true, "value": "Yes"},
+          {"key": false, "value": "No"}
+        ],
+        "default": true,
+        "classes":"inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "PUT",
+  "endpoint": "/subscribers/{field.listId}.json?email={field.oldEmail}",
+  "request": {
+    "EmailAddress": "{field.newEmail}",
+    "Name": "{field.name}",
+    "Resubscribe": "{string_to_boolean(field.resubscribe)}",
+    "RestartSubscriptionBasedAutoresponders": "{string_to_boolean(field.restartSubscriptionBasedAutoresponders)}"
+  },
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}
