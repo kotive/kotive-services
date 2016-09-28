@@ -19,7 +19,7 @@
       "properties": {
         "parameter": "to",
         "fieldType": "text",
-        "helptext": "Enter the email address of the recipient of the smart email. Multiple emails adresses can be entered and must be seperated by a comma. For example: joesmith@example.com,jamesmith@example.com"
+        "helptext": "Enter the email address of the recipient of the smart email. Multiple emails adresses can be entered and must be separated by a comma. For example: joesmith@example.com,jamesmith@example.com"
       },
       "readonly": false,
       "required": true,
@@ -30,7 +30,7 @@
       "properties": {
         "parameter": "cc",
         "fieldType": "text",
-        "helptext": "Enter the email address of the  CC recipient of the smart email. Multiple emails adresses can be entered and must be seperated by a comma. For example: joesmith@example.com,jamesmith@example.com"
+        "helptext": "Enter the email address of the CC recipient of the smart email. Multiple emails adresses can be entered and must be separated by a comma. For example: joesmith@example.com,jamesmith@example.com"
       },
       "readonly": false,
       "required": true,
@@ -41,27 +41,7 @@
       "properties": {
         "parameter": "bcc",
         "fieldType": "text",
-        "helptext": "Enter the email address of the BCC recipient of the smart email. Multiple emails adresses can be entered and must be seperated by a comma. For example: joesmith@example.com,jamesmith@example.com"
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
-    {
-      "label": "Subject",
-      "properties": {
-        "parameter": "subject",
-        "fieldType": "text"
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
-    {
-      "label": "Message",
-      "properties": {
-        "parameter": "message",
-        "fieldType": "textarea"
+        "helptext": "Enter the email address of the BCC recipient of the smart email. Multiple emails adresses can be entered and must be separated by a comma. For example: joesmith@example.com,jamesmith@example.com"
       },
       "readonly": false,
       "required": true,
@@ -72,13 +52,12 @@
       "properties": {
         "parameter": "data",
         "fieldType": "text",
-        "helptext": "Benodig help text"
+        "helptext": "Properties will be available in your email as variables which can be referenced using our <a href='https://www.campaignmonitor.com/create/' target='_blank'>Template Language</a>. Read more about smart transactional email variables and how to use them in your email in <a href='https://help.campaignmonitor.com/topic.aspx?t=1291' target='_blank'>our transactional support documentation</a>."
       },
       "readonly": false,
       "required": true,
       "visible": true
     },
-
     {
       "label": "Add recipients to list",
       "properties": {
@@ -99,16 +78,12 @@
   "method": "POST",
   "endpoint": "/transactional/smartEmail/{field.smartEmailID}/send",
   "request": {
-    "To": [
-        "{comma_to_array(field.to)}",
-    ],
-    "CC": null,
-    "BCC": [
-        "{comma_to_array(field:bcc)}"
-    ],
-    "Data": {"data": "{string_to_hash(field.data)}",
+    "To": "{comma_to_array_or_null(field.to)}",
+    "CC": "{comma_to_array_or_null(field:cc)}",
+    "BCC": "{comma_to_array_or_null(field:bcc)}",
+    "Data": "{string_to_hash(field.data)}",
     "AddRecipientsToList": "{string_to_boolean(field.addRecipientsToList)}"
-},
+  },
   "response": {
     "success": "",
     "error": ""
