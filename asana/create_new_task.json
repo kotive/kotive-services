@@ -32,7 +32,7 @@
                 "helptext": "Scheduling status of this task for the user it is assigned to. This field can only be set if the assignee is non-null"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -104,7 +104,7 @@
                 "helptext": "Is the task hearted by the authorized user?"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -115,7 +115,7 @@
                 "helptext": "The workspace this task is associated with. Once created, task cannot be moved to a different workspace. This attribute can only be specified at creation time"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -126,7 +126,7 @@
                 "helptext": "Array of projects this task is associated with and the section it is in. At task creation time, this array can be used to add the task to specific sections. After task creation, these associations can be modified using the addProject and removeProject endpoints. Note that over time, more types of memberships may be added to this property"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -165,7 +165,7 @@
                 "helptext": "YES if the task is currently marked complete, NO if not."
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         }
     ],
