@@ -1,13 +1,35 @@
 {
     "name": "Create a new task",
     "description": "Create a new task in Asana",
-    "documentation": "http://developers.asana.com/documentation/#tasks",
+    "documentation": "https://asana.com/developers/api-reference/tasks#create",
     "fields": [
         {
-            "label": "Label",
+            "label": "Name of the task",
             "properties": {
                 "parameter": "name",
-                "fieldType": "text"
+                "fieldType": "text",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Assignee",
+            "properties": {
+                "parameter": "assignee",
+                "fieldType": "text",
+                "helptext": "User to which this task is assigned to"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Assignee status",
+            "properties": {
+                "parameter": "assignee_status",
+                "fieldType": "text",
+                "helptext": "Scheduling status of this task for the user it is assigned to. This field can only be set if the assignee is non-null"
             },
             "readonly": false,
             "required": true,
@@ -17,7 +39,8 @@
             "label": "Notes",
             "properties": {
                 "parameter": "notes",
-                "fieldType": "textarea"
+                "fieldType": "textarea",
+                "helptext": "More detailed information on this task"
             },
             "readonly": false,
             "required": false,
@@ -27,7 +50,119 @@
             "label": "Due date",
             "properties": {
                 "parameter": "due_on",
-                "fieldType": "date"
+                "fieldType": "date",
+                "helptext": "Date on which this task is due, or null if the task has no due date"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Due date",
+            "properties": {
+                "parameter": "due_at",
+                "fieldType": "date",
+                "helptext": "Date and time on which this task is due, or null if the task has no due time"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Projects",
+            "properties": {
+                "parameter": "projects",
+                "fieldType": "textarea",
+                "helptext": "Array of projects this task is associated with. At task creation time, this array can be used to add the task to many projects at once. After task creation, these associations can be modified using the addProject and removeProject endpoints. Projects  should be separated with commas"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Followers",
+            "properties": {
+                "parameter": "followers",
+                "fieldType": "textarea",
+                "helptext": "Array of users following this task"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Hearted",
+            "properties": {
+                "parameter": "hearted",
+                "fieldType": "radio",
+                "choices": [
+                    "yes",
+                    "no"
+                ],
+                "default": "no",
+                "classes":"inline",
+                "helptext": "Is the task hearted by the authorized user?"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Workspace",
+            "properties": {
+                "parameter": "workspace",
+                "fieldType": "text",
+                "helptext": "The workspace this task is associated with. Once created, task cannot be moved to a different workspace. This attribute can only be specified at creation time"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Memberships",
+            "properties": {
+                "parameter": "memberships",
+                "fieldType": "textarea",
+                "helptext": "Array of projects this task is associated with and the section it is in. At task creation time, this array can be used to add the task to specific sections. After task creation, these associations can be modified using the addProject and removeProject endpoints. Note that over time, more types of memberships may be added to this property"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tags",
+            "properties": {
+                "parameter": "tags",
+                "fieldType": "text",
+                "helptext": "Array of tags associated with this task. This property may be specified on creation using just an array of tag IDs. In order to change tags on an existing task use addTag and removeTag"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Custom fields",
+            "properties": {
+                "parameter": "custom_fields",
+                "fieldType": "text",
+                "helptext": "Array of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. For example, these fields will contain an enum_value property for custom fields of type enum, a string_value property for custom fields of type string, and so on. Please note that the id returned on each custom field value is identical to the id of the custom field, which allows referencing the custom field metadata through the /custom_fields/custom_field-id endpoint"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Completed",
+            "properties": {
+                "parameter": "completed",
+                "fieldType": "radio",
+                "choices": [
+                    "yes",
+                    "no"
+                ],
+                "default": "no",
+                "classes":"inline",
+                "helptext": "YES if the task is currently marked complete, NO if not."
             },
             "readonly": false,
             "required": false,
@@ -37,51 +172,23 @@
     "method": "POST",
     "endpoint": "/tasks",
     "request": {
+        "assignee": "{field.assignee}",
+        "assignee_status": "{field.assignee_status}",
+        "completed": "{field.completed}",
+        "custom_fields": "{string_to_hash(field.custom_fields)}",
         "name": "{field.name}",
         "notes": "{field.notes}",
-        "due_on": "{field.due_on}"
+        "due_on": "{field.due_on}",
+        "due_at": "{field.due_at}",
+        "followers": "{string_to_hash(field.followers)}",
+        "hearted": "{field.hearted}",
+        "projects": "{string_to_hash(field.projects)}",
+        "workspace": "{field.workspace}",
+        "memberships": "{string_to_hash(field.memberships)}",
+        "tags": "{string_to_hash(field.tags)}",
     },
-    "response": {
-        "success": {
-            "data": {
-                "assignee": {
-                    "id": 1235,
-                    "name": "Tim Bizarro"
-                },
-                "assignee_status": "inbox",
-                "completed": false,
-                "completed_at": null,
-                "created_at": "2012-02-22T02:06:58.158Z",
-                "due_on": null,
-                "followers": [
-                    {
-                        "id": 5678,
-                        "name": "Greg Sanchez"
-                    }
-                ],
-                "id": 1001,
-                "modified_at": "2012-02-22T02:06:58.158Z",
-                "name": "Hello, world!",
-                "notes": "How are you today?",
-                "parent": null,
-                "projects": [
-                    {
-                        "id": 14641,
-                        "name": "Cat Stuff"
-                    }
-                ],
-                "workspace": {
-                    "id": 14916,
-                    "name": "My Favorite Workspace"
-                }
-            }
-        },
-        "error": {
-            "errors": [
-                {
-                    "message": "Not Authorized"
-                }
-            ]
-        }
-    }
+  "response": {
+    "success": "",
+    "error": ""
+  }
 }
