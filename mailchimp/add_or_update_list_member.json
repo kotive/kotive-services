@@ -86,7 +86,7 @@
                 "parameter": "mergeFields",
                 "fieldType": "text",
                 "default": "{}",
-                "helptext": "A list of merge fields containing \"merge variable\":\"value\" pairs for a member (in JSON format), e.g. {{\"FNAME\": \"John\"}, {\"LNAME\": \"Smith\"}}"
+                "helptext": "A list of merge fields containing 'merge variable':'value' pairs for a member (in JSON format), e.g. {{{{'FNAME': 'John'}}, {{'LNAME': 'Smith'}}}}"
             },
             "readonly": false,
             "required": false,
@@ -98,7 +98,7 @@
                 "parameter": "interests",
                 "fieldType": "text",
                 "default": "{}",
-                "helptext": "A list of interests containing \"key\":\"value\" pairs (in JSON format). The key of this object’s properties is the ID of the interest in question, e.g. {{\"9143cf3bd1\": \"false\"},{\"3a2a927344\": \"false\"}}"
+                "helptext": "A list of interests containing 'key':'value' pairs (in JSON format). The key of this object’s properties is the ID of the interest in question, e.g. {{{{'9143cf3bd1': 'false'}},{{'3a2a927344': 'false'}}}}"
             },
             "readonly": false,
             "required": false,
@@ -134,7 +134,7 @@
                 "parameter": "location",
                 "fieldType": "text",
                 "default": "{}",
-                "helptext": "A list containing location information as \"key\":\"value\" pairs (in JSON format), e.g. {{\"latitude\": 37.331687},{\"longitude\": -122.030519}}"
+                "helptext": "A list containing location information as 'key':'value' pairs (in JSON format), e.g. {{{{'latitude': 37.331687}},{{'longitude': -122.030519}}}}"
             },
             "readonly": false,
             "required": false,
