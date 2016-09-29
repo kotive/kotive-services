@@ -4,6 +4,16 @@
     "documentation": "https://asana.com/developers/api-reference/tasks#update",
     "fields": [
         {
+            "label": "Task ID",
+            "properties": {
+                "parameter": "taskId",
+                "fieldType": "text",
+            },
+            "readonly": true,
+            "required": true,
+            "visible": true
+        },
+        {
             "label": "Name of the task",
             "properties": {
                 "parameter": "name",
@@ -154,7 +164,7 @@
         }
     ],
     "method": "PUT",
-    "endpoint": "/tasks/task-id",
+    "endpoint": "/tasks/{field.taskId}",
     "request": {
         "assignee": "{string_to_hash_or_null(field.assignee)}",
         "assignee_status": "{field.assignee_status}",
