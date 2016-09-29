@@ -21,7 +21,7 @@
                 "helptext": "User to which this task is assigned to"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -29,7 +29,7 @@
             "properties": {
                 "parameter": "assignee_status",
                 "fieldType": "text",
-                "helptext": "Scheduling status of this task for the user it is assigned to. This field can only be set if the assignee is non-null"
+                "helptext": "Scheduling status of this task for the user it is assigned to. This field can only be set if the assignee (above) is specified."
             },
             "readonly": false,
             "required": false,
@@ -172,7 +172,7 @@
     "method": "POST",
     "endpoint": "/tasks",
     "request": {
-        "assignee": "{field.assignee}",
+        "assignee": "{string_to_hash_or_null(field.assignee)}",
         "assignee_status": "{field.assignee_status}",
         "completed": "{field.completed}",
         "custom_fields": "{string_to_hash(field.custom_fields)}",
