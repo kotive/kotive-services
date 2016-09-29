@@ -62,7 +62,7 @@
             "properties": {
                 "parameter": "projects",
                 "fieldType": "textarea",
-                "helptext": "List of projects this task is associated with. At task creation time, this list can be used to add the task to many projects at once. Projects should be separated with commas E.g. {{ 'id': 1331, 'name': 'Stuff to Buy' }}"
+                "helptext": "List of projects this task is associated with. At task creation time, this list can be used to add the task to many projects at once. Projects should be separated with commas E.g. {{ 'id': 1331, 'name': 'Stuff to Buy' }}, ..."
             },
             "readonly": false,
             "required": false,
@@ -73,7 +73,7 @@
             "properties": {
                 "parameter": "followers",
                 "fieldType": "textarea",
-                "helptext": "List of users following this task, seperated by commas E.g. {{ 'id': 1123, 'name': 'Mittens' }}"
+                "helptext": "List of users following this task, separated by commas E.g. {{ 'id': 1123, 'name': 'Mittens' }}, ..."
             },
             "readonly": false,
             "required": false,
@@ -107,7 +107,7 @@
             "properties": {
                 "parameter": "memberships",
                 "fieldType": "textarea",
-                "helptext": "List of projects this task is associated with and the section it is in. At task creation time, this list can be used to add the task to specific sections. E.g. {{ 'project': {{ 'id': 1331, 'name': 'Bugs' }}, 'section': {{ 'id': 1123, 'name': 'P1:' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on memberships</a>"
+                "helptext": "List of projects this task is associated with and the section it is in. At task creation time, this list can be used to add the task to specific sections. E.g. {{ 'project': {{ 'id': 1331, 'name': 'Bugs' }}, 'section': {{ 'id': 1123, 'name': 'P1:' }} }}, ... <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on memberships</a>"
             },
             "readonly": false,
             "required": true,
@@ -118,7 +118,7 @@
             "properties": {
                 "parameter": "tags",
                 "fieldType": "textarea",
-                "helptext": "List of tags associated with this task. This property may be specified on creation using just a list of tag IDs"
+                "helptext": "List of tags associated with this task. This property may be specified on creation using just a list of tag IDs."
             },
             "readonly": false,
             "required": false,
