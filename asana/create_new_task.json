@@ -7,7 +7,7 @@
             "label": "Name of the task",
             "properties": {
                 "parameter": "name",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": true,
@@ -164,11 +164,11 @@
         "notes": "{field.notes}",
         "due_on": "{string_to_hash_or_null(field.due_on)}",
         "followers": "{string_to_hash(field.followers)}",
-        "hearted": "{field.hearted}",
+        "hearted": "{string_to_boolean(field.hearted)}",
         "projects": "{string_to_hash(field.projects)}",
         "workspace": "{field.workspace}",
         "memberships": "{string_to_hash(field.memberships)}",
-        "tags": "{string_to_hash(field.tags)}",
+        "tags": "{string_to_hash(field.tags)}"
     },
   "response": {
     "success": "",
