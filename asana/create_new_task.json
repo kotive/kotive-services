@@ -18,7 +18,7 @@
             "properties": {
                 "parameter": "assignee",
                 "fieldType": "text",
-                "helptext": "User to which this task is assigned to"
+                "helptext": "User to which this task is assigned to. E.g. {{ 'id': 12345, 'name': 'Tim Bizarro' }}"
             },
             "readonly": false,
             "required": false,
@@ -51,18 +51,7 @@
             "properties": {
                 "parameter": "due_on",
                 "fieldType": "date",
-                "helptext": "Date on which this task is due, or null if the task has no due date"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Due date",
-            "properties": {
-                "parameter": "due_at",
-                "fieldType": "date",
-                "helptext": "Date and time on which this task is due, or null if the task has no due time"
+                "helptext": "Date on which this task is due"
             },
             "readonly": false,
             "required": false,
@@ -73,7 +62,7 @@
             "properties": {
                 "parameter": "projects",
                 "fieldType": "textarea",
-                "helptext": "Array of projects this task is associated with. At task creation time, this array can be used to add the task to many projects at once. After task creation, these associations can be modified using the addProject and removeProject endpoints. Projects  should be separated with commas"
+                "helptext": "List of projects this task is associated with. At task creation time, this list can be used to add the task to many projects at once. Projects should be separated with commas E.g. {{ 'id': 1331, 'name': 'Stuff to Buy' }}"
             },
             "readonly": false,
             "required": false,
@@ -84,7 +73,7 @@
             "properties": {
                 "parameter": "followers",
                 "fieldType": "textarea",
-                "helptext": "Array of users following this task"
+                "helptext": "List of users following this task, seperated by commas E.g. {{ 'id': 1123, 'name': 'Mittens' }}"
             },
             "readonly": false,
             "required": false,
@@ -94,17 +83,12 @@
             "label": "Hearted",
             "properties": {
                 "parameter": "hearted",
-                "fieldType": "radio",
-                "choices": [
-                    "yes",
-                    "no"
-                ],
+                "fieldType": "text",
                 "default": "no",
-                "classes":"inline",
-                "helptext": "Is the task hearted by the authorized user?"
+                "helptext": "Is the task hearted by the authorized user? (Yes or no)"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -112,7 +96,7 @@
             "properties": {
                 "parameter": "workspace",
                 "fieldType": "text",
-                "helptext": "The workspace this task is associated with. Once created, task cannot be moved to a different workspace. This attribute can only be specified at creation time"
+                "helptext": "The workspace this task is associated with. Once created, task cannot be moved to a different workspace. E.g. {{ 'id': 14916, 'name': 'My Workspace' }}"
             },
             "readonly": false,
             "required": true,
@@ -123,7 +107,7 @@
             "properties": {
                 "parameter": "memberships",
                 "fieldType": "textarea",
-                "helptext": "Array of projects this task is associated with and the section it is in. At task creation time, this array can be used to add the task to specific sections. After task creation, these associations can be modified using the addProject and removeProject endpoints. Note that over time, more types of memberships may be added to this property"
+                "helptext": "List of projects this task is associated with and the section it is in. At task creation time, this list can be used to add the task to specific sections. E.g. {{ 'project': {{ 'id': 1331, 'name': 'Bugs' }}, 'section': {{ 'id': 1123, 'name': 'P1:' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on memberships</a>"
             },
             "readonly": false,
             "required": true,
@@ -133,8 +117,8 @@
             "label": "Tags",
             "properties": {
                 "parameter": "tags",
-                "fieldType": "text",
-                "helptext": "Array of tags associated with this task. This property may be specified on creation using just an array of tag IDs. In order to change tags on an existing task use addTag and removeTag"
+                "fieldType": "textarea",
+                "helptext": "List of tags associated with this task. This property may be specified on creation using just a list of tag IDs"
             },
             "readonly": false,
             "required": false,
@@ -145,7 +129,7 @@
             "properties": {
                 "parameter": "custom_fields",
                 "fieldType": "text",
-                "helptext": "Array of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. For example, these fields will contain an enum_value property for custom fields of type enum, a string_value property for custom fields of type string, and so on. Please note that the id returned on each custom field value is identical to the id of the custom field, which allows referencing the custom field metadata through the /custom_fields/custom_field-id endpoint"
+                "helptext": "List of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. E.g. {{ 'id': 1646, 'name': 'Priority', 'type': 'enum', 'enum_value': {{ 'id': 126, 'name': 'P1' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on custom fields</a>"
             },
             "readonly": false,
             "required": false,
@@ -165,7 +149,7 @@
                 "helptext": "YES if the task is currently marked complete, NO if not."
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         }
     ],
@@ -174,12 +158,11 @@
     "request": {
         "assignee": "{string_to_hash_or_null(field.assignee)}",
         "assignee_status": "{field.assignee_status}",
-        "completed": "{field.completed}",
+        "completed": "{string_to_boolean(field.completed)}",
         "custom_fields": "{string_to_hash(field.custom_fields)}",
         "name": "{field.name}",
         "notes": "{field.notes}",
-        "due_on": "{field.due_on}",
-        "due_at": "{field.due_at}",
+        "due_on": "{string_to_hash_or_null(field.due_on)}",
         "followers": "{string_to_hash(field.followers)}",
         "hearted": "{field.hearted}",
         "projects": "{string_to_hash(field.projects)}",
