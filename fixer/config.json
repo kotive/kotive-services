@@ -1,0 +1,8 @@
+{
+  "name": "Fixer.io",
+  "description": "Foreign exchange rates and currency conversion",
+  "auth": {
+    "method": "none"
+  },
+  "domain": "https://api.fixer.io"
+}
