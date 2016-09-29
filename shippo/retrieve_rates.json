@@ -1,0 +1,497 @@
+{
+  "name": "Retieve rates",
+  "description": "Request to ship a given package between the sender and recipient addresses",
+  "documentation": "https://goshippo.com/docs/reference#shipments",
+  "fields": [
+    {
+      "label": "Purpose",
+      "properties": {
+        "parameter": "purpose",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "QUOTE", "value": "QUOTE"},
+          {"key": "PURCHASE", "value": "PURCHASE"}
+        ],
+        "default": "PURCHASE",
+        "classes": "inline",
+        "helptext": "Addresses to be used for purchases should be fully entered, i.e., a complete street address with all required fields."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Sender's details",
+      "properties": {
+        "fieldType": "heading"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Fullname of sender",
+      "properties": {
+        "parameter": "fromName",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Company",
+      "properties": {
+        "parameter": "fromCompany",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Street name",
+      "properties": {
+        "parameter": "fromStreet1",
+        "fieldType": "text",
+        "helptext": "First street line, which is usually the street name. Note that it is preferred to that a building's street number is be entered into the field below."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Street number",
+      "properties": {
+        "parameter": "fromStreetNo",
+        "fieldType": "text",
+        "helptext": "Street number of the addressed building. This field can be included in the street name for all carriers except for DHL Paket (Germany)."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Street (line 2)",
+      "properties": {
+        "parameter": "fromStreet2",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "City",
+      "properties": {
+        "parameter": "fromCity",
+        "fieldType": "text",
+        "helptext": "Note: required for purchases"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Postal code or Zip",
+      "properties": {
+        "parameter": "fromCode",
+        "fieldType": "text",
+        "helptext": "Note: required for purchases"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+        "properties": {
+        "parameter": "fromState",
+        "fieldType": "text",
+        "helptext": "Note: required for purchases for some countries"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Country",
+      "properties": {
+        "parameter": "fromCountry",
+        "fieldType": "text",
+        "helptext": "The 2 character country code, e.g. US or DE"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Phone",
+      "properties": {
+        "parameter": "fromPhone",
+        "fieldType": "text",
+        "helptext": "Addresses containing a phone number allow carriers to call the sender when picking up the Parcel. This increases the probability of pickup and helps to avoid accessorial charges after a Parcel has been shipped. Note: required for international purchases."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "fromEmail",
+        "fieldType": "email"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Is residential?",
+      "properties": {
+        "parameter": "fromIsResidential",
+        "fieldType": "text",
+        "helptext": "true or false"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Validate the address?",
+      "properties": {
+        "parameter": "fromValidate",
+        "fieldType": "text",
+        "helptext": "true or false"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Metadata",
+      "properties": {
+        "parameter": "fromMetadata",
+        "fieldType": "text",
+        "helptext": "A string of up to 100 characters that can be filled with any additional information."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Recipient's details",
+      "properties": {
+        "fieldType": "heading"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Fullname of recipient",
+      "properties": {
+        "parameter": "toName",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Company",
+      "properties": {
+        "parameter": "toCompany",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Street name",
+      "properties": {
+        "parameter": "toStreet1",
+        "fieldType": "text",
+        "helptext": "First street line, which is usually the street name. Note that it is preferred to that a building's street number is be entered into the field below."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Street number",
+      "properties": {
+        "parameter": "toStreetNo",
+        "fieldType": "text",
+        "helptext": "Street number of the addressed building. This field can be included in the street name for all carriers except for DHL Paket (Germany)."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Street (line 2)",
+      "properties": {
+        "parameter": "toStreet2",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "City",
+      "properties": {
+        "parameter": "toCity",
+        "fieldType": "text",
+        "helptext": "Note: required for purchases"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Postal code or Zip",
+      "properties": {
+        "parameter": "toCode",
+        "fieldType": "text",
+        "helptext": "Note: required for purchases"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+        "properties": {
+        "parameter": "toState",
+        "fieldType": "text",
+        "helptext": "Note: required for purchases for some countries"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Country",
+      "properties": {
+        "parameter": "toCountry",
+        "fieldType": "text",
+        "helptext": "The 2 character country code, e.g. US or DE"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Phone",
+      "properties": {
+        "parameter": "toPhone",
+        "fieldType": "text",
+        "helptext": "Addresses containing a phone number allow carriers to call the recipient when delivering the Parcel. This increases the probability of delivery and helps to avoid accessorial charges after a Parcel has been shipped. Note: required for international purchases."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "toEmail",
+        "fieldType": "email"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Is residential?",
+      "properties": {
+        "parameter": "toIsResidential",
+        "fieldType": "text",
+        "helptext": "true or false"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Validate the address?",
+      "properties": {
+        "parameter": "toValidate",
+        "fieldType": "text",
+        "helptext": "true or false"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Metadata",
+      "properties": {
+        "parameter": "toMetadata",
+        "fieldType": "text",
+        "helptext": "A string of up to 100 characters that can be filled with any additional information."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Parcel details",
+      "properties": {
+        "fieldType": "heading"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "The parcel's dimensions are measured in...",
+      "properties": {
+        "parameter": "parcelDistanceUnit",
+        "fieldType": "select",
+        "choices": [
+          {"key": "cm", "value": "Centimeters"},
+          {"key": "in", "value": "Inches"},
+          {"key": "ft", "value": "Feet"},
+          {"key": "mm", "value": "Millimeters"},
+          {"key": "m", "value": "Meters"},
+          {"key": "yd", "value": "Yards"}
+        ],
+        "default": "in",
+        "helptext": "The unit used for measuring the parcel's length, width and height."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Length",
+      "properties": {
+        "parameter": "parcelLength",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Width",
+      "properties": {
+        "parameter": "parcelWidth",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Height",
+      "properties": {
+        "parameter": "parcelHeight",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "The parcel's weight is measured in...",
+      "properties": {
+        "parameter": "parcelMassUnit",
+        "fieldType": "select",
+        "choices": [
+          {"key": "g", "value": "Grams"},
+          {"key": "oz", "value": "Ounces"},
+          {"key": "lb", "value": "Pounds"},
+          {"key": "kg", "value": "Kilograms"}
+        ],
+        "default": "in",
+        "helptext": "The unit used for weighing the parcel."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Weight",
+      "properties": {
+        "parameter": "parcelWeight",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Parcel metadata",
+      "properties": {
+        "parameter": "parcelMetadata",
+        "fieldType": "text",
+        "helptext": "A string of up to 100 characters that can be filled with any additional information."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "ShippoToken {auth.field.authtoken}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/shipments",
+  "request": {
+    "object_purpose": "{field.purpose}",
+    "address_from": {
+      "object_purpose": "{field.purpose}",
+      "name": "{field.fromName}",
+      "company": "{field.fromCompany}",
+      "street1": "{field.fromStreet1}",
+      "street_no": "{field.fromStreetNo}",
+      "street2": "{field.fromStreet2}",
+      "city": "{field.fromCity}",
+      "state": "{field.fromState}",
+      "zip": "{field.fromCode}",
+      "country": "{field.fromCountry}",
+      "phone": "{field.fromPhone}",
+      "email": "{field.fromEmail}",
+      "is_residential": "{string_to_boolean(field.fromIsResidential)}",
+      "validate": "{string_to_boolean(field.fromValidate)}",
+      "metadata": "{field.fromMetadata}"
+    },
+    "address_to": {
+      "object_purpose": "{field.purpose}",
+      "name": "{field.toName}",
+      "company": "{field.toCompany}",
+      "street1": "{field.toStreet1}",
+      "street_no": "{field.toStreetNo}",
+      "street2": "{field.toStreet2}",
+      "city": "{field.toCity}",
+      "state": "{field.toState}",
+      "zip": "{field.toCode}",
+      "country": "{field.toCountry}",
+      "phone": "{field.toPhone}",
+      "email": "{field.toEmail}",
+      "is_residential": "{string_to_boolean(field.toIsResidential)}",
+      "validate": "{string_to_boolean(field.toValidate)}",
+      "metadata": "{field.toMetadata}"
+    },
+    "parcel": {
+      "length": "{field.parcelLength}",
+      "width": "{field.parcelWidth}",
+      "height": "{field.parcelHeight}",
+      "distance_unit": "{field.parcelDistanceUnit}",
+      "weight": "{field.parcelWeight}",
+      "mass_unit": "{field.parcelMassUnit}",
+      "metadata": "{field.parcelMetadata}"
+    },
+    "async": false
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

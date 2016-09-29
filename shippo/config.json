@@ -8,7 +8,8 @@
         "label": "Private Auth Token",
         "properties": {
           "parameter": "authtoken",
-          "fieldType": "text"
+          "fieldType": "text",
+          "helptext": "Get your private auth token from your <a href='https://goshippo.com/user/apikeys/' target='_blank'>Shippo API page</a>." 
         },
         "readonly": false,
         "required": true,

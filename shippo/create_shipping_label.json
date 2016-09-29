@@ -1,0 +1,55 @@
+{
+  "name": "Create shipping label",
+  "description": "Request to ship a given package between the sender and recipient addresses",
+  "documentation": "https://goshippo.com/docs/reference#shipments",
+  "fields": [
+    {
+      "label": "Rate",
+      "properties": {
+        "parameter": "rate",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "File type of the label",
+      "properties": {
+        "parameter": "labelFileType",
+        "fieldType": "text",
+        "helptext": "PNG, PDF, PDF_4X6 or ZPLII. Defaults to <a href='https://goshippo.com/user/settings/' target='_blank'>your settings</a> if empty."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Metadata",
+      "properties": {
+        "parameter": "metadata",
+        "fieldType": "text",
+        "helptext": "A string of up to 100 characters that can be filled with any additional information."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "ShippoToken {auth.field.authtoken}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/transactions",
+  "request": {
+    "rate": "{field.rate}",
+    "label_file_type": "{field.labelFileType}",
+    "metadata": "{field.metadata}",
+    "async": false
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
