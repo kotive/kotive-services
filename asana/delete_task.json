@@ -1,0 +1,177 @@
+{
+    "name": "Delete a task",
+    "description": "Delete an existing task",
+    "documentation": "https://asana.com/developers/api-reference/tasks#delete",
+    "fields": [
+        {
+            "label": "Name of the task",
+            "properties": {
+                "parameter": "name",
+                "fieldType": "text",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Assignee",
+            "properties": {
+                "parameter": "assignee",
+                "fieldType": "text",
+                "helptext": "User to which this task is assigned to. E.g. {{ 'id': 12345, 'name': 'Tim Bizarro' }}"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Assignee status",
+            "properties": {
+                "parameter": "assignee_status",
+                "fieldType": "text",
+                "helptext": "Scheduling status of this task for the user it is assigned to. This field can only be set if the assignee (above) is specified."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Notes",
+            "properties": {
+                "parameter": "notes",
+                "fieldType": "textarea",
+                "helptext": "More detailed information on this task"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Due date",
+            "properties": {
+                "parameter": "due_on",
+                "fieldType": "date",
+                "helptext": "Date on which this task is due"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Projects",
+            "properties": {
+                "parameter": "projects",
+                "fieldType": "textarea",
+                "helptext": "List of projects this task is associated with. At task creation time, this list can be used to add the task to many projects at once. Projects should be separated with commas E.g. {{ 'id': 1331, 'name': 'Stuff to Buy' }}, ..."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Followers",
+            "properties": {
+                "parameter": "followers",
+                "fieldType": "textarea",
+                "helptext": "List of users following this task, separated by commas E.g. {{ 'id': 1123, 'name': 'Mittens' }}, ..."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Hearted",
+            "properties": {
+                "parameter": "hearted",
+                "fieldType": "text",
+                "default": "no",
+                "helptext": "Is the task hearted by the authorized user? (Yes or no)"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Workspace",
+            "properties": {
+                "parameter": "workspace",
+                "fieldType": "text",
+                "helptext": "The workspace this task is associated with. Once created, task cannot be moved to a different workspace. E.g. {{ 'id': 14916, 'name': 'My Workspace' }}"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Memberships",
+            "properties": {
+                "parameter": "memberships",
+                "fieldType": "textarea",
+                "helptext": "List of projects this task is associated with and the section it is in. At task creation time, this list can be used to add the task to specific sections. E.g. {{ 'project': {{ 'id': 1331, 'name': 'Bugs' }}, 'section': {{ 'id': 1123, 'name': 'P1:' }} }}, ... <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on memberships</a>"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Tags",
+            "properties": {
+                "parameter": "tags",
+                "fieldType": "textarea",
+                "helptext": "List of tags associated with this task. This property may be specified on creation using just a list of tag IDs."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Custom fields",
+            "properties": {
+                "parameter": "custom_fields",
+                "fieldType": "text",
+                "helptext": "List of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. E.g. {{ 'id': 1646, 'name': 'Priority', 'type': 'enum', 'enum_value': {{ 'id': 126, 'name': 'P1' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on custom fields</a>"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Completed",
+            "properties": {
+                "parameter": "completed",
+                "fieldType": "radio",
+                "choices": [
+                    "yes",
+                    "no"
+                ],
+                "default": "no",
+                "classes":"inline",
+                "helptext": "YES if the task is currently marked complete, NO if not."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "DELETE",
+    "endpoint": "/tasks/task-id",
+    "request": {
+        "assignee": "{string_to_hash_or_null(field.assignee)}",
+        "assignee_status": "{field.assignee_status}",
+        "completed": "{string_to_boolean(field.completed)}",
+        "custom_fields": "{string_to_hash(field.custom_fields)}",
+        "name": "{field.name}",
+        "notes": "{field.notes}",
+        "due_on": "{string_to_hash_or_null(field.due_on)}",
+        "followers": "{string_to_hash(field.followers)}",
+        "hearted": "{field.hearted}",
+        "projects": "{string_to_hash(field.projects)}",
+        "workspace": "{field.workspace}",
+        "memberships": "{string_to_hash(field.memberships)}",
+        "tags": "{string_to_hash(field.tags)}",
+    },
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}
