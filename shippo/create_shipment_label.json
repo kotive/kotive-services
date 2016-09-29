@@ -1,7 +1,7 @@
 {
   "name": "Create shipping label",
-  "description": "Request to ship a given package between the sender and recipient addresses",
-  "documentation": "https://goshippo.com/docs/reference#shipments",
+  "description": "Purchases the shipping label for the provided rate",
+  "documentation": "https://goshippo.com/docs/reference#transaction-create",
   "fields": [
     {
       "label": "Rate",

@@ -1,0 +1,39 @@
+{
+  "name": "Track a shipment's status",
+  "description": "Get any shipment's current status",
+  "documentation": "https://goshippo.com/docs/reference#track-retrieve",
+  "fields": [
+    {
+      "label": "Carrier",
+      "properties": {
+        "parameter": "carrier",
+        "fieldType": "text",
+        "helptext": "Token of the <a href='https://goshippo.com/docs/reference#carriers' target='_blank'>carrier</a> of the shipment to track. E.g. 'fedex' or 'dhl_ecommerce'"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Tracking number",
+      "properties": {
+        "parameter": "trackingNumber",
+        "fieldType": "text",
+        "helptext": "A string of up to 100 characters that can be filled with any additional information."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "ShippoToken {auth.field.authtoken}"
+  },
+  "method": "GET",
+  "endpoint": "/tracks/{field.carrier}/{field.trackingNumber}",
+  "request": {},
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
