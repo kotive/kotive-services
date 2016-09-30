@@ -37,7 +37,7 @@
         {
             "label": "Assignee status",
             "properties": {
-                "parameter": "assignee_status",
+                "parameter": "assigneeStatus",
                 "fieldType": "text",
                 "helptext": "Scheduling status of this task for the user it is assigned to. This field can only be set if the assignee (above) is specified."
             },
@@ -59,7 +59,7 @@
         {
             "label": "Due date",
             "properties": {
-                "parameter": "due_on",
+                "parameter": "dueOn",
                 "fieldType": "date",
                 "helptext": "Date on which this task is due"
             },
@@ -137,7 +137,7 @@
         {
             "label": "Custom fields",
             "properties": {
-                "parameter": "custom_fields",
+                "parameter": "customFields",
                 "fieldType": "text",
                 "helptext": "List of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. E.g. {{ 'id': 1646, 'name': 'Priority', 'type': 'enum', 'enum_value': {{ 'id': 126, 'name': 'P1' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on custom fields</a>"
             },
@@ -168,12 +168,12 @@
     "request": {
         "taskId": "{field.taskId}",
         "assignee": "{string_to_hash_or_null(field.assignee)}",
-        "assignee_status": "{field.assignee_status}",
+        "assignee_status": "{field.assigneeStatus}",
         "completed": "{string_to_boolean(field.completed)}",
-        "custom_fields": "{string_to_hash(field.custom_fields)}",
+        "custom_fields": "{string_to_hash(field.customFields)}",
         "name": "{field.name}",
         "notes": "{field.notes}",
-        "due_on": "{string_to_hash_or_null(field.due_on)}",
+        "due_on": "{string_to_hash_or_null(field.dueOn)}",
         "followers": "{string_to_hash(field.followers)}",
         "hearted": "{string_to_boolean(field.hearted)}",
         "projects": "{string_to_hash(field.projects)}",
