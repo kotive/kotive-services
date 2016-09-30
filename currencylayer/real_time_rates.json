@@ -1,7 +1,7 @@
 {
     "name": "Real-time exchange rates",
     "description": "Get real-time exchange rates",
-    "documentation": "https://currencylayer.com/documentation",
+    "documentation": "https://currencylayer.com/documentation#api_features",
     "fields": [
         {
             "label": "This task will automatically get the real-time foreign exchange rates. Optionally, it is possible to define an additional source currency, or specific output currencies below",
