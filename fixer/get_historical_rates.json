@@ -1,0 +1,24 @@
+{
+    "name": "Get historical rates",
+    "description": "Get historical rates for any day since 1999",
+    "documentation": "http://fixer.io/",
+    "fields": [
+        {
+            "label": "Date of historical foreign exchange rates",
+            "properties": {
+                "fieldType": "date",
+                "helptext": "Enter the date you wish to see the exchange rates for, any date since 1999. E.g. '2000-03-22'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/latest/{field.date}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
