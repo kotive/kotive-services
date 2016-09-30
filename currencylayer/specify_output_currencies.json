@@ -1,0 +1,45 @@
+{
+    "name": "Real-time exchange rates",
+    "description": "Get real-time exchange rates",
+    "documentation": "https://currencylayer.com/documentation#api_features",
+    "fields": [
+        {
+            "label": "This task will automatically get the real-time foreign exchange rates. Optionally, it is possible to define an additional source currency, or specific output currencies below",
+            "properties": {
+                "fieldType": "paragraph"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+        {
+            "label": "Choose base currency",
+            "properties": {
+                "parameter": "source",
+                "fieldType": "text",
+                "helptext": "Choose the currency you want to see the exhange rate against e.g. 'USD'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Request specific currencies",
+            "properties": {
+                "parameter": "currencies",
+                "fieldType": "text",
+                "helptext": "List all the currencies you wish to see the exchange rates for, separated by commas and no spaces. E.g. 'GBP,ZAR'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/live&source={field.source}&currencies={field.currencies}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

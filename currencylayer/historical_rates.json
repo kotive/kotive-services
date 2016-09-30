@@ -1,0 +1,25 @@
+{
+    "name": "Historical rates",
+    "description": "Get historical rates for any day since 1999",
+    "documentation": "https://currencylayer.com/documentation#historical_rates",
+    "fields": [
+        {
+            "label": "Date of historical foreign exchange rates",
+            "properties": {
+                "parameter": "date",
+                "fieldType": "text",
+                "helptext": "Enter the date you wish to see the exchange rates for, any date since 1999. E.g. '2000-03-22'"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/historical&date={field.date}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

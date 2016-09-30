@@ -1,0 +1,25 @@
+{
+    "name": "Source currency switching",
+    "description": "Set the currency you want to see the exhange rate against",
+    "documentation": "https://currencylayer.com/documentation#source_currency_switching",
+    "fields": [
+        {
+            "label": "Choose source currency",
+            "properties": {
+                "parameter": "source",
+                "fieldType": "text",
+                "helptext": "Choose the currency you want to see the exhange rate against e.g. 'USD'"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/live&source={field.source}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

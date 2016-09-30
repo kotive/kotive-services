@@ -1,0 +1,8 @@
+{
+  "name": "Currencylayer",
+  "description": "Foreign exchange rates and currency conversion",
+  "auth": {
+    "method": "none"
+  },
+  "domain": "http://apilayer.net/api"
+}
