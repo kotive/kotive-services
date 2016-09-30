@@ -6,16 +6,17 @@
         {
             "label": "Date of historical foreign exchange rates",
             "properties": {
+                "parameter": "historicalDate",
                 "fieldType": "date",
                 "helptext": "Enter the date you wish to see the exchange rates for, any date since 1999. E.g. '2000-03-22'"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         }
     ],
     "method": "GET",
-    "endpoint": "/latest/{field.date}",
+    "endpoint": "/latest/{field.historicalDate}",
     "request": {},
     "response": {
         "success": "",

@@ -6,28 +6,28 @@
         {
             "label": "Choose base currency",
             "properties": {
-                "parameter": "base_currency",
+                "parameter": "baseCurrency",
                 "fieldType": "text",
-                "helptext": "Rates are quoted against the Euro by default. Quote against a different currency by setting the base parameter e.g. 'ZAR'"
+                "helptext": "Rates are quoted against the Euro by default. Quote against a different currency by setting the base parameter e.g. 'USD'"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         }
         {
             "label": "Request specific currencies",
             "properties": {
-                "parameter": "spesific_currencies",
+                "parameter": "specificCurrencies",
                 "fieldType": "text",
-                "helptext": "List all the currencies you wish to see the exchange rates for, seperated by commas. E.g. 'GBP,USD'"
+                "helptext": "List all the currencies you wish to see the exchange rates for, separated by commas. E.g. 'GBP,ZAR'"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         }
     ],
     "method": "GET",
-    "endpoint": "/latest?symbols={string_to_hash(field.spesific_currencies)}&base={field.base_currency}",
+    "endpoint": "/latest?symbols={field.specificCurrencies}&base={field.baseCurrency}",
     "request": {},
     "response": {
         "success": "",

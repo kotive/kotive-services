@@ -6,17 +6,17 @@
         {
             "label": "Choose base currency",
             "properties": {
-                "parameter": "base_currency",
+                "parameter": "baseCurrency",
                 "fieldType": "text",
-                "helptext": "Rates are quoted against the Euro by default. Quote against a different currency by setting the base parameter"
+                "helptext": "Rates are quoted against the Euro by default. Quote against a different currency by setting the base parameter."
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         }
     ],
     "method": "GET",
-    "endpoint": "/latest?base={field.base_currency}",
+    "endpoint": "/latest?base={field.baseCurrency}",
     "request": {},
     "response": {
         "success": "",

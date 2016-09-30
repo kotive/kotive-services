@@ -6,17 +6,17 @@
         {
             "label": "Request specific currencies",
             "properties": {
-                "parameter": "spesific_currencies",
+                "parameter": "specificCurrencies",
                 "fieldType": "text",
-                "helptext": "List all the currencies you wish to see the exchange rates for, seperated by commas. E.g. 'GBP,USD'"
+                "helptext": "List all the currencies you wish to see the exchange rates for, separated by commas and no spaces. E.g. 'GBP,USD'"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         }
     ],
     "method": "GET",
-    "endpoint": "/latest?symbols={string_to_hash(field.spesific_currencies)}",
+    "endpoint": "/latest?symbols={field.specificCurrencies}",
     "request": {},
     "response": {
         "success": "",
