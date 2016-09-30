@@ -41,6 +41,10 @@
             "service": "email"
         },
         {
+            "name": "Fixer",
+            "service": "fixer"
+        },
+        {
             "name": "Freshbooks",
             "service": "freshbooks"
         },
