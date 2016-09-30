@@ -179,7 +179,7 @@
         "projects": "{string_to_hash(field.projects)}",
         "workspace": "{field.workspace}",
         "memberships": "{string_to_hash(field.memberships)}",
-        "tags": "{string_to_hash(field.tags)}",
+        "tags": "{string_to_hash(field.tags)}"
     },
   "response": {
     "success": "",
