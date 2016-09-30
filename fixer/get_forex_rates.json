@@ -1,5 +1,5 @@
 {
-    "name": "Get foreign exchange reference rates",
+    "name": "Get foreign exchange rates",
     "description": "Get the latest foreign exchange reference rates",
     "documentation": "http://fixer.io/",
     "fields": [

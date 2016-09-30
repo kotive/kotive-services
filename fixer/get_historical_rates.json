@@ -7,7 +7,7 @@
             "label": "Date of historical foreign exchange rates",
             "properties": {
                 "parameter": "historicalDate",
-                "fieldType": "date",
+                "fieldType": "text",
                 "helptext": "Enter the date you wish to see the exchange rates for, any date since 1999. E.g. '2000-03-22'"
             },
             "readonly": false,
