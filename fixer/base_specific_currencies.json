@@ -1,0 +1,36 @@
+{
+    "name": "Convert specific currencies against your chosen base currency",
+    "description": "Request specific exchange rates by listing the currencies and choosing the base rate you want to see the exchange against",
+    "documentation": "http://fixer.io/",
+    "fields": [
+        {
+            "label": "Choose base currency",
+            "properties": {
+                "parameter": "base_currency",
+                "fieldType": "text",
+                "helptext": "Rates are quoted against the Euro by default. Quote against a different currency by setting the base parameter e.g. 'ZAR'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+        {
+            "label": "Request specific currencies",
+            "properties": {
+                "parameter": "spesific_currencies",
+                "fieldType": "text",
+                "helptext": "List all the currencies you wish to see the exchange rates for, seperated by commas. E.g. 'GBP,USD'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/latest?symbols={string_to_hash(field.spesific_currencies)}&base={field.base_currency}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

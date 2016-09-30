@@ -1,0 +1,25 @@
+{
+    "name": "Choose base currency",
+    "description": "Quote against a different currency than Euro by setting the base parameter",
+    "documentation": "http://fixer.io/",
+    "fields": [
+        {
+            "label": "Choose base currency",
+            "properties": {
+                "parameter": "base_currency",
+                "fieldType": "text",
+                "helptext": "Rates are quoted against the Euro by default. Quote against a different currency by setting the base parameter"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/latest?base={field.base_currency}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

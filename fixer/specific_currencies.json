@@ -1,0 +1,25 @@
+{
+    "name": "Request specific currencies",
+    "description": "Request specific exchange rates by listing the currencies",
+    "documentation": "http://fixer.io/",
+    "fields": [
+        {
+            "label": "Request specific currencies",
+            "properties": {
+                "parameter": "spesific_currencies",
+                "fieldType": "text",
+                "helptext": "List all the currencies you wish to see the exchange rates for, seperated by commas. E.g. 'GBP,USD'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/latest?symbols={string_to_hash(field.spesific_currencies)}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
