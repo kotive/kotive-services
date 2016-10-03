@@ -1,0 +1,47 @@
+{
+    "name": "Currency change queries",
+    "description": "Request the change (both margin and percentage) of one or more currencies, relative to a Source Currency, within a specific time-frame",
+    "documentation": "https://currencylayer.com/documentation#change_queries",
+    "fields": [
+        {
+            "label": "Request currencies to change",
+            "properties": {
+                "parameter": "currencies",
+                "fieldType": "text",
+                "helptext": "List all the currencies you wish to change, separated by commas and no spaces. E.g. 'GBP,ZAR'"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+        {
+            "label": "Time-frame start date",
+            "properties": {
+                "parameter": "startDate",
+                "fieldType": "text",
+                "helptext": "Enter the start date you wish to see the change of currency for. E.g. '2000-03-22'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+        {
+            "label": "Time-frame end date",
+            "properties": {
+                "parameter": "endDate",
+                "fieldType": "text",
+                "helptext": "Enter the end date you wish to see the change of currency for. E.g. '2000-03-22'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/change&start_date={field.startDate}&end_date={field.endDate}&currencies={field.currencies}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
