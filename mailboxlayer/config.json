@@ -1,13 +1,13 @@
 {
   "name": "Mailboxlayer",
-  "description": "Thoroughly check and verify email addresses right at the point of entry into your system.",
+  "description": "Thoroughly check and verify email addresses",
   "auth": {
         "method": "Custom",
         "fields": [
             {
-                "label": "API Key",
+                "label": "API access key",
                 "properties": {
-                    "parameter": "accessKey",
+                    "parameter": "apiAccessKey",
                     "fieldType": "text"
                 },
                 "readonly": false,

@@ -1,6 +1,6 @@
 {
     "name": "Validation tools",
-    "description": "Thoroughly check and verify email addresses right at the point of entry into your system",
+    "description": "Thoroughly check and verify email addresses",
     "documentation": "https://mailboxlayer.com/documentation",
     "fields": [
         {
@@ -15,7 +15,7 @@
             "visible": true
         },
         {
-            "label": "Perform SMTP check",
+            "label": "Perform SMTP check?",
             "properties": {
                 "parameter": "smtp",
                 "fieldType": "radio",
@@ -25,14 +25,14 @@
                 ],
                 "default": 1,
                 "classes":"inline",
-                "helptext": "The mailboxlayer SMTP Check feature takes up around 75% of the API's entire response time. If you would like to skip SMTP (Simple Mail Tranfer Protocol) and speed up the API response, you may turn it off"
+                "helptext": "The mailboxlayer SMTP Check feature takes up around 75% of the API's entire response time. If you would like to skip SMTP (Simple Mail Tranfer Protocol) and speed up the API response, you may turn it off."
             },
             "readonly": false,
             "required": true,
             "visible": true
         },
         {
-            "label": "Detect if email address is a catch-all",
+            "label": "Detect if email address is a catch-all?",
             "properties": {
                 "parameter": "catchAll",
                 "fieldType": "radio",
@@ -42,7 +42,7 @@
                 ],
                 "default": 0,
                 "classes":"inline",
-                "helptext": "Due to it's heavy impact on the API's response time, this functionality is inactive by default. However, you may choose to turn on catch-all detection"
+                "helptext": "Due to it's heavy impact on the API's response time, this functionality is inactive by default. However, you may choose to turn on catch-all detection."
             },
             "readonly": false,
             "required": true,
@@ -50,7 +50,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/check?access_key={auth.field.accessKey}&email={field.email}&smtp={field.smtp}&catch_all={field.catchAll}",
+    "endpoint": "/check?access_key={auth.field.apiAccessKey}&email={field.email}&smtp={field.smtp}&catch_all={field.catchAll}",
     "request": {},
     "response": {
         "success": "",
