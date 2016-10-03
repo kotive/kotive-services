@@ -11,7 +11,7 @@
             "readonly": false,
             "required": false,
             "visible": true
-        }
+        },
         {
             "label": "Choose base currency",
             "properties": {

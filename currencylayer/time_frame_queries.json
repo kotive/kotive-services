@@ -13,7 +13,7 @@
             "readonly": false,
             "required": false,
             "visible": true
-        }
+        },
         {
             "label": "Time-frame start date",
             "properties": {
@@ -24,7 +24,7 @@
             "readonly": false,
             "required": true,
             "visible": true
-        }
+        },
         {
             "label": "Time-frame end date",
             "properties": {
