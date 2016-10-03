@@ -13,7 +13,7 @@
       "readonly": false,
       "required": false,
       "visible": true
-    },
+    }
   ],
   "method": "GET",
     "endpoint": "/email-count?domain={field.domain}",
