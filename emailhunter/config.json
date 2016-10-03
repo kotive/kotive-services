@@ -7,7 +7,7 @@
             {
                 "label": "API Key",
                 "properties": {
-                    "parameter": "apiKey",
+                    "parameter": "apikey",
                     "fieldType": "text"
                 },
                 "readonly": false,

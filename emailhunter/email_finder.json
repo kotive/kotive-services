@@ -1,0 +1,58 @@
+{
+  "name": "Email finder",
+  "description": "This API endpoint generates the most likely email address from a domain name, a first name and a last name.",
+  "documentation": "https://emailhunter.co/api/docs#email-finder",
+  "fields": [
+    {
+        "label": "Domain name",
+        "properties": {
+            "parameter": "domain",
+            "fieldType": "text",
+            "helptext": "Enter the domain name from which you want to find the email addresses. For example, 'stripe.com'"
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+    },
+    {
+        "label": "Company name",
+        "properties": {
+            "parameter": "company",
+            "fieldType": "text",
+            "helptext": "Enter the company name from which you want to find the email addresses. For example, 'stripe'"
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+    },
+    {
+      "label": "First name",
+      "properties": {
+        "parameter": "firstName",
+        "fieldType": "text",
+        "helptext": "Provide the person's first name"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Last name",
+      "properties": {
+        "parameter": "lastName",
+        "fieldType": "text",
+        "helptext": "Provide the person's last name"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "GET",
+    "endpoint": "/email-finder?domain={field.domain}&company={field.company}&first_name={field.firstName}&last_name={field.lastName}&api_key={auth.fields.apikey}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
