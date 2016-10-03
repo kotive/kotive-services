@@ -15,7 +15,7 @@
             "visible": true
         },
         {
-            "label": "Turn off SMTP",
+            "label": "Perform SMTP check",
             "properties": {
                 "parameter": "smtp",
                 "fieldType": "radio",
@@ -23,7 +23,7 @@
                   {"key": 1, "value": "Yes"},
                   {"key": 0, "value": "No"}
                 ],
-                "default": 0,
+                "default": 1,
                 "classes":"inline",
                 "helptext": "The mailboxlayer SMTP Check feature takes up around 75% of the API's entire response time. If you would like to skip SMTP (Simple Mail Tranfer Protocol) and speed up the API response, you may turn it off"
             },
@@ -32,7 +32,7 @@
             "visible": true
         },
         {
-            "label": "Turn on catch-all detection",
+            "label": "Detect if email address is a catch-all",
             "properties": {
                 "parameter": "catchAll",
                 "fieldType": "radio",
@@ -40,7 +40,7 @@
                   {"key": 1, "value": "Yes"},
                   {"key": 0, "value": "No"}
                 ],
-                "default": 1,
+                "default": 0,
                 "classes":"inline",
                 "helptext": "Due to it's heavy impact on the API's response time, this functionality is inactive by default. However, you may choose to turn on catch-all detection"
             },
