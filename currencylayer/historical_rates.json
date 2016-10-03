@@ -14,9 +14,31 @@
             "required": true,
             "visible": true
         }
+        {
+            "label": "Choose base currency",
+            "properties": {
+                "parameter": "source",
+                "fieldType": "text",
+                "helptext": "Choose the currency you want to see the exhange rate against e.g. 'USD'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Request specific currencies",
+            "properties": {
+                "parameter": "currencies",
+                "fieldType": "text",
+                "helptext": "List all the currencies you wish to see the exchange rates for, separated by commas and no spaces. E.g. 'GBP,ZAR,AUD,CHF'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
     ],
     "method": "GET",
-    "endpoint": "/historical&date={field.date}",
+    "endpoint": "/historical&date={field.date}&source={field.source}&currencies={field.currencies}",
     "request": {},
     "response": {
         "success": "",
