@@ -1,0 +1,20 @@
+{
+  "name": "Mailboxlayer",
+  "description": "Thoroughly check and verify email addresses right at the point of entry into your system.",
+  "auth": {
+        "method": "Custom",
+        "fields": [
+            {
+                "label": "API Key",
+                "properties": {
+                    "parameter": "accessKey",
+                    "fieldType": "text"
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+        ]
+    },
+  "domain": "http://apilayer.net/api"
+}

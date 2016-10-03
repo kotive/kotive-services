@@ -85,6 +85,10 @@
             "service": "kissmetrics"
         },
         {
+            "name": "Mailboxlayer",
+            "service": "mailboxlayer"
+        },
+        {
             "name": "Mailchimp",
             "service": "mailchimp"
         },
