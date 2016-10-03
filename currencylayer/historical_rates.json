@@ -38,7 +38,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/historical&date={field.date}&source={field.source}&currencies={field.currencies}",
+    "endpoint": "/historical?access_key={auth.field.accessKey}&date={field.date}&source={field.source}&currencies={field.currencies}",
     "request": {},
     "response": {
         "success": "",

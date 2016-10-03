@@ -36,7 +36,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/live&source={field.source}&currencies={field.currencies}",
+    "endpoint": "/live?access_key={auth.field.accessKey}&source={field.source}&currencies={field.currencies}",
     "request": {},
     "response": {
         "success": "",

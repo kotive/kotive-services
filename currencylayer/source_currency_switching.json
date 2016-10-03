@@ -16,7 +16,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/live&source={field.source}",
+    "endpoint": "/live?access_key={auth.field.accessKey}&source={field.source}",
     "request": {},
     "response": {
         "success": "",

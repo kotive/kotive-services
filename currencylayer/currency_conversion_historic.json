@@ -49,7 +49,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/convert&from={field.from}&to={field.to}&amount={field.amount}&date={field.date}",
+    "endpoint": "/convert?access_key={auth.field.accessKey}&from={field.from}&to={field.to}&amount={field.amount}&date={field.date}",
     "request": {},
     "response": {
         "success": "",

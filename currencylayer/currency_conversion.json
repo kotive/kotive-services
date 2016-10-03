@@ -38,7 +38,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/convert&from={field.from}&to={field.to}&amount={field.amount}",
+    "endpoint": "/convert?access_key={auth.field.accessKey}&from={field.from}&to={field.to}&amount={field.amount}",
     "request": {},
     "response": {
         "success": "",

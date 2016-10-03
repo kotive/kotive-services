@@ -38,7 +38,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/timeframe&start_date={field.startDate}&end_date={field.endDate}&currencies={field.currencies}",
+    "endpoint": "/timeframe?access_key={auth.field.accessKey}&start_date={field.startDate}&end_date={field.endDate}&currencies={field.currencies}",
     "request": {},
     "response": {
         "success": "",
