@@ -41,6 +41,10 @@
             "service": "email"
         },
         {
+            "name": "Email Hunter",
+            "service": "emailhunter"
+        },
+        {
             "name": "Freshbooks",
             "service": "freshbooks"
         },
