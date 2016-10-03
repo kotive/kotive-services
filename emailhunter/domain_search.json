@@ -1,6 +1,6 @@
 {
     "name": "Domain search",
-    "description": "Thoroughly check and verify email addresses right at the point of entry into your system",
+    "description": "Domain search thoroughly check and verify email addresses right at the point of entry into your system",
     "documentation": "https://emailhunter.co/api/docs#domain-search",
     "fields": [
         {
