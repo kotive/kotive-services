@@ -1,0 +1,25 @@
+{
+  "name": "Email count",
+  "description": "Email count allows you to know how many email addresses we have for one domain",
+  "documentation": "https://emailhunter.co/api/docs#email-count",
+  "fields": [
+    {
+      "label": "Domain name",
+      "properties": {
+          "parameter": "domain",
+          "fieldType": "text",
+          "helptext": "The domain name for which you want to know how many email addresses we have found. For example, 'stripe.com'"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+  ],
+  "method": "GET",
+    "endpoint": "/email-count?domain={field.domain}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
