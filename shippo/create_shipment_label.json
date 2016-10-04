@@ -25,9 +25,8 @@
           "PDF_4X6",
           "ZPLII"
         ],
-        "default": "PDF",
         "classes": "inline",
-        "helptext": "PNG, PDF, PDF_4X6 or ZPLII. Defaults to <a href='https://goshippo.com/user/settings/' target='_blank'>your settings</a> if empty."
+        "helptext": "Defaults to <a href='https://goshippo.com/user/settings/' target='_blank'>your settings</a> if left empty."
       },
       "readonly": false,
       "required": false,
@@ -46,7 +45,8 @@
     }
   ],
   "headers": {
-    "Authorization": "ShippoToken {auth.field.authtoken}"
+    "Authorization": "ShippoToken {auth.field.authtoken}",
+    "Content-Type": "application/json"
   },
   "method": "POST",
   "endpoint": "/transactions",
