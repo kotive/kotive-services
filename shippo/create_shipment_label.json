@@ -4,10 +4,11 @@
   "documentation": "https://goshippo.com/docs/reference#transaction-create",
   "fields": [
     {
-      "label": "Rate",
+      "label": "Rate ID",
       "properties": {
         "parameter": "rate",
-        "fieldType": "text"
+        "fieldType": "text",
+        "helptext": "ID of the Rate for which a Label has to be obtained. Please note that only rates that are not older than 7 days can be purchased in order to ensure up-to-date pricing."
       },
       "readonly": false,
       "required": true,
@@ -17,7 +18,15 @@
       "label": "File type of the label",
       "properties": {
         "parameter": "labelFileType",
-        "fieldType": "text",
+        "fieldType": "radio",
+        "choices": [
+          "PNG",
+          "PDF",
+          "PDF_4X6",
+          "ZPLII"
+        ],
+        "default": "PDF",
+        "classes": "inline",
         "helptext": "PNG, PDF, PDF_4X6 or ZPLII. Defaults to <a href='https://goshippo.com/user/settings/' target='_blank'>your settings</a> if empty."
       },
       "readonly": false,
@@ -37,8 +46,7 @@
     }
   ],
   "headers": {
-    "Authorization": "ShippoToken {auth.field.authtoken}",
-    "Content-Type": "application/json"
+    "Authorization": "ShippoToken {auth.field.authtoken}"
   },
   "method": "POST",
   "endpoint": "/transactions",

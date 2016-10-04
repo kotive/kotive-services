@@ -438,8 +438,7 @@
     }
   ],
   "headers": {
-    "Authorization": "ShippoToken {auth.field.authtoken}",
-    "Content-Type": "application/json"
+    "Authorization": "ShippoToken {auth.field.authtoken}"
   },
   "method": "POST",
   "endpoint": "/shipments",
