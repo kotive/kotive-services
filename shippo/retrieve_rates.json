@@ -21,9 +21,10 @@
       "visible": true
     },
     {
-      "label": "Sender's details",
+      "label": "",
       "properties": {
-        "fieldType": "heading"
+        "fieldType": "heading",
+        "default": "Sender's details"
       },
       "readonly": false,
       "required": false,
@@ -180,9 +181,10 @@
       "visible": true
     },
     {
-      "label": "Recipient's details",
+      "label": "",
       "properties": {
-        "fieldType": "heading"
+        "fieldType": "heading",
+        "default": "Recipient's details"
       },
       "readonly": false,
       "required": false,
@@ -339,9 +341,10 @@
       "visible": true
     },
     {
-      "label": "Parcel details",
+      "label": "",
       "properties": {
-        "fieldType": "heading"
+        "fieldType": "heading",
+        "default": "Parcel details"
       },
       "readonly": false,
       "required": false,
