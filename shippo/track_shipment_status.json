@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "carrier",
         "fieldType": "text",
-        "helptext": "Token of the <a href='https://goshippo.com/docs/reference#carriers' target='_blank'>carrier</a> of the shipment to track. E.g. 'fedex' or 'dhl_ecommerce'"
+        "helptext": "Token of the <a href='https://goshippo.com/docs/reference#carriers' target='_blank'>carrier</a> of the shipment to track. E.g. 'fedex' or 'dhl_ecommerce'."
       },
       "readonly": false,
       "required": true,
@@ -31,7 +31,7 @@
   },
   "method": "GET",
   "endpoint": "/tracks/{field.carrier}/{field.trackingNumber}",
-  "request": {},
+  "request": "",
   "response": {
     "success": {},
     "error": {}
