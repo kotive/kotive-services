@@ -1,0 +1,36 @@
+{
+    "name": "Phone number validation",
+    "description": "National and international phone number validation",
+    "documentation": "https://numverify.com/documentation",
+    "fields": [
+        {
+            "label": "Phone number",
+            "properties": {
+                "parameter": "phoneNumber",
+                "fieldType": "numbers",
+                "helptext": "Enter the phone number that needs to be verified"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Country code",
+            "properties": {
+                "parameter": "countryCode",
+                "fieldType": "numbers",
+                "helptext": "Specify a country code if you intend to use a national phone number for your request"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/validate?access_key={auth.field.apiAccessKey}&number={field.phoneNumber}&country_code={field.countryCode}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

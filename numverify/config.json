@@ -1,0 +1,20 @@
+{
+  "name": "numverify",
+  "description": "National and international phone number validation",
+  "auth": {
+        "method": "Custom",
+        "fields": [
+            {
+                "label": "API access key",
+                "properties": {
+                    "parameter": "apiAccessKey",
+                    "fieldType": "text"
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+        ]
+    },
+  "domain": "https://apilayer.net/api"
+}
