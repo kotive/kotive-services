@@ -1,0 +1,103 @@
+{
+  "name": "Status updates",
+  "description": "Updates the authenticating user’s current status.",
+  "documentation": "https://dev.twitter.com/rest/reference/post/statuses/update",
+  "fields": [
+    {
+      "label": "Status Update",
+      "properties": {
+        "parameter": "status",
+        "fieldType": "textarea",
+        "helptext": "The text of your status update, typically up to 140 characters."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "In reply to status ID",
+      "properties": {
+        "parameter": "inReplyToStatusId",
+        "fieldType": "text",
+        "helptext": "The ID of an existing status that the update is in reply to."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Does the status possibly contain sensitve content?",
+      "properties": {
+        "parameter": "possiblySensitive",
+        "fieldType": "radio",
+        "choices": [
+          {"key": true, "value": "Yes"},
+          {"key": false, "value": "No"}
+        ],
+        "default": "false",
+        "classes":"inline",
+        "helptext": "If you upload Tweet media that might be considered sensitive content such as nudity, violence, or medical procedures, you should set this value to 'Yes'."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Latitude",
+      "properties": {
+        "parameter": "latitude",
+        "fieldType": "text",
+        "helptext": "The latitude of the location this tweet refers to. Example Values: 37.7821120598956"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Longitude",
+      "properties": {
+        "parameter": "longitude",
+        "fieldType": "text",
+        "helptext": "The longitude of the location this tweet refers to. Example Values: -122.400612831116"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Place ID",
+      "properties": {
+        "parameter": "placeId",
+        "fieldType": "text",
+        "helptext": "A place in the world. Example Values: df51dec6f4ee2b2c"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Display coordinates",
+      "properties": {
+        "parameter": "displayCoordinates",
+        "fieldType": "radio",
+        "choices": [
+          {"key": true, "value": "Yes"},
+          {"key": false, "value": "No"}
+        ],
+        "default": "false",
+        "classes":"inline",
+        "helptext": "Whether or not to put a pin on the exact coordinates a tweet has been sent from."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "endpoint": "/statuses/update.json?status={field.status}&in_reply_to_status_id={field.inReplyToStatusId}&possibly_sensitive={field.possiblySensitive}&lat={field.latitude}&long={field.longitude}&place_id={field.placeId}&display_coordinates={field.displayCoordinates}",
+  "request": {},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Twitter",
+  "description": "Online social networking service that enables users to send and read short 140-character messages called 'tweets'.",
+  "auth": {
+    "method": "OAuth2"
+  },
+  "domain": "https://api.twitter.com/1.1"
+}

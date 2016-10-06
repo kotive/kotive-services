@@ -149,6 +149,10 @@
             "service": "twilio"
         },
         {
+            "name": "Twitter",
+            "service": "twitter"
+        },
+        {
             "name": "Vertical Response",
             "service": "verticalresponse"
         },
