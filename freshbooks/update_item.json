@@ -1,0 +1,155 @@
+{
+    "name": "Update an item",
+    "description": "https://www.freshbooks.com/api/items",
+    "documentation": "Items are stored from invoice lines to make invoicing easier in the future.",
+    "fields": [
+        {
+            "label": "Accounting system id",
+            "properties": {
+                "parameter": "accountingSystemId",
+                "fieldType": "text",
+                "helptext": "The unique identifier of business client exists on"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Item name",
+            "properties": {
+                "parameter": "itemName",
+                "fieldType": "text",
+                "helptext": "Descriptive name of the item"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Quantity",
+            "properties": {
+                "parameter": "quantity",
+                "fieldType": "number",
+                "helptext": "Number to multiply unit cost by"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Inventory",
+            "properties": {
+                "parameter": "inventory",
+                "fieldType": "number",
+                "helptext": "Count of inventory"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Unit cost",
+            "properties": {
+                "parameter": "unitCost",
+                "fieldType": "number",
+                "helptext": "subfields: amount and code"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Amount",
+            "properties": {
+                "parameter": "amount",
+                "fieldType": "number",
+                "helptext": "Amount paid on invoice, to two decimal places"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Currency code",
+            "properties": {
+                "parameter": "currencyCode",
+                "fieldType": "text",
+                "helptext": "Three-letter currency code"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax 1",
+            "properties": {
+                "parameter": "tax1",
+                "fieldType": "text",
+                "helptext": "ID of tax on invoice"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Vis state",
+            "properties": {
+                "parameter": "visState",
+                "fieldType": "radio",
+                "choices": [
+                  {"key": 0, "value": "Active"},
+                  {"key": 1, "value": "Deleted"}
+                ],
+                "default": "Actrive",
+                "classes": "inline",
+                "helptext": ""
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Tax 2",
+            "properties": {
+                "parameter": "tax2",
+                "fieldType": "text",
+                "helptext": "ID of second tax on invoice if applicable"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Description",
+            "properties": {
+                "parameter": "description",
+                "fieldType": "text",
+                "helptext": "Descriptive text for item"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "PUT",
+    "endpoint": "/{auth.field.apikey}/items/items/{field.itemId}",
+    "request": {
+        "item": {
+            "accounting_systemid": "{field.accountingSystemId}",
+            "name": "{field.itemName}",
+            "qty": "{field.quantity}",
+            "inventory": "{field.inventory}",
+            "unit_cost": "{field.unitCost}",
+            "amount": "{field.amount}",
+            "code": "{field.currencyCode}",
+            "tax1": "{field.tax1}",
+            "vis_state": "{field.visState}",
+            "tax2": "{field.tax2}",
+            "description": "{field.description}",
+                }
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}

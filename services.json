@@ -49,6 +49,10 @@
             "service": "freshbooks"
         },
         {
+            "name": "Freshbooks 2.1",
+            "service": "freshbooks2.1"
+        },
+        {
             "name": "Github",
             "service": "github"
         },

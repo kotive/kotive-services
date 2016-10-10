@@ -1,0 +1,25 @@
+{
+    "name": "Get a single item",
+    "description": "Get a specific item based on an ID.",
+    "documentation": "https://www.freshbooks.com/api/items",
+    "fields": [
+        {
+            "label": "Item id",
+            "properties": {
+                "parameter": "itemId",
+                "fieldType": "text",
+                "helptext": "The ID of the item you want to see"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/{auth.field.apikey}/items/items/{field.itemId}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
