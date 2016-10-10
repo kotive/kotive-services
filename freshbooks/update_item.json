@@ -4,6 +4,17 @@
     "documentation": "Items are stored from invoice lines to make invoicing easier in the future.",
     "fields": [
         {
+            "label": "Item id",
+            "properties": {
+                "parameter": "itemId",
+                "fieldType": "text",
+                "helptext": "The ID of the item you want to retrieve"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
             "label": "Accounting system id",
             "properties": {
                 "parameter": "accountingSystemId",
@@ -97,10 +108,10 @@
                 "parameter": "visState",
                 "fieldType": "radio",
                 "choices": [
-                  {"key": 0, "value": "Active"},
-                  {"key": 1, "value": "Deleted"}
+                  {"key": "0", "value": "Active"},
+                  {"key": "1", "value": "Deleted"}
                 ],
-                "default": "Active",
+                "default": "0",
                 "classes": "inline"
             },
             "readonly": false,
