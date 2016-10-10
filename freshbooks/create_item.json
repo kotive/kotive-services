@@ -97,10 +97,10 @@
                 "parameter": "visState",
                 "fieldType": "radio",
                 "choices": [
-                  {"key": 0, "value": "Active"},
-                  {"key": 1, "value": "Deleted"}
+                  {"key": "0", "value": "Active"},
+                  {"key": "1", "value": "Deleted"}
                 ],
-                "default": "Active",
+                "default": "0",
                 "classes": "inline"
             },
             "readonly": false,
