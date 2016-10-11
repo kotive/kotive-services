@@ -1,0 +1,25 @@
+{
+    "name": "Get a payment",
+    "description": "Get a specific payment based on an ID.",
+    "documentation": "https://www.freshbooks.com/api/payments",
+    "fields": [
+        {
+            "label": "Client id",
+            "properties": {
+                "parameter": "clientId",
+                "fieldType": "text",
+                "helptext": "The ID of the client you want to retrieve the payment for."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/{field.clientId}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

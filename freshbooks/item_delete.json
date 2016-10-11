@@ -16,7 +16,7 @@
         }
     ],
     "method": "PUT",
-    "endpoint": "/{auth.field.apikey}/items/items/{field.itemId}",
+    "endpoint": "/accounting/account/{auth.field.apikey}/items/items/{field.itemId}",
     "request": {
         "item": {
             "vis_state": 1

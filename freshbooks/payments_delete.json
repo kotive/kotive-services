@@ -1,14 +1,14 @@
 {
-    "name": "Delete a client",
-    "description": "https://www.freshbooks.com/api/clients",
+    "name": "Delete a payment",
+    "description": "https://www.freshbooks.com/api/payments",
     "documentation": "Delete an existing client",
     "fields": [
         {
-            "label": "Client id",
+            "label": "Payment id",
             "properties": {
-                "parameter": "clientId",
+                "parameter": "paymentId",
                 "fieldType": "text",
-                "helptext": "The ID of the client you want to delete"
+                "helptext": "The ID of the payment you want to delete"
             },
             "readonly": false,
             "required": true,
@@ -16,7 +16,7 @@
         }
     ],
     "method": "PUT",
-    "endpoint": "/{auth.field.apikey}/users/clients/{field.clientId}",
+    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/{field.paymentId}",
     "request": {
         "item": {
             "vis_state": "1"

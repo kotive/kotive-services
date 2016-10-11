@@ -1,14 +1,14 @@
 {
-    "name": "Get a client",
-    "description": "Get a specific client based on an ID.",
+    "name": "Get a single item",
+    "description": "Get a specific item based on an ID.",
     "documentation": "https://www.freshbooks.com/api/items",
     "fields": [
         {
-            "label": "Client id",
+            "label": "Item id",
             "properties": {
-                "parameter": "clientId",
+                "parameter": "itemId",
                 "fieldType": "text",
-                "helptext": "The ID of the client you want to retrieve"
+                "helptext": "The ID of the item you want to retrieve"
             },
             "readonly": false,
             "required": true,
@@ -16,7 +16,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/{auth.field.apikey}/users/clients/{field.clientId}",
+    "endpoint": "/accounting/account/{auth.field.apikey}/items/items/{field.itemId}",
     "request": {},
     "response": {
         "success": "",

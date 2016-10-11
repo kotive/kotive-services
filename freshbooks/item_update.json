@@ -1,8 +1,19 @@
 {
-    "name": "Create an item",
-    "description": "Items are stored from invoice lines to make invoicing easier in the future.",
-    "documentation": "https://www.freshbooks.com/api/items",
+    "name": "Update an item",
+    "description": "https://www.freshbooks.com/api/items",
+    "documentation": "Items are stored from invoice lines to make invoicing easier in the future.",
     "fields": [
+        {
+            "label": "Item id",
+            "properties": {
+                "parameter": "itemId",
+                "fieldType": "text",
+                "helptext": "The ID of the item you want to retrieve"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
         {
             "label": "Accounting system id",
             "properties": {
@@ -119,8 +130,8 @@
             "visible": true
         }
     ],
-    "method": "POST",
-    "endpoint": "/{auth.field.apikey}/items/items/",
+    "method": "PUT",
+    "endpoint": "/accounting/account/{auth.field.apikey}/items/items/{field.itemId}",
     "request": {
         "item": {
             "accounting_systemid": "{field.accountingSystemId}",

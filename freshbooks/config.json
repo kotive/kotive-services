@@ -17,5 +17,5 @@
       }
     ]
   },
-  "domain": "https://api.freshbooks.com/accounting/account"
+  "domain": "https://api.freshbooks.com"
 }

@@ -1,0 +1,379 @@
+{
+    "name": "Create a client",
+    "description": "Create a client to send invoices to.",
+    "documentation": "https://www.freshbooks.com/api/clients",
+    "fields": [
+        {
+            "label": "Accounting system id",
+            "properties": {
+                "parameter": "accountingSystemId",
+                "fieldType": "text",
+                "helptext": "The unique identifier of business client exists on"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Firstname",
+            "properties": {
+                "parameter": "firstname",
+                "fieldType": "text",
+                "helptext": "The firstname of the client"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Lastname",
+            "properties": {
+                "parameter": "lastname",
+                "fieldType": "text",
+                "helptext": "The lastname of the client"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Email Address",
+            "properties": {
+                "parameter": "emailAddress",
+                "fieldType": "email",
+                "helptext": "The email address of the client"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Business phone number",
+            "properties": {
+                "parameter": "businessPhone",
+                "fieldType": "text",
+                "helptext": "Enter the business phone number of the client"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Home phone number",
+            "properties": {
+                "parameter": "homePhone",
+                "fieldType": "text",
+                "helptext": "Enter the home phone number of the client"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Mobile phone number",
+            "properties": {
+                "parameter": "mobPhone",
+                "fieldType": "text",
+                "helptext": "Enter the mobile phone number of the client"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Fax number",
+            "properties": {
+                "parameter": "fax",
+                "fieldType": "text",
+                "helptext": "The fax number of the client"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Organization",
+            "properties": {
+                "parameter": "organization",
+                "fieldType": "text",
+                "helptext": "Name for client's business"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Company industry",
+            "properties": {
+                "parameter": "companyIndustry",
+                "fieldType": "text",
+                "helptext": "Description of the industry your client is in"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Company size",
+            "properties": {
+                "parameter": "companySize",
+                "fieldType": "text",
+                "helptext": "Size of client's company"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Billing street address",
+            "properties": {
+                "parameter": "billingStreetAddress",
+                "fieldType": "text",
+                "helptext": "Billing street address"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Billing street address second part",
+            "properties": {
+                "parameter": "billingStreetAddress2",
+                "fieldType": "text",
+                "helptext": "Billing street address second part"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Billing province",
+            "properties": {
+                "parameter": "billingProvince",
+                "fieldType": "text",
+                "helptext": "Billing province"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Billing country",
+            "properties": {
+                "parameter": "billingCountry",
+                "fieldType": "text",
+                "helptext": "Billing country"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Billing postal code",
+            "properties": {
+                "parameter": "billingPostalCode",
+                "fieldType": "text",
+                "helptext": "Billing postal code"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Billing city",
+            "properties": {
+                "parameter": "billingCity",
+                "fieldType": "text",
+                "helptext": "Billing city"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Shipping street address",
+            "properties": {
+                "parameter": "shippingStreetAddress",
+                "fieldType": "text",
+                "helptext": "Shipping street address"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Shipping street address second part",
+            "properties": {
+                "parameter": "shippingStreetAddress2",
+                "fieldType": "text",
+                "helptext": "Shipping street address second part"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Shipping province",
+            "properties": {
+                "parameter": "shippingProvince",
+                "fieldType": "text",
+                "helptext": "Shipping province"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Shipping country",
+            "properties": {
+                "parameter": "shippingCountry",
+                "fieldType": "text",
+                "helptext": "Shipping country"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Shipping postal code",
+            "properties": {
+                "parameter": "shippingPostalCode",
+                "fieldType": "text",
+                "helptext": "Shipping postal code"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Shipping city",
+            "properties": {
+                "parameter": "shippingCity",
+                "fieldType": "text",
+                "helptext": "Shipping city"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Currency code",
+            "properties": {
+                "parameter": "currencyCode",
+                "fieldType": "text",
+                "helptext": "Three-letter shortcode for preferred currency"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Prefers email over ground mail",
+            "properties": {
+                "parameter": "prefEmail",
+                "fieldType": "text",
+                "helptext": "Client prefers email over ground mail 'true' or 'false'.",
+                "default": "true"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Prefers ground mail over email",
+            "properties": {
+                "parameter": "prefGroundMail",
+                "fieldType": "text",
+                "helptext": "Client prefers ground mail over email 'true' or 'false'.",
+                "default": "false"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Language",
+            "properties": {
+                "parameter": "language",
+                "fieldType": "text",
+                "helptext": "shortcode indicating user language e.g. 'en'"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "VAT name",
+            "properties": {
+                "parameter": "vatName",
+                "fieldType": "text",
+                "helptext": "Value added tax name"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "VAT number",
+            "properties": {
+                "parameter": "vatNumber",
+                "fieldType": "text",
+                "helptext": "Value added tax number"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Notes",
+            "properties": {
+                "parameter": "notes",
+                "fieldType": "text",
+                "helptext": "Notes kept by admin about client"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/accounting/account/{auth.field.apikey}/users/clients/",
+    "request": {
+        "client": {
+            "accounting_systemid": "{field.accountingSystemId}",
+            "fname": "{field.firstname}",
+            "lname": "{field.lastname}",
+            "email": "{field.email}",
+            "bus_phone": "{string_or_null(field.businessPhone)}",
+            "home_phone": "{string_or_null(field.homePhone)}",
+            "mob_phone": "{string_or_null(field.mobPhone)}",
+            "fax": "{field.fax}",
+            "organization": "{field.organization}",
+            "company_industry": "{string_or_null(field.companyIndustry)}",
+            "company_size": "{string_or_null(field.companySize)}",
+            "p_street": "{field.billingStreetAddress}",
+            "p_street2": "{field.billingStreetAddress2}",
+            "p_province": "{field.billingProvince}",
+            "p_country": "{field.billingCountry}",
+            "p_code": "{field.billingPostalCode}",
+            "p_city": "{field.billingCity}",
+            "s_street": "{field.shippingStreetAddress}",
+            "s_street2": "{field.shippingStreetAddress2}",
+            "s_province": "{field.shippingProvince}",
+            "s_country": "{field.shippingCountry}",
+            "s_code": "{field.shippingPostalCode}",
+            "s_city": "{field.shippingCity}",
+            "currency_code": "{field.currencyCode}",
+            "pref_email": "{string_to_boolean(field.prefEmail)}",
+            "pref_gmail": "{string_to_boolean(field.prefGroundMail)}",
+            "language": "{field.language}",
+            "vat_name": "{string_or_null(field.vatName)}",
+            "vat_number": "{string_or_null(field.vatNumber)}",
+            "note": "{string_or_null(field.notes)}"
+        }
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}
