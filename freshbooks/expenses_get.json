@@ -1,0 +1,25 @@
+{
+    "name": "Get an expense",
+    "description": "Expenses are used to track expenditures your business incurs.",
+    "documentation": "https://www.freshbooks.com/api/payments",
+    "fields": [
+        {
+            "label": "Expense id",
+            "properties": {
+                "parameter": "expenseId",
+                "fieldType": "text",
+                "helptext": "The ID of the expense you want to retrieve."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/accounting/account/{auth.field.apikey}/expenses/expenses/{field.expenseId}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

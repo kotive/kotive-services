@@ -1,0 +1,191 @@
+{
+    "name": "Update a payment",
+    "description": "Payments are a record of the payments made on your invoices.",
+    "documentation": "https://www.freshbooks.com/api/payments",
+    "fields": [
+        {
+            "label": "Payment id",
+            "properties": {
+                "parameter": "paymentId",
+                "fieldType": "text",
+                "helptext": "Unique ID (across this business) for payment"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Accounting system id",
+            "properties": {
+                "parameter": "accountingSystemId",
+                "fieldType": "text",
+                "helptext": "The unique identifier of business client exists on"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Client id",
+            "properties": {
+                "parameter": "clientId",
+                "fieldType": "text",
+                "helptext": "The ID of the client who made the payment"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Order id",
+            "properties": {
+                "parameter": "orderId",
+                "fieldType": "text",
+                "helptext": "ID of related order"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Invoice id",
+            "properties": {
+                "parameter": "invoiceId",
+                "fieldType": "text",
+                "helptext": "ID of related invoice"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Credit id",
+            "properties": {
+                "parameter": "creditId",
+                "fieldType": "text",
+                "helptext": "ID of related credit"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Overpayment id",
+            "properties": {
+                "parameter": "overpaymentId",
+                "fieldType": "text",
+                "helptext": "ID of related overpayment if relevant"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Amount",
+            "properties": {
+                "parameter": "amount",
+                "fieldType": "text",
+                "helptext": "Amount paid on invoice, to two decimal places"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Currency code",
+            "properties": {
+                "parameter": "currencyCode",
+                "fieldType": "text",
+                "helptext": "Three-letter currency code"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Notes",
+            "properties": {
+                "parameter": "notes",
+                "fieldType": "text",
+                "helptext": "Notes kept by admin about client"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Gateway",
+            "properties": {
+                "parameter": "gateway",
+                "fieldType": "text",
+                "helptext": "The payment processor used, if any"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Date of payment",
+            "properties": {
+                "parameter": "date",
+                "fieldType": "text",
+                "helptext": "Date the payment was made, YYYY-MM-DD format"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Type of payment",
+            "properties": {
+                "parameter": "type",
+                "fieldType": "text",
+                "helptext": "The type of payment made e.g. 'Check', 'Credit', 'Cash'"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Was the payment converted from a Credit on a Client's account?",
+            "properties": {
+                "parameter": "fromCredit",
+                "fieldType": "radio",
+                "choices": [
+                  {"key": true, "value": "Yes"},
+                  {"key": false, "value": "No"}
+                ],
+            "default": "false",
+            "classes": "inline",
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+            }
+    ],
+    "method": "PUT",
+    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/{field.paymentId}",
+    "request": {
+        "payment": {
+            "accounting_systemid": "{field.accountingSystemId}",
+            "clientid": "{field.clientId}",
+            "orderid": "{string_or_null(field.orderId)}",
+            "invoiceid": "{field.invoiceId}",
+            "creditid": "{string_or_null(field.creditId)}",
+            "overpaymentid": "{string_or_null(field.overpaymentId)}",
+            "amount": {
+                "amount": "{field.amount}",
+                "code": "{field.currencyCode}"
+            },
+            "note": "{field.notes}",
+            "gateway": "{string_or_null(field.gateway)}",
+            "date": "{field.date}",
+            "type": "{field.type}",
+            "from_credit": "{string_to_boolean(field.fromCredit)}"
+        }
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}

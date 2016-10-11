@@ -1,0 +1,29 @@
+{
+    "name": "Delete an expense",
+    "description": "Delete an expense",
+    "documentation": "https://www.freshbooks.com/api/payments",
+    "fields": [
+        {
+            "label": "Expense id",
+            "properties": {
+                "parameter": "expenseId",
+                "fieldType": "text",
+                "helptext": "The ID of the expense you want to delete"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "PUT",
+    "endpoint": "/accounting/account/{auth.field.apikey}/expenses/expenses/{field.expenseId}",
+    "request": {
+        "expense": {
+            "vis_state": 1
+        }
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}
