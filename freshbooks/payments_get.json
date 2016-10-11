@@ -4,11 +4,11 @@
     "documentation": "https://www.freshbooks.com/api/payments",
     "fields": [
         {
-            "label": "Client id",
+            "label": "Payment id",
             "properties": {
-                "parameter": "clientId",
+                "parameter": "paymentId",
                 "fieldType": "text",
-                "helptext": "The ID of the client you want to retrieve the payment for."
+                "helptext": "The ID of the payment you want to retrieve."
             },
             "readonly": false,
             "required": true,
@@ -16,7 +16,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/{field.clientId}",
+    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/{field.paymentId}",
     "request": {},
     "response": {
         "success": "",
