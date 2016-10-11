@@ -1,7 +1,7 @@
 {
     "name": "Delete a payment",
-    "description": "https://www.freshbooks.com/api/payments",
-    "documentation": "Delete an existing client",
+    "description": "Delete an existing client",
+    "documentation": "https://www.freshbooks.com/api/payments",
     "fields": [
         {
             "label": "Payment id",
