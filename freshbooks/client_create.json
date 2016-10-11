@@ -346,7 +346,7 @@
             "email": "{field.email}",
             "bus_phone": "{string_or_null(field.businessPhone)}",
             "home_phone": "{string_or_null(field.homePhone)}",
-            "mob_phone": "{string_or_null(field.mobPhone)}",
+            "mob_phone": "{field.mobPhone}",
             "fax": "{field.fax}",
             "organization": "{field.organization}",
             "company_industry": "{string_or_null(field.companyIndustry)}",

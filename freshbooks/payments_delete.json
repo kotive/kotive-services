@@ -18,8 +18,8 @@
     "method": "PUT",
     "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/{field.paymentId}",
     "request": {
-        "item": {
-            "vis_state": "1"
+        "payment": {
+            "vis_state": 1
         }
     },
     "response": {

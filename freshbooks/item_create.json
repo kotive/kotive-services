@@ -125,16 +125,16 @@
         "item": {
             "accounting_systemid": "{field.accountingSystemId}",
             "name": "{field.itemName}",
+            "description": "{string_or_null(field.description)}",
             "qty": "{field.quantity}",
-            "inventory": "{field.inventory}",
+            "inventory": "{string_or_null(field.inventory)}",
             "unit_cost": {
                 "amount": "{field.amount}",
                 "code": "{field.currencyCode}"
             },
             "tax1": "{field.tax1}",
-            "vis_state": "{field.visState}",
-            "tax2": "{field.tax2}",
-            "description": "{field.description}",
+            "vis_state": "{string_to_int(field.visState)}",
+            "tax2": "{field.tax2}"
         }
     },
     "response": {

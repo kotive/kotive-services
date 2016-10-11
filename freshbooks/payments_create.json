@@ -33,7 +33,7 @@
                 "helptext": "ID of related order"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -55,7 +55,7 @@
                 "helptext": "ID of related credit"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -66,7 +66,7 @@
                 "helptext": "ID of related overpayment if relevant"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -121,7 +121,7 @@
                 "helptext": "Date the payment was made, YYYY-MM-DD format"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -132,7 +132,7 @@
                 "helptext": "The type of payment made e.g. 'Check', 'Credit', 'Cash'"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -148,25 +148,25 @@
             "classes": "inline",
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
             }
     ],
     "method": "POST",
-    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/",
+    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments",
     "request": {
         "payment": {
             "accounting_systemid": "{field.accountingSystemId}",
             "clientid": "{field.clientId}",
-            "orderid": "{field.orderId}",
+            "orderid": "{string_or_null(field.orderId)}",
             "invoiceid": "{field.invoiceId}",
-            "creditid": "{field.creditId}",
+            "creditid": "{string_or_null(field.creditId)}",
             "overpaymentid": "{string_or_null(field.overpaymentId)}",
             "amount": {
                 "amount": "{field.amount}",
                 "code": "{field.currencyCode}"
             },
-            "note": "{string_or_null(field.notes)}",
+            "note": "{field.notes}",
             "gateway": "{string_or_null(field.gateway)}",
             "date": "{field.date}",
             "type": "{field.type}",
