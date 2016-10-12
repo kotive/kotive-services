@@ -125,6 +125,25 @@
             "visible": true
         },
         {
+            "label": "",
+            "properties": {
+                "fieldType": "divider"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "",
+            "properties": {
+                "fieldType": "paragraph",
+                "default": "<h3>Billing address</h3>"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
             "label": "Billing street address",
             "properties": {
                 "parameter": "billingStreetAddress",
@@ -191,6 +210,25 @@
             "visible": true
         },
         {
+            "label": "",
+            "properties": {
+                "fieldType": "divider"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "",
+            "properties": {
+                "fieldType": "paragraph",
+                "default": "<h3>Shipping address</h3>"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
             "label": "Shipping street address",
             "properties": {
                 "parameter": "shippingStreetAddress",
@@ -251,6 +289,15 @@
                 "parameter": "shippingCity",
                 "fieldType": "text",
                 "helptext": "Shipping city"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "",
+            "properties": {
+                "fieldType": "divider"
             },
             "readonly": false,
             "required": false,
