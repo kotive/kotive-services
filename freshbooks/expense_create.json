@@ -130,6 +130,15 @@
             "visible": true
         },
         {
+            "label": "Divider",
+            "properties": {
+                "fieldType": "divider"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
             "label": "Date of expense",
             "properties": {
                 "parameter": "date",
@@ -139,13 +148,13 @@
             "readonly": false,
             "required": true,
             "visible": true
-        }
+        },
         {
             "label": "Account name",
             "properties": {
                 "parameter": "accountName",
                 "fieldType": "text",
-                "helptext": "Name of the related account if applicable"
+                "helptext": "Name of the related account, if applicable"
             },
             "readonly": false,
             "required": false,
@@ -197,67 +206,7 @@
             "visible": true
         },
         {
-            "label": "Tax name 1",
-            "properties": {
-                "parameter": "taxName1",
-                "fieldType": "text",
-                "helptext": "Name of first tax"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Tax 1",
-            "properties": {
-                "parameter": "taxPercent1",
-                "fieldType": "text",
-                "helptext": "Tax amount"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Tax name 2",
-            "properties": {
-                "parameter": "taxName2",
-                "fieldType": "text",
-                "helptext": "Name of second tax"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Tax 2",
-            "properties": {
-                "parameter": "taxPercent2",
-                "fieldType": "text",
-                "helptext": "Amount for second tax"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Was tax 2 a compound tax?",
-            "properties": {
-                "parameter": "compoundedTax",
-                "fieldType": "radio",
-                "choices": [
-                  {"key": true, "value": "Yes"},
-                  {"key": false, "value": "No"}
-                ],
-            "default": "false",
-            "classes": "inline",
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Is the a duplicated expense?",
+            "label": "Is this a duplicated expense?",
             "properties": {
                 "parameter": "isDuplicate",
                 "fieldType": "radio",
@@ -265,8 +214,8 @@
                   {"key": true, "value": "Yes"},
                   {"key": false, "value": "No"}
                 ],
-            "default": "false",
-            "classes": "inline",
+                "default": "false",
+                "classes": "inline"
             },
             "readonly": false,
             "required": false,
@@ -281,8 +230,8 @@
                   {"key": true, "value": "Yes"},
                   {"key": false, "value": "No"}
                 ],
-            "default": "false",
-            "classes": "inline",
+                "default": "false",
+                "classes": "inline"
             },
             "readonly": false,
             "required": false,
@@ -294,6 +243,142 @@
                 "parameter": "notes",
                 "fieldType": "text",
                 "helptext": "Notes about expense"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "",
+            "properties": {
+                "fieldType": "divider"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "",
+            "properties": {
+                "fieldType": "paragraph",
+                "default": "<h3>Tax #1</h3>"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Name of tax",
+            "properties": {
+                "parameter": "taxName1",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax percentage",
+            "properties": {
+                "parameter": "taxPercent1",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax amount",
+            "properties": {
+                "parameter": "taxAmount1",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax currency",
+            "properties": {
+                "parameter": "taxCurrencyCode1",
+                "fieldType": "text",
+                "helptext": "Three-letter currency code"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "",
+            "properties": {
+                "fieldType": "divider"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "",
+            "properties": {
+                "fieldType": "paragraph",
+                "default": "<h3>Tax #2</h3>"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Name of tax",
+            "properties": {
+                "parameter": "taxName2",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax percentage",
+            "properties": {
+                "parameter": "taxPercent2",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax amount",
+            "properties": {
+                "parameter": "taxAmount2",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax currency",
+            "properties": {
+                "parameter": "taxCurrencyCode2",
+                "fieldType": "text",
+                "helptext": "Three-letter currency code"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Was this tax a compound tax?",
+            "properties": {
+                "parameter": "compoundedTax",
+                "fieldType": "radio",
+                "choices": [
+                  {"key": true, "value": "Yes"},
+                  {"key": false, "value": "No"}
+                ],
+                "default": "false",
+                "classes": "inline"
             },
             "readonly": false,
             "required": false,
@@ -326,14 +411,14 @@
             "taxName1": "{string_or_null(field.taxName1)}",
             "taxPercent1": "{string_or_null(field.taxPercent1)}",
             "taxAmount1": {
-                "amount": "{field.amount}",
-                "code": "{field.currencyCode}"
+                "amount": "{field.taxAmount1}",
+                "code": "{field.taxCurrencyCode1}"
             },
             "taxName2": "{string_or_null(field.taxName2)}",
             "taxPercent2": "{string_or_null(field.taxPercent2)}",
             "taxAmount2": {
-                "amount": "{field.amount}",
-                "code": "{field.currencyCode}"
+                "amount": "{field.taxAmount2}",
+                "code": "{field.taxCurrencyCode2}"
             },
             "compounded_tax": "{string_to_boolean(field.compoundedTax)}",
             "isduplicate": "{string_to_boolean(field.isDuplicate)}",
