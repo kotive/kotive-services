@@ -7,7 +7,7 @@
             "label": "Payment id",
             "properties": {
                 "parameter": "paymentId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "Unique ID (across this business) for payment"
             },
             "readonly": false,
@@ -29,7 +29,7 @@
             "label": "Client id",
             "properties": {
                 "parameter": "clientId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "The ID of the client who made the payment"
             },
             "readonly": false,
@@ -40,7 +40,7 @@
             "label": "Order id",
             "properties": {
                 "parameter": "orderId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of related order"
             },
             "readonly": false,
@@ -51,7 +51,7 @@
             "label": "Invoice id",
             "properties": {
                 "parameter": "invoiceId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of related invoice"
             },
             "readonly": false,
@@ -62,7 +62,7 @@
             "label": "Credit id",
             "properties": {
                 "parameter": "creditId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of related credit"
             },
             "readonly": false,
@@ -73,7 +73,7 @@
             "label": "Overpayment id",
             "properties": {
                 "parameter": "overpaymentId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of related overpayment if relevant"
             },
             "readonly": false,

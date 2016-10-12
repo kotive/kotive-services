@@ -1,13 +1,13 @@
 {
     "name": "Get a client",
-    "description": "Get a specific client based on an ID.",
-    "documentation": "https://www.freshbooks.com/api/items",
+    "description": "Retrieve a specific client based on an ID.",
+    "documentation": "https://www.freshbooks.com/api/clients",
     "fields": [
         {
             "label": "Client id",
             "properties": {
                 "parameter": "clientId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "The ID of the client you want to retrieve"
             },
             "readonly": false,

@@ -55,7 +55,7 @@
                 "helptext": "Enter the business phone number of the client"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -88,7 +88,7 @@
                 "helptext": "The fax number of the client"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -317,7 +317,7 @@
             "label": "VAT number",
             "properties": {
                 "parameter": "vatNumber",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "Value added tax number"
             },
             "readonly": false,

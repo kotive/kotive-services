@@ -7,7 +7,7 @@
             "label": "Item id",
             "properties": {
                 "parameter": "itemId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "The ID of the item you want to delete"
             },
             "readonly": false,

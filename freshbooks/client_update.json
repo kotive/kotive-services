@@ -1,5 +1,5 @@
 {
-    "name": "Update an client details",
+    "name": "Update a client's details",
     "description": "https://www.freshbooks.com/api/clients",
     "documentation": "Update a client's details to send invoices to.",
     "fields": [
@@ -7,8 +7,8 @@
             "label": "Client id",
             "properties": {
                 "parameter": "clientId",
-                "fieldType": "text",
-                "helptext": "The ID of the client's details you want to retrieve"
+                "fieldType": "number",
+                "helptext": "The ID of the client whose details you want to retrieve"
             },
             "readonly": false,
             "required": true,
@@ -18,11 +18,11 @@
             "label": "User id",
             "properties": {
                 "parameter": "userId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "Duplicate of the ID of the client"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -62,7 +62,7 @@
             "label": "Email Address",
             "properties": {
                 "parameter": "emailAddress",
-                "fieldType": "email",
+                "fieldType": "text",
                 "helptext": "The email address of the client"
             },
             "readonly": false,
@@ -73,7 +73,7 @@
             "label": "Business phone number",
             "properties": {
                 "parameter": "businessPhone",
-                "fieldType": "number",
+                "fieldType": "text",
                 "helptext": "Enter the business phone number of the client"
             },
             "readonly": false,
@@ -84,7 +84,7 @@
             "label": "Home phone number",
             "properties": {
                 "parameter": "homePhone",
-                "fieldType": "number",
+                "fieldType": "text",
                 "helptext": "Enter the home phone number of the client"
             },
             "readonly": false,
@@ -95,7 +95,7 @@
             "label": "Mobile phone number",
             "properties": {
                 "parameter": "mobPhone",
-                "fieldType": "number",
+                "fieldType": "text",
                 "helptext": "Enter the mobile phone number of the client"
             },
             "readonly": false,
@@ -106,11 +106,11 @@
             "label": "Fax number",
             "properties": {
                 "parameter": "fax",
-                "fieldType": "number",
+                "fieldType": "text",
                 "helptext": "The fax number of the client"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
@@ -154,7 +154,7 @@
                 "helptext": "Billing street address"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -165,7 +165,7 @@
                 "helptext": "Billing street address second part"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -176,7 +176,7 @@
                 "helptext": "Billing province"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -187,7 +187,7 @@
                 "helptext": "Billing country"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -198,7 +198,7 @@
                 "helptext": "Billing postal code"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -209,7 +209,7 @@
                 "helptext": "Billing city"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -220,7 +220,7 @@
                 "helptext": "Shipping street address"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -231,7 +231,7 @@
                 "helptext": "Shipping street address second part"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -242,7 +242,7 @@
                 "helptext": "Shipping province"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -253,7 +253,7 @@
                 "helptext": "Shipping country"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -264,7 +264,7 @@
                 "helptext": "Shipping postal code"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -275,7 +275,7 @@
                 "helptext": "Shipping city"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -286,7 +286,7 @@
                 "helptext": "Three-letter shortcode for preferred currency"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -361,7 +361,7 @@
     "method": "PUT",
     "endpoint": "/accounting/account/{auth.field.apikey}/users/clients/{field.clientID}",
     "request": {
-        "item": {
+        "client": {
             "id": "{field.clientId}",
             "userid": "{field.userId}",
             "accounting_systemid": "{field.accountingSystemId}",

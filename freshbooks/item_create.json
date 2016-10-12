@@ -22,7 +22,7 @@
                 "helptext": "Descriptive name of the item"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -66,7 +66,7 @@
                 "helptext": "Amount paid on invoice, to two decimal places"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
@@ -77,20 +77,31 @@
                 "helptext": "Three-letter currency code"
             },
             "readonly": false,
-            "required": false,
+            "required": true,
             "visible": true
         },
         {
             "label": "Tax 1",
             "properties": {
                 "parameter": "tax1",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of tax on invoice"
             },
             "readonly": false,
             "required": false,
             "visible": true
         },
+        {
+            "label": "Tax 2",
+            "properties": {
+                "parameter": "tax2",
+                "fieldType": "number",
+                "helptext": "ID of second tax on invoice if applicable"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
         {
             "label": "Visible state",
             "properties": {
@@ -106,21 +117,10 @@
             "readonly": false,
             "required": true,
             "visible": true
-        },
-        {
-            "label": "Tax 2",
-            "properties": {
-                "parameter": "tax2",
-                "fieldType": "text",
-                "helptext": "ID of second tax on invoice if applicable"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
         }
     ],
     "method": "POST",
-    "endpoint": "/accounting/account/{auth.field.apikey}/items/items/",
+    "endpoint": "/accounting/account/{auth.field.apikey}/items/items",
     "request": {
         "item": {
             "accounting_systemid": "{field.accountingSystemId}",

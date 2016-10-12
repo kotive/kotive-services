@@ -7,7 +7,7 @@
             "label": "Client id",
             "properties": {
                 "parameter": "clientId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "The ID of the client you want to delete"
             },
             "readonly": false,
@@ -18,8 +18,8 @@
     "method": "PUT",
     "endpoint": "/accounting/account/{auth.field.apikey}/users/clients/{field.clientId}",
     "request": {
-        "item": {
-            "vis_state": "1"
+        "client": {
+            "vis_state": 1
         }
     },
     "response": {

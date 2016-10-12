@@ -1,13 +1,13 @@
 {
     "name": "Update an item",
     "description": "https://www.freshbooks.com/api/items",
-    "documentation": "Items are stored from invoice lines to make invoicing easier in the future.",
+    "documentation": "Update an existing item. Items are stored from invoice lines to make invoicing easier in the future.",
     "fields": [
         {
             "label": "Item id",
             "properties": {
                 "parameter": "itemId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "The ID of the item you want to retrieve"
             },
             "readonly": false,
@@ -95,8 +95,19 @@
             "label": "Tax 1",
             "properties": {
                 "parameter": "tax1",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of tax on invoice"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Tax 2",
+            "properties": {
+                "parameter": "tax2",
+                "fieldType": "number",
+                "helptext": "ID of second tax on invoice if applicable"
             },
             "readonly": false,
             "required": false,
@@ -117,17 +128,6 @@
             "readonly": false,
             "required": true,
             "visible": true
-        },
-        {
-            "label": "Tax 2",
-            "properties": {
-                "parameter": "tax2",
-                "fieldType": "text",
-                "helptext": "ID of second tax on invoice if applicable"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
         }
     ],
     "method": "PUT",
@@ -136,16 +136,16 @@
         "item": {
             "accounting_systemid": "{field.accountingSystemId}",
             "name": "{field.itemName}",
+            "description": "{field.description}",
             "qty": "{field.quantity}",
-            "inventory": "{field.inventory}",
+            "inventory": "{string_or_null(field.inventory)}",
             "unit_cost": {
                 "amount": "{field.amount}",
                 "code": "{field.currencyCode}"
             },
             "tax1": "{field.tax1}",
-            "vis_state": "{field.visState}",
             "tax2": "{field.tax2}",
-            "description": "{field.description}",
+            "vis_state": "{field.visState}",
         }
     },
     "response": {
