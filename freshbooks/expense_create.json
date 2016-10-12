@@ -18,8 +18,9 @@
             "label": "Client id",
             "properties": {
                 "parameter": "clientId",
-                "fieldType": "text",
-                "helptext": "ID of related client if applicable"
+                "fieldType": "number",
+                "helptext": "ID of related client if applicable",
+                "default": "0"
             },
             "readonly": false,
             "required": false,
@@ -29,7 +30,7 @@
             "label": "Category id",
             "properties": {
                 "parameter": "categoryId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of related expense category"
             },
             "readonly": false,
@@ -40,19 +41,20 @@
             "label": "Project id",
             "properties": {
                 "parameter": "projectId",
-                "fieldType": "text",
-                "helptext": "ID of related project if applicable"
+                "fieldType": "number",
+                "helptext": "ID of related project if applicable",
+                "default": "0"
             },
             "readonly": false,
             "required": false,
             "visible": true
         },
         {
-            "label": "Order id",
+            "label": "Profile id",
             "properties": {
-                "parameter": "orderId",
-                "fieldType": "text",
-                "helptext": "ID of related order"
+                "parameter": "profileId",
+                "fieldType": "number",
+                "helptext": "ID of related profile if applicable"
             },
             "readonly": false,
             "required": false,
@@ -62,7 +64,7 @@
             "label": "Invoice id",
             "properties": {
                 "parameter": "invoiceId",
-                "fieldType": "text",
+                "fieldType": "number",
                 "helptext": "ID of related invoice"
             },
             "readonly": false,
@@ -70,22 +72,102 @@
             "visible": true
         },
         {
-            "label": "Credit id",
+            "label": "Account id",
             "properties": {
-                "parameter": "creditId",
-                "fieldType": "text",
-                "helptext": "ID of related credit"
+                "parameter": "accountId",
+                "fieldType": "number",
+                "helptext": "ID of expense account if applicable"
             },
             "readonly": false,
             "required": false,
             "visible": true
         },
         {
-            "label": "Overpayment id",
+            "label": "Transaction id",
             "properties": {
-                "parameter": "overpaymentId",
+                "parameter": "transactionId",
+                "fieldType": "number",
+                "helptext": "ID of related transaction if applicable"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Contractor system id",
+            "properties": {
+                "parameter": "extSystemId",
+                "fieldType": "number",
+                "helptext": "ID of related contractor system if applicable",
+                "default": "0"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Contractor invoice id",
+            "properties": {
+                "parameter": "extInvoiceId",
+                "fieldType": "number",
+                "helptext": "ID of related contractor invoice if applicable",
+                "default": "0"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Staff id",
+            "properties": {
+                "parameter": "staffId",
+                "fieldType": "number",
+                "helptext": "ID of related staff member if applicable",
+                "default": "0"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Date of expense",
+            "properties": {
+                "parameter": "date",
                 "fieldType": "text",
-                "helptext": "ID of related overpayment if relevant"
+                "helptext": "Date the payment was made, YYYY-MM-DD format"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+        {
+            "label": "Account name",
+            "properties": {
+                "parameter": "accountName",
+                "fieldType": "text",
+                "helptext": "Name of the related account if applicable"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Vendor",
+            "properties": {
+                "parameter": "vendor",
+                "fieldType": "text",
+                "helptext": "Name of the vendor"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Bank name",
+            "properties": {
+                "parameter": "bankName",
+                "fieldType": "text",
+                "helptext": "Name of bank expense was imported from, if applicable"
             },
             "readonly": false,
             "required": false,
@@ -96,7 +178,8 @@
             "properties": {
                 "parameter": "amount",
                 "fieldType": "text",
-                "helptext": "Amount paid on invoice, to two decimal places"
+                "helptext": "Expense amount",
+                "default": "0.00"
             },
             "readonly": false,
             "required": false,
@@ -114,53 +197,53 @@
             "visible": true
         },
         {
-            "label": "Notes",
+            "label": "Tax name 1",
             "properties": {
-                "parameter": "notes",
+                "parameter": "taxName1",
                 "fieldType": "text",
-                "helptext": "Notes kept by admin about client"
+                "helptext": "Name of first tax"
             },
             "readonly": false,
             "required": false,
             "visible": true
         },
         {
-            "label": "Gateway",
+            "label": "Tax 1",
             "properties": {
-                "parameter": "gateway",
+                "parameter": "taxPercent1",
                 "fieldType": "text",
-                "helptext": "The payment processor used, if any"
+                "helptext": "Tax amount"
             },
             "readonly": false,
             "required": false,
             "visible": true
         },
         {
-            "label": "Date of payment",
+            "label": "Tax name 2",
             "properties": {
-                "parameter": "date",
+                "parameter": "taxName2",
                 "fieldType": "text",
-                "helptext": "Date the payment was made, YYYY-MM-DD format"
+                "helptext": "Name of second tax"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
-            "label": "Type of payment",
+            "label": "Tax 2",
             "properties": {
-                "parameter": "type",
+                "parameter": "taxPercent2",
                 "fieldType": "text",
-                "helptext": "The type of payment made e.g. 'Check', 'Credit', 'Cash'"
+                "helptext": "Amount for second tax"
             },
             "readonly": false,
-            "required": true,
+            "required": false,
             "visible": true
         },
         {
-            "label": "Was the payment converted from a Credit on a Client's account?",
+            "label": "Was tax 2 a compound tax?",
             "properties": {
-                "parameter": "fromCredit",
+                "parameter": "compoundedTax",
                 "fieldType": "radio",
                 "choices": [
                   {"key": true, "value": "Yes"},
@@ -172,27 +255,90 @@
             "readonly": false,
             "required": false,
             "visible": true
-            }
+        },
+        {
+            "label": "Is the a duplicated expense?",
+            "properties": {
+                "parameter": "isDuplicate",
+                "fieldType": "radio",
+                "choices": [
+                  {"key": true, "value": "Yes"},
+                  {"key": false, "value": "No"}
+                ],
+            "default": "false",
+            "classes": "inline",
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Does the expense have a receipt attached",
+            "properties": {
+                "parameter": "hasReceipt",
+                "fieldType": "radio",
+                "choices": [
+                  {"key": true, "value": "Yes"},
+                  {"key": false, "value": "No"}
+                ],
+            "default": "false",
+            "classes": "inline",
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Notes",
+            "properties": {
+                "parameter": "notes",
+                "fieldType": "text",
+                "helptext": "Notes about expense"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
     ],
     "method": "POST",
-    "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments",
+    "endpoint": "/accounting/account/{auth.field.apikey}/expenses/expenses",
     "request": {
         "expense": {
             "accounting_systemid": "{field.accountingSystemId}",
             "clientid": "{field.clientId}",
-            "orderid": "{string_or_null(field.orderId)}",
-            "invoiceid": "{field.invoiceId}",
-            "creditid": "{string_or_null(field.creditId)}",
-            "overpaymentid": "{string_or_null(field.overpaymentId)}",
+            "categoryid": "{field.categoryId}",
+            "projectid": "{field.projectId}",
+            "profileid": "{string_or_null(field.profileId)}",
+            "invoiceid": "{string_or_null(field.invoiceId)}",
+            "accountid": "{string_or_null(field.accountId)}",
+            "transactionid": "{string_or_null(field.transactionId)}",
+            "ext_systemid": "{field.extSystemId}",
+            "ext_invoiceid": "{field.extInvoiceId}",
+            "staffid": "{field.staffId}",
+            "date": "{field.date}",
+            "account_name": "{string_or_null(field.accountName)}",
+            "vendor": "{string_or_null(field.vendor)}",
+            "bank_name": "{string_or_null(field.bankName)}",
             "amount": {
                 "amount": "{field.amount}",
                 "code": "{field.currencyCode}"
             },
-            "note": "{field.notes}",
-            "gateway": "{string_or_null(field.gateway)}",
-            "date": "{field.date}",
-            "type": "{field.type}",
-            "from_credit": "{string_to_boolean(field.fromCredit)}"
+            "taxName1": "{string_or_null(field.taxName1)}",
+            "taxPercent1": "{string_or_null(field.taxPercent1)}",
+            "taxAmount1": {
+                "amount": "{field.amount}",
+                "code": "{field.currencyCode}"
+            },
+            "taxName2": "{string_or_null(field.taxName2)}",
+            "taxPercent2": "{string_or_null(field.taxPercent2)}",
+            "taxAmount2": {
+                "amount": "{field.amount}",
+                "code": "{field.currencyCode}"
+            },
+            "compounded_tax": "{string_to_boolean(field.compoundedTax)}",
+            "isduplicate": "{string_to_boolean(field.isDuplicate)}",
+            "has_receipt": "{string_to_boolean(field.hasReceipt)}",
+            "note": "{field.notes}"
         }
     },
     "response": {
