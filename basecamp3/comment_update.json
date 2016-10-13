@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "bucketId",
                 "fieldType": "number",
-                "helptext": "The ID of the Basecamp where the comment resides"
+                "helptext": "The ID of the Basecamp where the comment resides."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "commentId",
                 "fieldType": "number",
-                "helptext": "The ID of the comment you want to update"
+                "helptext": "The ID of the comment you want to update."
             },
             "readonly": false,
             "required": true,
@@ -38,9 +38,9 @@
         }
     ],
     "method": "PUT",
-    "endpoint": "/buckets/{field.bucketId}/comments/{field.commentId}.json",
+    "endpoint": "{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.commentId}.json",
     "request": {
-        "content": "{field.content}",
+        "content": "{field.content}"
     },
     "response": {
         "success": "",

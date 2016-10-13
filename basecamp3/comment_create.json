@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "bucketId",
                 "fieldType": "number",
-                "helptext": "The ID of the Basecamp where you want to publish the comment"
+                "helptext": "The ID of the Basecamp where you want to publish the comment."
             },
             "readonly": false,
             "required": true,
@@ -40,7 +40,7 @@
     "method": "POST",
     "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/recordings/{field.recordingId}/comments.json",
     "request": {
-        "content": "{field.content}",
+        "content": "{field.content}"
     },
     "response": {
         "success": "",
