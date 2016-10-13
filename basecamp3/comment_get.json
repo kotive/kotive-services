@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "bucketId",
                 "fieldType": "number",
-                "helptext": "The ID of the basecamp where you want to retrieve the comment"
+                "helptext": "The ID of the basecamp where you want to retrieve the comment from"
             },
             "readonly": false,
             "required": true,

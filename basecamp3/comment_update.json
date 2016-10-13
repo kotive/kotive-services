@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "bucketId",
                 "fieldType": "number",
-                "helptext": "The ID of the Basecamp where you want to publish the comment"
+                "helptext": "The ID of the Basecamp where the comment resides"
             },
             "readonly": false,
             "required": true,
@@ -30,7 +30,7 @@
           "properties": {
             "parameter": "content",
             "fieldType": "textarea",
-            "helptext": "Note: All people who are subscribed to the recording will be notified when the comment is posted. Get info on <a href='hhttps://github.com/basecamp/bc3-api/blob/master/README.md#rich-text-content' target='_blank'>how to style</a> your comment.",
+            "helptext": "Get info on <a href='hhttps://github.com/basecamp/bc3-api/blob/master/README.md#rich-text-content' target='_blank'>how to style</a> your comment.",
           },
           "readonly": false,
           "required": true,
