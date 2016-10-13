@@ -1,0 +1,25 @@
+{
+    "name": "Get a person",
+    "description": "Retrieve the profile for a spesific user based on an ID.",
+    "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/people.md#get-person",
+    "fields": [
+        {
+            "label": "Person id",
+            "properties": {
+                "parameter": "personId",
+                "fieldType": "number",
+                "helptext": "The ID of the person you want to retrieve"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/{auth.field.accountId}/people/{field.personId}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

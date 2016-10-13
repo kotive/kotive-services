@@ -17,6 +17,10 @@
             "service": "basecamp2"
         },
         {
+            "name": "Basecamp 3",
+            "service": "basecamp3"
+        },
+        {
             "name": "Campaign Monitor",
             "service": "campaignmonitor"
         },

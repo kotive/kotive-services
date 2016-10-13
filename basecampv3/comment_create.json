@@ -1,0 +1,50 @@
+{
+    "name": "Create a comment",
+    "description": "Publish a comment.",
+    "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/comments.md#create-a-comment",
+    "fields": [
+        {
+            "label": "Bucket id",
+            "properties": {
+                "parameter": "bucketId",
+                "fieldType": "number",
+                "helptext": "The ID of the bucket where you want to publish the comment"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Recording id",
+            "properties": {
+                "parameter": "recordingId",
+                "fieldType": "number",
+                "helptext": "The ID of the recording under which you want to publish the comment."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Message",
+          "properties": {
+            "parameter": "content",
+            "fieldType": "textarea",
+            "helptext": "Note: All people who are subscribed to the recording will be notified when the comment is posted. Get info on <a href='hhttps://github.com/basecamp/bc3-api/blob/master/README.md#rich-text-content' target='_blank'>how to style</a> your comment.",
+            "sanitize": false
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+        ],
+        "method": "POST",
+        "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId/recordings/{field.recordingId}/comments.json",
+        "request": {
+            "content": "{field.content}",
+        },
+        "response": {
+            "success": "",
+            "error": {}
+        }
+}

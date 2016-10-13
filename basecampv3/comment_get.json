@@ -1,0 +1,36 @@
+{
+    "name": "Get a comment",
+    "description": "Retrieve a comment based on an ID.",
+    "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/comments.md#get-a-comment",
+    "fields": [
+        {
+            "label": "Bucket id",
+            "properties": {
+                "parameter": "bucketId",
+                "fieldType": "number",
+                "helptext": "The ID of the bucket where you want to retrieve the comment"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Comment id",
+            "properties": {
+                "parameter": "commentId",
+                "fieldType": "number",
+                "helptext": "The ID of the comment you want to retrieve"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.comment}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

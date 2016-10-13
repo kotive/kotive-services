@@ -1,0 +1,50 @@
+{
+    "name": "Update a comment",
+    "description": "Update an existing comment.",
+    "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/comments.md#update-a-comment",
+    "fields": [
+        {
+            "label": "Bucket id",
+            "properties": {
+                "parameter": "bucketId",
+                "fieldType": "number",
+                "helptext": "The ID of the bucket where you want to publish the comment"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Comment id",
+            "properties": {
+                "parameter": "commentId",
+                "fieldType": "number",
+                "helptext": "The ID of the comment you want to update"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Message",
+          "properties": {
+            "parameter": "content",
+            "fieldType": "textarea",
+            "helptext": "Note: All people who are subscribed to the recording will be notified when the comment is posted. Get info on <a href='hhttps://github.com/basecamp/bc3-api/blob/master/README.md#rich-text-content' target='_blank'>how to style</a> your comment.",
+            "sanitize": false
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "method": "PUT",
+    "endpoint": "/buckets/{field.bucketId}/comments/{field.commentId}.json",
+    "request": {
+        "content": "{field.content}",
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}
