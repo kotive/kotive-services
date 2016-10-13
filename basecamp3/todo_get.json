@@ -1,0 +1,36 @@
+{
+    "name": "Get a To-do",
+    "description": "Retrieve a to-do based on an ID.",
+    "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/todos.md#get-a-to-do",
+    "fields": [
+        {
+            "label": "Basecamp id",
+            "properties": {
+                "parameter": "bucketId",
+                "fieldType": "number",
+                "helptext": "The ID of the basecamp where you want to retrieve the to-do from."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "To-do id",
+            "properties": {
+                "parameter": "todoId",
+                "fieldType": "number",
+                "helptext": "The ID of the to-do you want to retrieve."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/todos/{field.todoId}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

@@ -1,0 +1,110 @@
+{
+    "name": "Update a to-do",
+    "description": "Update an existing to-do.",
+    "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/todos.md#update-a-to-do",
+    "fields": [
+        {
+            "label": "Basecamp id",
+            "properties": {
+                "parameter": "bucketId",
+                "fieldType": "number",
+                "helptext": "The ID of the Basecamp where the comment resides."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "To-do id",
+            "properties": {
+                "parameter": "todoId",
+                "fieldType": "number",
+                "helptext": "The ID of the To-do you want to update."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "To-do",
+          "properties": {
+            "parameter": "content",
+            "fieldType": "text",
+            "helptext": "Content for what the to-do is for."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Description",
+          "properties": {
+            "parameter": "description",
+            "fieldType": "textarea",
+            "helptext": "Information about the to-do. Get info on <a href='https://github.com/basecamp/bc3-api/blob/master/sections/rich_text.md' target='_blank'>how to style</a> your description."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "People to assign this to-do, to.",
+          "properties": {
+            "parameter": "assigneeIds",
+            "fieldType": "textarea",
+            "helptext": "A list of people that will be assigned to this to-do. Get info on <a href='https://github.com/basecamp/bc3-api/blob/master/sections/people.md#get-all-people' target='_blank'>how to retrieve people</a>."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+            "label": "Notify the assignee",
+            "properties": {
+                "parameter": "notify",
+                "fieldType": "text",
+                "helptext": "Do you want to notify the assignees about being assigned? 'true' or 'false'",
+                "default": "true"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+          "label": "Due date",
+          "properties": {
+            "parameter": "dueOn",
+            "fieldType": "text",
+            "helptext": "A date when the to-do should be completed, YYYY-MM-DD format."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "Start date",
+          "properties": {
+            "parameter": "startsOn",
+            "fieldType": "text",
+            "helptext": "A date that allows the to-do to run from this date to the due date, YYYY-MM-DD format."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        }
+    ],
+    "method": "PUT",
+    "endpoint": "{auth.field.accountId}/buckets/{field.bucketId/todos/{field.todoId}.json",
+    "request": {
+        "content": "{field.content}",
+        "description": "{field.description}",
+        "assignee_ids": "{field.assigneeIds}",
+        "notify": "{string_to_boolean(field.notify)}",
+        "due_on":"{field.dueOn}",
+        "starts_on":"{field.startsOn}"
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}
