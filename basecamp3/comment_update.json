@@ -4,11 +4,11 @@
     "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/comments.md#update-a-comment",
     "fields": [
         {
-            "label": "Bucket id",
+            "label": "Basecamp id",
             "properties": {
                 "parameter": "bucketId",
                 "fieldType": "number",
-                "helptext": "The ID of the bucket where you want to publish the comment"
+                "helptext": "The ID of the Basecamp where you want to publish the comment"
             },
             "readonly": false,
             "required": true,
@@ -26,12 +26,11 @@
             "visible": true
         },
         {
-          "label": "Message",
+          "label": "Comment",
           "properties": {
             "parameter": "content",
             "fieldType": "textarea",
             "helptext": "Note: All people who are subscribed to the recording will be notified when the comment is posted. Get info on <a href='hhttps://github.com/basecamp/bc3-api/blob/master/README.md#rich-text-content' target='_blank'>how to style</a> your comment.",
-            "sanitize": false
           },
           "readonly": false,
           "required": true,

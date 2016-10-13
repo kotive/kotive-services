@@ -4,11 +4,11 @@
     "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/comments.md#get-a-comment",
     "fields": [
         {
-            "label": "Bucket id",
+            "label": "Basecamp id",
             "properties": {
                 "parameter": "bucketId",
                 "fieldType": "number",
-                "helptext": "The ID of the bucket where you want to retrieve the comment"
+                "helptext": "The ID of the basecamp where you want to retrieve the comment"
             },
             "readonly": false,
             "required": true,
@@ -27,7 +27,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.comment}.json",
+    "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.commentId}.json",
     "request": {},
     "response": {
         "success": "",
