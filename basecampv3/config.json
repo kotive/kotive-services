@@ -1,0 +1,30 @@
+{
+  "name": "Basecamp 3",
+  "description": "Provides a web based project, task and time management, team collaboration and reporting.",
+  "auth": {
+        "method": "Custom",
+        "fields": [
+            {
+                "label": "API access key",
+                "properties": {
+                    "parameter": "apiAccessKey",
+                    "fieldType": "text"
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+            {
+                "label": "Account id",
+                "properties": {
+                    "parameter": "accountId",
+                    "fieldType": "text"
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+        ]
+    },
+  "domain": "https://3.basecampapi.com"
+}
