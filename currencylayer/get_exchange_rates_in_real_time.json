@@ -4,9 +4,10 @@
     "documentation": "https://currencylayer.com/documentation#api_features",
     "fields": [
         {
-            "label": "This task will automatically get the real-time foreign exchange rates if you do not fill in any fields. Optionally, it is possible to define an additional source currency, or specific output currencies below.",
+            "label": "",
             "properties": {
-                "fieldType": "paragraph"
+                "fieldType": "paragraph",
+                "default": "This task will automatically get the real-time foreign exchange rates if you do not fill in any fields. Optionally, it is possible to define an additional source currency, or specific output currencies below."
             },
             "readonly": false,
             "required": false,
