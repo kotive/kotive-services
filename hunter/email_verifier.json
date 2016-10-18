@@ -1,7 +1,7 @@
 {
   "name": "Email verifier",
   "description": "Email verifier allows you to verify the deliverability of an email address",
-  "documentation": "https://emailhunter.co/api/docs#email-verifier",
+  "documentation": "https://hunter.io/api/docs#email-verifier",
   "fields": [
     {
       "label": "Email address",

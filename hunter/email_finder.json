@@ -1,7 +1,7 @@
 {
   "name": "Email finder",
   "description": "Email finder generates the most likely email address from a domain name, a first name and a last name.",
-  "documentation": "https://emailhunter.co/api/docs#email-finder",
+  "documentation": "https://hunter.io.co/api/docs#email-finder",
   "fields": [
     {
         "label": "Domain name",

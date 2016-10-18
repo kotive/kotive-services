@@ -1,7 +1,7 @@
 {
   "name": "Email count",
   "description": "Email count allows you to know how many email addresses we have for one domain",
-  "documentation": "https://emailhunter.co/api/docs#email-count",
+  "documentation": "https://hunter.io/api/docs#email-count",
   "fields": [
     {
       "label": "Domain name",

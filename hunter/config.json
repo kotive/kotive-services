@@ -1,5 +1,5 @@
 {
-    "name": "Email Hunter",
+    "name": "Hunter",
     "description": "Find email addresses in seconds and connect with people that matter for your business.",
     "auth": {
         "method": "Custom",
@@ -16,5 +16,5 @@
             }
         ]
     },
-    "domain": "https://api.emailhunter.co/v2"
+    "domain": "https://api.hunter.io/v2"
 }
