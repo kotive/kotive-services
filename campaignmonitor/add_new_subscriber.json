@@ -1,6 +1,6 @@
 {
   "name": "Add a new subscriber",
-  "description": "Adds a subscriber to an existing subscriber list.",
+  "description": "Add a subscriber to an existing subscriber list.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#adding_a_subscriber",
   "fields": [
     {
@@ -29,7 +29,8 @@
       "label": "Name",
       "properties": {
         "parameter": "subscriberName",
-        "fieldType": "text"
+        "fieldType": "text",
+        "helptext": "Name of the subscriber."
       },
       "readonly": false,
       "required": false,

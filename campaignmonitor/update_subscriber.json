@@ -1,5 +1,5 @@
 {
-  "name": "Update an existing subscriber",
+  "name": "Update a subscriber",
   "description": "Update a subscriber in an existing subscriber list.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#updating_a_subscriber",
   "fields": [

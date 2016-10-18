@@ -1,5 +1,5 @@
 {
-  "name": "Unsubscribe an existing subscriber",
+  "name": "Unsubscribe a subscriber",
   "description": "Unsubscribe a subscriber from an existing subscriber list.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#unsubscribing_a_subscriber",
   "fields": [

@@ -1,5 +1,5 @@
 {
-  "name": "Delete an existing subscriber",
+  "name": "Delete a subscriber",
   "description": "Delete a subscriber from an existing subscriber list.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#deleting_a_subscriber",
   "fields": [

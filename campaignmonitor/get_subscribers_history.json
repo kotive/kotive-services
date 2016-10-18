@@ -1,6 +1,6 @@
 {
-  "name": "Retrieve a subscriber's history",
-  "description": "Retrieves a historical record of campaigns and automated workflow emails received by a subscriber.",
+  "name": "Get a subscriber's history",
+  "description": "Get a historical record of campaigns and automated workflow emails received by a subscriber.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#getting_a_subscribers_history",
   "fields": [
     {
