@@ -1,6 +1,6 @@
 {
     "name": "Domain search",
-    "description": "Domain search thoroughly check and verify email addresses right at the point of entry into your system",
+    "description": "Search all the email addresses corresponding to one website address",
     "documentation": "https://hunter.io/api/docs#domain-search",
     "fields": [
         {
