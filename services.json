@@ -41,10 +41,6 @@
             "service": "email"
         },
         {
-            "name": "Email Hunter",
-            "service": "emailhunter"
-        },
-        {
             "name": "Freshbooks",
             "service": "freshbooks"
         },
@@ -75,6 +71,10 @@
         {
             "name": "Hipchat",
             "service": "hipchat"
+        },
+        {
+            "name": "Hunter",
+            "service": "hunter"
         },
         {
             "name": "IBM Watson",
