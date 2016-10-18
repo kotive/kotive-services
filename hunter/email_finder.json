@@ -49,7 +49,7 @@
     }
   ],
   "method": "GET",
-    "endpoint": "/email-finder?domain={field.domain}&company={field.company}&first_name={field.firstName}&last_name={field.lastName}&api_key={auth.fields.apikey}",
+    "endpoint": "/email-finder?domain={field.domain}&company={field.company}&first_name={field.firstName}&last_name={field.lastName}&api_key={auth.field.apikey}",
     "request": {},
     "response": {
         "success": "",

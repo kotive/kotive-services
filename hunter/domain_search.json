@@ -44,7 +44,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/domain-search?domain={field.domain}&company={field.company}&api_key={auth.fields.apikey}",
+    "endpoint": "/domain-search?domain={field.domain}&company={field.company}&api_key={auth.field.apikey}",
     "request": {},
     "response": {
         "success": "",

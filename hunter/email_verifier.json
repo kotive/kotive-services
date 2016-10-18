@@ -16,7 +16,7 @@
     }
   ],
   "method": "GET",
-    "endpoint": "/email-verifier?email={field.email}&api_key={auth.fields.apikey}",
+    "endpoint": "/email-verifier?email={field.email}&api_key={auth.field.apikey}",
     "request": {},
     "response": {
         "success": "",
