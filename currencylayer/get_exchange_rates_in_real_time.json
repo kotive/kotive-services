@@ -1,10 +1,10 @@
 {
     "name": "Get exchange rates in real-time",
-    "description": "Get real-time exchange rates.",
+    "description": "Get exchange rates in real-time.",
     "documentation": "https://currencylayer.com/documentation#api_features",
     "fields": [
         {
-            "label": "This task will automatically get the real-time foreign exchange rates. Optionally, it is possible to define an additional source currency, or specific output currencies below.",
+            "label": "This task will automatically get the real-time foreign exchange rates if you do not fill in any fields. Optionally, it is possible to define an additional source currency, or specific output currencies below.",
             "properties": {
                 "fieldType": "paragraph"
             },
@@ -13,7 +13,7 @@
             "visible": true
         },
         {
-            "label": "Choose base currency",
+            "label": "Base currency",
             "properties": {
                 "parameter": "source",
                 "fieldType": "text",
@@ -24,7 +24,7 @@
             "visible": true
         },
         {
-            "label": "Request specific currencies",
+            "label": "Get specific currencies",
             "properties": {
                 "parameter": "currencies",
                 "fieldType": "text",

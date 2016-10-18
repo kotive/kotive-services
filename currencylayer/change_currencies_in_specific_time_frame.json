@@ -1,10 +1,10 @@
 {
-    "name": "Change the currency",
-    "description": "Request the change of one or more currencies, relative to a source currency, within a specific time-frame.",
+    "name": "Change currencies in specific time-frame",
+    "description": "Get the change of one or more currencies, relative to a source currency, within a specific time-frame.",
     "documentation": "https://currencylayer.com/documentation#change_queries",
     "fields": [
         {
-            "label": "Request currencies to change",
+            "label": "Currencies to change",
             "properties": {
                 "parameter": "currencies",
                 "fieldType": "text",
@@ -15,7 +15,7 @@
             "visible": true
         },
         {
-            "label": "Time-frame start date",
+            "label": "Start date",
             "properties": {
                 "parameter": "startDate",
                 "fieldType": "text",
@@ -26,7 +26,7 @@
             "visible": true
         },
         {
-            "label": "Time-frame end date",
+            "label": "End date",
             "properties": {
                 "parameter": "endDate",
                 "fieldType": "text",

@@ -1,5 +1,5 @@
 {
-  "name": "Currencylayer",
+  "name": "Currency layer",
   "description": "Foreign exchange rates and currency conversion",
   "auth": {
         "method": "Custom",

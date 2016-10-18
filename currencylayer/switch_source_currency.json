@@ -4,7 +4,7 @@
     "documentation": "https://currencylayer.com/documentation#source_currency_switching",
     "fields": [
         {
-            "label": "Choose source currency",
+            "label": "Source currency",
             "properties": {
                 "parameter": "source",
                 "fieldType": "text",
