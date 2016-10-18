@@ -1,14 +1,14 @@
 {
     "name": "Delete an item",
     "description": "https://www.freshbooks.com/api/items",
-    "documentation": "Delete an existing item",
+    "documentation": "Delete an existing item.",
     "fields": [
         {
             "label": "Item id",
             "properties": {
                 "parameter": "itemId",
                 "fieldType": "number",
-                "helptext": "The ID of the item you want to delete"
+                "helptext": "The ID of the item you want to delete."
             },
             "readonly": false,
             "required": true,

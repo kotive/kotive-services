@@ -1,14 +1,14 @@
 {
     "name": "Delete a client",
     "description": "https://www.freshbooks.com/api/clients",
-    "documentation": "Delete an existing client",
+    "documentation": "Delete an existing client.",
     "fields": [
         {
             "label": "Client id",
             "properties": {
                 "parameter": "clientId",
                 "fieldType": "number",
-                "helptext": "The ID of the client you want to delete"
+                "helptext": "The ID of the client you want to delete."
             },
             "readonly": false,
             "required": true,

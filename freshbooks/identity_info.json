@@ -1,13 +1,13 @@
 {
     "name": "Businesses and Accounts ids",
-    "description": "Find ids for the Businesses and Accounts a user can interact with",
+    "description": "Find ids for the businesses and accounts a user can interact with.",
     "documentation": "https://www.freshbooks.com/api/identity_model",
     "fields": [
         {
             "label": "",
             "properties": {
                 "fieldType": "paragraph",
-                "default": "Users may interact with more than one business in the new FreshBooks. You can find ids for the Businesses and Accounts a user can interact with by using this task."
+                "default": "Users may interact with more than one business in the new FreshBooks. You can find ids for the businesses and accounts a user can interact with by using this task."
             },
             "readonly": false,
             "required": false,

@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "itemId",
                 "fieldType": "number",
-                "helptext": "The ID of the item you want to retrieve"
+                "helptext": "The ID of the item you want to retrieve."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "accountingSystemId",
                 "fieldType": "text",
-                "helptext": "The unique identifier of business client exists on"
+                "helptext": "The unique identifier of business client exists on."
             },
             "readonly": false,
             "required": true,
@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "itemName",
                 "fieldType": "text",
-                "helptext": "Descriptive name of the item"
+                "helptext": "Descriptive name of the item."
             },
             "readonly": false,
             "required": false,
@@ -41,7 +41,7 @@
             "properties": {
                 "parameter": "description",
                 "fieldType": "text",
-                "helptext": "Descriptive text for item"
+                "helptext": "Descriptive text for item."
             },
             "readonly": false,
             "required": false,
@@ -52,7 +52,7 @@
             "properties": {
                 "parameter": "quantity",
                 "fieldType": "text",
-                "helptext": "Number to multiply unit cost by"
+                "helptext": "Number to multiply unit cost by."
             },
             "readonly": false,
             "required": false,
@@ -63,7 +63,7 @@
             "properties": {
                 "parameter": "inventory",
                 "fieldType": "text",
-                "helptext": "Count of inventory"
+                "helptext": "Count of inventory."
             },
             "readonly": false,
             "required": false,
@@ -74,7 +74,7 @@
             "properties": {
                 "parameter": "amount",
                 "fieldType": "text",
-                "helptext": "Amount paid on invoice, to two decimal places"
+                "helptext": "Amount paid on invoice, to two decimal places."
             },
             "readonly": false,
             "required": false,
@@ -85,7 +85,7 @@
             "properties": {
                 "parameter": "currencyCode",
                 "fieldType": "text",
-                "helptext": "Three-letter currency code"
+                "helptext": "Three-letter currency code."
             },
             "readonly": false,
             "required": false,
@@ -96,7 +96,7 @@
             "properties": {
                 "parameter": "tax1",
                 "fieldType": "number",
-                "helptext": "ID of tax on invoice"
+                "helptext": "ID of tax on invoice."
             },
             "readonly": false,
             "required": false,
@@ -107,7 +107,7 @@
             "properties": {
                 "parameter": "tax2",
                 "fieldType": "number",
-                "helptext": "ID of second tax on invoice if applicable"
+                "helptext": "ID of second tax on invoice if applicable."
             },
             "readonly": false,
             "required": false,

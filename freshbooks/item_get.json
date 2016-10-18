@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "itemId",
                 "fieldType": "number",
-                "helptext": "The ID of the item you want to retrieve"
+                "helptext": "The ID of the item you want to retrieve."
             },
             "readonly": false,
             "required": true,

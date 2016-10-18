@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "clientId",
                 "fieldType": "number",
-                "helptext": "The ID of the client whose details you want to retrieve"
+                "helptext": "The ID of the client whose details you want to retrieve."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "userId",
                 "fieldType": "number",
-                "helptext": "Duplicate of the ID of the client"
+                "helptext": "Duplicate of the ID of the client."
             },
             "readonly": false,
             "required": false,
@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "accountingSystemId",
                 "fieldType": "text",
-                "helptext": "The unique identifier of business client exists on"
+                "helptext": "The unique identifier of business client exists on."
             },
             "readonly": false,
             "required": true,
@@ -41,7 +41,7 @@
             "properties": {
                 "parameter": "firstname",
                 "fieldType": "text",
-                "helptext": "The firstname of the client"
+                "helptext": "The firstname of the client."
             },
             "readonly": false,
             "required": true,
@@ -52,7 +52,7 @@
             "properties": {
                 "parameter": "lastname",
                 "fieldType": "text",
-                "helptext": "The lastname of the client"
+                "helptext": "The lastname of the client."
             },
             "readonly": false,
             "required": true,
@@ -63,7 +63,7 @@
             "properties": {
                 "parameter": "emailAddress",
                 "fieldType": "text",
-                "helptext": "The email address of the client"
+                "helptext": "The email address of the client."
             },
             "readonly": false,
             "required": true,
@@ -74,7 +74,7 @@
             "properties": {
                 "parameter": "businessPhone",
                 "fieldType": "text",
-                "helptext": "Enter the business phone number of the client"
+                "helptext": "Enter the business phone number of the client."
             },
             "readonly": false,
             "required": false,
@@ -85,7 +85,7 @@
             "properties": {
                 "parameter": "homePhone",
                 "fieldType": "text",
-                "helptext": "Enter the home phone number of the client"
+                "helptext": "Enter the home phone number of the client."
             },
             "readonly": false,
             "required": false,
@@ -96,7 +96,7 @@
             "properties": {
                 "parameter": "mobPhone",
                 "fieldType": "text",
-                "helptext": "Enter the mobile phone number of the client"
+                "helptext": "Enter the mobile phone number of the client."
             },
             "readonly": false,
             "required": false,
@@ -107,7 +107,7 @@
             "properties": {
                 "parameter": "fax",
                 "fieldType": "text",
-                "helptext": "The fax number of the client"
+                "helptext": "The fax number of the client."
             },
             "readonly": false,
             "required": false,
@@ -118,7 +118,7 @@
             "properties": {
                 "parameter": "organization",
                 "fieldType": "text",
-                "helptext": "Name for client's business"
+                "helptext": "Name for client's business."
             },
             "readonly": false,
             "required": false,
@@ -129,7 +129,7 @@
             "properties": {
                 "parameter": "companyIndustry",
                 "fieldType": "text",
-                "helptext": "Description of the industry your client is in"
+                "helptext": "Description of the industry your client is in."
             },
             "readonly": false,
             "required": false,
@@ -140,7 +140,7 @@
             "properties": {
                 "parameter": "companySize",
                 "fieldType": "text",
-                "helptext": "Size of client's company"
+                "helptext": "Size of client's company."
             },
             "readonly": false,
             "required": false,
@@ -170,7 +170,6 @@
             "properties": {
                 "parameter": "billingStreetAddress",
                 "fieldType": "text",
-                "helptext": "Billing street address"
             },
             "readonly": false,
             "required": true,
@@ -181,7 +180,6 @@
             "properties": {
                 "parameter": "billingStreetAddress2",
                 "fieldType": "text",
-                "helptext": "Billing street address second part"
             },
             "readonly": false,
             "required": true,
@@ -192,7 +190,6 @@
             "properties": {
                 "parameter": "billingProvince",
                 "fieldType": "text",
-                "helptext": "Billing province"
             },
             "readonly": false,
             "required": true,
@@ -203,7 +200,6 @@
             "properties": {
                 "parameter": "billingCountry",
                 "fieldType": "text",
-                "helptext": "Billing country"
             },
             "readonly": false,
             "required": true,
@@ -214,7 +210,6 @@
             "properties": {
                 "parameter": "billingPostalCode",
                 "fieldType": "text",
-                "helptext": "Billing postal code"
             },
             "readonly": false,
             "required": true,
@@ -225,7 +220,6 @@
             "properties": {
                 "parameter": "billingCity",
                 "fieldType": "text",
-                "helptext": "Billing city"
             },
             "readonly": false,
             "required": true,
@@ -255,7 +249,6 @@
             "properties": {
                 "parameter": "shippingStreetAddress",
                 "fieldType": "text",
-                "helptext": "Shipping street address"
             },
             "readonly": false,
             "required": true,
@@ -266,7 +259,6 @@
             "properties": {
                 "parameter": "shippingStreetAddress2",
                 "fieldType": "text",
-                "helptext": "Shipping street address second part"
             },
             "readonly": false,
             "required": true,
@@ -277,7 +269,6 @@
             "properties": {
                 "parameter": "shippingProvince",
                 "fieldType": "text",
-                "helptext": "Shipping province"
             },
             "readonly": false,
             "required": true,
@@ -288,7 +279,6 @@
             "properties": {
                 "parameter": "shippingCountry",
                 "fieldType": "text",
-                "helptext": "Shipping country"
             },
             "readonly": false,
             "required": true,
@@ -299,7 +289,6 @@
             "properties": {
                 "parameter": "shippingPostalCode",
                 "fieldType": "text",
-                "helptext": "Shipping postal code"
             },
             "readonly": false,
             "required": true,
@@ -310,7 +299,6 @@
             "properties": {
                 "parameter": "shippingCity",
                 "fieldType": "text",
-                "helptext": "Shipping city"
             },
             "readonly": false,
             "required": true,
@@ -330,7 +318,7 @@
             "properties": {
                 "parameter": "currencyCode",
                 "fieldType": "text",
-                "helptext": "Three-letter shortcode for preferred currency"
+                "helptext": "Three-letter shortcode for preferred currency."
             },
             "readonly": false,
             "required": true,
@@ -365,7 +353,7 @@
             "properties": {
                 "parameter": "language",
                 "fieldType": "text",
-                "helptext": "shortcode indicating user language e.g. 'en'"
+                "helptext": "shortcode indicating user language e.g. 'en'."
             },
             "readonly": false,
             "required": false,
@@ -376,7 +364,7 @@
             "properties": {
                 "parameter": "vatName",
                 "fieldType": "text",
-                "helptext": "Value added tax name"
+                "helptext": "Value added tax name."
             },
             "readonly": false,
             "required": false,
@@ -387,7 +375,7 @@
             "properties": {
                 "parameter": "vatNumber",
                 "fieldType": "text",
-                "helptext": "Value added tax number"
+                "helptext": "Value added tax number."
             },
             "readonly": false,
             "required": false,
@@ -398,7 +386,7 @@
             "properties": {
                 "parameter": "notes",
                 "fieldType": "text",
-                "helptext": "Notes kept by admin about client"
+                "helptext": "Notes kept by admin about client."
             },
             "readonly": false,
             "required": false,

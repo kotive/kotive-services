@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "clientId",
                 "fieldType": "number",
-                "helptext": "The ID of the client you want to retrieve"
+                "helptext": "The ID of the client you want to retrieve."
             },
             "readonly": false,
             "required": true,

@@ -1,6 +1,6 @@
 {
     "name": "Delete a payment",
-    "description": "Delete an existing client",
+    "description": "Delete an existing client.",
     "documentation": "https://www.freshbooks.com/api/payments",
     "fields": [
         {
@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "paymentId",
                 "fieldType": "number",
-                "helptext": "The ID of the payment you want to delete"
+                "helptext": "The ID of the payment you want to delete."
             },
             "readonly": false,
             "required": true,

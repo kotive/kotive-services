@@ -1,6 +1,6 @@
 {
     "name": "Update a payment",
-    "description": "Payments are a record of the payments made on your invoices.",
+    "description": "Update an exsiting payment.",
     "documentation": "https://www.freshbooks.com/api/payments",
     "fields": [
         {
@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "paymentId",
                 "fieldType": "number",
-                "helptext": "Unique ID (across this business) for payment"
+                "helptext": "Unique ID (across this business) for payment."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "accountingSystemId",
                 "fieldType": "text",
-                "helptext": "The unique identifier of business client exists on"
+                "helptext": "The unique identifier of business client exists on."
             },
             "readonly": false,
             "required": true,
@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "clientId",
                 "fieldType": "number",
-                "helptext": "The ID of the client who made the payment"
+                "helptext": "The ID of the client who made the payment."
             },
             "readonly": false,
             "required": true,
@@ -41,7 +41,7 @@
             "properties": {
                 "parameter": "orderId",
                 "fieldType": "number",
-                "helptext": "ID of related order"
+                "helptext": "ID of related order."
             },
             "readonly": false,
             "required": false,
@@ -52,7 +52,7 @@
             "properties": {
                 "parameter": "invoiceId",
                 "fieldType": "number",
-                "helptext": "ID of related invoice"
+                "helptext": "ID of related invoice."
             },
             "readonly": false,
             "required": true,
@@ -63,7 +63,7 @@
             "properties": {
                 "parameter": "creditId",
                 "fieldType": "number",
-                "helptext": "ID of related credit"
+                "helptext": "ID of related credit."
             },
             "readonly": false,
             "required": false,
@@ -74,7 +74,7 @@
             "properties": {
                 "parameter": "overpaymentId",
                 "fieldType": "number",
-                "helptext": "ID of related overpayment if relevant"
+                "helptext": "ID of related overpayment if relevant."
             },
             "readonly": false,
             "required": false,
@@ -85,7 +85,7 @@
             "properties": {
                 "parameter": "amount",
                 "fieldType": "text",
-                "helptext": "Amount paid on invoice, to two decimal places"
+                "helptext": "Amount paid on invoice, to two decimal places."
             },
             "readonly": false,
             "required": false,
@@ -96,7 +96,7 @@
             "properties": {
                 "parameter": "currencyCode",
                 "fieldType": "text",
-                "helptext": "Three-letter currency code"
+                "helptext": "Three-letter currency code."
             },
             "readonly": false,
             "required": false,
@@ -107,7 +107,7 @@
             "properties": {
                 "parameter": "notes",
                 "fieldType": "text",
-                "helptext": "Notes kept by admin about client"
+                "helptext": "Notes kept by admin about client."
             },
             "readonly": false,
             "required": false,
@@ -118,7 +118,7 @@
             "properties": {
                 "parameter": "gateway",
                 "fieldType": "text",
-                "helptext": "The payment processor used, if any"
+                "helptext": "The payment processor used, if any."
             },
             "readonly": false,
             "required": false,
@@ -129,7 +129,7 @@
             "properties": {
                 "parameter": "date",
                 "fieldType": "text",
-                "helptext": "Date the payment was made, YYYY-MM-DD format"
+                "helptext": "Date the payment was made, YYYY-MM-DD format."
             },
             "readonly": false,
             "required": true,
@@ -140,7 +140,7 @@
             "properties": {
                 "parameter": "type",
                 "fieldType": "text",
-                "helptext": "The type of payment made e.g. 'Check', 'Credit', 'Cash'"
+                "helptext": "The type of payment made e.g. 'Check', 'Credit', 'Cash'."
             },
             "readonly": false,
             "required": true,

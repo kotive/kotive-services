@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "expenseId",
                 "fieldType": "text",
-                "helptext": "The ID of the expense you want to delete"
+                "helptext": "The ID of the expense you want to delete."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "accountingSystemId",
                 "fieldType": "text",
-                "helptext": "Unique ID for the system"
+                "helptext": "Unique ID for the system."
             },
             "readonly": false,
             "required": true,
@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "clientId",
                 "fieldType": "number",
-                "helptext": "ID of related client if applicable",
+                "helptext": "ID of related client if applicable.",
                 "default": "0"
             },
             "readonly": false,
@@ -42,7 +42,7 @@
             "properties": {
                 "parameter": "categoryId",
                 "fieldType": "number",
-                "helptext": "ID of related expense category"
+                "helptext": "ID of related expense category."
             },
             "readonly": false,
             "required": false,
@@ -53,7 +53,7 @@
             "properties": {
                 "parameter": "projectId",
                 "fieldType": "number",
-                "helptext": "ID of related project if applicable",
+                "helptext": "ID of related project if applicable.",
                 "default": "0"
             },
             "readonly": false,
@@ -65,7 +65,7 @@
             "properties": {
                 "parameter": "profileId",
                 "fieldType": "number",
-                "helptext": "ID of related profile if applicable"
+                "helptext": "ID of related profile if applicable."
             },
             "readonly": false,
             "required": false,
@@ -76,7 +76,7 @@
             "properties": {
                 "parameter": "invoiceId",
                 "fieldType": "number",
-                "helptext": "ID of related invoice"
+                "helptext": "ID of related invoice."
             },
             "readonly": false,
             "required": true,
@@ -87,7 +87,7 @@
             "properties": {
                 "parameter": "accountId",
                 "fieldType": "number",
-                "helptext": "ID of expense account if applicable"
+                "helptext": "ID of expense account if applicable."
             },
             "readonly": false,
             "required": false,
@@ -98,7 +98,7 @@
             "properties": {
                 "parameter": "transactionId",
                 "fieldType": "number",
-                "helptext": "ID of related transaction if applicable"
+                "helptext": "ID of related transaction if applicable."
             },
             "readonly": false,
             "required": false,
@@ -109,7 +109,7 @@
             "properties": {
                 "parameter": "extSystemId",
                 "fieldType": "number",
-                "helptext": "ID of related contractor system if applicable",
+                "helptext": "ID of related contractor system if applicable.",
                 "default": "0"
             },
             "readonly": false,
@@ -121,7 +121,7 @@
             "properties": {
                 "parameter": "extInvoiceId",
                 "fieldType": "number",
-                "helptext": "ID of related contractor invoice if applicable",
+                "helptext": "ID of related contractor invoice if applicable.",
                 "default": "0"
             },
             "readonly": false,
@@ -133,7 +133,7 @@
             "properties": {
                 "parameter": "staffId",
                 "fieldType": "number",
-                "helptext": "ID of related staff member if applicable",
+                "helptext": "ID of related staff member if applicable.",
                 "default": "0"
             },
             "readonly": false,
@@ -154,7 +154,7 @@
             "properties": {
                 "parameter": "date",
                 "fieldType": "text",
-                "helptext": "Date the payment was made, YYYY-MM-DD format"
+                "helptext": "Date the payment was made, YYYY-MM-DD format."
             },
             "readonly": false,
             "required": true,
@@ -165,7 +165,7 @@
             "properties": {
                 "parameter": "accountName",
                 "fieldType": "text",
-                "helptext": "Name of the related account, if applicable"
+                "helptext": "Name of the related account, if applicable."
             },
             "readonly": false,
             "required": false,
@@ -176,7 +176,7 @@
             "properties": {
                 "parameter": "vendor",
                 "fieldType": "text",
-                "helptext": "Name of the vendor"
+                "helptext": "Name of the vendor."
             },
             "readonly": false,
             "required": false,
@@ -187,7 +187,7 @@
             "properties": {
                 "parameter": "bankName",
                 "fieldType": "text",
-                "helptext": "Name of bank expense was imported from, if applicable"
+                "helptext": "Name of bank expense was imported from, if applicable."
             },
             "readonly": false,
             "required": false,
@@ -198,7 +198,7 @@
             "properties": {
                 "parameter": "amount",
                 "fieldType": "text",
-                "helptext": "Expense amount",
+                "helptext": "Expense amount.",
                 "default": "0.00"
             },
             "readonly": false,
@@ -210,7 +210,7 @@
             "properties": {
                 "parameter": "currencyCode",
                 "fieldType": "text",
-                "helptext": "Three-letter currency code"
+                "helptext": "Three-letter currency code."
             },
             "readonly": false,
             "required": false,
@@ -233,7 +233,7 @@
             "visible": true
         },
         {
-            "label": "Does the expense have a receipt attached",
+            "label": "Does the expense have a receipt attached?",
             "properties": {
                 "parameter": "hasReceipt",
                 "fieldType": "radio",
@@ -253,7 +253,7 @@
             "properties": {
                 "parameter": "notes",
                 "fieldType": "text",
-                "helptext": "Notes about expense"
+                "helptext": "Notes about expense."
             },
             "readonly": false,
             "required": false,
@@ -313,7 +313,7 @@
             "properties": {
                 "parameter": "taxCurrencyCode1",
                 "fieldType": "text",
-                "helptext": "Three-letter currency code"
+                "helptext": "Three-letter currency code."
             },
             "readonly": false,
             "required": false,
@@ -373,7 +373,7 @@
             "properties": {
                 "parameter": "taxCurrencyCode2",
                 "fieldType": "text",
-                "helptext": "Three-letter currency code"
+                "helptext": "Three-letter currency code."
             },
             "readonly": false,
             "required": false,

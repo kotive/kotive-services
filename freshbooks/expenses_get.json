@@ -1,6 +1,6 @@
 {
     "name": "Get an expense",
-    "description": "Expenses are used to track expenditures your business incurs.",
+    "description": "Get a spesific expense your business incured.",
     "documentation": "https://www.freshbooks.com/api/payments",
     "fields": [
         {
