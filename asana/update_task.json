@@ -1,6 +1,6 @@
 {
     "name": "Update a task",
-    "description": "Update an existing task",
+    "description": "Update an existing task.",
     "documentation": "https://asana.com/developers/api-reference/tasks#update",
     "fields": [
         {
@@ -50,7 +50,7 @@
             "properties": {
                 "parameter": "notes",
                 "fieldType": "textarea",
-                "helptext": "More detailed information on this task"
+                "helptext": "More detailed information on this task."
             },
             "readonly": false,
             "required": false,
@@ -61,7 +61,7 @@
             "properties": {
                 "parameter": "dueOn",
                 "fieldType": "date",
-                "helptext": "Date on which this task is due"
+                "helptext": "Date on which this task is due."
             },
             "readonly": false,
             "required": false,
@@ -117,7 +117,7 @@
             "properties": {
                 "parameter": "memberships",
                 "fieldType": "textarea",
-                "helptext": "List of projects this task is associated with and the section it is in. At task creation time, this list can be used to add the task to specific sections. E.g. {{ 'project': {{ 'id': 1331, 'name': 'Bugs' }}, 'section': {{ 'id': 1123, 'name': 'P1:' }} }}, ... <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on memberships</a>"
+                "helptext": "List of projects this task is associated with and the section it is in. At task creation time, this list can be used to add the task to specific sections. E.g. {{ 'project': {{ 'id': 1331, 'name': 'Bugs' }}, 'section': {{ 'id': 1123, 'name': 'P1:' }} }}, ... <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on memberships</a>."
             },
             "readonly": false,
             "required": true,
@@ -139,7 +139,7 @@
             "properties": {
                 "parameter": "customFields",
                 "fieldType": "text",
-                "helptext": "List of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. E.g. {{ 'id': 1646, 'name': 'Priority', 'type': 'enum', 'enum_value': {{ 'id': 126, 'name': 'P1' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on custom fields</a>"
+                "helptext": "List of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. E.g. {{ 'id': 1646, 'name': 'Priority', 'type': 'enum', 'enum_value': {{ 'id': 126, 'name': 'P1' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on custom fields</a>."
             },
             "readonly": false,
             "required": false,

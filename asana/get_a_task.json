@@ -1,6 +1,6 @@
 {
     "name": "Get a task",
-    "description": "Returns the complete task record for a single task",
+    "description": "Returns the complete task record for a single task.",
     "documentation": "https://asana.com/developers/api-reference/tasks#get",
     "fields": [
         {

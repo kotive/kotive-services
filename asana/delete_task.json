@@ -1,6 +1,6 @@
 {
     "name": "Delete a task",
-    "description": "Delete an existing task",
+    "description": "Delete an existing task.",
     "documentation": "https://asana.com/developers/api-reference/tasks#delete",
     "fields": [
         {
