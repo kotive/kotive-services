@@ -1,6 +1,6 @@
 {
     "name": "Get a client",
-    "description": "Retrieve a specific client based on an ID.",
+    "description": "Get a specific client based on an ID.",
     "documentation": "https://www.freshbooks.com/api/clients",
     "fields": [
         {
