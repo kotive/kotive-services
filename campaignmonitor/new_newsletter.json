@@ -1,6 +1,6 @@
 {
     "name": "Create a new campaign",
-    "description": "Create a new campaign in Campaign Monitor",
+    "description": "Create a new campaign in Campaign Monitor.",
     "documentation": "https://www.campaignmonitor.com/api/campaigns/#sending_a_draft_campaign",
     "fields": [
         {

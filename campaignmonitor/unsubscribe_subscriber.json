@@ -1,6 +1,6 @@
 {
   "name": "Unsubscribe an existing subscriber",
-  "description": "Unsubscribe a subscriber from an existing subscriber list",
+  "description": "Unsubscribe a subscriber from an existing subscriber list.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#unsubscribing_a_subscriber",
   "fields": [
     {
@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "listId",
         "fieldType": "text",
-        "helptext": "The unique id of the subscriber list from which the subscriber should be unsubscribed"
+        "helptext": "The unique id of the subscriber list from which the subscriber should be unsubscribed."
       },
       "readonly": false,
       "required": true,

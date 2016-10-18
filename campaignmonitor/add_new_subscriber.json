@@ -1,6 +1,6 @@
 {
   "name": "Add a new subscriber",
-  "description": "Adds a subscriber to an existing subscriber list",
+  "description": "Adds a subscriber to an existing subscriber list.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#adding_a_subscriber",
   "fields": [
     {
@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "listId",
         "fieldType": "text",
-        "helptext": "The unique id of the subscriber list to add this subscriber to"
+        "helptext": "The unique id of the subscriber list to add this subscriber to."
       },
       "readonly": false,
       "required": true,
@@ -36,7 +36,7 @@
       "visible": true
     },
     {
-      "label": "Resubscribe",
+      "label": "Resubscribe?",
       "properties": {
         "parameter": "resubscribe",
         "fieldType": "radio",
@@ -52,7 +52,7 @@
       "visible": true
     },
     {
-      "label": "Restart subscription-based autoresponders",
+      "label": "Restart subscription-based autoresponders?",
       "properties": {
         "parameter": "restartSubscriptionBasedAutoresponders",
         "fieldType": "radio",

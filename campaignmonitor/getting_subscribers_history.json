@@ -1,6 +1,6 @@
 {
   "name": "Retrieve a subscriber's history",
-  "description": "Retrieves a historical record of campaigns and automated workflow emails received by a subscriber",
+  "description": "Retrieves a historical record of campaigns and automated workflow emails received by a subscriber.",
   "documentation": "https://www.campaignmonitor.com/api/subscribers/#getting_a_subscribers_history",
   "fields": [
     {
@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "listId",
         "fieldType": "text",
-        "helptext": "The unique id of the subscriber list to which the subscriber belongs"
+        "helptext": "The unique id of the subscriber list to which the subscriber belongs."
       },
       "readonly": false,
       "required": true,
@@ -19,7 +19,7 @@
       "properties": {
         "parameter": "email",
         "fieldType": "email",
-        "helptext": "The email address of the subscriber for which history should be retrieved"
+        "helptext": "The email address of the subscriber for which history should be retrieved."
       },
       "readonly": false,
       "required": true,

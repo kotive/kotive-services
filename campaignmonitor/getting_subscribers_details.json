@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "listId",
         "fieldType": "text",
-        "helptext": "The unique id of the subscriber list to which the subscriber belongs"
+        "helptext": "The unique id of the subscriber list to which the subscriber belongs."
       },
       "readonly": false,
       "required": true,
@@ -19,7 +19,7 @@
       "properties": {
         "parameter": "email",
         "fieldType": "email",
-        "helptext": "The email address of the subscriber whose details should be retrieved"
+        "helptext": "The email address of the subscriber whose details should be retrieved."
       },
       "readonly": false,
       "required": true,

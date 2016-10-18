@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "smartEmailId",
         "fieldType": "text",
-        "helptext": "The unique id of the smart email to send"
+        "helptext": "The unique id of the smart email to send."
       },
       "readonly": false,
       "required": true,
