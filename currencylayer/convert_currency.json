@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "from",
                 "fieldType": "text",
-                "helptext": "Specify the currency you want to do the convertion from e.g. 'USD'."
+                "helptext": "Specify the currency you want to do the conversion from e.g. 'USD'."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "to",
                 "fieldType": "text",
-                "helptext": "Specify the currency you want to see the exhange rate for e.g. 'GBP'."
+                "helptext": "Specify the currency you want to convert to e.g. 'GBP'."
             },
             "readonly": false,
             "required": true,
