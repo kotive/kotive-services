@@ -1,6 +1,6 @@
 {
-    "name": "Currency conversion",
-    "description": "Single currency conversion",
+    "name": "Convert a currency",
+    "description": "Single currency conversion.",
     "documentation": "https://currencylayer.com/documentation#currency_conversion",
     "fields": [
         {
@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "from",
                 "fieldType": "text",
-                "helptext": "Specify the currency you want to do the convertion from e.g. 'USD'"
+                "helptext": "Specify the currency you want to do the convertion from e.g. 'USD'."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "to",
                 "fieldType": "text",
-                "helptext": "Specify the currency you want to see the exhange rate for e.g. 'GBP'"
+                "helptext": "Specify the currency you want to see the exhange rate for e.g. 'GBP'."
             },
             "readonly": false,
             "required": true,
@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "amount",
                 "fieldType": "text",
-                "helptext": "Enter the amount you want to convert e.g. '1254'"
+                "helptext": "Enter the amount you want to convert e.g. '1254'."
             },
             "readonly": false,
             "required": true,

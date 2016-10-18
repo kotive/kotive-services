@@ -1,6 +1,6 @@
 {
-    "name": "Source currency switching",
-    "description": "Set the currency you want to see the exhange rate against",
+    "name": "Switch the source currency",
+    "description": "Set the currency you want to see the exhange rate against.",
     "documentation": "https://currencylayer.com/documentation#source_currency_switching",
     "fields": [
         {
@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "source",
                 "fieldType": "text",
-                "helptext": "Choose the currency you want to see the exhange rate against e.g. 'USD'"
+                "helptext": "Choose the currency you want to see the exhange rate against e.g. 'USD'."
             },
             "readonly": false,
             "required": true,

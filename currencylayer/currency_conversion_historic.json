@@ -1,6 +1,6 @@
 {
-    "name": "Currency conversionusing historical rates",
-    "description": "Single currency conversion using historical exchange rates",
+    "name": "Convert a currency using historical rates",
+    "description": "Single currency conversion using historical exchange rates.",
     "documentation": "https://currencylayer.com/documentation#currency_conversion",
     "fields": [
         {
@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "from",
                 "fieldType": "text",
-                "helptext": "Specify the currency you want to do the convertion from e.g. 'USD'"
+                "helptext": "Specify the currency you want to do the convertion from e.g. 'USD'."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "to",
                 "fieldType": "text",
-                "helptext": "Specify the currency you want to see the exhange rate for e.g. 'GBP'"
+                "helptext": "Specify the currency you want to see the exhange rate for e.g. 'GBP'."
             },
             "readonly": false,
             "required": true,
@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "amount",
                 "fieldType": "text",
-                "helptext": "Enter the amount you want to convert e.g. '1254'"
+                "helptext": "Enter the amount you want to convert e.g. '1254'."
             },
             "readonly": false,
             "required": true,
@@ -41,7 +41,7 @@
             "properties": {
                 "parameter": "date",
                 "fieldType": "text",
-                "helptext": "Enter the date you wish to see the exchange rates for e.g. '2014-03-22'"
+                "helptext": "Enter the date you wish to see the exchange rates for e.g. '2014-03-22'."
             },
             "readonly": false,
             "required": true,

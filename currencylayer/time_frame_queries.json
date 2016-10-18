@@ -1,6 +1,6 @@
 {
-    "name": "Time-frame queries",
-    "description": "Request historical exchange rates for a time-period of your choice. (maximum range: 365 days)",
+    "name": "Request a time-frame",
+    "description": "Request historical exchange rates for a time-period of your choice (maximum range: 365 days).",
     "documentation": "https://currencylayer.com/documentation#timeframe_queries",
     "fields": [
         {
@@ -8,7 +8,7 @@
             "properties": {
                 "parameter": "currencies",
                 "fieldType": "text",
-                "helptext": "List all the currencies you wish to within this time-frame, separated by commas and no spaces. E.g. 'GBP,ZAR'"
+                "helptext": "List all the currencies you wish to within this time-frame, separated by commas and no spaces. E.g. 'GBP,ZAR'."
             },
             "readonly": false,
             "required": false,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "startDate",
                 "fieldType": "text",
-                "helptext": "Enter the start date you wish to see the currencies for. E.g. '2000-03-22'"
+                "helptext": "Enter the start date you wish to see the currencies for. E.g. '2000-03-22'."
             },
             "readonly": false,
             "required": true,
@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "endDate",
                 "fieldType": "text",
-                "helptext": "Enter the end date you wish to see the currencies for. E.g. '2000-03-22'"
+                "helptext": "Enter the end date you wish to see the currencies for. E.g. '2000-03-22'."
             },
             "readonly": false,
             "required": true,
