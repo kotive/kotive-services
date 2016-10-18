@@ -61,18 +61,7 @@
             "properties": {
                 "parameter": "dueOn",
                 "fieldType": "date",
-                "helptext": "Date on which this task is due."
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Projects",
-            "properties": {
-                "parameter": "projects",
-                "fieldType": "textarea",
-                "helptext": "List of projects this task is associated with. At task creation time, this list can be used to add the task to many projects at once. Projects should be separated with commas E.g. {{ 'id': 1331, 'name': 'Stuff to Buy' }}, ..."
+                "helptext": "Date on which this task is due, using YYYY-MM-DD format."
             },
             "readonly": false,
             "required": false,
@@ -83,7 +72,8 @@
             "properties": {
                 "parameter": "followers",
                 "fieldType": "textarea",
-                "helptext": "List of users following this task, separated by commas E.g. {{ 'id': 1123, 'name': 'Mittens' }}, ..."
+                "helptext": "List of users following this task, separated by commas E.g. {{ 'id': 1123, 'name': 'Mittens' }}, ...",
+                "default": "{}"
             },
             "readonly": false,
             "required": false,
@@ -102,44 +92,12 @@
             "visible": true
         },
         {
-            "label": "Workspace",
-            "properties": {
-                "parameter": "workspace",
-                "fieldType": "text",
-                "helptext": "The workspace this task is associated with. Once created, task cannot be moved to a different workspace. E.g. {{ 'id': 14916, 'name': 'My Workspace' }}"
-            },
-            "readonly": false,
-            "required": true,
-            "visible": true
-        },
-        {
-            "label": "Memberships",
-            "properties": {
-                "parameter": "memberships",
-                "fieldType": "textarea",
-                "helptext": "List of projects this task is associated with and the section it is in. At task creation time, this list can be used to add the task to specific sections. E.g. {{ 'project': {{ 'id': 1331, 'name': 'Bugs' }}, 'section': {{ 'id': 1123, 'name': 'P1:' }} }}, ... <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on memberships</a>."
-            },
-            "readonly": false,
-            "required": true,
-            "visible": true
-        },
-        {
-            "label": "Tags",
-            "properties": {
-                "parameter": "tags",
-                "fieldType": "textarea",
-                "helptext": "List of tags associated with this task. This property may be specified on creation using just a list of tag IDs."
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
             "label": "Custom fields",
             "properties": {
                 "parameter": "customFields",
                 "fieldType": "text",
-                "helptext": "List of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. E.g. {{ 'id': 1646, 'name': 'Priority', 'type': 'enum', 'enum_value': {{ 'id': 126, 'name': 'P1' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on custom fields</a>."
+                "helptext": "List of custom fields applied to the task. These custom fields represent the values recorded on this task for a particular custom field. E.g. {{ 'id': 1646, 'name': 'Priority', 'type': 'enum', 'enum_value': {{ 'id': 126, 'name': 'P1' }} }} <a href='https://asana.com/developers/api-reference/tasks' target='_blank'>More on custom fields</a>.",
+                "default": "{}"
             },
             "readonly": false,
             "required": false,
@@ -175,11 +133,7 @@
         "notes": "{field.notes}",
         "due_on": "{string_to_hash_or_null(field.dueOn)}",
         "followers": "{string_to_hash(field.followers)}",
-        "hearted": "{string_to_boolean(field.hearted)}",
-        "projects": "{string_to_hash(field.projects)}",
-        "workspace": "{field.workspace}",
-        "memberships": "{string_to_hash(field.memberships)}",
-        "tags": "{string_to_hash(field.tags)}"
+        "hearted": "{string_to_boolean(field.hearted)}"
     },
   "response": {
     "success": "",
