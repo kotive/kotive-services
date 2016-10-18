@@ -1,14 +1,14 @@
 {
-    "name": "Phone number validation",
-    "description": "National and international phone number validation",
-    "documentation": "https://numverify.com/documentation",
+    "name": "Validate a phone number",
+    "description": "Validate national and international phone number.",
+    "documentation": "https://numverify.com/documentation#number_validation",
     "fields": [
         {
             "label": "Phone number",
             "properties": {
                 "parameter": "phoneNumber",
                 "fieldType": "numbers",
-                "helptext": "Enter the phone number that needs to be verified"
+                "helptext": "Enter the phone number that needs to be verified."
             },
             "readonly": false,
             "required": true,
@@ -19,7 +19,7 @@
             "properties": {
                 "parameter": "countryCode",
                 "fieldType": "numbers",
-                "helptext": "Specify a country code if you intend to use a national phone number for your request"
+                "helptext": "Specify a country code if you intend to use a national phone number for your request."
             },
             "readonly": false,
             "required": false,
