@@ -1,5 +1,5 @@
 {
-  "name": "numverify",
+  "name": "Numverify",
   "description": "Validate national and international phone numbers.",
   "auth": {
         "method": "Custom",
