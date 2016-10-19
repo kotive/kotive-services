@@ -1,0 +1,32 @@
+{
+    "name": "Get projects",
+    "description": "Retrieve active, drafts or archived projects.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/projects.md#get-projects",
+    "fields": [
+        {
+            "label": "Project status",
+            "properties": {
+                "parameter": "projectStatus",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "", "value": "Active"},
+                    {"key": "/drafts", "value": "Drafts"},
+                    {"key": "/archived", "value": "Archived"}
+                ],
+                "default": "Active",
+                "classes": "inline",
+                "helptext": "Select the status of the projects you want to retrieve."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/projects/{field.projectStatus}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

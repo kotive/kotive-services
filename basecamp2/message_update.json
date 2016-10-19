@@ -1,0 +1,86 @@
+{
+    "name": "Update a message",
+    "description": "Update an existing message.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/messages.md#update-message",
+    "fields": [
+        {
+          "label": "Project id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the project where you want to update the message."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Message id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the message you want to update."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+            "label": "Subject",
+            "properties": {
+                "parameter": "subject",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Content",
+            "properties": {
+                "parameter": "content",
+                "fieldType": "textarea"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Subscribers",
+            "properties": {
+                "parameter": "subscribers",
+                "fieldType": "text"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Private message",
+            "properties": {
+                "parameter": "private",
+                "fieldType": "radio",
+                "choices": [
+                    "false",
+                    "true"
+                ],
+                "default": false
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "PUT",
+    "endpoint": "/projects/{field.projectId}/messages/{field.messageId}.json",
+    "request": {
+        "subject": "{field.subject}",
+        "content": "{field.content}",
+        "subscribers": "{field.subscribers}",
+        "private": "{field.private}"
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}

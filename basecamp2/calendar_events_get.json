@@ -1,0 +1,80 @@
+{
+    "name": "Get calendar events",
+    "description": "Get upcoming or past calendar events.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/calendar_events.md#get-calendar-events",
+    "fields": [
+        {
+            "label": "Does this calendar event belong to a project or to a standalone calendar?",
+            "properties": {
+                "parameter": "calendarType",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "/projects/{id}", "value": "Project"},
+                    {"key": "/calendars/{id}", "value": "Calendar"},
+                    {"key": "", "value": "Any"}
+                ],
+                "default": "/projects{id}",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Do you want to retrieve an upcoming or past calendar event?",
+            "properties": {
+                "parameter": "eventStatus",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "", "value": "Upcoming"},
+                    {"key": "/past", "value": "Past"}
+                ],
+                "default": "",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Project/ Calendar id",
+          "properties": {
+            "parameter": "id",
+            "fieldType": "text",
+            "helptext": "If you indicated that the calendar event belongs to a 'Project' or a 'Calendar', provide the id for that project or calendar."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "Start date",
+          "properties": {
+            "parameter": "startsAt",
+            "fieldType": "text",
+            "helptext": "By specifing a start date, you will be able to see six weeks of calendar events after the start date. YYYY-MM-DD format."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "End date",
+          "properties": {
+            "parameter": "endsAt",
+            "fieldType": "text",
+            "helptext": "By specifing an end date, you will be able to see calendar events between the start and end date. The start and end date can be up to six weeks apart. YYYY-MM-DD format."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "{field.calendarType}/{id}/calendar_events{field.eventStatus}.json?start_date={field.startsAt}&end_date={field.endsAt}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Delete a message",
+    "description": "Delete a message from a project.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/messages.md#delete-message",
+    "fields": [
+        {
+          "label": "Project id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the project where you want to delete the message."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Message id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the message you want to delete."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "method": "DELETE",
+    "endpoint": "/projects/{field.projectId}/messages/{field.messageId}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
