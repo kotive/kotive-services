@@ -1,5 +1,5 @@
 {
-    "name": "Complete a  To-do",
+    "name": "Complete a To-do",
     "description": "Mark a to-do as completed.",
     "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/todos.md#complete-a-to-do",
     "fields": [
@@ -24,10 +24,10 @@
             "readonly": false,
             "required": true,
             "visible": true
-        },
+        }
     ],
     "method": "POST",
-    "endpoint": "{auth.field.accountId}/buckets/{field.bucketId}/todos/{field.todoId}/completion.json",
+    "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/todos/{field.todoId}/completion.json",
     "request": {},
     "response": {
         "success": "",

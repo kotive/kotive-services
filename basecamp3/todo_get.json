@@ -1,6 +1,6 @@
 {
     "name": "Get a To-do",
-    "description": "Retrieve a to-do based on an ID.",
+    "description": "Get a to-do based on an ID.",
     "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/todos.md#get-a-to-do",
     "fields": [
         {

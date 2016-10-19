@@ -38,7 +38,7 @@
         }
     ],
     "method": "PUT",
-    "endpoint": "{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.commentId}.json",
+    "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.commentId}.json",
     "request": {
         "content": "{field.content}"
     },

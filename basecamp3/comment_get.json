@@ -1,6 +1,6 @@
 {
     "name": "Get a comment",
-    "description": "Retrieve a comment based on an ID.",
+    "description": "Get a comment based on an ID.",
     "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/comments.md#get-a-comment",
     "fields": [
         {
