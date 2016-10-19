@@ -1,6 +1,6 @@
 {
   "name": "numverify",
-  "description": "Validate national and international phone number.",
+  "description": "Validate national and international phone numbers.",
   "auth": {
         "method": "Custom",
         "fields": [
