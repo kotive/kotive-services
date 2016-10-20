@@ -1,0 +1,113 @@
+{
+    "name": "Create a comment",
+    "description": "Creates a comment.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/comments.md#create-comment",
+    "fields": [
+        {
+          "label": "Project id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the project you want to create the comments for."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "Message id",
+          "properties": {
+            "parameter": "messageId",
+            "fieldType": "text",
+            "helptext": "ID for the message you want to create the comment for."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "To-do id",
+          "properties": {
+            "parameter": "todoId",
+            "fieldType": "text",
+            "helptext": "ID for the to-do you want to create the comment for."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "Section you want to create the comment for",
+          "properties": {
+              "parameter": "section",
+              "fieldType": "radio",
+              "choices": [
+                  {"key": "/projects/{id}", "value": "Projects"},
+                  {"key": "/messages/{id}", "value": "Messages"},
+                  {"key": "/todos/{id}", "value": "To-do"}
+              ],
+              "default": "/projects{id}",
+              "classes": "inline"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Content",
+          "properties": {
+            "parameter": "content",
+            "fieldType": "textarea",
+            "helptext": "Content of the comment, e.g. 'Yeah, really, welcome!'."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Subject",
+          "properties": {
+            "parameter": "subject",
+            "fieldType": "text",
+            "helptext": "Information about the calendar event, e.g. 'To discuss business'."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Subscriber's id",
+          "properties": {
+            "parameter": "subscriberIds",
+            "fieldType": "text",
+            "helptext": "To notify subscribers about this comment, provide their person ID. Or to subscribe 'all' the people on the project to this calendar event enter the word 'all' in the text box."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "New subscribers",
+          "properties": {
+            "parameter": "newSubscriberEmails",
+            "fieldType": "textarea",
+            "helptext": "To 'loop-in' outside email addresses for users without an account, include a new subscriber emails list. E.g. 'example@example.com'"
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        }
+    ],
+    "method": "POST",
+    "endpoint": "/projects/{field.projectId}/{field.section}/{id}/comment.json",
+    "request": {
+        "content": "{field.content}",
+        "subject": "{field.subject}",
+        "subscribers": "{string_to_hash(field.subscriberIds)}",
+        "new_subscriber_emails": "{string_to_hash(field.newSubscriberEmails)}"
+    },
+    "response": {
+        "success": "",
+        "error": {}
+    }
+}
