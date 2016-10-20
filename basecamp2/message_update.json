@@ -17,7 +17,7 @@
         {
           "label": "Message id",
           "properties": {
-            "parameter": "projectId",
+            "parameter": "messageId",
             "fieldType": "text",
             "helptext": "ID for the message you want to update."
           },
@@ -49,7 +49,8 @@
             "label": "Subscribers",
             "properties": {
                 "parameter": "subscribers",
-                "fieldType": "text"
+                "fieldType": "text",
+                "helptext": "The subscribers list is a list of people IDs that you want to notify about this message."
             },
             "readonly": false,
             "required": false,
@@ -76,7 +77,7 @@
     "request": {
         "subject": "{field.subject}",
         "content": "{field.content}",
-        "subscribers": "{field.subscribers}",
+        "subscribers": "{string_to_hash(field.subscribers)}",
         "private": "{field.private}"
     },
     "response": {

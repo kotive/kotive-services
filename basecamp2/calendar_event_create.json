@@ -1,7 +1,7 @@
 {
-    "name": "Create a To-do",
-    "description": "Creates a to-do in the Basecamp.",
-    "documentation": "https://github.com/basecamp/bc3-api/blob/master/sections/todos.md#create-a-to-do",
+    "name": "Create a calendar event",
+    "description": "Creates a calendar event.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/calendar_events.md#create-calendar-event",
     "fields": [
         {
             "label": "Is this calendar event for a project or for a standalone calendar?",
@@ -57,7 +57,7 @@
           "properties": {
             "parameter": "subscriberIds",
             "fieldType": "text",
-            "helptext": "To subscribe specific people to a calendar event, provide their person ID."
+            "helptext": "To subscribe specific people to a calendar event, provide their person ID. Or to subscribe 'all' the people on the project to this calendar event enter the word 'all' in the text box."
           },
           "readonly": false,
           "required": false,
