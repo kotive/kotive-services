@@ -9,11 +9,10 @@
                 "parameter": "calendarType",
                 "fieldType": "radio",
                 "choices": [
-                    {"key": "/projects/{id}", "value": "Project"},
-                    {"key": "/calendars/{id}", "value": "Calendar"},
-                    {"key": "", "value": "Any"}
+                    {"key": "projects", "value": "Project"},
+                    {"key": "calendars", "value": "Calendar"}
                 ],
-                "default": "/projects{id}",
+                "default": "projects",
                 "classes": "inline",
             },
             "readonly": false,
@@ -37,14 +36,14 @@
             "visible": true
         },
         {
-          "label": "Project/ Calendar id",
+          "label": "Project or Calendar Id",
           "properties": {
-            "parameter": "id",
+            "parameter": "calendarProjectid",
             "fieldType": "text",
             "helptext": "If you indicated that the calendar event belongs to a 'Project' or a 'Calendar', provide the id for that project or calendar."
           },
           "readonly": false,
-          "required": false,
+          "required": true,
           "visible": true
         },
         {
@@ -71,7 +70,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "{field.calendarType}/{id}/calendar_events{field.eventStatus}.json?start_date={field.startsAt}&end_date={field.endsAt}",
+    "endpoint": "/{field.calendarType}/{field.calendarProjectid}/calendar_events{field.eventStatus}.json?start_date={field.startsAt}&end_date={field.endsAt}",
     "request": {},
     "response": {
         "success": "",
