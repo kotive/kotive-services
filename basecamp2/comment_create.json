@@ -42,11 +42,11 @@
               "parameter": "section",
               "fieldType": "radio",
               "choices": [
-                  {"key": "/projects/{id}", "value": "Projects"},
-                  {"key": "/messages/{id}", "value": "Messages"},
-                  {"key": "/todos/{id}", "value": "To-do"}
+                  {"key": "projects", "value": "Projects"},
+                  {"key": "messages", "value": "Messages"},
+                  {"key": "todos", "value": "To-do"}
               ],
-              "default": "/projects{id}",
+              "default": "projects",
               "classes": "inline"
           },
           "readonly": false,

@@ -38,7 +38,7 @@
         {
           "label": "Project or Calendar Id",
           "properties": {
-            "parameter": "calendarProjectid",
+            "parameter": "calendarProjectId",
             "fieldType": "text",
             "helptext": "If you indicated that the calendar event belongs to a 'Project' or a 'Calendar', provide the id for that project or calendar."
           },
@@ -70,7 +70,7 @@
         }
     ],
     "method": "GET",
-    "endpoint": "/{field.calendarType}/{field.calendarProjectid}/calendar_events{field.eventStatus}.json?start_date={field.startsAt}&end_date={field.endsAt}",
+    "endpoint": "/{field.calendarType}/{field.calendarProjectId}/calendar_events{field.eventStatus}.json?start_date={field.startsAt}&end_date={field.endsAt}",
     "request": {},
     "response": {
         "success": "",
