@@ -57,55 +57,6 @@
           "readonly": false,
           "required": false,
           "visible": true
-        },
-        {
-          "label": "Type of assignee",
-          "properties": {
-            "parameter": "assigneeType",
-            "fieldType": "text",
-            "helptext": "A list of people that will be assigned to this to-do. Get info on <a href='https://github.com/basecamp/bc3-api/blob/master/sections/people.md#get-all-people' target='_blank'>how to retrieve people</a>."
-          },
-          "readonly": false,
-          "required": false,
-          "visible": true
-        },
-        {
-            "label": "Private message",
-            "properties": {
-                "parameter": "private",
-                "fieldType": "radio",
-                "choices": [
-                    {"key": "true", "value": "Yes"},
-                    {"key": "false", "value": "No"}
-                ],
-                "default": false,
-                "helptext": "To hide a message from clients select 'Yes', to reveal a message to clients select 'No'."
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-          "label": "Subscriber's id",
-          "properties": {
-            "parameter": "subscriberIds",
-            "fieldType": "text",
-            "helptext": "To notify subscribers about this message, provide their person IDs (seperated by commas)."
-          },
-          "readonly": false,
-          "required": false,
-          "visible": true
-        },
-        {
-          "label": "New subscribers",
-          "properties": {
-            "parameter": "newSubscriberEmails",
-            "fieldType": "textarea",
-            "helptext": "To 'loop-in' outside email addresses for users without an account, include a new subscriber emails list. Seperate email addresses by commas and no spaces E.g. 'example@example.com,example@example.com'"
-          },
-          "readonly": false,
-          "required": false,
-          "visible": true
         }
     ],
     "method": "POST",
@@ -114,12 +65,9 @@
         "content": "{field.content}",
         "assignee": {
             "id": "{field.assigneeId}",
-            "type": "{field.person}"
+            "type": "Person"
         },
-        "private": "{field.private}",
-        "due_at":"{field.dueAt}",
-        "subscribers": "{string_to_hash(field.subscriberIds)}",
-        "new_subscriber_emails": "{string_to_hash(field.newSubscriberEmails)}"
+        "due_at":"{string_or_null(field.dueAt)}"
     },
     "response": {
         "success": "",
