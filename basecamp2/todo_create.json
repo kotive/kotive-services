@@ -37,11 +37,22 @@
             "visible": true
         },
         {
-          "label": "People to assign this to-do, to.",
+          "label": "Due date",
+          "properties": {
+            "parameter": "dueAt",
+            "fieldType": "text",
+            "helptext": "A date when the to-do should be completed, in ISO 8601 format (like '2012-03-27T16:00:00-05:00')."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "ID of person to assign this to-do, to.",
           "properties": {
             "parameter": "assigneeId",
-            "fieldType": "textarea",
-            "helptext": "A list of people that will be assigned to this to-do. Get info on <a href='https://github.com/basecamp/bc3-api/blob/master/sections/people.md#get-all-people' target='_blank'>how to retrieve people</a>."
+            "fieldType": "text",
+            "helptext": "Provide the id of the person that will be assigned to this to-do."
           },
           "readonly": false,
           "required": false,
@@ -89,6 +100,7 @@
             "id": "{field.assigneeId}",
             "type": "{field.person}"
         },
+        "due_at":"{field.dueAt}",
         "subscribers": "{string_to_hash(field.subscriberIds)}",
         "new_subscriber_emails": "{string_to_hash(field.newSubscriberEmails)}"
     },
