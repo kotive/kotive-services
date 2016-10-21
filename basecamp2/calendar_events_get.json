@@ -51,7 +51,7 @@
           "properties": {
             "parameter": "startsAt",
             "fieldType": "text",
-            "helptext": "By specifing a start date, you will be able to see six weeks of calendar events after the start date. YYYY-MM-DD format."
+            "helptext": "By specifing a start date, you will be able to see six weeks of calendar events after the start date, YYYY-MM-DD format."
           },
           "readonly": false,
           "required": false,
@@ -62,7 +62,7 @@
           "properties": {
             "parameter": "endsAt",
             "fieldType": "text",
-            "helptext": "By specifing an end date, you will be able to see calendar events between the start and end date. The start and end date can be up to six weeks apart. YYYY-MM-DD format."
+            "helptext": "By specifing an end date, you will be able to see calendar events between the start and end date. The start and end date can be up to six weeks apart, YYYY-MM-DD format."
           },
           "readonly": false,
           "required": false,

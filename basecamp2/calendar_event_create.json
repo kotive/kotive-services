@@ -53,24 +53,13 @@
           "visible": true
         },
         {
-          "label": "Subscriber's id",
-          "properties": {
-            "parameter": "subscriberIds",
-            "fieldType": "text",
-            "helptext": "To subscribe specific people to a calendar event, provide their person ID. Or to subscribe 'all' the people on the project to this calendar event enter the word 'all' in the text box."
-          },
-          "readonly": false,
-          "required": false,
-          "visible": true
-        },
-        {
             "label": "Do you want to subscribe all the people on the project to this calendar event?",
             "properties": {
                 "parameter": "subscribers",
                 "fieldType": "radio",
                 "choices": [
-                    {"key": "all", "value": "Yes"},
-                    {"key": "", "value": "No"},
+                    {"key": "all", "value": "Yes, subscribe everybody"},
+                    {"key": "", "value": "No, do not subscribe anybody"}
                 ],
                 "default": "",
                 "classes": "inline",
@@ -84,7 +73,7 @@
           "properties": {
             "parameter": "startsAt",
             "fieldType": "text",
-            "helptext": "The start date for the calendar events. YYYY-MM-DD format."
+            "helptext": "The start date for the calendar events, YYYY-MM-DD format."
           },
           "readonly": false,
           "required": false,
@@ -107,7 +96,6 @@
     "request": {
         "summary": "{field.summary}",
         "description": "{field.description}",
-        "subscribers": "{field.subscriberIds}",
         "subscribers": "{field.subscribers}",
         "starts_at":"{field.startsAt}",
         "remind_at":"{field.remindAt}"

@@ -11,43 +11,37 @@
             "helptext": "ID for the project you want to create the comments for."
           },
           "readonly": false,
-          "required": false,
+          "required": true,
           "visible": true
         },
         {
-          "label": "Message id",
-          "properties": {
-            "parameter": "messageId",
-            "fieldType": "text",
-            "helptext": "ID for the message you want to create the comment for."
-          },
-          "readonly": false,
-          "required": false,
-          "visible": true
-        },
-        {
-          "label": "To-do id",
-          "properties": {
-            "parameter": "todoId",
-            "fieldType": "text",
-            "helptext": "ID for the to-do you want to create the comment for."
-          },
-          "readonly": false,
-          "required": false,
-          "visible": true
-        },
-        {
-          "label": "Section you want to create the comment for",
+          "label": "Select the section you want to create the comment for",
           "properties": {
               "parameter": "section",
-              "fieldType": "radio",
+              "fieldType": "select",
               "choices": [
-                  {"key": "projects", "value": "Projects"},
                   {"key": "messages", "value": "Messages"},
+                  {"key": "documents", "value": "Documents"},
+                  {"key": "forwards", "value": "Forwards"},
+                  {"key": "calendar_events", "value": "Calendar events"},
+                  {"key": "uploads", "value": "Uploads"},
+                  {"key": "todolists", "value": "To-do lists"},
                   {"key": "todos", "value": "To-do"}
               ],
-              "default": "projects",
-              "classes": "inline"
+              "default": "messages",
+              "classes": "inline",
+              "helptext": "Select the section from the dropdown, you want to create the comment for, e.g. 'Messages', 'Documents', 'To-do' etc."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Section id",
+          "properties": {
+            "parameter": "sectionId",
+            "fieldType": "text",
+            "helptext": "Provide the ID for the section you have selected above. E.g. the message ID"
           },
           "readonly": false,
           "required": true,
@@ -65,22 +59,11 @@
           "visible": true
         },
         {
-          "label": "Subject",
-          "properties": {
-            "parameter": "subject",
-            "fieldType": "text",
-            "helptext": "Information about the calendar event, e.g. 'To discuss business'."
-          },
-          "readonly": false,
-          "required": true,
-          "visible": true
-        },
-        {
           "label": "Subscriber's id",
           "properties": {
             "parameter": "subscriberIds",
             "fieldType": "text",
-            "helptext": "To notify subscribers about this comment, provide their person ID. Or to subscribe 'all' the people on the project to this calendar event enter the word 'all' in the text box."
+            "helptext": "To notify subscribers about this comment, provide their person IDs (seperated by commas). Or to subscribe 'all' the people on the project to this calendar event enter the word 'all' in the text box."
           },
           "readonly": false,
           "required": false,
@@ -91,7 +74,18 @@
           "properties": {
             "parameter": "newSubscriberEmails",
             "fieldType": "textarea",
-            "helptext": "To 'loop-in' outside email addresses for users without an account, include a new subscriber emails list. E.g. 'example@example.com'"
+            "helptext": "To 'loop-in' outside email addresses for users without an account, include a new subscriber emails list. Seperate email addresses by commas and no spaces E.g. 'example@example.com,example@example.com'"
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+          "label": "Subject",
+          "properties": {
+            "parameter": "subject",
+            "fieldType": "text",
+            "helptext": "Information about the comment to be displayed in the subject line of the email for users without an account, e.g. 'To discuss business'."
           },
           "readonly": false,
           "required": false,
@@ -99,12 +93,12 @@
         }
     ],
     "method": "POST",
-    "endpoint": "/projects/{field.projectId}/{field.section}/{id}/comment.json",
+    "endpoint": "/projects/{field.projectId}/{field.section}/{sectionId}/comments.json",
     "request": {
         "content": "{field.content}",
-        "subject": "{field.subject}",
         "subscribers": "{string_to_hash(field.subscriberIds)}",
-        "new_subscriber_emails": "{string_to_hash(field.newSubscriberEmails)}"
+        "new_subscriber_emails": "{string_to_hash(field.newSubscriberEmails)}",
+        "subject": "{field.subject}"
     },
     "response": {
         "success": "",
