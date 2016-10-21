@@ -20,7 +20,7 @@
                 "parameter": "clientId",
                 "fieldType": "number",
                 "helptext": "ID of related client if applicable.",
-                "default": "0"
+                "default": 0
             },
             "readonly": false,
             "required": false,
@@ -31,7 +31,8 @@
             "properties": {
                 "parameter": "categoryId",
                 "fieldType": "number",
-                "helptext": "ID of related expense category."
+                "helptext": "ID of related expense category.",
+                "default": 0
             },
             "readonly": false,
             "required": false,
@@ -43,7 +44,7 @@
                 "parameter": "projectId",
                 "fieldType": "number",
                 "helptext": "ID of related project if applicable.",
-                "default": "0"
+                "default": 0
             },
             "readonly": false,
             "required": false,
@@ -99,7 +100,7 @@
                 "parameter": "extSystemId",
                 "fieldType": "number",
                 "helptext": "ID of related contractor system if applicable.",
-                "default": "0"
+                "default": 0
             },
             "readonly": false,
             "required": false,
@@ -111,7 +112,7 @@
                 "parameter": "extInvoiceId",
                 "fieldType": "number",
                 "helptext": "ID of related contractor invoice if applicable.",
-                "default": "0"
+                "default": 0
             },
             "readonly": false,
             "required": true,
@@ -123,7 +124,7 @@
                 "parameter": "staffId",
                 "fieldType": "number",
                 "helptext": "ID of related staff member if applicable.",
-                "default": "0"
+                "default": 0
             },
             "readonly": false,
             "required": false,
@@ -393,29 +394,29 @@
             "clientid": "{field.clientId}",
             "categoryid": "{field.categoryId}",
             "projectid": "{field.projectId}",
-            "profileid": "{string_or_null(field.profileId)}",
-            "invoiceid": "{string_or_null(field.invoiceId)}",
-            "accountid": "{string_or_null(field.accountId)}",
-            "transactionid": "{string_or_null(field.transactionId)}",
+            "profileid": "{field.profileId}",
+            "invoiceid": "{field.invoiceId}",
+            "accountid": "{field.accountId}",
+            "transactionid": "{field.transactionId}",
             "ext_systemid": "{field.extSystemId}",
             "ext_invoiceid": "{field.extInvoiceId}",
             "staffid": "{field.staffId}",
             "date": "{field.date}",
-            "account_name": "{string_or_null(field.accountName)}",
-            "vendor": "{string_or_null(field.vendor)}",
-            "bank_name": "{string_or_null(field.bankName)}",
+            "account_name": "{field.accountName}",
+            "vendor": "{field.vendor}",
+            "bank_name": "{field.bankName}",
             "amount": {
                 "amount": "{field.amount}",
                 "code": "{field.currencyCode}"
             },
-            "taxName1": "{string_or_null(field.taxName1)}",
-            "taxPercent1": "{string_or_null(field.taxPercent1)}",
+            "taxName1": "{field.taxName1}",
+            "taxPercent1": "{field.taxPercent1}",
             "taxAmount1": {
                 "amount": "{field.taxAmount1}",
                 "code": "{field.taxCurrencyCode1}"
             },
-            "taxName2": "{string_or_null(field.taxName2)}",
-            "taxPercent2": "{string_or_null(field.taxPercent2)}",
+            "taxName2": "{field.taxName2}",
+            "taxPercent2": "{field.taxPercent2}",
             "taxAmount2": {
                 "amount": "{field.taxAmount2}",
                 "code": "{field.taxCurrencyCode2}"

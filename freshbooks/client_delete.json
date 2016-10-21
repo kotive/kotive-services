@@ -1,7 +1,7 @@
 {
     "name": "Delete a client",
-    "description": "https://www.freshbooks.com/api/clients",
-    "documentation": "Delete an existing client.",
+    "description": "Delete an existing client.",
+    "documentation": "https://www.freshbooks.com/api/clients",
     "fields": [
         {
             "label": "Client id",

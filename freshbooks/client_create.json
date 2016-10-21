@@ -147,7 +147,7 @@
             "label": "Billing street address",
             "properties": {
                 "parameter": "billingStreetAddress",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -157,7 +157,7 @@
             "label": "Billing street address second part",
             "properties": {
                 "parameter": "billingStreetAddress2",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -167,7 +167,7 @@
             "label": "Billing province",
             "properties": {
                 "parameter": "billingProvince",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -177,7 +177,7 @@
             "label": "Billing country",
             "properties": {
                 "parameter": "billingCountry",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -187,7 +187,7 @@
             "label": "Billing postal code",
             "properties": {
                 "parameter": "billingPostalCode",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -197,7 +197,7 @@
             "label": "Billing city",
             "properties": {
                 "parameter": "billingCity",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -226,7 +226,7 @@
             "label": "Shipping street address",
             "properties": {
                 "parameter": "shippingStreetAddress",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -236,7 +236,7 @@
             "label": "Shipping street address second part",
             "properties": {
                 "parameter": "shippingStreetAddress2",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -246,7 +246,7 @@
             "label": "Shipping province",
             "properties": {
                 "parameter": "shippingProvince",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -256,7 +256,7 @@
             "label": "Shipping country",
             "properties": {
                 "parameter": "shippingCountry",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -266,7 +266,7 @@
             "label": "Shipping postal code",
             "properties": {
                 "parameter": "shippingPostalCode",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -276,7 +276,7 @@
             "label": "Shipping city",
             "properties": {
                 "parameter": "shippingCity",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -379,13 +379,13 @@
             "fname": "{field.firstname}",
             "lname": "{field.lastname}",
             "email": "{field.email}",
-            "bus_phone": "{string_or_null(field.businessPhone)}",
-            "home_phone": "{string_or_null(field.homePhone)}",
+            "bus_phone": "{field.businessPhone}",
+            "home_phone": "{field.homePhone}",
             "mob_phone": "{field.mobPhone}",
             "fax": "{field.fax}",
             "organization": "{field.organization}",
-            "company_industry": "{string_or_null(field.companyIndustry)}",
-            "company_size": "{string_or_null(field.companySize)}",
+            "company_industry": "{field.companyIndustry}",
+            "company_size": "{field.companySize}",
             "p_street": "{field.billingStreetAddress}",
             "p_street2": "{field.billingStreetAddress2}",
             "p_province": "{field.billingProvince}",
@@ -402,9 +402,9 @@
             "pref_email": "{string_to_boolean(field.prefEmail)}",
             "pref_gmail": "{string_to_boolean(field.prefGroundMail)}",
             "language": "{field.language}",
-            "vat_name": "{string_or_null(field.vatName)}",
-            "vat_number": "{string_or_null(field.vatNumber)}",
-            "note": "{string_or_null(field.notes)}"
+            "vat_name": "{field.vatName}",
+            "vat_number": "{field.vatNumber}",
+            "note": "{field.notes}"
         }
     },
     "response": {
