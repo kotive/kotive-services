@@ -1,0 +1,57 @@
+{
+    "name": "Get a topic",
+    "description": "Get a specific topic in Basecamp e.g. 'Messages', 'Documents', 'To-do' etc.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todos.md#get-to-do", "https://github.com/basecamp/bcx-api/blob/master/sections/todolists.md#get-to-do-list"
+    "fields": [
+        {
+          "label": "Project id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the project you want to get the topic for."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Select the topic you want to retrieve",
+          "properties": {
+              "parameter": "topic",
+              "fieldType": "select",
+              "choices": [
+                  {"key": "messages", "value": "Message"},
+                  {"key": "documents", "value": "Document"},
+                  {"key": "forwards", "value": "Forward"},
+                  {"key": "uploads", "value": "Upload"},
+                  {"key": "todolists", "value": "To-do list"},
+                  {"key": "todos", "value": "To-do"}
+              ],
+              "default": "messages",
+              "classes": "inline",
+              "helptext": "Select the topic from the dropdown, you want to retrieve, e.g. 'Messages', 'Documents', 'To-do' etc."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Topic id",
+          "properties": {
+            "parameter": "topicId",
+            "fieldType": "text",
+            "helptext": "ID for the topic you have selected above, which you want to retrieve. E.g. the message ID"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/projects/{field.projectId}/{field.topic}/{field.topicId}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "name": "Get calendar event",
+    "description": "Get a specific calendar event.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/calendar_events.md#get-calendar-event",
+    "fields": [
+        {
+            "label": "Does this calendar event belong to a project or to a standalone calendar?",
+            "properties": {
+                "parameter": "calendarType",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "projects", "value": "Project"},
+                    {"key": "calendars", "value": "Calendar"}
+                ],
+                "default": "projects",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Project or Calendar Id",
+          "properties": {
+            "parameter": "calendarProjectId",
+            "fieldType": "text",
+            "helptext": "You indicated that the calendar event belongs to a 'Project' or a 'Calendar', provide the id for that project or calendar."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Calendar event Id",
+          "properties": {
+            "parameter": "calendarEventId",
+            "fieldType": "text",
+            "helptext": "Provide the id for the specific 'calendar event' you want to see."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/{field.calendarType}/{field.calendarProjectId}/calendar_events/{field.calendarEventId}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Delete a to-do",
+    "description": "Delete a to-do from a project.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todos.md#delete-to-do",
+    "fields": [
+        {
+          "label": "Project id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the project where you want to delete the comment."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Todo id",
+          "properties": {
+            "parameter": "todoId",
+            "fieldType": "text",
+            "helptext": "ID for the to-do you want to delete."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "method": "DELETE",
+    "endpoint": "/projects/{field.projectId}/todos/{field.todoId}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Delete a comment",
+    "description": "Delete a comment from a project.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/comments.md#delete-comment",
+    "fields": [
+        {
+          "label": "Project id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "ID for the project where you want to delete the comment."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Comment id",
+          "properties": {
+            "parameter": "commentId",
+            "fieldType": "text",
+            "helptext": "ID for the comment you want to delete."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "method": "DELETE",
+    "endpoint": "/projects/{field.projectId}/comments/{field.commentId}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
