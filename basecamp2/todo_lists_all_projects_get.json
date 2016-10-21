@@ -1,0 +1,31 @@
+{
+    "name": "Get to-do lists for all projects",
+    "description": "Get to-do lists for all projects.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todolists.md#get-to-do-lists",
+    "fields": [
+        {
+            "label": "Do you want to see active, completed or trashed to-do lists?",
+            "properties": {
+                "parameter": "todolistsStatus",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "", "value": "Active"},
+                    {"key": "/completed", "value": "Completed"},
+                    {"key": "/trashed", "value": "Trashed"}
+                ],
+                "default": "",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/todolists{field.todolistsStatus}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
