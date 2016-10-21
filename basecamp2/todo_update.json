@@ -1,29 +1,29 @@
 {
-    "name": "Create a to-do",
-    "description": "Create a new to-do.",
-    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todos.md#create-to-do",
+    "name": "Update a to-do",
+    "description": "Update an existing to-do.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todos.md#update-to-do",
     "fields": [
         {
           "label": "Project id",
           "properties": {
             "parameter": "projectId",
             "fieldType": "text",
-            "helptext": "ID for the project you want to create the to-do for."
+            "helptext": "ID for the project where you want to update the to-do."
           },
           "readonly": false,
           "required": true,
           "visible": true
         },
         {
-            "label": "To-do list id",
-            "properties": {
-                "parameter": "todoListId",
-                "fieldType": "text",
-                "helptext": "The ID of the to-do list where under you want the to-do."
-            },
-            "readonly": false,
-            "required": true,
-            "visible": true
+          "label": "To-do id",
+          "properties": {
+            "parameter": "todoId",
+            "fieldType": "text",
+            "helptext": "ID for the to-do you want to update."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
         },
         {
             "label": "Content",
@@ -70,16 +70,30 @@
           "visible": true
         },
         {
-            "label": "Private message",
+            "label": "Is the to-do completed?",
             "properties": {
-                "parameter": "private",
+                "parameter": "completed",
                 "fieldType": "radio",
                 "choices": [
                     {"key": "true", "value": "Yes"},
                     {"key": "false", "value": "No"}
                 ],
-                "default": false,
-                "helptext": "To hide a message from clients select 'Yes', to reveal a message to clients select 'No'."
+                "default": "false"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Private to-do",
+            "properties": {
+                "parameter": "private",
+                "fieldType": "radio",
+                "choices": [
+                    "false",
+                    "true"
+                ],
+                "default": false
             },
             "readonly": false,
             "required": false,
@@ -108,16 +122,17 @@
           "visible": true
         }
     ],
-    "method": "POST",
-    "endpoint": "/projects/{field.projectId}/todolists/{field.todolistId/todos.json",
+    "method": "PUT",
+    "endpoint": "/projects/{field.projectId}/todos/{field.todoId}.json",
     "request": {
         "content": "{field.content}",
         "assignee": {
             "id": "{field.assigneeId}",
             "type": "{field.person}"
         },
-        "private": "{field.private}",
         "due_at":"{field.dueAt}",
+        "completed":"{field.completed}",
+        "private": "{field.private}",
         "subscribers": "{string_to_hash(field.subscriberIds)}",
         "new_subscriber_emails": "{string_to_hash(field.newSubscriberEmails)}"
     },

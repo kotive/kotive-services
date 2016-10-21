@@ -1,0 +1,81 @@
+{
+    "name": "Get to-dos",
+    "description": "Get to-dos.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todos.md#get-to-dos",
+    "fields": [
+        {
+            "label": "Do you want to get the to-dos for a project only or for a to-do list within a project??",
+            "properties": {
+                "parameter": "todosType",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "", "value": "Project only"},
+                    {"key": "todolists", "value": "To-do List within a project"}
+                ],
+                "default": "",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Project Id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "Provide the project ID you want to see the to-dos for.",
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        },
+        {
+          "label": "Todolists Id",
+          "properties": {
+            "parameter": "todolistsId",
+            "fieldType": "text",
+            "helptext": "If you selected to see 'To-do List within a project' above, provide the to-do lists' ID you want to see the to-dos for.",
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+            "label": "Do you want to see all to-dos (completed and remaining), only completed, only remainging or trashed to-dos?",
+            "properties": {
+                "parameter": "todosStatus",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "", "value": "All to-dos (completed and remaining)"},
+                    {"key": "/completed", "value": "Completed"},
+                    {"key": "/remaining", "value": "Remaining"},
+                    {"key": "/trashed", "value": "Trashed"}
+                ],
+                "default": "",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Due since",
+          "properties": {
+            "parameter": "dueSince",
+            "fieldType": "text",
+            "helptext": "Specify a date after which you want to see all the to-dos due for."
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/projects/{field.projectId}/{field.todosType}/{field.todosStatus}/.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

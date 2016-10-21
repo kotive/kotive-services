@@ -1,0 +1,41 @@
+{
+    "name": "Get accesses",
+    "description": "See who has access to which projects and calendars.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/accesses.md",
+    "fields": [
+        {
+            "label": "Do you want to see people with access to a project or to a calendar?",
+            "properties": {
+                "parameter": "accessType",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "projects", "value": "Project"},
+                    {"key": "calendars", "value": "Calendar"}
+                ],
+                "default": "projects",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Project or Calendar Id",
+          "properties": {
+            "parameter": "calendarProjectId",
+            "fieldType": "text",
+            "helptext": "Provide the id for the project or calendar you selected above."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/{field.accessType}/{field.calendarProjectId}/accesses.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

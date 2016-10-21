@@ -1,0 +1,58 @@
+{
+    "name": "Get to-do lists",
+    "description": "Get to-do lists.",
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todolists.md#get-to-do-lists",
+    "fields": [
+        {
+            "label": "Do you want to get the to-do lists for a specific project or for all projects?",
+            "properties": {
+                "parameter": "todolistsType",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "projects", "value": "A specific project"},
+                    {"key": "", "value": "All projects"}
+                ],
+                "default": "projects",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+          "label": "Project Id",
+          "properties": {
+            "parameter": "projectId",
+            "fieldType": "text",
+            "helptext": "If you indicated that you want to see a 'A specific project', provide the project ID.",
+          },
+          "readonly": false,
+          "required": false,
+          "visible": true
+        },
+        {
+            "label": "Do you want to see active, completed or trashed to-do lists?",
+            "properties": {
+                "parameter": "todolistsStatus",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "", "value": "Active"},
+                    {"key": "/completed", "value": "Completed"},
+                    {"key": "/trashed", "value": "Trashed"}
+                ],
+                "default": "",
+                "classes": "inline",
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/{field.todolistsType}/{field.projectId}/todolists{field.todolistsStatus}.json",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
