@@ -1,5 +1,5 @@
 {
-    "name": "Businesses and Accounts ids",
+    "name": "Find businesses and accounts ids",
     "description": "Find ids for the businesses and accounts a user can interact with.",
     "documentation": "https://www.freshbooks.com/api/identity_model",
     "fields": [

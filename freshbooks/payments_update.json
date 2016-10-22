@@ -155,7 +155,7 @@
                   {"key": true, "value": "Yes"},
                   {"key": false, "value": "No"}
                 ],
-            "default": "false",
+            "default": false,
             "classes": "inline",
             },
             "readonly": false,

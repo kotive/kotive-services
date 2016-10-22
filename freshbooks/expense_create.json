@@ -212,8 +212,8 @@
                 "parameter": "isDuplicate",
                 "fieldType": "radio",
                 "choices": [
-                  {"key": true, "value": "Yes"},
-                  {"key": false, "value": "No"}
+                  {"key": "true", "value": "Yes"},
+                  {"key": "false", "value": "No"}
                 ],
                 "default": "false",
                 "classes": "inline"
@@ -228,8 +228,8 @@
                 "parameter": "hasReceipt",
                 "fieldType": "radio",
                 "choices": [
-                  {"key": true, "value": "Yes"},
-                  {"key": false, "value": "No"}
+                  {"key": "true", "value": "Yes"},
+                  {"key": "false", "value": "No"}
                 ],
                 "default": "false",
                 "classes": "inline"
@@ -375,8 +375,8 @@
                 "parameter": "compoundedTax",
                 "fieldType": "radio",
                 "choices": [
-                  {"key": true, "value": "Yes"},
-                  {"key": false, "value": "No"}
+                  {"key": "true", "value": "Yes"},
+                  {"key": "false", "value": "No"}
                 ],
                 "default": "false",
                 "classes": "inline"

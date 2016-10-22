@@ -1,7 +1,7 @@
 {
     "name": "Delete an item",
-    "description": "https://www.freshbooks.com/api/items",
-    "documentation": "Delete an existing item.",
+    "description": "Delete an existing item.",
+    "documentation": "https://www.freshbooks.com/api/items",
     "fields": [
         {
             "label": "Item id",
