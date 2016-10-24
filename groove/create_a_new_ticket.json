@@ -1,265 +1,188 @@
 {
-    "name": "Create a new ticket",
-    "description": "Create a new ticket.",
-    "documentation": "https://www.groovehq.com/docs/tickets#creating-a-new-ticket",
-    "fields": [
-      {
-      "label": "To Email address",
-      "properties": {
-        "parameter": "toEmail",
-        "fieldType": "text",
-        "helptext": "The email address of the customer or mailbox that the ticket is addressed to."
-        },
-        "readonly": false,
-        "required": true,
-        "visible": true
-      },
-      {
-        "label": "Assignee",
-        "properties": {
-          "parameter": "assignee",
-          "fieldType": "text",
-          "helptext": "The email of the agent to assign the ticket to."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-      "label": "From Email Address",
+  "name": "Create a new ticket",
+  "description": "Create a new ticket.",
+  "documentation": "https://www.groovehq.com/docs/tickets#creating-a-new-ticket",
+  "fields": [
+    {
+      "label": "From email address",
       "properties": {
         "parameter": "fromEmail",
         "fieldType": "text",
         "helptext": "The email address of the agent or customer who sent the ticket."
-        },
-        "readonly": false,
-        "required": true,
-        "visible": true
       },
-      {
-      "label": "From Name",
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "From name",
       "properties": {
         "parameter": "fromName",
         "fieldType": "text",
         "helptext": "The name of the agent or customer who sent the ticket."
       },
-        "readonly": false,
-        "required": true,
-        "visible": true
-        },
-      {
-        "label": "Body",
-        "properties": {
-          "parameter": "body",
-          "fieldType": "textarea",
-          "helptext": "The body of the first comment to add to the ticket."
-        },
-        "readonly": false,
-        "required": true,
-        "visible": true
-      },
-      {
-        "label": "Subject",
-        "properties": {
-          "parameter": "subject",
-          "fieldType": "text",
-          "helptext": "The email subject of your ticket."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Assignee group",
-        "properties": {
-          "parameter": "assigneeGroup",
-          "fieldType": "text",
-          "helptext": "The name of the assigned group."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Sent at",
-        "properties": {
-          "parameter": "sentAt",
-          "fieldType": "text",
-          "helptext": "Can be used to set the created and updated datetimes to sometime in the past. e.g. 'Wed, 02 Oct 2002 13:00:00 GMT'."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "When creating a ticket from an agent, should the message body be added as a private note?",
-        "properties": {
-            "parameter": "note",
-            "fieldType": "radio",
-            "choices": [
-                {"key": "true", "value": "Yes"},
-                {"key": "false", "value": "No"}
-            ],
-            "default": "false",
-            "classes": "inline",
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "When creating a ticket from an agent, should the message be emailed to the customer?",
-        "properties": {
-            "parameter": "sendCopyToCustomer",
-            "fieldType": "radio",
-            "choices": [
-                {"key": "true", "value": "Yes"},
-                {"key": "false", "value": "No"}
-            ],
-            "default": "false",
-            "classes": "inline",
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Tags",
-        "properties": {
-          "parameter": "tags",
-          "fieldType": "text",
-          "default": "{}",
-          "helptext": "A list of tag names."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-            "label": "",
-            "properties": {
-                "fieldType": "divider"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "",
-            "properties": {
-                "fieldType": "paragraph",
-                "default": "<h3>Customer details</h3>"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-      {
-        "label": "About",
-        "properties": {
-          "parameter": "aboutCustomer",
-          "fieldType": "text",
-          "helptext": "Some text about the customer."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Twitter username",
-        "properties": {
-          "parameter": "twitterUsername",
-          "fieldType": "text",
-          "helptext": "The customer's twitter user name."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "LinkedIn username",
-        "properties": {
-          "parameter": "linkedinUsername",
-          "fieldType": "text",
-          "helptext": "The customer's LinkedIn user name."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Title",
-        "properties": {
-          "parameter": "customerTitle",
-          "fieldType": "text",
-          "helptext": "The customer's title."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Company name",
-        "properties": {
-          "parameter": "comapyName",
-          "fieldType": "text",
-          "helptext": "The customer's company name."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Phone number",
-        "properties": {
-          "parameter": "phoneNumber",
-          "fieldType": "text",
-          "helptext": "The customer's phone number."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Location",
-        "properties": {
-          "parameter": "location",
-          "fieldType": "text",
-          "helptext": "The customer's location."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      }
-    ],
-    "method": "POST",
-    "endpoint": "https://api.groovehq.com/v1/tickets",
-    "request": {
-        "to": {
-          "email": "{field.toEmail}",
-          "assignee": "{field.assignee}"
-          },
-        "from": {
-          "email": "{field.fromEmail}",
-          "name": "{field.fromName}"
-          },
-        "body": "{field.body}",
-        "subject": "{field.subject}",
-        "assignee": "{field.assignee}",
-        "assignee_group": "{field.assigneeGroup}",
-        "sent_at": "{field.sentAt}",
-        "note": "{string_to_boolean(field.note)}",
-        "send_copy_to_customer": "{string_to_boolean(field.sendCopyToCustomer)}",
-        "tags": "{string_to_hash(field.tags)}",
-        "about":"{field.aboutCustomer}",
-        "title":"{field.customerTitle}",
-        "company_name":"{field.companyName}",
-        "phone_number":"{field.phoneNumber}",
-        "location":"{field.location}",
-        "linkedin_username":"{field.linkedinUsername}"
+      "readonly": false,
+      "required": false,
+      "visible": true
     },
-    "response": {
-        "success": "",
-        "error": {}
+    {
+      "label": "To email address",
+      "properties": {
+        "parameter": "toEmail",
+        "fieldType": "text",
+        "helptext": "The email address of the customer or mailbox that the ticket is addressed to."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "To name",
+      "properties": {
+        "parameter": "toName",
+        "fieldType": "text",
+        "helptext": "The name of the customer or mailbox that the ticket is addressed to."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Subject",
+      "properties": {
+        "parameter": "subject",
+        "fieldType": "text",
+        "helptext": "The email subject of your ticket."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Body",
+      "properties": {
+        "parameter": "body",
+        "fieldType": "textarea",
+        "helptext": "The body of the first comment to add to the ticket."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Is this a private note?",
+      "properties": {
+        "parameter": "note",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "false",
+        "classes": "inline",
+        "helptext": "When creating a ticket from an agent, should the message body be added as a private note?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Send copy to customer?",
+      "properties": {
+        "parameter": "sendCopyToCustomer",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "false",
+        "classes": "inline",
+        "helptext": "When creating a ticket from an agent, should the message be emailed to the customer?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+      "properties": {
+        "parameter": "state",
+        "fieldType": "radio",
+        "choices": [
+          "unread",
+          "opened",
+          "pending",
+          "closed",
+          "spam"
+        ],
+        "default": "unread",
+        "classes": "inline",
+        "helptext": "The ticket state."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Assignee email",
+      "properties": {
+        "parameter": "assigneeEmail",
+        "fieldType": "text",
+        "helptext": "The email of the agent to assign the ticket to."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Assignee group",
+      "properties": {
+        "parameter": "assigneeGroup",
+        "fieldType": "text",
+        "helptext": "The name of the assigned group."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Tags",
+      "properties": {
+        "parameter": "tags",
+        "fieldType": "text",
+        "default": "{}",
+        "helptext": "A list of tag names, seperated by commas."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
     }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "https://api.groovehq.com/v1/tickets",
+  "request": {
+    "to": {
+      "email": "{field.toEmail}",
+      "name": "{field.toName}"
+      },
+    "from": {
+      "email": "{field.fromEmail}",
+      "name": "{field.fromName}"
+      },
+    "subject": "{field.subject}",
+    "body": "{field.body}",
+    "note": "{string_to_boolean(field.note)}",
+    "send_copy_to_customer": "{string_to_boolean(field.sendCopyToCustomer)}",
+    "state": "{field.state}",
+    "assignee": "{field.assigneeEmail}",
+    "assignee_group": "{field.assigneeGroup}",
+    "tags": "{string_to_hash(field.tags)}"
+  },
+  "response": {
+    "success": "",
+    "error": {}
+  }
 }
