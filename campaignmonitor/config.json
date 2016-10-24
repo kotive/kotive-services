@@ -4,7 +4,7 @@
   "auth": {
     "method": "OAuth2",
     "target_service": "Campaignmonitor",
-    "required_scope": "https://api.createsend.com/oauth?type=web_server&client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}&state={state}"
+    "required_scope": "https://api.createsend.com/oauth?type=web_server&client_id={auth.clientID}&redirect_uri={redirect_uri}&scope={scope}&state={state}"
   },
   "domain": "https://api.createsend.com/api/v3.1"
 }
