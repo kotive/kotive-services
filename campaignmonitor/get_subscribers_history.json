@@ -28,9 +28,7 @@
   ],
   "method": "GET",
   "endpoint": "/subscribers/{field.listId}/history.json?email={field.email}",
-  "request": {
-    ""
-  },
+  "request": {},
   "response": {
     "success": "",
     "error": ""

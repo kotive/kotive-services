@@ -13,13 +13,11 @@
       "readonly": false,
       "required": true,
       "visible": true
-    },
+    }
   ],
   "method": "GET",
   "endpoint": "/lists/{field.listId}/stats.json",
-  "request": {
-    ""
-  },
+  "request": {},
   "response": {
     "success": "",
     "error": ""
