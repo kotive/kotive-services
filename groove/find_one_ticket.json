@@ -1,0 +1,28 @@
+{
+  "name": "Find one ticket",
+  "description": "Find one ticket.",
+  "documentation": "https://www.groovehq.com/docs/tickets#finding-one-ticket",
+  "fields": [
+    {
+      "label": "Ticket number",
+      "properties": {
+        "parameter": "ticketNumber",
+        "fieldType": "text",
+        "helptext": "Enter the ticket number for the ticket you want to find."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "https://api.groovehq.com/v1/tickets/:{field.ticketNumber}",
+  "request": {},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

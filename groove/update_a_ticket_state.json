@@ -1,0 +1,49 @@
+{
+  "name": "Update a ticket state",
+  "description": "Update a ticket state.",
+  "documentation": "https://www.groovehq.com/docs/tickets#updating-a-ticket-state",
+  "fields": [
+    {
+        "label": "Ticket number",
+        "properties": {
+            "parameter": "ticketNumber",
+            "fieldType": "text",
+            "helptext": "Enter the ticket number for the ticket you want to update."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+    },
+    {
+      "label": "New state",
+      "properties": {
+        "parameter": "state",
+        "fieldType": "radio",
+        "choices": [
+          "unread",
+          "opened",
+          "pending",
+          "closed",
+          "spam"
+        ],
+        "default": "unread",
+        "classes": "inline",
+        "helptext": "New ticket state."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "PUT",
+  "endpoint": "https://api.groovehq.com/v1/tickets/:{field.ticketNumber}/{field.state}",
+  "request": {
+  },
+  "response": {
+    "success": "",
+    "error": {}
+  }
+}

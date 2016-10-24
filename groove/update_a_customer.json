@@ -1,0 +1,138 @@
+{
+  "name": "Update a customer",
+  "description": "Update a customer's details.",
+  "documentation": "https://www.groovehq.com/docs/customers#updating-a-customer",
+  "fields": [
+    {
+      "label": "Customer's email address",
+      "properties": {
+        "parameter": "customerEmail",
+        "fieldType": "text",
+        "helptext": "Enter the customer's email address you want to update."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Customer's name",
+      "properties": {
+        "parameter": "customerName",
+        "fieldType": "text",
+        "helptext": "The customer's full name."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "About",
+      "properties": {
+        "parameter": "about",
+        "fieldType": "text",
+        "helptext": "Some text about the customer."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Title",
+      "properties": {
+        "parameter": "title",
+        "fieldType": "text",
+        "helptext": "The customer's title."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Company name",
+      "properties": {
+        "parameter": "companyName",
+        "fieldType": "text",
+        "helptext": "The customer's company name."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Phone number",
+      "properties": {
+        "parameter": "phoneNumber",
+        "fieldType": "text",
+        "helptext": "The customer's phone number."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Location",
+      "properties": {
+        "parameter": "location",
+        "fieldType": "text",
+        "helptext": "The customer's location."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Twitter username",
+      "properties": {
+        "parameter": "twitterUsername",
+        "fieldType": "text",
+        "helptext": "The customer's twitter user name."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "LinkedIn username",
+      "properties": {
+        "parameter": "linkedinUsername",
+        "fieldType": "text",
+        "helptext": "The customer's linkedin username."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Custom",
+      "properties": {
+        "parameter": "custom",
+        "fieldType": "text",
+        "default": "{}",
+        "helptext": "A list of additional details containing \"key\":\"value\" pairs for the customer (in JSON format), e.g. {{\"prefContactMethod\": \"Telephone\"}, {\"prefLanguage\": \"English\"}}."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "PUT",
+  "endpoint": "https://api.groovehq.com/v1/customers/:{field.customerEmail}",
+  "request": {
+    "name": "{field.customerName}",
+    "about": "{field.about}",
+    "title": "{field.title}",
+    "company_name": "{field.companyName}",
+    "phone_number": "{field.phoneNumber}",
+    "location": "{field.location}",
+    "twitter_username": "{field.twitterUsername}",
+    "linkedin_username": "{field.linkedinUsername}",
+    "custom": "{string_to_hash(field.custom)}"
+  },
+  "response": {
+    "success": "",
+    "error": {}
+  }
+}

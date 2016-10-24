@@ -1,0 +1,28 @@
+{
+  "name": "Find one message",
+  "description": "Find one message.",
+  "documentation": "https://www.groovehq.com/docs/messages#finding-one-message",
+  "fields": [
+    {
+      "label": "Message Id",
+      "properties": {
+        "parameter": "messageId",
+        "fieldType": "text",
+        "helptext": "The ID of the message you want to see."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "https://api.groovehq.com/v1/messages/:{field.messageId}",
+  "request": {},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

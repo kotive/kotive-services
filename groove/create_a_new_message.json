@@ -1,0 +1,78 @@
+{
+  "name": "Create a new message",
+  "description": "Create a new message.",
+  "documentation": "https://www.groovehq.com/docs/messages#creating-a-new-message",
+  "fields": [
+    {
+      "label": "Author",
+      "properties": {
+        "parameter": "authorEmail",
+        "fieldType": "text",
+        "helptext": "The email of the agent or customer the ticket belongs to."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Body",
+      "properties": {
+        "parameter": "body",
+        "fieldType": "textarea",
+        "helptext": "The message body."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Is this a private note?",
+      "properties": {
+        "parameter": "note",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "false",
+        "classes": "inline",
+        "helptext": "Is the message a private note?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Send copy to customer?",
+      "properties": {
+        "parameter": "sendCopyToCustomer",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "false",
+        "classes": "inline",
+        "helptext": "Should a copy of the message be emailed to the customer?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "https://api.groovehq.com/v1/tickets/:{field.ticketNumber}/messages",
+  "request": {
+    "author": "{field.authorEmail}",
+    "body": "{field.body}",
+    "note": "{string_to_boolean(field.note)}",
+    "send_copy_to_customer": "{string_to_boolean(field.sendCopyToCustomer)}"
+  },
+  "response": {
+    "success": "",
+    "error": {}
+  }
+}

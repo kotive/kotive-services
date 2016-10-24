@@ -1,0 +1,28 @@
+{
+  "name": "Find one customer",
+  "description": "Find one customer.",
+  "documentation": "https://www.groovehq.com/docs/customers#finding-one-customer",
+  "fields": [
+    {
+      "label": "Customer's email address",
+      "properties": {
+        "parameter": "customerEmail",
+        "fieldType": "text",
+        "helptext": "Enter the customer's email address you want to find."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "https://api.groovehq.com/v1/customers/:{field.customerEmail}",
+  "request": {},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}
