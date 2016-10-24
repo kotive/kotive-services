@@ -42,10 +42,10 @@
         "parameter": "resubscribe",
         "fieldType": "radio",
         "choices": [
-          {"key": true, "value": "Yes"},
-          {"key": false, "value": "No"}
+          {"key": "true", "value": "Yes"},
+          {"key": "false", "value": "No"}
         ],
-        "default": true,
+        "default": "true",
         "classes":"inline"
       },
       "readonly": false,
@@ -58,10 +58,10 @@
         "parameter": "restartSubscriptionBasedAutoresponders",
         "fieldType": "radio",
         "choices": [
-          {"key": true, "value": "Yes"},
-          {"key": false, "value": "No"}
+          {"key": "true", "value": "Yes"},
+          {"key": "false", "value": "No"}
         ],
-        "default": true,
+        "default": "true",
         "classes":"inline"
       },
       "readonly": false,

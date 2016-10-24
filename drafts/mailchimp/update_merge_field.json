@@ -53,10 +53,10 @@
                 "parameter": "required",
                 "fieldType": "radio",
                 "choices": [
-                    {"key": true, "value": "Yes"},
-                    {"key": false, "value": "No"}
+                    {"key": "true", "value": "Yes"},
+                    {"key": "false", "value": "No"}
                 ],
-                "default": false,
+                "default": "false",
                 "helptext": "Is this a required merge field?"
             },
             "readonly": false,
@@ -80,8 +80,8 @@
                 "parameter": "public",
                 "fieldType": "radio",
                 "choices": [
-                    {"key": true, "value": "Yes"},
-                    {"key": false, "value": "No"}
+                    {"key": "true", "value": "Yes"},
+                    {"key": "false", "value": "No"}
                 ],
                 "helptext": "Whether the merge field is displayed on the signup form. "
             },

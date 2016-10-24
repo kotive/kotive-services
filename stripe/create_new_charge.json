@@ -72,7 +72,7 @@
                     "true",
                     "false"
                 ],
-                "default": true
+                "default": "true"
             },
             "readonly": false,
             "required": false,

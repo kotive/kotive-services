@@ -92,7 +92,7 @@
                     "true",
                     "false"
                 ],
-                "default": false
+                "default": "false"
             },
             "readonly": false,
             "required": false,

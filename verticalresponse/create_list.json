@@ -20,10 +20,10 @@
         "parameter": "is_public",
         "fieldType": "radio",
         "choices": [
-          {"key": true, "value": "Yes"},
-          {"key": false, "value": "No"}
+          {"key": "true", "value": "Yes"},
+          {"key": "false", "value": "No"}
         ],
-        "default": false,
+        "default": "false",
         "helptext": "Is your new list publicly accessable?"
       },
       "readonly": false,

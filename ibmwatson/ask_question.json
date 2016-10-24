@@ -58,7 +58,7 @@
                     "true",
                     "false"
                 ],
-                "default": true
+                "default": "true"
             },
             "readonly": false,
             "required": false,
@@ -73,7 +73,7 @@
                     "true",
                     "false"
                 ],
-                "default": false
+                "default": "false"
             },
             "readonly": false,
             "required": false,
