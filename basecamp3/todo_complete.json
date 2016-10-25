@@ -26,6 +26,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "POST",
     "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/todos/{field.todoId}/completion.json",
     "request": {},

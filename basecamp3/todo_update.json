@@ -93,6 +93,9 @@
           "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "PUT",
     "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId/todos/{field.todoId}.json",
     "request": {

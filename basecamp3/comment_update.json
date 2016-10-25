@@ -30,13 +30,16 @@
           "properties": {
             "parameter": "content",
             "fieldType": "textarea",
-            "helptext": "Get info on <a href='hhttps://github.com/basecamp/bc3-api/blob/master/README.md#rich-text-content' target='_blank'>how to style</a> your comment.",
+            "helptext": "Get info on <a href='hhttps://github.com/basecamp/bc3-api/blob/master/README.md#rich-text-content' target='_blank'>how to style</a> your comment."
           },
           "readonly": false,
           "required": true,
           "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "PUT",
     "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.commentId}.json",
     "request": {

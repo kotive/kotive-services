@@ -26,6 +26,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "GET",
     "endpoint": "/{auth.field.accountId}/buckets/{field.bucketId}/comments/{field.commentId}.json",
     "request": {},

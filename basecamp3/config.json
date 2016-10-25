@@ -2,7 +2,9 @@
   "name": "Basecamp 3",
   "description": "Provides a web based project, task and time management, team collaboration and reporting.",
   "auth": {
-    "method": "OAuth2"
+    "method": "OAuth2",
+    "target_service": "Basecamp",
+        "required_scope": ""
   },
   "domain": "https://3.basecampapi.com"
 }
