@@ -65,6 +65,10 @@
             "service": "googlesheets"
         },
         {
+            "name": "Groove",
+            "service": "groove"
+        },
+        {
             "name": "Hacker News",
             "service": "hackernews"
         },
