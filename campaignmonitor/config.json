@@ -4,7 +4,7 @@
   "auth": {
     "method": "OAuth2",
     "target_service": "Campaignmonitor",
-    "required_scope": "https://api.createsend.com/oauth"
+    "required_scope": "ManageLists,SendTransactional"
   },
   "domain": "https://api.createsend.com/api/v3.1"
 }
