@@ -13,7 +13,7 @@
                     {"key": "calendars", "value": "Calendar"}
                 ],
                 "default": "projects",
-                "classes": "inline",
+                "classes": "inline"
             },
             "readonly": false,
             "required": true,

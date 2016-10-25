@@ -8,7 +8,7 @@
           "properties": {
             "parameter": "projectId",
             "fieldType": "text",
-            "helptext": "Provide the project ID you want to see the to-dos for.",
+            "helptext": "Provide the project ID you want to see the to-dos for."
           },
           "readonly": false,
           "required": true,
@@ -19,7 +19,7 @@
           "properties": {
             "parameter": "todolistsId",
             "fieldType": "text",
-            "helptext": "Provide the to-do lists' ID you want to see the to-dos for.",
+            "helptext": "Provide the to-do lists' ID you want to see the to-dos for."
           },
           "readonly": false,
           "required": true,
@@ -37,7 +37,7 @@
                     {"key": "/trashed", "value": "Trashed"}
                 ],
                 "default": "",
-                "classes": "inline",
+                "classes": "inline"
             },
             "readonly": false,
             "required": true,

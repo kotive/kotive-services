@@ -29,7 +29,7 @@
                     {"key": "/past", "value": "Past"}
                 ],
                 "default": "",
-                "classes": "inline",
+                "classes": "inline"
             },
             "readonly": false,
             "required": true,

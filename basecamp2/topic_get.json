@@ -1,7 +1,7 @@
 {
     "name": "Get a topic",
     "description": "Get a specific topic in Basecamp e.g. 'Messages', 'Documents', 'To-do' etc.",
-    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todos.md#get-to-do", "https://github.com/basecamp/bcx-api/blob/master/sections/todolists.md#get-to-do-list"
+    "documentation": "https://github.com/basecamp/bcx-api/blob/master/sections/todos.md#get-to-do and https://github.com/basecamp/bcx-api/blob/master/sections/todolists.md#get-to-do-list",
     "fields": [
         {
           "label": "Project id",

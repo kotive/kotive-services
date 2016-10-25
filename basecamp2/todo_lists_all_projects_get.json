@@ -14,7 +14,7 @@
                     {"key": "/trashed", "value": "Trashed"}
                 ],
                 "default": "",
-                "classes": "inline",
+                "classes": "inline"
             },
             "readonly": false,
             "required": true,
