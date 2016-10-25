@@ -6,9 +6,9 @@
     {
       "label": "Smart email ID",
       "properties": {
-        "parameter": "smartEmailId",
+        "parameter": "smartEmailID",
         "fieldType": "text",
-        "helptext": "The unique id of the smart email to send."
+        "helptext": "The unique ID of the smart email to send. Click on your transactional email, then on 'Developer Instructions' on the right. The ID is the unique code in the url, e.g. https://api.createsend.com/api/v3.1/transactional/smartemail/<strong>6cbwb92b-8e48-17a1-ak5c-a95928s8eGa1</strong>/send."
       },
       "readonly": false,
       "required": true,
@@ -51,8 +51,8 @@
       "label": "Data",
       "properties": {
         "parameter": "data",
-        "fieldType": "text",
-        "helptext": "Properties will be available in your email as variables which can be referenced using our <a href='https://www.campaignmonitor.com/create/' target='_blank'>Template Language</a>. Read more about smart transactional email variables and how to use them in your email in <a href='https://help.campaignmonitor.com/topic.aspx?t=1291' target='_blank'>our transactional support documentation</a>."
+        "fieldType": "textarea",
+        "helptext": "Properties are available in your email as variables which can be referenced using the <a href='https://www.campaignmonitor.com/create/' target='_blank'>Template Language</a>. Read more about smart transactional email variables and how to use them in your email in the <a href='https://help.campaignmonitor.com/topic.aspx?t=1291' target='_blank'>transactional support documentation</a>."
       },
       "readonly": false,
       "required": true,

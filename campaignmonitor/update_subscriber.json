@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "listId",
         "fieldType": "text",
-        "helptext": "The unique id of the subscriber list to add this subscriber to."
+        "helptext": "The unique ID of the subscriber list this subscriber is in.  Go into the list in your account and click the 'change name/type' link below your list name. The 'API Subscriber List ID' is the ID you're looking for."
       },
       "readonly": false,
       "required": true,
@@ -56,6 +56,7 @@
           {"key": "false", "value": "No"}
         ],
         "default": "true",
+        "helptext": "Should the subscriber be re-added to the list if he/she is in an inactive state, or has previously been unsubscribed, or has been added to the suppression list?",
         "classes":"inline"
       },
       "readonly": false,
@@ -71,7 +72,8 @@
           {"key": "true", "value": "Yes"},
           {"key": "false", "value": "No"}
         ],
-        "default": "true",
+        "default": "false",
+        "helptext": "Should autoresponder sequences be restarted if the subscriber is resubscribed?",
         "classes":"inline"
       },
       "readonly": false,

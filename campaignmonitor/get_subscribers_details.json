@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "listId",
         "fieldType": "text",
-        "helptext": "The unique id of the subscriber list to which the subscriber belongs."
+        "helptext": "The unique ID of the subscriber list to which the subscriber belongs. Go into the list in your account and click the 'change name/type' link below your list name. The 'API Subscriber List ID' is the ID you're looking for."
       },
       "readonly": false,
       "required": true,
