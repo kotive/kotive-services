@@ -1,0 +1,40 @@
+{
+  "name": "Get an event",
+  "description": "Get a specific event in Google Calendar.",
+  "documentation": "https://developers.google.com/google-apps/calendar/v3/reference/events/get",
+  "fields": [
+    {
+      "label": "Calendar Id",
+      "properties": {
+          "parameter": "calendarId",
+          "fieldType": "text",
+          "helptext": "Enter the ID of the calendar where the event is listed."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Event Id",
+      "properties": {
+          "parameter": "eventId",
+          "fieldType": "text",
+          "helptext": "Enter the ID of the event you want to see."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}",
+  "request": {
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Quick add an event",
+  "description": "Quick add an event in Google Calendar.",
+  "documentation": "https://developers.google.com/google-apps/calendar/v3/reference/events/quickAdd#parameters",
+  "fields": [
+    {
+      "label": "Calendar Id",
+      "properties": {
+          "parameter": "calendarId",
+          "fieldType": "text",
+          "helptext": "Enter the ID of the calendar where you want to list the event."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Text",
+      "properties": {
+          "parameter": "text",
+          "fieldType": "text",
+          "helptext": "The text describing the event to be created."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Send notifications?",
+      "properties": {
+        "parameter": "sendNotifications",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "false",
+        "classes": "inline",
+        "helptext": "Should notifications of the creation of this event be sent?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "/calendars/{field.calendarId}/events/quickAdd",
+  "request": {
+    "text": "{field.text}",
+    "sendNotifications": "{string_to_boolean(field.sendNotifications)}"
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}

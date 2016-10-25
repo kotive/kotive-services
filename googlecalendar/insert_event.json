@@ -1,0 +1,76 @@
+{
+  "name": "Insert an event",
+  "description": "Insert a new event in Google Calendar.",
+  "documentation": "https://developers.google.com/google-apps/calendar/v3/reference/events/insert",
+  "fields": [
+    {
+      "label": "Calendar Id",
+      "properties": {
+          "parameter": "calendarId",
+          "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Maximum attendees",
+      "properties": {
+          "parameter": "maxAttendees",
+          "fieldType": "number",
+          "helptext": "The maximum number of attendees to include in the response."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Send notifications?",
+      "properties": {
+        "parameter": "sendNotifications",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "false",
+        "classes": "inline",
+        "helptext": "Should notifications of the creation of the new event be sent?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Support attachments?",
+      "properties": {
+        "parameter": "supportsAttachments",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "false",
+        "classes": "inline",
+        "helptext": "Whether API client performing operation supports event attachments."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "/calendars/{field.calendarId}/events",
+  "request": {
+    "maxAttendees": "{string_to_int(field.maxAttendees)}",
+    "sendNotifications": "{string_to_boolean(field.sendNotifications)}",
+    "supportsAttachments": "{string_to_boolean(field.supportsAttachments)}"
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}

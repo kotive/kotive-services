@@ -1,0 +1,10 @@
+{
+    "name": "Google Calendar",
+    "description": "Keep track of life's important events all in one place.",
+    "auth": {
+        "method": "OAuth2",
+        "target_service": "Google",
+        "required_scope": ""
+    },
+    "domain": "https://www.googleapis.com/calendar/v3"
+}
