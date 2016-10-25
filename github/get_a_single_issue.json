@@ -41,7 +41,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "GET",
-  "endpoint": "/repos/{field.owner}/{field:repo}/issues/{field:issueNumber}",
+  "endpoint": "/repos/{field.owner}/{field.repo}/issues/{field.issueNumber}",
   "request": {},
   "response": {
     "success": "",

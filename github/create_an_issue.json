@@ -88,7 +88,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "POST",
-  "endpoint": "/repos/{field.owner}/{field:repo}/issues",
+  "endpoint": "/repos/{field.owner}/{field.repo}/issues",
   "request": {
     "title": "{field.title}",
     "body": "{field.body}",

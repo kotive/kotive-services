@@ -114,7 +114,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "PATCH",
-  "endpoint": "/repos/{field.owner}/{field:repo}/issues/{field.issueNumber}",
+  "endpoint": "/repos/{field.owner}/{field.repo}/issues/{field.issueNumber}",
   "request": {
     "title": "{field.title}",
     "body": "{field.body}",

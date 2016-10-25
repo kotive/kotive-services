@@ -1,6 +1,6 @@
 {
   "name": "Get a single pull request",
-  "description": "Get a single pull request in a repository.",
+  "description": "Get a single pull request in Github.",
   "documentation": "https://developer.github.com/v3/pulls/#get-a-single-pull-request",
   "fields": [
     {
@@ -26,11 +26,11 @@
       "visible": true
     },
     {
-      "label": "Pull request Id",
+      "label": "Pull request number",
       "properties": {
-        "parameter": "pullId",
+        "parameter": "pullNumber",
         "fieldType": "text",
-        "helptext": "Enter the ID of the pull request you want to see."
+        "helptext": "Enter the number for the pull request you want to see."
       },
       "readonly": false,
       "required": true,
@@ -41,7 +41,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "GET",
-  "endpoint": "/repos/{field.owner}/{field:repo}/pulls/{field:pullId}",
+  "endpoint": "/repos/{field.owner}/{field.repo}/pulls/{field.pullNumber}",
   "request": {},
   "response": {
     "success": "",
