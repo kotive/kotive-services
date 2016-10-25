@@ -396,6 +396,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "PUT",
     "endpoint": "/accounting/account/{auth.field.apikey}/expenses/expenses/{field.expenseId}",
     "request": {

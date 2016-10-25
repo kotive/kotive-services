@@ -163,6 +163,9 @@
             "visible": true
             }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "PUT",
     "endpoint": "/accounting/account/{auth.field.apikey}/payments/payments/{field.paymentId}",
     "request": {

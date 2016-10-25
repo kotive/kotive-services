@@ -14,6 +14,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "GET",
     "endpoint": "/auth/api/v1/users/me",
     "request": {},

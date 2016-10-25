@@ -371,6 +371,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "POST",
     "endpoint": "/accounting/account/{auth.field.apikey}/users/clients/",
     "request": {

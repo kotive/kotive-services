@@ -393,6 +393,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "PUT",
     "endpoint": "/accounting/account/{auth.field.apikey}/users/clients/{field.clientID}",
     "request": {
