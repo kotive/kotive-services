@@ -118,7 +118,7 @@
   "request": {
     "title": "{field.title}",
     "body": "{field.body}",
-    "state": "{field.state}",
+    "state": "{string_to_boolean(field.state)}",
     "milestone": "{string_to_int(field.milestone)}",
     "labels": "{string_to_hash(field.labels)}",
     "assignees": "{string_to_hash(field.assignees)}"
