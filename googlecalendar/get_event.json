@@ -24,13 +24,35 @@
       "readonly": false,
       "required": true,
       "visible": true
-    }
+    },
+    {
+      "label": "Maximum attendees",
+      "properties": {
+          "parameter": "maxAttendees",
+          "fieldType": "number",
+          "helptext": "The maximum number of attendees to include in the response."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Time zone",
+      "properties": {
+          "parameter": "timeZone",
+          "fieldType": "text",
+          "helptext": "The time zone of the calendar. Formatted as an IANA Time Zone Database name, e.g. 'EST'."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
   ],
   "headers": {
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "GET",
-  "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}",
+  "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}?maxAttendees={field.maxAttendees}&timeZone={field.timeZone}",
   "request": {
   },
   "response": {

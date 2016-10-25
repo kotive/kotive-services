@@ -47,9 +47,8 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "DELETE",
-  "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}",
+  "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}?sendNotifications={string_to_boolean(field.sendNotifications)}",
   "request": {
-    "sendNotifications": "{string_to_boolean(field.sendNotifications)}"
   },
   "response": {
       "success": {},
