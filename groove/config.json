@@ -1,21 +1,10 @@
 {
-  "name": "Groove",
-  "description": "Delight your online customers with awesome, personal support.",
-  "auth": {
-    "method": "Custom",
-    "fields": [
-      {
-        "label": "Private Access Token",
-        "properties": {
-          "parameter": "accessToken",
-          "fieldType": "text",
-          "helptext": "Get your private access token from your <a href='https://www.groovehq.com/users/sign_in' target='_blank'>Groove API page</a>." 
-        },
-        "readonly": false,
-        "required": true,
-        "visible": true
-      }
-    ]
-  },
-  "domain": "https://api.groovehq.com/v1/"
+    "name": "Groove",
+    "description": "Delight your online customers with awesome, personal support.",
+    "auth": {
+        "method": "OAuth2",
+        "target_service": "Groove",
+        "required_scope": ""
+    },
+    "domain": "https://api.groovehq.com/v1/"
 }

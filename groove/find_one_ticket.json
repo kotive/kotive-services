@@ -19,7 +19,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "GET",
-  "endpoint": "https://api.groovehq.com/v1/tickets/:{field.ticketNumber}",
+  "endpoint": "tickets/{field.ticketNumber}",
   "request": {},
   "response": {
     "success": "",

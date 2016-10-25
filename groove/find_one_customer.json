@@ -19,7 +19,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "GET",
-  "endpoint": "https://api.groovehq.com/v1/customers/:{field.customerEmail}",
+  "endpoint": "customers/{field.customerEmail}",
   "request": {},
   "response": {
     "success": "",

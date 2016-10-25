@@ -119,7 +119,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "PUT",
-  "endpoint": "https://api.groovehq.com/v1/customers/:{field.customerEmail}",
+  "endpoint": "customers/{field.customerEmail}",
   "request": {
     "name": "{field.customerName}",
     "about": "{field.about}",

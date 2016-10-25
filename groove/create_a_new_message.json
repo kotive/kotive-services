@@ -64,7 +64,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "POST",
-  "endpoint": "https://api.groovehq.com/v1/tickets/:{field.ticketNumber}/messages",
+  "endpoint": "tickets/{field.ticketNumber}/messages",
   "request": {
     "author": "{field.authorEmail}",
     "body": "{field.body}",

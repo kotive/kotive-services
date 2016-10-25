@@ -19,7 +19,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "GET",
-  "endpoint": "https://api.groovehq.com/v1/messages/:{field.messageId}",
+  "endpoint": "messages/{field.messageId}",
   "request": {},
   "response": {
     "success": "",

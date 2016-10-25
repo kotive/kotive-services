@@ -39,7 +39,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "PUT",
-  "endpoint": "https://api.groovehq.com/v1/tickets/:{field.ticketNumber}/{field.state}",
+  "endpoint": "tickets/{field.ticketNumber}/{field.state}",
   "request": {
   },
   "response": {
