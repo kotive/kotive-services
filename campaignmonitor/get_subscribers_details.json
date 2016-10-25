@@ -26,6 +26,9 @@
       "visible": true
     }
   ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
   "method": "GET",
   "endpoint": "/subscribers/{field.listId}.json?email={field.email}",
   "request": {},

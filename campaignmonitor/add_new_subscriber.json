@@ -46,6 +46,7 @@
           {"key": "false", "value": "No"}
         ],
         "default": "true",
+        "helptext": "Should the subscriber be re-added to the list if he/she is in an inactive state, or has previously been unsubscribed, or has been added to the suppression list?",
         "classes":"inline"
       },
       "readonly": false,
@@ -61,7 +62,8 @@
           {"key": "true", "value": "Yes"},
           {"key": "false", "value": "No"}
         ],
-        "default": "true",
+        "default": "false",
+        "helptext": "Should autoresponder sequences be restarted if the subscriber is resubscribed?",
         "classes":"inline"
       },
       "readonly": false,
