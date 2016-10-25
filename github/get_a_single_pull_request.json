@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "owner",
         "fieldType": "text",
-        "helptext": "Enter the member's username with an 'owner' role."
+        "helptext": "The owner of the repository which you want to see the pull request for."
       },
       "readonly": false,
       "required": true,

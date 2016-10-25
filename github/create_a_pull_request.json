@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "owner",
         "fieldType": "text",
-        "helptext": "Enter a member's username with an 'owner' role."
+        "helptext": "The owner of the repository where you want to pull the request."
       },
       "readonly": false,
       "required": true,
@@ -19,16 +19,16 @@
       "properties": {
         "parameter": "repository",
         "fieldType": "text",
-        "helptext": "Enter the repository where you want to create the issue."
+        "helptext": "Enter the repository where you want to pull the request."
       },
       "readonly": false,
       "required": true,
       "visible": true
     },
     {
-      "label": "Issue Id",
+      "label": "Issue number",
       "properties": {
-        "parameter": "issueId",
+        "parameter": "issueNumber",
         "fieldType": "text",
         "helptext": "To pull a request from an existing issue, enter the ID of the issue instead of filling in the 'title' and 'body' below."
       },
@@ -87,7 +87,7 @@
   "method": "POST",
   "endpoint": "/repos/{field.owner}/{field:repo}/pulls",
   "request": {
-    "issue": "{string_to_int(field.issueId)}",
+    "issue": "{string_to_int(field.issueNumber)}",
     "title": "{field.title}",
     "body": "{field.body}",
     "head": "{field.head}",

@@ -1,6 +1,6 @@
 {
   "name": "Edit an issue",
-  "description": "Edit an issue in a repository.",
+  "description": "Edit an existing issue using Github.",
   "documentation": "https://developer.github.com/v3/issues/#edit-an-issue",
   "fields": [
     {
@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "owner",
         "fieldType": "text",
-        "helptext": "Enter a member's username with an 'owner' role."
+        "helptext": "The owner of the repository where you want to edit the issue."
       },
       "readonly": false,
       "required": true,
@@ -26,11 +26,11 @@
       "visible": true
     },
     {
-      "label": "Issue Id",
+      "label": "Issue number",
       "properties": {
-        "parameter": "issueId",
-        "fieldType": "text",
-        "helptext": "Enter the ID of the issue you want to edit."
+        "parameter": "issueNumber",
+        "fieldType": "number",
+        "helptext": "The issue number to query."
       },
       "readonly": false,
       "required": true,
@@ -64,8 +64,8 @@
         "parameter": "state",
         "fieldType": "radio",
         "choices": [
-          "open",
-          "closed"
+          {"key": "open", "value": "Open"},
+          {"key": "closed", "value": "Closed"}
         ],
         "default": "open",
         "classes": "inline",
@@ -92,7 +92,7 @@
         "parameter": "labels",
         "fieldType": "text",
         "default": "{}",
-        "helptext": "Labels to associate with this issue, seperated by commas."
+        "helptext": "Labels to associate with this issue. Note that these have to be in quotes and separated by commas, for example: '\"Big issue!\", \"Bug\"'"
       },
       "readonly": false,
       "required": false,
@@ -114,7 +114,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "PATCH",
-  "endpoint": "/repos/{field.owner}/{field:repo}/issues/{field.issieId}",
+  "endpoint": "/repos/{field.owner}/{field:repo}/issues/{field.issueNumber}",
   "request": {
     "title": "{field.title}",
     "body": "{field.body}",

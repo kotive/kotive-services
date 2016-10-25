@@ -19,7 +19,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "GET",
-  "endpoint": "https://api.github.com/users/{field.username}",
+  "endpoint": "users/{field.username}",
   "request": {},
   "response": {
     "success": "",

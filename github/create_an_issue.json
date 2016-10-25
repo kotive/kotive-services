@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "owner",
         "fieldType": "text",
-        "helptext": "Enter a member's username with an 'owner' role."
+        "helptext": "The owner of the repository that you want to add an issue to."
       },
       "readonly": false,
       "required": true,
@@ -52,6 +52,7 @@
       "properties": {
         "parameter": "milestone",
         "fieldType": "text",
+        "default": "{}",
         "helptext": "The number of the milestone to associate this issue with."
       },
       "readonly": false,
@@ -75,6 +76,7 @@
       "properties": {
         "parameter": "assignees",
         "fieldType": "text",
+        "default": "{}",
         "helptext": "Logins for Users to assign to this issue, seperated by commas."
       },
       "readonly": false,
