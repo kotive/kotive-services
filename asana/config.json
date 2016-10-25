@@ -2,9 +2,9 @@
   "name": "Asana",
   "description": "Teamwork without email",
   "auth": {
-    "method": "Basic",
-    "username": "{settings.asana.apikey}",
-    "password": ""
-  },
-  "domain": "https://app.asana.com/api/1.0"
+        "method": "OAuth2",
+        "target_service": "Asana",
+        "required_scope": ""
+    },
+    "domain": "https://app.asana.com/api/1.0"
 }
