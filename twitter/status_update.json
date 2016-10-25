@@ -93,6 +93,9 @@
       "visible": true
     }
   ],
+  "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
   "method": "POST",
   "endpoint": "/statuses/update.json?status={field.status}&in_reply_to_status_id={field.inReplyToStatusId}&possibly_sensitive={field.possiblySensitive}&lat={field.latitude}&long={field.longitude}&place_id={field.placeId}&display_coordinates={field.displayCoordinates}",
   "request": {},
