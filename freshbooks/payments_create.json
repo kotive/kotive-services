@@ -145,7 +145,7 @@
                   {"key": false, "value": "No"}
                 ],
             "default": false,
-            "classes": "inline",
+            "classes": "inline"
             },
             "readonly": false,
             "required": false,

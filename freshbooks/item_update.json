@@ -148,7 +148,7 @@
             },
             "tax1": "{field.tax1}",
             "tax2": "{field.tax2}",
-            "vis_state": "{field.visState}",
+            "vis_state": "{field.visState}"
         }
     },
     "response": {
