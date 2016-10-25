@@ -1,0 +1,50 @@
+{
+  "name": "Get a single issue",
+  "description": "Get a single issue in a repository.",
+  "documentation": "https://developer.github.com/v3/issues/#get-a-single-issue",
+  "fields": [
+    {
+      "label": "Owner username",
+      "properties": {
+        "parameter": "owner",
+        "fieldType": "text",
+        "helptext": "Enter the member's username with an 'owner' role."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Repository",
+      "properties": {
+        "parameter": "repository",
+        "fieldType": "text",
+        "helptext": "Enter the repository with the issue."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Issue Id",
+      "properties": {
+        "parameter": "issueId",
+        "fieldType": "text",
+        "helptext": "Enter the ID of the issue you want to see."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "/repos/{field.owner}/{field:repo}/issues/{field:issueId}",
+  "request": {},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

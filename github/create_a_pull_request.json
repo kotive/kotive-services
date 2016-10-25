@@ -1,0 +1,100 @@
+{
+  "name": "Create a pull request",
+  "description": "Create a pull request in a repository.",
+  "documentation": "https://developer.github.com/v3/pulls/#create-a-pull-request",
+  "fields": [
+    {
+      "label": "Owner username",
+      "properties": {
+        "parameter": "owner",
+        "fieldType": "text",
+        "helptext": "Enter a member's username with an 'owner' role."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Repository",
+      "properties": {
+        "parameter": "repository",
+        "fieldType": "text",
+        "helptext": "Enter the repository where you want to create the issue."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Issue Id",
+      "properties": {
+        "parameter": "issueId",
+        "fieldType": "text",
+        "helptext": "To pull a request from an existing issue, enter the ID of the issue instead of filling in the 'title' and 'body' below."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Title",
+      "properties": {
+        "parameter": "title",
+        "fieldType": "text",
+        "helptext": "The title of the pull request."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Body",
+      "properties": {
+        "parameter": "body",
+        "fieldType": "textarea",
+        "helptext": "The contents of the pull request."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Head",
+      "properties": {
+        "parameter": "head",
+        "fieldType": "text",
+        "helptext": "The name of the branch where your changes are implemented."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Base",
+      "properties": {
+        "parameter": "base",
+        "fieldType": "text",
+        "helptext": "The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. E.g. 'master'"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "/repos/{field.owner}/{field:repo}/pulls",
+  "request": {
+    "issue": "{string_to_int(field.issueId)}",
+    "title": "{field.title}",
+    "body": "{field.body}",
+    "head": "{field.head}",
+    "base": "{field.base}"
+  },
+  "response": {
+    "success": "",
+    "error": {}
+  }
+}

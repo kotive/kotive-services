@@ -1,0 +1,50 @@
+{
+  "name": "Get a single pull request",
+  "description": "Get a single pull request in a repository.",
+  "documentation": "https://developer.github.com/v3/pulls/#get-a-single-pull-request",
+  "fields": [
+    {
+      "label": "Owner username",
+      "properties": {
+        "parameter": "owner",
+        "fieldType": "text",
+        "helptext": "Enter the member's username with an 'owner' role."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Repository",
+      "properties": {
+        "parameter": "repository",
+        "fieldType": "text",
+        "helptext": "Enter the repository with the pull request you want to see."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Pull request Id",
+      "properties": {
+        "parameter": "pullId",
+        "fieldType": "text",
+        "helptext": "Enter the ID of the pull request you want to see."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "/repos/{field.owner}/{field:repo}/pulls/{field:pullId}",
+  "request": {},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

@@ -2,9 +2,9 @@
     "name": "Github",
     "description": "Build better software, together.",
     "auth": {
-        "method": "Basic",
-        "username": "{settings.github.username}",
-        "password": "{settings.github.password}"
+        "method": "OAuth2",
+        "target_service": "Google",
+        "required_scope": ""
     },
     "domain": "https://api.github.com"
 }

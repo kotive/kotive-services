@@ -1,0 +1,28 @@
+{
+  "name": "Get an organization",
+  "description": "Get an organization.",
+  "documentation": "https://developer.github.com/v3/orgs/#get-an-organization",
+  "fields": [
+    {
+      "label": "Name of the organization",
+      "properties": {
+        "parameter": "orgName",
+        "fieldType": "text",
+        "helptext": "Enter the organization's name you want to see."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "/orgs/{field.orgName}",
+  "request": {},
+  "response": {
+    "success": "",
+    "error": ""
+  }
+}

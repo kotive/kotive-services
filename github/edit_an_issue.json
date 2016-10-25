@@ -1,0 +1,130 @@
+{
+  "name": "Edit an issue",
+  "description": "Edit an issue in a repository.",
+  "documentation": "https://developer.github.com/v3/issues/#edit-an-issue",
+  "fields": [
+    {
+      "label": "Owner username",
+      "properties": {
+        "parameter": "owner",
+        "fieldType": "text",
+        "helptext": "Enter a member's username with an 'owner' role."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Repository",
+      "properties": {
+        "parameter": "repository",
+        "fieldType": "text",
+        "helptext": "Enter the repository where you want to edit the issue."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Issue Id",
+      "properties": {
+        "parameter": "issueId",
+        "fieldType": "text",
+        "helptext": "Enter the ID of the issue you want to edit."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Title",
+      "properties": {
+        "parameter": "title",
+        "fieldType": "text",
+        "helptext": "The title of the issue."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Body",
+      "properties": {
+        "parameter": "body",
+        "fieldType": "textarea",
+        "helptext": "The contents of the issue."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "State",
+      "properties": {
+        "parameter": "state",
+        "fieldType": "radio",
+        "choices": [
+          "open",
+          "closed"
+        ],
+        "default": "open",
+        "classes": "inline",
+        "helptext": "Is the issue open or closed?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Milestone",
+      "properties": {
+        "parameter": "milestone",
+        "fieldType": "text",
+        "helptext": "The number of the milestone to associate this issue with."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Labels",
+      "properties": {
+        "parameter": "labels",
+        "fieldType": "text",
+        "default": "{}",
+        "helptext": "Labels to associate with this issue, seperated by commas."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Assignees",
+      "properties": {
+        "parameter": "assignees",
+        "fieldType": "text",
+        "helptext": "Logins for users to assign to this issue, seperated by commas."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "PATCH",
+  "endpoint": "/repos/{field.owner}/{field:repo}/issues/{field.issieId}",
+  "request": {
+    "title": "{field.title}",
+    "body": "{field.body}",
+    "state": "{field.state}",
+    "milestone": "{string_to_int(field.milestone)}",
+    "labels": "{string_to_hash(field.labels)}",
+    "assignees": "{string_to_hash(field.assignees)}"
+  },
+  "response": {
+    "success": "",
+    "error": {}
+  }
+}
