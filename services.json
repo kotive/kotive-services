@@ -49,6 +49,10 @@
             "service": "freshbooks"
         },
         {
+            "name": "Geckoboard",
+            "service": "geckoboard"
+        },
+        {
             "name": "Github",
             "service": "github"
         },
