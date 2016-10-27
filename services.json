@@ -163,6 +163,10 @@
         {
             "name": "Webhook",
             "service": "webhook"
+        },
+        {
+            "name": "Woodpecker",
+            "service": "woodpecker"
         }
     ]
 }

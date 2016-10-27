@@ -1,0 +1,21 @@
+{
+  "name": "Woodpecker",
+  "description": "Send emails and follow-ups automatically, track opens and clicks, catches replies and sends followups only to those who haven't responded
+automatically",
+  "auth": {
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "API access key",
+        "properties": {
+            "parameter": "apiAccessKey",
+            "fieldType": "text"
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://api.woodpecker.co/rest/v1/"
+}
