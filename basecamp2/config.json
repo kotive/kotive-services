@@ -1,10 +1,10 @@
 {
-  "name": "Basecamp 2",
-  "description": "Basecamp is a place to share files, have discussions, collaborate on documents, assign tasks, and check due dates.",
-  "auth": {
-    "method": "Basic",
-    "username": "{settings.basecamp.username}",
-    "password": "{settings.basecamp.password}"
+    "name": "Basecamp 2",
+    "description": "Basecamp is a place to share files, have discussions, collaborate on documents, assign tasks, and check due dates.",
+    "auth": {
+        "method": "OAuth2",
+        "target_service": "Basecamp",
+        "required_scope": ""
     },
-  "domain": "https://basecamp.com/{settings.basecamp.account_id}/api/v1"
+    "domain": "https://basecamp.com/{settings.basecamp.account_id}/api/v1"
 }

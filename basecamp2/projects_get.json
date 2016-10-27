@@ -22,6 +22,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "GET",
     "endpoint": "/projects/{field.projectStatus}.json",
     "request": {},

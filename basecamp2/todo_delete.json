@@ -26,6 +26,9 @@
           "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "DELETE",
     "endpoint": "/projects/{field.projectId}/todos/{field.todoId}.json",
     "request": {},

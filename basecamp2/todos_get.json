@@ -44,6 +44,9 @@
             "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "GET",
     "endpoint": "/projects/{field.projectId}/todolists/{field.todolistsId}/todos{field.todosStatus}.json",
     "request": {},

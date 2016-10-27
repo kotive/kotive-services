@@ -92,6 +92,9 @@
           "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "POST",
     "endpoint": "/projects/{field.projectId}/{field.section}/{sectionId}/comments.json",
     "request": {

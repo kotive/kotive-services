@@ -91,6 +91,9 @@
           "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "POST",
     "endpoint": "/{field.calendarType}/{field.calendarProjectId}/calendar_events.json",
     "request": {

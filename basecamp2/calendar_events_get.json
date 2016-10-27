@@ -69,6 +69,9 @@
           "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "GET",
     "endpoint": "/{field.calendarType}/{field.calendarProjectId}/calendar_events{field.eventStatus}.json?start_date={field.startsAt}&end_date={field.endsAt}",
     "request": {},

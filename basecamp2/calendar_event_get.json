@@ -42,6 +42,9 @@
           "visible": true
         }
     ],
+    "headers": {
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
     "method": "GET",
     "endpoint": "/{field.calendarType}/{field.calendarProjectId}/calendar_events/{field.calendarEventId}.json",
     "request": {},
