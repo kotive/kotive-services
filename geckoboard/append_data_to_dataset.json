@@ -1,0 +1,42 @@
+{
+  "name": "Append data to a dataset",
+  "description": "Append data to an existing dataset",
+  "documentation": "https://developer.geckoboard.com/api-reference/curl/#append",
+  "fields": [
+    {
+      "label": "Dataset id",
+      "properties": {
+        "parameter": "datasetId",
+        "fieldType": "text",
+        "helptext": "Provide the dataset id. (The id or name you use to identify your dataset from within the application.)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Data",
+      "properties": {
+        "parameter": "data",
+        "fieldType": "textarea",
+        "helptext": "An list of objects with key + values representing a record in your dataset."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "auth.field.apiAccessKey:",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "datasets/{field.datasetId}/data",
+  "request": {
+    "data": "{field.data}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
