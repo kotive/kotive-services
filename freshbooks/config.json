@@ -1,21 +1,10 @@
 {
-  "name": "Freshbooks",
-  "description": "Accounting software that makes running your small business easy, fast and secure.",
-  "auth": {
-    "method": "Custom",
-    "fields": [
-      {
-        "label": "Bearer and Refresh token",
-        "properties": {
-          "parameter": "authtoken",
-          "fieldType": "text",
-          "helptext": "Get your bearer and refresh auth token from your <a href='https://my.freshbooks.com/#/login' target='_blank'>Freshbooks API page</a>." 
-        },
-        "readonly": false,
-        "required": true,
-        "visible": true
-      }
-    ]
-  },
-  "domain": "https://api.freshbooks.com"
+    "name": "Freshbooks",
+    "description": "Accounting software that makes running your small business easy, fast and secure.",
+    "auth": {
+        "method": "OAuth2",
+        "target_service": "Freshbooks",
+        "required_scope": ""
+    },
+    "domain": "https://api.freshbooks.com"
 }
