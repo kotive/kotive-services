@@ -1,7 +1,6 @@
 {
   "name": "Woodpecker",
-  "description": "Send emails and follow-ups automatically, track opens and clicks, catches replies and sends followups only to those who haven't responded
-automatically",
+  "description": "Send emails and follow-ups automatically, track opens and clicks, catches replies and sends followups only to those who haven't responded automatically",
   "auth": {
     "method": "Custom",
     "fields": [

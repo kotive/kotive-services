@@ -1,19 +1,8 @@
 {
-  "name": "Add prospects to the campaign",
-  "description": "Add prospects to the campaign",
+  "name": "Edit prospect data",
+  "description": "Edit prospect data.",
   "documentation": "http://help.woodpecker.co/article/16-api-docs",
   "fields": [
-    {
-      "label": "Campaign id",
-      "properties": {
-        "parameter": "campaignId",
-        "fieldType": "text",
-        "helptext": "Provide the campaign id of the campaign you want to add the prospect to."
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
     {
       "label": "Update",
       "properties": {
@@ -32,6 +21,17 @@
       "visible": true
     },
     {
+      "label": "Prospect id",
+      "properties": {
+        "parameter": "prospectId",
+        "fieldType": "text",
+        "helptext": "Provide the id of the prospect's data you want to edit."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
       "label": "Email",
       "properties": {
         "parameter": "email",
@@ -39,7 +39,7 @@
         "helptext": "Email address of the prospect you want to add the the campaign."
       },
       "readonly": false,
-      "required": true,
+      "required": false,
       "visible": true
     },
     {
@@ -47,7 +47,7 @@
       "properties": {
         "parameter": "tags",
         "fieldType": "text",
-        "helptext": "Title of the prospect."
+        "helptext": "An list of objects with key + values representing a record in your dataset."
       },
       "readonly": false,
       "required": false,
@@ -237,14 +237,12 @@
     "Content-Type": "application/json"
   },
   "method": "POST",
-  "endpoint": "/rest/v1/add_prospects_campaign",
+  "endpoint": "/rest/v1/add_prospects_list",
   "request": {
-    "campaign": {
-      "campaign_id":"{field.campaignId}"
-      },
     "update": "{string_to_boolean(field.update)}",
     "prospects": [
       {
+        "id":"{field.prospectId}",
         "email":"{field.email}",
         "title":"{field.title}",
         "first_name":"{field.fname}",

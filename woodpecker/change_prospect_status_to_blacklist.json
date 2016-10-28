@@ -1,0 +1,33 @@
+{
+  "name": "Change prospect status to blacklist",
+  "description": "Change prospect status to blacklist, to stop follow-ups.",
+  "documentation": "http://help.woodpecker.co/article/16-api-docs",
+  "fields": [
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Email address of the prospect you want to to follow-ups for."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/rest/v1/stop_followups",
+  "request": {
+    "prospects":{
+        "email":"{field.email}"
+      }
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

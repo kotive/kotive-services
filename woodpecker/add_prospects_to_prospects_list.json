@@ -1,19 +1,8 @@
 {
-  "name": "Add prospects to the campaign",
-  "description": "Add prospects to the campaign",
+  "name": "Add prospects to the prospects list",
+  "description": "Add prospects to the prospects list.",
   "documentation": "http://help.woodpecker.co/article/16-api-docs",
   "fields": [
-    {
-      "label": "Campaign id",
-      "properties": {
-        "parameter": "campaignId",
-        "fieldType": "text",
-        "helptext": "Provide the campaign id of the campaign you want to add the prospect to."
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
     {
       "label": "Update",
       "properties": {
@@ -25,7 +14,7 @@
         ],
         "default": "True",
         "classes": "inline",
-        "helptext": "If the prospect already exsist, do you want to update the existing details 'Yes', or if you want to keep it as is select 'No'."
+        "helptext": "If the prospect already exsist, do you want to update the existing details of the prospect select 'Yes', or if you want to keep it as is, select 'No'."
       },
       "readonly": false,
       "required": true,
@@ -36,7 +25,7 @@
       "properties": {
         "parameter": "email",
         "fieldType": "email",
-        "helptext": "Email address of the prospect you want to add the the campaign."
+        "helptext": "Email address of the prospect you want to add the the prospects list."
       },
       "readonly": false,
       "required": true,
@@ -58,7 +47,7 @@
       "properties": {
         "parameter": "fname",
         "fieldType": "text",
-        "helptext": "Firstname of the prospect you want to add the the campaign."
+        "helptext": "Firstname of the prospect you want to add the the prospects list."
       },
       "readonly": false,
       "required": false,
@@ -69,7 +58,7 @@
       "properties": {
         "parameter": "lname",
         "fieldType": "text",
-        "helptext": "Firstname of the prospect you want to add the the campaign."
+        "helptext": "Firstname of the prospect you want to add the the prospects list."
       },
       "readonly": false,
       "required": false,
@@ -90,8 +79,7 @@
       "label": "Industry",
       "properties": {
         "parameter": "tags",
-        "fieldType": "text",
-        "helptext": "Which industry are they in?"
+        "fieldType": "text"
       },
       "readonly": false,
       "required": false,
@@ -237,11 +225,8 @@
     "Content-Type": "application/json"
   },
   "method": "POST",
-  "endpoint": "/rest/v1/add_prospects_campaign",
+  "endpoint": "/rest/v1/add_prospects_list",
   "request": {
-    "campaign": {
-      "campaign_id":"{field.campaignId}"
-      },
     "update": "{string_to_boolean(field.update)}",
     "prospects": [
       {
