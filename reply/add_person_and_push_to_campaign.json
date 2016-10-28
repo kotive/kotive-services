@@ -124,8 +124,6 @@
   "method": "POST",
   "endpoint": "/actions/addandpushtocampaign",
   "request": {
-    "prospects":
-      {
         "campaignId":"{field.domain}",
         "email":"{field.email}",
         "first_name":"{field.fname}",
@@ -135,8 +133,7 @@
         "state":"{field.state}",
         "country":"{field.country}",
         "title":"{field.title}",
-        "update": "{string_to_boolean(field.update)}",
-      }
+        "forcePush": "{string_to_boolean(field.forcePush)}"
   },
   "response": {
     "success": {},

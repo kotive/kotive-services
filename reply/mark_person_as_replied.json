@@ -33,11 +33,8 @@
   "method": "POST",
   "endpoint": "/actions/markasreplied",
   "request": {
-    "prospects":
-      {
         "email":"{field.email}",
         "domain":"{field.domain}"
-      }
   },
   "response": {
     "success": {},
