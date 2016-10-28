@@ -1,0 +1,145 @@
+{
+  "name": "Add person and push to the campaign",
+  "description": "Add person and push to the campaign",
+  "documentation": "http://support.replyapp.io/article/51-actions",
+  "fields": [
+    {
+      "label": "Campaign Id",
+      "properties": {
+        "parameter": "domain",
+        "fieldType": "text",
+        "helptext": "Provide the id of the campaign that the contact will be added to."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Provide the email address of the person you want to add to the campaign."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": "Firstname of the prospect you want to add the the campaign."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": "Firstname of the prospect you want to add the the campaign."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Company",
+      "properties": {
+        "parameter": "tags",
+        "fieldType": "text",
+        "helptext": "Name of the company."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "City",
+      "properties": {
+        "parameter": "city",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+      "properties": {
+        "parameter": "state",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Country",
+      "properties": {
+        "parameter": "country",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Title",
+      "properties": {
+        "parameter": "title",
+        "fieldType": "text",
+        "helptext": "Title of the person, e.g. 'VP of Marketing'."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Force push",
+      "properties": {
+        "parameter": "forcePush",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "True", "value": "Yes"},
+          {"key": "False", "value": "No"}
+        ],
+        "default": "True",
+        "classes": "inline",
+        "helptext": "The person will be removed from all other campaigns and moved to the new one if 'Yes' is selected."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/actions/addandpushtocampaign",
+  "request": {
+    "prospects":
+      {
+        "campaignId":"{field.domain}",
+        "email":"{field.email}",
+        "first_name":"{field.fname}",
+        "last_name":"{field.lname}",
+        "company":"{field.company}",
+        "city":"{field.city}",
+        "state":"{field.state}",
+        "country":"{field.country}",
+        "title":"{field.title}",
+        "update": "{string_to_boolean(field.update)}",
+      }
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

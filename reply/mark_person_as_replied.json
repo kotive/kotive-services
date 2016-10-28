@@ -1,0 +1,46 @@
+{
+  "name": "Mark person as replied",
+  "description": "Mark a person as “replied” in all campaigns by email address or all people in all campaigns by email domain.",
+  "documentation": "http://support.replyapp.io/article/51-actions",
+  "fields": [
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Provide the email address of the the person you want to mark as replied."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Domain",
+      "properties": {
+        "parameter": "domain",
+        "fieldType": "text",
+        "helptext": "Or provide the email domain if all people in all campaigns must be marked as replied."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/actions/markasreplied",
+  "request": {
+    "prospects":
+      {
+        "email":"{field.email}",
+        "domain":"{field.domain}"
+      }
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
