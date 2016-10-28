@@ -43,20 +43,9 @@
       "visible": true
     },
     {
-      "label": "Title",
-      "properties": {
-        "parameter": "tags",
-        "fieldType": "text",
-        "helptext": "Title of the prospect."
-      },
-      "readonly": false,
-      "required": false,
-      "visible": true
-    },
-    {
       "label": "Firstname",
       "properties": {
-        "parameter": "fname",
+        "parameter": "firstname",
         "fieldType": "text",
         "helptext": "Firstname of the prospect you want to add the the campaign."
       },
@@ -67,7 +56,7 @@
     {
       "label": "Lastname",
       "properties": {
-        "parameter": "lname",
+        "parameter": "lastname",
         "fieldType": "text",
         "helptext": "Firstname of the prospect you want to add the the campaign."
       },
@@ -78,7 +67,7 @@
     {
       "label": "Company",
       "properties": {
-        "parameter": "tags",
+        "parameter": "company",
         "fieldType": "text",
         "helptext": "Name of the company."
       },
@@ -89,9 +78,20 @@
     {
       "label": "Industry",
       "properties": {
-        "parameter": "tags",
+        "parameter": "industry",
         "fieldType": "text",
-        "helptext": "Which industry are they in?"
+        "helptext": "Title of the person, e.g. 'VP of Marketing'."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Title",
+      "properties": {
+        "parameter": "title",
+        "fieldType": "text",
+        "helptext": "Title of the prospect."
       },
       "readonly": false,
       "required": false,
@@ -110,7 +110,7 @@
     {
       "label": "Address",
       "properties": {
-        "parameter": "phone",
+        "parameter": "address",
         "fieldType": "text"
       },
       "readonly": false,
@@ -120,7 +120,7 @@
     {
       "label": "City",
       "properties": {
-        "parameter": "phone",
+        "parameter": "cityt",
         "fieldType": "text"
       },
       "readonly": false,
@@ -130,7 +130,7 @@
     {
       "label": "State",
       "properties": {
-        "parameter": "phone",
+        "parameter": "state",
         "fieldType": "text"
       },
       "readonly": false,
