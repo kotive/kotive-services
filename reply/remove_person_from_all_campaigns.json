@@ -1,0 +1,31 @@
+{
+  "name": "Remove person from all campaigns",
+  "description": "Remove person from all campaigns",
+  "documentation": "http://support.replyapp.io/article/51-actions",
+  "fields": [
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Provide the email address of the person that will be removed from all campaigns."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/actions/removepersonfromallcampaigns",
+  "request": {
+        "email":"{field.email}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

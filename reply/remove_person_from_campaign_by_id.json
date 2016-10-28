@@ -1,0 +1,43 @@
+{
+  "name": "Remove person from campaign by Id",
+  "description": "Remove person from campaign by Id",
+  "documentation": "http://support.replyapp.io/article/51-actions",
+  "fields": [
+    {
+      "label": "Campaign Id",
+      "properties": {
+        "parameter": "domain",
+        "fieldType": "text",
+        "helptext": "Provide the id of the campaign that the contact will be removed from."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Provide the email address of the person that will be removed from the campaign."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/actions/removepersonfromcampaignbyid",
+  "request": {
+        "campaignId":"{field.campaignId}",
+        "email":"{field.email}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
