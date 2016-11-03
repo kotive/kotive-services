@@ -1,0 +1,160 @@
+{
+    "name": "Create a Company",
+    "description": "Create a new company for a given portal.",
+    "documentation": "http://developers.hubspot.com/docs/methods/companies/create_company",
+    "fields": [
+      {
+        "label": "Company Name",
+        "properties": {
+          "parameter": "company",
+          "fieldType": "text",
+          "helptext": "Name of the company you want to create in the portal."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },
+      {
+        "label": "Company description",
+        "properties": {
+          "parameter": "companyDescription",
+          "fieldType": "text",
+          "helptext": "Short description of the company."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "Portal Id",
+        "properties": {
+            "parameter": "portalId",
+            "fieldType": "text",
+            "helptext": "Id of the Portal you want to create the company for."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },
+      {
+        "label": "Email",
+        "properties": {
+            "parameter": "contactEmail",
+            "fieldType": "email",
+            "helptext": "Contact's email address."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },
+      {
+        "label": "Firstname",
+        "properties": {
+            "parameter": "firstname",
+            "fieldType": "text",
+            "helptext": "Firstname of contact."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "Lastname",
+        "properties": {
+            "parameter": "lastname",
+            "fieldType": "text",
+            "helptext": "Lastname of contact."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "Phone",
+        "properties": {
+          "parameter": "phone",
+          "fieldType": "text",
+          "helptext": "Telephone number of contact."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "Address",
+        "properties": {
+          "parameter": "address",
+          "fieldType": "text",
+          "helptext": "Street address and number of the contact."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "City",
+        "properties": {
+          "parameter": "city",
+          "fieldType": "text"
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "State",
+          "properties": {
+          "parameter": "state",
+          "fieldType": "text"
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "Postal code or Zip",
+        "properties": {
+          "parameter": "zip",
+          "fieldType": "text"
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+        "label": "Website",
+        "properties": {
+            "parameter": "website",
+            "fieldType": "text",
+            "helptext": "Contact's website."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
+    "method": "POST",
+    "endpoint": "/companies/v2/companies/",
+    "request": {
+      "properties": {
+        "email": "{field.email}",
+        "firstname": "{field.firstname}",
+        "lastname": "{field.lastname}",
+        "phone": "{field.phone}",
+        "company": "{field.company}",
+        "address": "{field.address}",
+        "city": "{field.city}",
+        "state": "{field.state}",
+        "zip": "{field.zip}",
+        "website": "{field.website}"
+      },
+    },
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}

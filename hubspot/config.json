@@ -1,0 +1,10 @@
+{
+    "name": "Hubspot",
+    "description": "Inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers.",
+    "auth": {
+        "method": "OAuth2",
+        "target_service": "Hubspot",
+        "required_scope": ""
+    },
+    "domain": "https://www.hubspot.com/"
+}
