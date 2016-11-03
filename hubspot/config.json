@@ -6,5 +6,5 @@
         "target_service": "Hubspot",
         "required_scope": ""
     },
-    "domain": "https://www.hubspot.com/"
+    "domain": "https://api.hubapi.com"
 }
