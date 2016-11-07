@@ -1,0 +1,57 @@
+{
+    "name": "Create a Company",
+    "description": "Create a new company for a given portal.",
+    "documentation": "http://developers.hubspot.com/docs/methods/companies/create_company",
+    "fields": [
+      {
+        "label": "Company Name",
+        "properties": {
+          "parameter": "company",
+          "fieldType": "text",
+          "helptext": "Name of the company you want to create in the portal."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },
+      {
+        "label": "Company description",
+        "properties": {
+          "parameter": "companyDescription",
+          "fieldType": "text",
+          "helptext": "Short description of the company."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },
+      {
+        "label": "Portal Id",
+        "properties": {
+            "parameter": "portalId",
+            "fieldType": "text",
+            "helptext": "Id of the Portal you want to create the company in."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
+    "method": "POST",
+    "endpoint": "/companies/v2/companies/",
+    "request": {
+      "properties": {
+        "name": "{field.company}",
+        "description": "{field.companyDescription}",
+        "portalId": "{field.portalId}"
+      },
+    },
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}
