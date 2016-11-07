@@ -1,138 +1,159 @@
 {
-    "name": "Create or update a contact",
-    "description": "Create a contact if it doesn't exist in a portal already, or update it with the latest property values if it does.",
-    "documentation": "http://developers.hubspot.com/docs/methods/contacts/create_or_update",
-    "fields": [
-      {
-        "label": "Email",
-        "properties": {
-            "parameter": "contactEmail",
-            "fieldType": "email",
-            "helptext": "Contact's email address."
-        },
-        "readonly": false,
-        "required": true,
-        "visible": true
-      },
-      {
-        "label": "Firstname",
-        "properties": {
-            "parameter": "firstname",
-            "fieldType": "text",
-            "helptext": "Firstname of contact."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Lastname",
-        "properties": {
-            "parameter": "lastname",
-            "fieldType": "text",
-            "helptext": "Lastname of contact."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Phone",
-        "properties": {
-          "parameter": "phone",
-          "fieldType": "text",
-          "helptext": "Telephone number of contact."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Company",
-        "properties": {
-          "parameter": "company",
-          "fieldType": "text",
-          "helptext": "Name of the company of the contact."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Address",
-        "properties": {
-          "parameter": "address",
-          "fieldType": "text",
-          "helptext": "Street address and number of the contact."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "City",
-        "properties": {
-          "parameter": "city",
-          "fieldType": "text"
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "State",
-          "properties": {
-          "parameter": "state",
-          "fieldType": "text"
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Postal code or Zip",
-        "properties": {
-          "parameter": "zip",
-          "fieldType": "text"
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      },
-      {
-        "label": "Website",
-        "properties": {
-            "parameter": "website",
-            "fieldType": "text",
-            "helptext": "Contact's website."
-        },
-        "readonly": false,
-        "required": false,
-        "visible": true
-      }
-    ],
-    "headers": {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer {auth.oauth2Token}"
-    },
-    "method": "POST",
-    "endpoint": "/contacts/v1/contact/createOrUpdate/email/{field.contactEmail}",
-    "request": {
+  "name": "Create or update a contact",
+  "description": "Create a contact if it doesn't exist in a portal already, or update it with the latest property values if it does.",
+  "documentation": "http://developers.hubspot.com/docs/methods/contacts/create_or_update",
+  "fields": [
+    {
+      "label": "",
       "properties": {
-        "email": "{field.email}",
-        "firstname": "{field.firstname}",
-        "lastname": "{field.lastname}",
-        "phone": "{field.phone}",
-        "company": "{field.company}",
-        "address": "{field.address}",
-        "city": "{field.city}",
-        "state": "{field.state}",
-        "zip": "{field.zip}",
-        "website": "{field.website}"
+        "fieldType": "paragraph",
+        "default": "Create a contact if it doesn't exist in a portal already, or update it with the latest property values if it does. All fields will be overwritten if the contact already exists. For example, if you leave the 'Firstname' field empty the contact's firstname will be replaced by an empty field."
       },
+      "readonly": false,
+      "required": false,
+      "visible": true
     },
-    "response": {
-        "success": {},
-        "error": {}
+    {
+      "label": "Current email",
+      "properties": {
+        "parameter": "currentEmail",
+        "fieldType": "email",
+        "helptext": "If the contact already exist, provide the current email address."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "New email",
+      "properties": {
+        "parameter": "newEmail",
+        "fieldType": "email",
+        "helptext": "Provide the new email address for the contact, whether creating a new client or updating."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": "Firstname of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": "Lastname of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Phone",
+      "properties": {
+        "parameter": "phone",
+        "fieldType": "text",
+        "helptext": "Telephone number of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Company",
+      "properties": {
+        "parameter": "company",
+        "fieldType": "text",
+        "helptext": "Name of the company of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Address",
+      "properties": {
+        "parameter": "address",
+        "fieldType": "text",
+        "helptext": "Street address and number of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "City",
+      "properties": {
+        "parameter": "city",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+        "properties": {
+        "parameter": "state",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Postal code or Zip",
+      "properties": {
+        "parameter": "zip",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Website",
+      "properties": {
+          "parameter": "website",
+          "fieldType": "text",
+          "helptext": "Contact's website."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
     }
+  ],
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "/contacts/v1/contact/createOrUpdate/email/{field.currentEmail}",
+  "request": {
+    "properties": {
+      "email": "{field.newEmail}",
+      "firstname": "{field.firstname}",
+      "lastname": "{field.lastname}",
+      "phone": "{field.phone}",
+      "company": "{field.company}",
+      "address": "{field.address}",
+      "city": "{field.city}",
+      "state": "{field.state}",
+      "zip": "{field.zip}",
+      "website": "{field.website}"
+    },
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
 }
