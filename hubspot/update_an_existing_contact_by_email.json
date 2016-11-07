@@ -29,7 +29,7 @@
       "properties": {
         "parameter": "newEmail",
         "fieldType": "email",
-        "helptext": "New email address, if updating the email address."
+        "helptext": "New email address of contact, or the current email if the email address has not changed."
       },
       "readonly": false,
       "required": true,

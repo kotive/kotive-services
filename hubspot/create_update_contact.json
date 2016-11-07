@@ -17,11 +17,10 @@
       "label": "Current email",
       "properties": {
         "parameter": "currentEmail",
-        "fieldType": "email",
-        "helptext": "If the contact already exist, provide the current email address."
+        "fieldType": "email"
       },
       "readonly": false,
-      "required": false,
+      "required": true,
       "visible": true
     },
     {
@@ -29,7 +28,7 @@
       "properties": {
         "parameter": "newEmail",
         "fieldType": "email",
-        "helptext": "Provide the new email address for the contact, whether creating a new client or updating."
+        "helptext": "Provide the new email address for the contact. If creating, this should be the same as the 'Current email' field above."
       },
       "readonly": false,
       "required": true,
