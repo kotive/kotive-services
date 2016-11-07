@@ -1,0 +1,181 @@
+{
+  "name": "Update an existing contact by email",
+  "description": "Update an existing contact in HubSpot, identified by email.",
+  "documentation": "http://developers.hubspot.com/docs/methods/contacts/update_contact-by-email",
+  "fields": [
+    {
+      "label": "",
+      "properties": {
+        "fieldType": "paragraph",
+        "default": "All fields will be overwritten. For example, if you leave the 'Firstname' field empty the contact's firstname will be replaced by an empty field."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Current email",
+      "properties": {
+        "parameter": "currentEmail",
+        "fieldType": "email",
+        "helptext": "Provide the current email address."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "New email",
+      "properties": {
+        "parameter": "newEmail",
+        "fieldType": "email",
+        "helptext": "New email address, if updating the email address."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": "Firstname of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": "Lastname of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Phone",
+      "properties": {
+        "parameter": "phone",
+        "fieldType": "text",
+        "helptext": "Telephone number of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Company",
+      "properties": {
+        "parameter": "company",
+        "fieldType": "text",
+        "helptext": "Name of the company of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Address",
+      "properties": {
+        "parameter": "address",
+        "fieldType": "text",
+        "helptext": "Street address and number of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "City",
+      "properties": {
+        "parameter": "city",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+        "properties": {
+        "parameter": "state",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Postal code or Zip",
+      "properties": {
+        "parameter": "zip",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Website",
+      "properties": {
+          "parameter": "website",
+          "fieldType": "text",
+          "helptext": "Contact's website."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "lifecycle stage",
+      "properties": {
+        "parameter": "lifecycleStage",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "subscriber", "value": "Subscriber"},
+          {"key": "lead", "value": "Lead"},
+          {"key": "marketingqualifiedlead", "value": "Marketing qualified lead"},
+          {"key": "salesqualifiedlead", "value": "Sales qualified lead"},
+          {"key": "opportunity", "value": "Opportunity"},
+          {"key": "customer", "value": "Customer"}
+        ],
+        "default": "Subscriber",
+        "classes": "inline",
+        "helptext": "The Lifecycle stage is not designed to move backwards. If you need to set this property to a previous stage, you will first need to set the value to (an empty string) and then set the new Stage."
+    },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "/contacts/v1/contact/email/{field.currentEmail}/profile",
+  "request": {
+    "properties": {
+      "email": "{field.newEmail}",
+      "firstname": "{field.firstname}",
+      "lastname": "{field.lastname}",
+      "phone": "{field.phone}",
+      "company": "{field.company}",
+      "address": "{field.address}",
+      "city": "{field.city}",
+      "state": "{field.state}",
+      "zip": "{field.zip}",
+      "website": "{field.website}",
+      "lifecyclestage": "{field.lifecycleStage}",
+    },
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}

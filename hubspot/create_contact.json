@@ -1,0 +1,138 @@
+{
+  "name": "Create a new contact",
+  "description": "Create a new contact in HubSpot.",
+  "documentation": "http://developers.hubspot.com/docs/methods/contacts/create_contact#tab-1",
+  "fields": [
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Email address of new contact."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": "Firstname of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": "Lastname of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Phone",
+      "properties": {
+        "parameter": "phone",
+        "fieldType": "text",
+        "helptext": "Telephone number of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Company",
+      "properties": {
+        "parameter": "company",
+        "fieldType": "text",
+        "helptext": "Name of the company of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Address",
+      "properties": {
+        "parameter": "address",
+        "fieldType": "text",
+        "helptext": "Street address and number of the contact."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "City",
+      "properties": {
+        "parameter": "city",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+        "properties": {
+        "parameter": "state",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Postal code or Zip",
+      "properties": {
+        "parameter": "zip",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Website",
+      "properties": {
+          "parameter": "website",
+          "fieldType": "text",
+          "helptext": "Contact's website."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "POST",
+  "endpoint": "/contacts/v1/contact",
+  "request": {
+    "properties": {
+      "email": "{field.email}",
+      "firstname": "{field.firstname}",
+      "lastname": "{field.lastname}",
+      "phone": "{field.phone}",
+      "company": "{field.company}",
+      "address": "{field.address}",
+      "city": "{field.city}",
+      "state": "{field.state}",
+      "zip": "{field.zip}",
+      "website": "{field.website}"
+    },
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}

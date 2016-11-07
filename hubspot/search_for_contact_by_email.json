@@ -1,0 +1,29 @@
+{
+  "name": "Search for a contact by email address",
+  "description": "Search for information about a single contact by its email address.",
+  "documentation": "http://developers.hubspot.com/docs/methods/contacts/get_contact_by_email",
+  "fields": [
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Provide the email address of the contact you want to search for."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer {auth.oauth2Token}"
+  },
+  "method": "GET",
+  "endpoint": "/contacts/v1/contact/email/{field.email}/profile",
+  "request": {},
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}
