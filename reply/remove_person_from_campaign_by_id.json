@@ -1,6 +1,6 @@
 {
-  "name": "Remove person from campaign by Id",
-  "description": "Remove person from campaign by Id",
+  "name": "Remove person from a specific campaign",
+  "description": "Remove a person from a campaign by ID",
   "documentation": "http://support.replyapp.io/article/51-actions",
   "fields": [
     {

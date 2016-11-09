@@ -1,6 +1,6 @@
 {
   "name": "Add person and push to the campaign",
-  "description": "Add person and push to the campaign",
+  "description": "Add a person and push them to a specific campaign",
   "documentation": "http://support.replyapp.io/article/51-actions",
   "fields": [
     {
