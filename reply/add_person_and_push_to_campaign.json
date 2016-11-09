@@ -50,7 +50,7 @@
     {
       "label": "Company",
       "properties": {
-        "parameter": "tags",
+        "parameter": "company",
         "fieldType": "text",
         "helptext": "Name of the company."
       },
@@ -119,15 +119,15 @@
   ],
   "headers": {
     "X-Api-Key": "{auth.field.apiAccessKey}",
-    "Content-Type": "application/json; charset=utf-8"
+    "Content-Type": "application/json"
   },
   "method": "POST",
   "endpoint": "/actions/addandpushtocampaign",
   "request": {
         "campaignId":"{field.campaignId}",
         "email":"{field.email}",
-        "first_name":"{field.fname}",
-        "last_name":"{field.lname}",
+        "first_name":"{field.firstname}",
+        "last_name":"{field.lastname}",
         "company":"{field.company}",
         "city":"{field.city}",
         "state":"{field.state}",
