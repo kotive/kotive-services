@@ -16,7 +16,7 @@
     }
   ],
   "headers": {
-    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "X-Api-Key": "{auth.field.apiAccessKey}",
     "Content-Type": "application/json"
   },
   "method": "POST",
