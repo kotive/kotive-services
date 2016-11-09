@@ -115,7 +115,7 @@
       "readonly": false,
       "required": false,
       "visible": true
-    },
+    }
   ],
   "headers": {
     "X-Api-Key": "{auth.field.apiAccessKey}",
