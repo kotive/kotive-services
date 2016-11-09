@@ -35,7 +35,7 @@
   "request": {
     "prospects":
       {
-        "campaignId":"{field.campaignId}",
+        "campaignId":"{string_to_float(field.campaignId)}",
         "email":"{field.email}"
       }
   },
