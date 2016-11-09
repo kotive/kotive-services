@@ -117,6 +117,10 @@
             "service": "pdf"
         },
         {
+            "name": "Reply",
+            "service": "reply"
+        },
+        {
             "name": "Salesforce",
             "service": "salesforce"
         },
