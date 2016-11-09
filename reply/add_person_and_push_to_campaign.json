@@ -6,9 +6,9 @@
     {
       "label": "Campaign Id",
       "properties": {
-        "parameter": "domain",
+        "parameter": "campaignId",
         "fieldType": "text",
-        "helptext": "Provide the id of the campaign that the contact will be added to."
+        "helptext": "Provide the ID of the campaign that the contact will be added to."
       },
       "readonly": false,
       "required": true,
@@ -124,7 +124,7 @@
   "method": "POST",
   "endpoint": "/actions/addandpushtocampaign",
   "request": {
-        "campaignId":"{field.domain}",
+        "campaignId":"{field.campaignId}",
         "email":"{field.email}",
         "first_name":"{field.fname}",
         "last_name":"{field.lname}",

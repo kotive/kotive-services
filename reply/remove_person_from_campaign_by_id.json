@@ -6,9 +6,9 @@
     {
       "label": "Campaign Id",
       "properties": {
-        "parameter": "domain",
+        "parameter": "campaignId",
         "fieldType": "text",
-        "helptext": "Provide the id of the campaign that the contact will be removed from."
+        "helptext": "Provide the ID of the campaign that the contact will be removed from."
       },
       "readonly": false,
       "required": true,

@@ -6,7 +6,7 @@
     {
       "label": "Campaign Id",
       "properties": {
-        "parameter": "domain",
+        "parameter": "campaignId",
         "fieldType": "text",
         "helptext": "Provide the id of the campaign that the contact will be added to."
       },
@@ -35,7 +35,7 @@
   "request": {
     "prospects":
       {
-        "campaignId":"{field.domain}",
+        "campaignId":"{field.campaignId}",
         "email":"{field.email}"
       }
   },
