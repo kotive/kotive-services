@@ -16,5 +16,5 @@
       }
     ]
   },
-  "domain": "https://run.replyapp.io/api/v2"
+  "domain": "https://run.replyapp.io/api/v1"
 }
