@@ -192,7 +192,7 @@
       "visible": true
     },
     {
-      "label": "Snippet",
+      "label": "Snippet 1",
       "properties": {
         "parameter": "snippet1",
         "fieldType": "text"
@@ -202,7 +202,7 @@
       "visible": true
     },
     {
-      "label": "Snippet",
+      "label": "Snippet 2",
       "properties": {
         "parameter": "snippet2",
         "fieldType": "text"
@@ -212,7 +212,7 @@
       "visible": true
     },
     {
-      "label": "Snippet",
+      "label": "Snippet 3",
       "properties": {
         "parameter": "snippet3",
         "fieldType": "text"
@@ -222,7 +222,7 @@
       "visible": true
     },
     {
-      "label": "Snippet",
+      "label": "Snippet 4",
       "properties": {
         "parameter": "snippet4",
         "fieldType": "text"
@@ -233,7 +233,7 @@
     }
   ],
   "headers": {
-    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:X)}",
     "Content-Type": "application/json"
   },
   "method": "POST",
@@ -255,7 +255,7 @@
         "state":"{field.state}",
         "country":"{field.country}",
         "website":"{field.website}",
-        "status":"{string_to_boolean(field.status)}",
+        "status":"{field.status}",
         "tags":"{field.tags}",
         "snipet1":"{field.snippet1}",
         "snipet2":"{field.snippet2}",

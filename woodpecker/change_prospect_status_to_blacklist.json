@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "email",
         "fieldType": "email",
-        "helptext": "Email address of the prospect you want to to follow-ups for."
+        "helptext": "Email address of the prospect you want to blacklist and send no follow-ups in future for."
       },
       "readonly": false,
       "required": true,
@@ -16,7 +16,7 @@
     }
   ],
   "headers": {
-    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:)}",
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:X)}",
     "Content-Type": "application/json"
   },
   "method": "POST",
