@@ -22,7 +22,7 @@
   "method": "POST",
   "endpoint": "/rest/v1/stop_followups",
   "request": {
-    "prospects":{
+    "prospect":{
         "email":"{field.email}"
       }
   },
