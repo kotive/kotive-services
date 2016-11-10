@@ -33,7 +33,7 @@
   "method": "POST",
   "endpoint": "/actions/pushtocampaign",
   "request": {
-    "campaignId":"{string_to_float(field.campaignId)}",
+    "campaignId":"{string_to_number(field.campaignId)}",
     "email":"{field.email}"
   },
   "response": {

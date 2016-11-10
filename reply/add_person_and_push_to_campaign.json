@@ -124,7 +124,7 @@
   "method": "POST",
   "endpoint": "/actions/addandpushtocampaign",
   "request": {
-        "campaignId":"{string_to_float(field.campaignId)}",
+        "campaignId":"{string_to_number(field.campaignId)}",
         "email":"{field.email}",
         "firstName":"{field.firstname}",
         "lastName":"{field.lastname}",
