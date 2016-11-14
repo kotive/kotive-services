@@ -1,104 +1,104 @@
 {
-    "name": "Update a pull request",
-    "description": "Update a pull request using Github.",
-    "documentation": "https://developer.github.com/v3/pulls/#update-a-pull-request",
-    "fields": [
-        {
-            "label": "Owner",
-            "properties": {
-                "parameter": "owner",
-                "fieldType": "text",
-                "helptext": "The owner of the repository with the pull request."
-            },
-            "readonly": false,
-            "required": true,
-            "visible": true
-        },
-        {
-            "label": "Repository",
-            "properties": {
-                "parameter": "repo",
-                "fieldType": "text",
-                "helptext": "The repository with the pull request."
-            },
-            "readonly": false,
-            "required": true,
-            "visible": true
-        },
-        {
-            "label": "Pull request number",
-            "properties": {
-                "parameter": "number",
-                "fieldType": "number",
-                "helptext": "The pull request number to query"
-            },
-            "readonly": false,
-            "required": true,
-            "visible": true
-        },
-        {
-            "label": "Title",
-            "properties": {
-                "parameter": "title",
-                "fieldType": "text",
-                "helptext": "The title of the pull request"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Body",
-            "properties": {
-                "parameter": "body",
-                "fieldType": "text",
-                "helptext": "The body of the pull reqest"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "State",
-            "properties": {
-                "parameter": "state",
-                "fieldType": "radio",
-                "choices": [
-                    {
-                        "key": "open",
-                        "value": "Open"
-                    },
-                    {
-                        "key": "closed",
-                        "value": "Closed"
-                    }
-                ],
-                "default": "closed",
-                "helptext": "Whether the pull request is open or closed"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-        },
-        {
-            "label": "Base",
-            "properties": {
-                "parameter": "base",
-                "fieldType": "text",
-                "helptext": "The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. E.g. 'master'"
-            },
-            "readonly": false,
-            "required": false,
-            "visible": true
-    }
-    ],
-    "method": "PATCH",
-    "endpoint": "/repos/{field.owner}/{field.repo}/pulls/{field.pullNumber}",
-    "request": {
-        "title": "{field.title}",
-        "body": "{field.body}",
-        "state": "{field.state}",
-        "base": "{field.base}"
+  "name": "Update a pull request",
+  "description": "Update a pull request using Github.",
+  "documentation": "https://developer.github.com/v3/pulls/#update-a-pull-request",
+  "fields": [
+    {
+      "label": "Owner",
+      "properties": {
+        "parameter": "owner",
+        "fieldType": "text",
+        "helptext": "The owner of the repository with the pull request."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Repository",
+      "properties": {
+        "parameter": "repo",
+        "fieldType": "text",
+        "helptext": "The repository with the pull request."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Pull request number",
+      "properties": {
+        "parameter": "number",
+        "fieldType": "number",
+        "helptext": "The pull request number to query"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Title",
+      "properties": {
+        "parameter": "title",
+        "fieldType": "text",
+        "helptext": "The title of the pull request"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Body",
+      "properties": {
+        "parameter": "body",
+        "fieldType": "text",
+        "helptext": "The body of the pull reqest"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+      "properties": {
+        "parameter": "state",
+        "fieldType": "radio",
+        "choices": [
+          {
+            "key": "open",
+            "value": "Open"
+          },
+          {
+            "key": "closed",
+            "value": "Closed"
+          }
+        ],
+        "default": "closed",
+        "helptext": "Whether the pull request is open or closed"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Base",
+      "properties": {
+        "parameter": "base",
+        "fieldType": "text",
+        "helptext": "The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. E.g. 'master'"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+  }
+  ],
+  "method": "PATCH",
+  "endpoint": "/repos/{field.owner}/{field.repo}/pulls/{field.pullNumber}",
+  "request": {
+      "title": "{field.title}",
+      "body": "{field.body}",
+      "state": "{field.state}",
+      "base": "{field.base}"
   },
   "response": {
     "success": "",
