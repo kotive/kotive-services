@@ -77,6 +77,10 @@
             "service": "hipchat"
         },
         {
+            "name": "Hubspot",
+            "service": "hubspot"
+        },
+        {
             "name": "Hunter",
             "service": "hunter"
         },
