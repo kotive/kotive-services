@@ -1,7 +1,7 @@
 {
   "name": "Update an event",
-  "description": "Get a specific event in Google Calendar.",
-  "documentation": "https://developers.google.com/google-apps/calendar/v3/reference/events/get",
+  "description": "Update a specific event in Google Calendar.",
+  "documentation": "https://developers.google.com/google-apps/calendar/v3/reference/events/update",
   "fields": [
     {
       "label": "Calendar Id",
@@ -19,7 +19,7 @@
       "properties": {
           "parameter": "eventId",
           "fieldType": "text",
-          "helptext": "Enter the ID of the event you want to see."
+          "helptext": "Enter the ID of the event you want to update."
       },
       "readonly": false,
       "required": true,
@@ -36,7 +36,7 @@
         ],
         "default": "false",
         "classes": "inline",
-        "helptext": "Should notifications of the creation of this event be sent?"
+        "helptext": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided)."
       },
       "readonly": false,
       "required": false,
