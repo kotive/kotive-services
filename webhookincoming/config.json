@@ -1,0 +1,20 @@
+{
+  "name": "Webhook incoming",
+  "description": "An incoming webhook can be used to post data from others apps into Kotive and kickoff new taskflow instances.",
+  "auth": {
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "Secret key",
+        "properties": {
+          "parameter": "secretKey",
+          "fieldType": "text"
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": ""
+}

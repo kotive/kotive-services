@@ -1,0 +1,40 @@
+{
+    "name": "Receive an incoming json webhook",
+    "description": "Receive an incoming webhook to start a new taskflow",
+    "documentation": "",
+    "fields": [
+        {
+            "label": "Payload",
+            "properties": {
+                "parameter": "payload",
+                "fieldType": "textarea",
+                "helptext": "This is the JSON body/content that is sent to the webhook URL.",
+                "default": "{\n  \"your\": \"JSON data here\"\n}"
+            },
+            "readonly": false,
+            "required": false,
+            "visible": false
+        },{
+            "label": "Secret",
+            "properties": {
+                "parameter": "secret",
+                "fieldType": "text",
+                "default": ""
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "headers": {
+        "Authorization": "{auth.field.secretKey}",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "method": "POST",
+    "endpoint": "",
+    "request": {
+        "payload": "string_to_hash_or_null(field.payload)}",
+        "secret": "{field.secret}"
+    }
+}
