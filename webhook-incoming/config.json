@@ -1,5 +1,5 @@
 {
-  "name": "Webhook incoming",
+  "name": "Webhook (incoming)",
   "description": "An incoming webhook can be used to post data from others apps into Kotive and kickoff new taskflow instances.",
   "auth": {
     "method": "Custom",

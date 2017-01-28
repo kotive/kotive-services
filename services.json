@@ -169,11 +169,11 @@
             "service": "verticalresponse"
         },
         {
-            "name": "Webhook incoming",
-            "service": "webhookincoming"
+            "name": "Webhook (incoming)",
+            "service": "webhook-incoming"
         },
         {
-            "name": "Webhook outgoing",
+            "name": "Webhook (outgoing)",
             "service": "webhook"
         },
         {

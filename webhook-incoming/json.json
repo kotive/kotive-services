@@ -1,5 +1,5 @@
 {
-    "name": "Receive an incoming json webhook",
+    "name": "Receive an incoming webhook (json)",
     "description": "Receive an incoming webhook to start a new taskflow",
     "documentation": "",
     "fields": [
@@ -7,9 +7,7 @@
             "label": "Payload",
             "properties": {
                 "parameter": "payload",
-                "fieldType": "textarea",
-                "helptext": "This is the JSON body/content that is sent to the webhook URL.",
-                "default": "{\n  \"your\": \"JSON data here\"\n}"
+                "fieldType": "text",
             },
             "readonly": false,
             "required": false,
