@@ -7,7 +7,7 @@
             "label": "Payload",
             "properties": {
                 "parameter": "payload",
-                "fieldType": "text",
+                "fieldType": "text"
             },
             "readonly": false,
             "required": false,
@@ -16,8 +16,7 @@
             "label": "Secret",
             "properties": {
                 "parameter": "secret",
-                "fieldType": "text",
-                "default": ""
+                "fieldType": "text"
             },
             "readonly": false,
             "required": true,
