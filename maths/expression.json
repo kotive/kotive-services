@@ -1,0 +1,42 @@
+{
+  "name": "Evaluate a math expression",
+  "description": "Evaluate a mathematical expression",
+  "documentation": "http://www.kotive.com/how-to/integrate/maths/",
+  "fields": [
+    {
+      "label": "The mathematical expression",
+      "properties": {
+        "parameter": "expression",
+        "fieldType": "text",
+        "helptext": "<a href='http://www.kotive.com/how-to/integrate/maths/' target='_blank'>Examples</a>"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Decimals",
+      "properties": {
+        "parameter": "precision",
+        "fieldType": "text",
+        "helptext": "How many decimals digits should be returned in the result? (0 - 16)",
+        "default": 2
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{global.taas-api-key}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/expression",
+  "request": {
+    "expression": "{field.expression}",
+    "precision": "{field.precision}"
+  },
+  "response": {}
+}

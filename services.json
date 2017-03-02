@@ -109,6 +109,10 @@
             "service": "mandrill"
         },
         {
+            "name": "Maths",
+            "service": "maths"
+        },
+        {
             "name": "Mixpanel",
             "service": "mixpanel"
         },
