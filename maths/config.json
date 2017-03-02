@@ -2,7 +2,7 @@
   "name": "Maths",
   "description": "Evaluate mathematical expressions",
   "auth": {
-    "method": "API key"
+    "method": "none"
   },
   "domain": "https://qf3q0egqbc.execute-api.us-east-1.amazonaws.com/production/maths"
 }
