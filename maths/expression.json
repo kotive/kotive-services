@@ -15,12 +15,12 @@
       "visible": true
     },
     {
-      "label": "Decimals",
+      "label": "Precision",
       "properties": {
         "parameter": "precision",
         "fieldType": "text",
-        "helptext": "How many decimals digits should be returned in the result? (0 - 16)",
-        "default": "2"
+        "helptext": "A number between 0 and 16 to round the digits of the result. It defines the total number of significant digits returned. Default: 0.",
+        "default": "0"
       },
       "readonly": false,
       "required": true,
