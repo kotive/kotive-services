@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "expression",
         "fieldType": "text",
-        "helptext": "<a href='http://www.kotive.com/how-to/integrate/maths/' target='_blank'>Examples</a>"
+        "helptext": "See <a href='http://www.kotive.com/how-to/integrate/maths/' target='_blank'>examples of math expressions</a>."
       },
       "readonly": false,
       "required": true,
@@ -28,7 +28,7 @@
     }
   ],
   "headers": {
-    "x-api-key": "{global.taas-api-key}",
+    "x-api-key": "{auth.taasApiKey}",
     "Content-Type": "application/json",
     "Accept": "application/json"
   },
