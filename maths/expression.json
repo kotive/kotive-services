@@ -20,7 +20,7 @@
         "parameter": "precision",
         "fieldType": "text",
         "helptext": "How many decimals digits should be returned in the result? (0 - 16)",
-        "default": 2
+        "default": "2"
       },
       "readonly": false,
       "required": true,
