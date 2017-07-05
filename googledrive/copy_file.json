@@ -1,0 +1,54 @@
+{
+    "name": "Copy a file",
+    "description": "Make a copy of an existing file in Drive",
+    "documentation": "https://developers.google.com/drive/v3/reference/files/copy",
+    "fields": [
+        {
+            "label": "Source file's Id",
+            "properties": {
+                "parameter": "fileId",
+                "fieldType": "text",
+                "helptext": "The ID of the source file to be copied."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Destination filename",
+            "properties": {
+                "parameter": "name",
+                "fieldType": "text",
+                "helptext": "The name of the new, copied file."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Destination folder's id",
+            "properties": {
+                "parameter": "parents",
+                "fieldType": "text",
+                "helptext": "The ID of the destination folder where the file will be copied. If left blank, the file will be copied directly into the My Drive folder."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
+    "method": "POST",
+    "endpoint": "/files/{field.fileId}/copy",
+    "request": {
+      "name": "{field.name}",
+      "parents": ["{field.parents}"]
+    },
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}

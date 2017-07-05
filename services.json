@@ -69,6 +69,10 @@
             "service": "googlecontacts"
         },
         {
+            "name": "Google Drive",
+            "service": "googledrive"
+        },
+        {
             "name": "Google Sheets",
             "service": "googlesheets"
         },

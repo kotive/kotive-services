@@ -1,0 +1,11 @@
+{
+    "name": "Google Drive",
+    "description": "Read, write, and update files stored in Google Drive",
+    "auth": {
+        "method": "OAuth2",
+        "target_service": "Google",
+        "required_scope": "https://www.googleapis.com/auth/drive.file"
+    },
+    "domain": "POST https://www.googleapis.com/drive/v3",
+    "version": 3
+}
