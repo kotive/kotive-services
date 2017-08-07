@@ -6,6 +6,6 @@
         "target_service": "Google",
         "required_scope": "https://www.googleapis.com/auth/drive.file"
     },
-    "domain": "POST https://www.googleapis.com/drive/v3",
+    "domain": "https://www.googleapis.com/drive/v3",
     "version": 3
 }
