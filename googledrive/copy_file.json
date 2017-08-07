@@ -30,7 +30,7 @@
             "properties": {
                 "parameter": "parents",
                 "fieldType": "text",
-                "helptext": "The ID of the destination folder where the file will be copied. If left blank, the file will be copied directly into the My Drive folder."
+                "helptext": "A list of IDs (separated by commas) of the destination folders where the file will be copied. If left blank, the file will be copied directly into the My Drive folder."
             },
             "readonly": false,
             "required": false,
@@ -45,7 +45,7 @@
     "endpoint": "/files/{field.fileId}/copy",
     "request": {
       "name": "{field.name}",
-      "parents": ["{field.parents}"]
+      "parents": "{comma_to_array(field.parents)}"
     },
     "response": {
         "success": {},
