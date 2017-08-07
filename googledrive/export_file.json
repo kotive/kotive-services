@@ -20,24 +20,24 @@
                 "parameter": "mimeType",
                 "fieldType": "select",
                 "choices": [
-                    {"key": "CSV (first sheet only)", "value": "text/csv"},
+                    {"key": "text/csv", "value": "CSV (first sheet only)"},
                     {"key": "application/epub+zip", "value": "EPUB"},
                     {"key": "text/html", "value": "HTML"},
                     {"key": "application/zip", "value": "HTML (zipped)"},
                     {"key": "image/jpeg", "value": "JPEG"},
                     {"key": "application/vnd.google-apps.script+json", "value": "JSON"},
-                    {"key": "MS Excel", "value": "MS Excel"},
+                    {"key": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "value": "MS Excel"},
                     {"key": "application/vnd.openxmlformats-officedocument.presentationml.presentation", "value": "MS PowerPoint"},
                     {"key": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "value": "MS Word document"},
                     {"key": "application/vnd.oasis.opendocument.text", "value": "Open Office doc"},
                     {"key": "application/vnd.oasis.opendocument.presentation", "value": "Open Office presentation"},
-                    {"key": "Open Office sheet", "value": "Open Office sheet"},
+                    {"key": "application/x-vnd.oasis.opendocument.spreadsheet", "value": "Open Office sheet"},
                     {"key": "application/pdf", "value": "PDF"},
                     {"key": "image/png", "value": "PNG"},
                     {"key": "text/plain", "value": "Plain text"},
                     {"key": "application/rtf", "value": "Rich text"},
                     {"key": "image/svg+xml", "value": "SVG"},
-                    {"key": "TSV (first sheet only)", "value": "text/tab-separated-values"}
+                    {"key": "text/tab-separated-values", "value": "TSV (first sheet only)"}
                 ],
                 "default": "application/pdf",
                 "helptext": "The MIME type of the format requested for this export. Refer to the <a href='https://developers.google.com/drive/v3/web/manage-downloads#downloading_google_documents' target='_blank'>table of supported Google export formats</a>."
