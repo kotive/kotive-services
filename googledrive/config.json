@@ -4,7 +4,7 @@
     "auth": {
         "method": "OAuth2",
         "target_service": "Google",
-        "required_scope": "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file"
+        "required_scope": "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.appdata"
     },
     "domain": "https://www.googleapis.com/drive/v3",
     "version": 3
