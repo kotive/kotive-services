@@ -52,7 +52,7 @@
       "Authorization": "Bearer {auth.oauth2Token}"
     },
     "method": "GET",
-    "endpoint": "/files/{field.fileId}/export?mimeType={field.mimeType}",
+    "endpoint": "/files/{field.fileId}/export?mimeType={encode_uri(field.mimeType)}",
     "request": {},
     "response": {
         "success": {},
