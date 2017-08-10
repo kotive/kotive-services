@@ -1,6 +1,6 @@
 {
     "name": "Export a file",
-    "description": "Exports a Google Doc to the requested file type and returns the exported content.",
+    "description": "Exports a Google Doc to the requested filestype and returns the exported content.",
     "documentation": "https://developers.google.com/drive/v3/reference/files/export",
     "fields": [
         {
