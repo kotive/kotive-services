@@ -53,6 +53,7 @@
     },
     "method": "GET",
     "endpoint": "/files/{field.fileId}/export?mimeType={field.mimeType}",
+    "request": null,
     "response": {
         "success": {},
         "error": {}
