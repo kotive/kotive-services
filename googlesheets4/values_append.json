@@ -43,7 +43,7 @@
             "label": "Values",
             "properties": {
                 "parameter": "values",
-                "fieldType": "text",
+                "fieldType": "textarea",
                 "helptext": "A list of values to be inserted into the spreadsheet. Values are separated by <strong>,</strong> (comma)."
             },
             "readonly": false,
@@ -90,7 +90,7 @@
     "request": {
         "range": "{field.range}",
         "majorDimension": "{field.majorDimension}",
-        "values": "{comma_to_array(field.values)}"
+        "values": ["{comma_to_array(field.values)}"]
     },
     "response": {
         "success": {},
