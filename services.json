@@ -13,7 +13,7 @@
             "service": "aweber"
         },
         {
-            "name": "Basecamp 2",
+            "name": "Basecamp v2",
             "service": "basecamp2"
         },
         {
@@ -70,11 +70,15 @@
         },
         {
             "name": "Google Drive",
-            "service": "googledrive"
+            "service": "googledrive3"
         },
         {
-            "name": "Google Sheets",
-            "service": "googlesheets"
+            "name": "Google Sheets v3",
+            "service": "googlesheets3"
+        },
+        {
+            "name": "Google Sheets v4",
+            "service": "googlesheets4"
         },
         {
             "name": "Hacker News",
