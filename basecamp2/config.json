@@ -1,5 +1,5 @@
 {
-  "name": "Basecamp 2",
+  "name": "Basecamp v2",
   "description": "Basecamp is a place to share files, have discussions, collaborate on documents, assign tasks, and check due dates.",
   "auth": {
     "method": "Basic",

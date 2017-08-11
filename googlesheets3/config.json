@@ -1,5 +1,5 @@
 {
-    "name": "Google Sheets",
+    "name": "Google Sheets v3",
     "description": "Quickly create new spreadsheets and open existing ones.",
     "auth": {
         "method": "OAuth2",

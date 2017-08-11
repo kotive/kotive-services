@@ -1,5 +1,5 @@
 {
-    "name": "Google Sheets",
+    "name": "Google Sheets v4",
     "description": "Read, write, and format data in Sheets.",
     "auth": {
         "method": "OAuth2",
