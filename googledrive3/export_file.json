@@ -45,11 +45,28 @@
             "readonly": false,
             "required": true,
             "visible": true
+        },{
+            "label": "Save file content as base64-encoded string?",
+            "properties": {
+                "parameter": "saveFileContentAsBase64",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "true", "value": "Yes"},
+                    {"key": "false", "value": "No (default)"}
+                ],
+                "default": "false",
+                "classes": "inline",
+                "helptext": "In addition to saving the exported file to the cloud, should its content be saved as a base64-encoded string? Select 'Yes' only if you need to reuse its content in another task, e.g. adding a base64-encoded attachment to an email."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
         }
     ],
     "headers": {
       "Content-Type": "application/json",
-      "Authorization": "Bearer {auth.oauth2Token}"
+      "Authorization": "Bearer {auth.oauth2Token}",
+      "X-Kotive-SaveFileContentAsBase64": "{string_to_boolean(field.saveFileContentAsBase64)}"
     },
     "method": "GET",
     "endpoint": "/files/{field.fileId}/export?mimeType={field.mimeType}",
