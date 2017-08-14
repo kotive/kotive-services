@@ -73,10 +73,6 @@
             "service": "googledrive3"
         },
         {
-            "name": "Google Sheets v3",
-            "service": "googlesheets"
-        },
-        {
             "name": "Google Sheets v4",
             "service": "googlesheets4"
         },
