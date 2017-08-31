@@ -165,6 +165,10 @@
             "service": "stripe"
         },
         {
+            "name": "Text utilities",
+            "service": "textutilities"
+        },
+        {
             "name": "Trello",
             "service": "trello"
         },
