@@ -37,6 +37,10 @@
             "service": "currencylayer"
         },
         {
+            "name": "Date utilities",
+            "service": "dateutilities"
+        },
+        {
             "name": "Desk",
             "service": "desk"
         },
