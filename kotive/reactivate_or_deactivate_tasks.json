@@ -7,9 +7,8 @@
       "label": "Tasks",
       "properties": {
         "parameter": "taskIds",
-        "fieldType": "check",
-        "helptext": "The tasks to be reactivated or deactivated.",
-        "defaultlookup": "{tasksInTaskflow:{taskflow.rootid}}"
+        "fieldType": "text",
+        "helptext": "A list of the task ids to be reactivated or deactivated (separated by commas)."
       },
       "readonly": false,
       "required": true,
@@ -37,7 +36,7 @@
   },
   "method": "POST",
   "endpoint": "/group/{group.id}/process/{taskflow.id}/{field.action}",
-  "request": "string_to_hash(field.taskIds)}",
+  "request": "{comma_to_array(field.taskIds)}",
   "response": {
     "success": {},
     "error": {}
