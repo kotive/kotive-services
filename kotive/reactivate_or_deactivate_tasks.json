@@ -9,7 +9,7 @@
         "parameter": "taskIds",
         "fieldType": "check",
         "helptext": "The tasks to be reactivated or deactivated.",
-        "choices": "{tasksInTaskflow:{taskflow.rootid}}"
+        "defaultlookup": "{tasksInTaskflow:{taskflow.rootid}}"
       },
       "readonly": false,
       "required": true,
