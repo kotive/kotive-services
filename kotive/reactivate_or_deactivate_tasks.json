@@ -31,7 +31,7 @@
         "parameter": "taskIds",
         "fieldType": "check",
         "helptext": "The tasks to be reactivated or deactivated.",
-        "options": "{tasksInTaskflow:{taskflow.rootid}}"
+        "choices": "{tasksInTaskflow:{taskflow.rootid}}"
       },
       "readonly": false,
       "required": true,
