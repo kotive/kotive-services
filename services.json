@@ -109,6 +109,10 @@
             "service": "kissmetrics"
         },
         {
+            "name": "Kotive",
+            "service": "kotive"
+        },
+        {
             "name": "Mailboxlayer",
             "service": "mailboxlayer"
         },

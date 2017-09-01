@@ -1,0 +1,67 @@
+{
+  "name": "Reactivate or deactivate tasks",
+  "description": "Reactivate completed tasks or deactivate active tasks in the current taskflow",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Group id",
+      "properties": {
+        "parameter": "groupId",
+        "fieldType": "text",
+        "default": "{group.id}"
+      },
+      "readonly": true,
+      "required": true,
+      "visible": false
+    },
+    {
+      "label": "Taskflow id",
+      "properties": {
+        "parameter": "processId",
+        "fieldType": "text",
+        "default": "{process.id}"
+      },
+      "readonly": true,
+      "required": true,
+      "visible": false
+    },
+    {
+      "label": "Tasks",
+      "properties": {
+        "parameter": "taskIds",
+        "fieldType": "check",
+        "helptext": "The tasks to be reactivated or deactivated.",
+        "options": "{tasksInTaskflow:{taskflow.rootid}}"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Action",
+      "properties": {
+        "parameter": "action",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "reactivate", "value": "Reactivate"},
+          {"key": "deactivate", "value": "Deactivate"}
+        ],
+        "classes":"inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/group/{field.groupId}/process/{field.processId}/{field.action}",
+  "request": "string_to_hash(field.taskIds)}",
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
