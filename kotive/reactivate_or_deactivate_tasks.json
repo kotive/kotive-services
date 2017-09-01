@@ -4,28 +4,6 @@
   "documentation": "http://www.kotive.com/how-to/integrate/kotive",
   "fields": [
     {
-      "label": "Group id",
-      "properties": {
-        "parameter": "groupId",
-        "fieldType": "text",
-        "default": "{group.id}"
-      },
-      "readonly": true,
-      "required": true,
-      "visible": false
-    },
-    {
-      "label": "Taskflow id",
-      "properties": {
-        "parameter": "processId",
-        "fieldType": "text",
-        "default": "{process.id}"
-      },
-      "readonly": true,
-      "required": true,
-      "visible": false
-    },
-    {
       "label": "Tasks",
       "properties": {
         "parameter": "taskIds",
@@ -58,7 +36,7 @@
     "Content-Type": "application/json"
   },
   "method": "POST",
-  "endpoint": "/group/{field.groupId}/process/{field.processId}/{field.action}",
+  "endpoint": "/group/{group.id}/process/{taskflow.id}/{field.action}",
   "request": "string_to_hash(field.taskIds)}",
   "response": {
     "success": {},
