@@ -35,7 +35,7 @@
     "Content-Type": "application/json"
   },
   "method": "POST",
-  "endpoint": "/group/{number_to_string(group.id)}/process/{number_to_string(taskflow.id)}/{field.action}",
+  "endpoint": "/group/{group.id}/process/{taskflow.id}/{field.action}",
   "request": "{comma_to_array(field.taskIds)}",
   "response": {
     "success": {},
