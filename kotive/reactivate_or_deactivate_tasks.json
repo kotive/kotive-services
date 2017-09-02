@@ -36,7 +36,7 @@
   },
   "method": "POST",
   "endpoint": "/group/{group.id}/process/{taskflow.id}/{field.action}",
-  "request": "{comma_to_array(field.taskIds)}",
+  "request": "{comma_to_array_of_numbers(field.taskIds)}",
   "response": {
     "success": {},
     "error": {}
