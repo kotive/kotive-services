@@ -4,7 +4,7 @@
     "auth": {
         "method": "OAuth2",
         "target_service": "Google",
-        "required_scope": ""
+        "required_scope": "https://www.googleapis.com/auth/calendar"
     },
     "domain": "https://www.googleapis.com/calendar/v3"
 }
