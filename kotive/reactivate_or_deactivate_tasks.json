@@ -1,0 +1,45 @@
+{
+  "name": "Reactivate or deactivate tasks",
+  "description": "Reactivate completed tasks or deactivate active tasks in the current taskflow",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Tasks",
+      "properties": {
+        "parameter": "taskIds",
+        "fieldType": "text",
+        "helptext": "A list of the task ids to be reactivated or deactivated (separated by commas)."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Action",
+      "properties": {
+        "parameter": "action",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "reactivate", "value": "Reactivate"},
+          {"key": "deactivate", "value": "Deactivate"}
+        ],
+        "classes":"inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "text/plain; charset=UTF-8"
+  },
+  "method": "POST",
+  "endpoint": "/group/{group.id}/process/{taskflow.id}/{field.action}",
+  "request": "{comma_to_array_of_numbers(field.taskIds)}",
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

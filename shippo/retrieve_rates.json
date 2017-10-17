@@ -1,5 +1,5 @@
 {
-  "name": "Retieve rates",
+  "name": "Retrieve rates",
   "description": "Request to ship a given package between the sender and recipient addresses",
   "documentation": "https://goshippo.com/docs/reference#shipments",
   "fields": [

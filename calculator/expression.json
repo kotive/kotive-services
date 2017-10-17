@@ -1,0 +1,42 @@
+{
+  "name": "Evaluate a mathematical expression",
+  "description": "Evaluate a mathematical expression",
+  "documentation": "http://www.kotive.com/how-to/integrate/calculator/",
+  "fields": [
+    {
+      "label": "The mathematical expression",
+      "properties": {
+        "parameter": "expression",
+        "fieldType": "text",
+        "helptext": "See <a href='http://www.kotive.com/how-to/integrate/calculator/' target='_blank'>examples of math expressions</a>."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Precision",
+      "properties": {
+        "parameter": "precision",
+        "fieldType": "text",
+        "helptext": "A number between 0 and 16 to round the digits of the result. It defines the total number of significant digits returned. Default: 0.",
+        "default": "0"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{auth.taasApiKey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/expression",
+  "request": {
+    "expression": "{field.expression}",
+    "precision": "{field.precision}"
+  },
+  "response": {}
+}

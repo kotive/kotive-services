@@ -1,0 +1,31 @@
+{
+  "name": "Kotive",
+  "description": "Include Kotive related tasks as tasks in your taskflows...",
+  "auth":{
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "Email address",
+        "properties": {
+          "parameter": "username",
+          "fieldType": "text",
+          "helptext": "The email address you use to login to Kotive.<br/><strong>Important:</strong> at a minimum the 'User administrator' role should be assigned to this account."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },{
+        "label": "Password",
+        "properties": {
+          "parameter": "password",
+          "fieldType": "text",
+          "helptext": "The password you use to login to Kotive."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://webapp.kotive.com/api"
+}

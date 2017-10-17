@@ -1,0 +1,8 @@
+{
+  "name": "Date utilities",
+  "description": "Utilities to manipulate, convert and parse dates",
+  "auth": {
+    "method": "none"
+  },
+  "domain": "https://s9srkl72qi.execute-api.us-east-1.amazonaws.com/production/date-utilities"
+}

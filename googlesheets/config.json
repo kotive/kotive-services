@@ -1,10 +1,11 @@
 {
-    "name": "Google Sheets",
+    "name": "Google Sheets v3",
     "description": "Quickly create new spreadsheets and open existing ones.",
     "auth": {
         "method": "OAuth2",
         "target_service": "Google",
         "required_scope": "https://spreadsheets.google.com/feeds/ https://docs.google.com/feeds"
     },
-    "domain": "https://spreadsheets.google.com/feeds"
+    "domain": "https://spreadsheets.google.com/feeds",
+    "version": 3
 }

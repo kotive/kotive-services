@@ -1,0 +1,53 @@
+{
+  "name": "Find and replace",
+  "description": "Find and replace a needle in a haystack.",
+  "documentation": "http://www.kotive.com/how-to/integrate/textutilities/",
+  "fields": [
+    {
+      "label": "Find...",
+      "properties": {
+        "parameter": "find",
+        "fieldType": "text",
+        "helptext": "The text or <a href='https://developer.mozilla.org/en/docs/Web/JavaScript/Guide/Regular_Expressions' target='_blank'>regular expression</a> to find...<br/>To replace <strong>-9-</strong> with <strong>-</strong> in <strong>http://www.kotive.com/how-9-to/integrate/</strong> the regular expression would be <strong>(\\-[0-9]\\-)</strong> ( <em>/(\\-[0-9]\\-)/gim interally</em> ). Note the use of double escape <strong>\\</strong>.<br/>Find is case-insensitive."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Replace with...",
+      "properties": {
+        "parameter": "replaceWith",
+        "fieldType": "text",
+        "helptext": "The text that it should be replaced with."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "In",
+      "properties": {
+        "parameter": "in",
+        "fieldType": "textarea",
+        "helptext": "The text in which to find and replace."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{auth.taasApiKey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/findAndReplace",
+  "request": {
+      "find": "{field.find}",
+      "in": "{field.in}",
+      "replaceWith": "{field.replaceWith}"
+  },
+  "response": {}
+}

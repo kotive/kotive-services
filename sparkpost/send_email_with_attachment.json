@@ -1,0 +1,136 @@
+{
+  "name": "Send an email with an attachment",
+  "description": "Send a new transactional email with an attachment.",
+  "documentation": "https://developers.sparkpost.com/api/transmissions.html#header-attachment-attributes",
+  "fields": [
+    {
+      "label": "From name",
+      "properties": {
+        "parameter": "fromName",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },{
+      "label": "From email",
+      "properties": {
+        "parameter": "fromEmail",
+        "fieldType": "email",
+        "helptext": "The email address to send this notification from"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },{
+      "label": "To",
+      "properties": {
+        "parameter": "to",
+        "fieldType": "text",
+        "helptext": "A comma separated list of email addresses"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },{
+      "label": "Subject",
+      "properties": {
+        "parameter": "subject",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },{
+      "label": "Message",
+      "properties": {
+        "parameter": "message",
+        "fieldType": "textarea",
+        "helptext": "Message can contain HTML for formatting"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },{
+      "label": "Attachment's content",
+      "properties": {
+        "parameter": "attachmentData",
+        "fieldType": "textarea",
+        "helptext": "The content of the attachment as a <strong>base64 encoded</strong> string. The string should not contain '\r\n' line breaks."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },{
+      "label": "Attachment's filename",
+      "properties": {
+        "parameter": "attachmentName",
+        "fieldType": "text",
+        "helptext": "The filename of the attachment, e.g. <strong>Document.pdf</strong>"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },{
+      "label": "Attachment's file type",
+      "properties": {
+        "parameter": "attachmentType",
+        "fieldType": "select",
+        "choices": [
+          {"key": "text/csv; charset='UTF-8'", "value": "CSV"},
+          {"key": "application/epub+zip", "value": "EPUB"},
+          {"key": "text/html; charset='UTF-8'", "value": "HTML"},
+          {"key": "application/zip", "value": "Zip"},
+          {"key": "image/jpeg", "value": "JPEG"},
+          {"key": "application/vnd.google-apps.script+json", "value": "JSON"},
+          {"key": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "value": "MS Excel"},
+          {"key": "application/vnd.openxmlformats-officedocument.presentationml.presentation", "value": "MS PowerPoint"},
+          {"key": "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "value": "MS Word document"},
+          {"key": "application/vnd.oasis.opendocument.text", "value": "Open Office doc"},
+          {"key": "application/vnd.oasis.opendocument.presentation", "value": "Open Office presentation"},
+          {"key": "application/x-vnd.oasis.opendocument.spreadsheet", "value": "Open Office sheet"},
+          {"key": "application/pdf", "value": "PDF"},
+          {"key": "image/png", "value": "PNG"},
+          {"key": "text/plain; charset='UTF-8'", "value": "Plain text"},
+          {"key": "application/rtf; charset='UTF-8'", "value": "Rich text"},
+          {"key": "image/svg+xml", "value": "SVG"},
+          {"key": "text/tab-separated-values; charset='UTF-8'", "value": "TSV"}
+        ],
+        "default": "application/pdf",
+        "helptext": "The MIME type of the attached file."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/transmissions",
+  "request": {
+    "recipients": "{comma_to_hash_array(field.to, address)}",
+    "content": {
+      "from": {
+        "email": "{field.fromEmail}",
+        "name": "{field.fromName} (via Kotive)"
+      },
+      "subject": "{field.subject}",
+      "html": "{field.message}",
+      "attachments": [
+        {
+          "type": "{field.attachmentType}",
+          "name": "{field.attachmentName}",
+          "data": "{field.attachmentData}"
+        }
+      ]
+    }
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}

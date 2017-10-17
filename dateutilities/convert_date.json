@@ -1,0 +1,53 @@
+{
+  "name": "Convert a date",
+  "description": "Convert a date from one to another format.",
+  "documentation": "http://www.kotive.com/how-to/integrate/dateutilities/",
+  "fields": [
+    {
+      "label": "Date",
+      "properties": {
+        "parameter": "date",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "The date's current format",
+      "properties": {
+        "parameter": "fromFormat",
+        "fieldType": "text",
+        "helptext": "E.g. The format for <strong>7 May, 2000</strong> would be <strong>D MMM, YYYY</strong>.<br/>Refer to <a href='http://momentjs.com/docs/#/displaying/format/' target='_blank'>date formats</a> for more info.",
+        "default": "D MMM, YYYY"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Convert to this format",
+      "properties": {
+        "parameter": "toFormat",
+        "fieldType": "text",
+        "default": "YYYY-MM-DD"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{auth.taasApiKey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/convertDate",
+  "request": {
+    "date": "{field.date}",
+    "fromFormat": "{field.fromFormat}",
+    "toFormat": "{field.toFormat}"
+  },
+  "response": {}
+}

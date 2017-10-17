@@ -1,0 +1,271 @@
+{
+  "name": "Edit a prospect",
+  "description": "Edit a prospect's information.",
+  "documentation": "http://help.woodpecker.co/article/16-api-docs",
+  "fields": [
+    {
+      "label": "Update",
+      "properties": {
+        "parameter": "update",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "True", "value": "Yes"},
+          {"key": "False", "value": "No"}
+        ],
+        "default": "True",
+        "classes": "inline",
+        "helptext": "If the prospect already exsist, do you want to update the existing details 'Yes', or if you want to keep it as is select 'No'."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Prospect id",
+      "properties": {
+        "parameter": "prospectId",
+        "fieldType": "text",
+        "helptext": "Provide the id of the prospect's data you want to edit."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Email",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "Email address of the prospect you want to add to the campaign."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": "Firstname of the prospect you want to add to the campaign."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": "Firstname of the prospect you want to add to the campaign."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Company",
+      "properties": {
+        "parameter": "company",
+        "fieldType": "text",
+        "helptext": "Name of the company."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Industry",
+      "properties": {
+        "parameter": "industry",
+        "fieldType": "text",
+        "helptext": "Which industry are they in?"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Title",
+      "properties": {
+        "parameter": "title",
+        "fieldType": "text",
+        "helptext": "Title of the prospect, e.g. 'VP of Marketing'."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Phone number",
+      "properties": {
+        "parameter": "phone",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Address",
+      "properties": {
+        "parameter": "address",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "City",
+      "properties": {
+        "parameter": "city",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "State",
+      "properties": {
+        "parameter": "state",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Country",
+      "properties": {
+        "parameter": "country",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Website",
+      "properties": {
+        "parameter": "website",
+        "fieldType": "text",
+        "helptext": "Prospect's website address"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Status",
+      "properties": {
+        "parameter": "status",
+        "fieldType": "select",
+        "choices": [
+          {"key": "ACTIVE", "value": "Active"},
+          {"key": "BLACKLIST", "value": "Blacklist"},
+          {"key": "AUTOREPLIED", "value": "Autoreplied"},
+          {"key": "TO-CHECK", "value": "To-check"},
+          {"key": "TO-REVIEW", "value": "To-review"},
+          {"key": "BOUNCED", "value": "Bounced"},
+          {"key": "INVALID", "value": "Invalid"},
+          {"key": "REPLIED", "value": "Replied"},
+          {"key": "PAUSED", "value": "Paused"}
+        ],
+        "default": "ACTIVE",
+        "helptext": "Select the status of the prospect."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Tags",
+      "properties": {
+        "parameter": "tags",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Snippet 1",
+      "properties": {
+        "parameter": "snippet1",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Snippet 2",
+      "properties": {
+        "parameter": "snippet2",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Snippet 3",
+      "properties": {
+        "parameter": "snippet3",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Snippet 4",
+      "properties": {
+        "parameter": "snippet4",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.apiAccessKey:X)}",
+    "Content-Type": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/rest/v1/add_prospects_list",
+  "request": {
+    "update": "{string_to_boolean(field.update)}",
+    "prospects": [
+      {
+        "id":"{field.prospectId}",
+        "email":"{field.email}",
+        "title":"{field.title}",
+        "first_name":"{field.firstname}",
+        "last_name":"{field.lastname}",
+        "company":"{field.company}",
+        "industry":"{field.industry}",
+        "phone":"{field.phone}",
+        "address":"{field.address}",
+        "city":"{field.city}",
+        "state":"{field.state}",
+        "country":"{field.country}",
+        "website":"{field.website}",
+        "status":"{field.status}",
+        "tags":"{field.tags}",
+        "snipet1":"{field.snippet1}",
+        "snipet2":"{field.snippet2}",
+        "snipet3":"{field.snippet3}",
+        "snipet4":"{field.snippet4}"
+      }
+    ]
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

@@ -1,0 +1,47 @@
+{
+    "name": "Get exchange rates for a time-frame",
+    "description": "Get historical exchange rates for a time-period of your choice (maximum range: 365 days).",
+    "documentation": "https://currencylayer.com/documentation#timeframe_queries",
+    "fields": [
+        {
+            "label": "Get specific currencies",
+            "properties": {
+                "parameter": "currencies",
+                "fieldType": "text",
+                "helptext": "List all the currencies you wish to get within this time-frame, separated by commas and no spaces. E.g. 'GBP,ZAR'."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Start date",
+            "properties": {
+                "parameter": "startDate",
+                "fieldType": "text",
+                "helptext": "Enter the start date you wish to see the currencies for. E.g. '2000-03-22'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "End date",
+            "properties": {
+                "parameter": "endDate",
+                "fieldType": "text",
+                "helptext": "Enter the end date you wish to see the currencies for. E.g. '2000-03-22'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/timeframe?access_key={auth.field.accessKey}&start_date={field.startDate}&end_date={field.endDate}&currencies={field.currencies}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

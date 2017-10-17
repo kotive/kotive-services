@@ -1,0 +1,20 @@
+{
+  "name": "Reply",
+  "description": "Sales automation platform that puts email outreach on autopilot, while still making each communication personal.",
+  "auth": {
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "API access key",
+        "properties": {
+            "parameter": "apiAccessKey",
+            "fieldType": "text"
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://run.replyapp.io/api/v1"
+}

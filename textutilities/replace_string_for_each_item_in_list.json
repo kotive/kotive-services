@@ -1,0 +1,68 @@
+{
+  "name": "Replace string for each item in list",
+  "description": "Loops through the list and replaces each occurrence of ${i} with an item in the list.",
+  "documentation": "http://www.kotive.com/how-to/integrate/textutilities/",
+  "fields": [
+    {
+      "label": "The list of items",
+      "properties": {
+        "parameter": "list",
+        "fieldType": "text",
+        "helptext": "Each of the items in this list will be inserted into the template below."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Separator",
+      "properties": {
+        "parameter": "delimiter",
+        "fieldType": "text",
+        "helptext": "The character that separates each item in the list.",
+        "default": ","
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Template text",
+      "properties": {
+        "parameter": "template",
+        "fieldType": "textarea",
+        "helptext": "<strong>Very important:</strong> the character <strong>${i}</strong> will be searched for and replaced with each item in the list.<br/>E.g. If the first item in the list is the number <strong>7</strong> then the template text `It has been ${i} days since...` will become `It has been 7 days since...`<br/><strong>Note: </strong>if you want to make use of <a href='http://www.kotive.com/how-to/design-taskflows/add-dynamic-field-tags/' target='_blank'>dynamic field tags</a> then use double <strong>{{</strong> brackets.<br/>E.g. <strong>{field.value:${i}}</strong> should be <strong>{{field.value:${{i}}}}</strong>",
+        "default": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Concatenating character",
+      "properties": {
+        "parameter": "concat",
+        "fieldType": "text",
+        "helptext": "On completing of the find-and-replace all the replaced templates will be combined into one text result. Each template will be separated by this concatenating character. If you leave the concatenating character empty then the returned result will be a list (array) of templates instead of a single text result.",
+        "default": ", "
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{auth.taasApiKey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/replaceStringForEachItemInList",
+  "request": {
+    "list": "{field.list}",
+    "delimiter": "{field.delimiter}",
+    "template": "{field.template}",
+    "concat": "{field.concat}"
+  },
+  "response": {}
+}

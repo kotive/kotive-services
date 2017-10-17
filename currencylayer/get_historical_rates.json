@@ -1,0 +1,47 @@
+{
+    "name": "Get historical rates",
+    "description": "Get historical rates for any day since 1999.",
+    "documentation": "https://currencylayer.com/documentation#historical_rates",
+    "fields": [
+        {
+            "label": "Date of historical foreign exchange rates",
+            "properties": {
+                "parameter": "date",
+                "fieldType": "text",
+                "helptext": "Enter the date you wish to see the exchange rates for, any date since 1999. E.g. '2000-03-22'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Base currency",
+            "properties": {
+                "parameter": "source",
+                "fieldType": "text",
+                "helptext": "Choose the currency you want to see the exhange rate against e.g. 'USD'."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        },
+        {
+            "label": "Get specific currencies",
+            "properties": {
+                "parameter": "currencies",
+                "fieldType": "text",
+                "helptext": "List all the currencies you wish to see the exchange rates for, separated by commas and no spaces. E.g. 'GBP,ZAR,AUD,CHF'."
+            },
+            "readonly": false,
+            "required": false,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/historical?access_key={auth.field.accessKey}&date={field.date}&source={field.source}&currencies={field.currencies}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

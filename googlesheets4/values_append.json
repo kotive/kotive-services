@@ -1,0 +1,102 @@
+{
+    "name": "Add or update values",
+    "description": "Append values to a spreadsheet. The input range is used to search for existing data and find a 'table' within that range. Values will be appended to the next row of the table, starting with the first column of the table.",
+    "documentation": "https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/append",
+    "fields": [
+        {
+            "label": "Spreadsheet Id",
+            "properties": {
+                "parameter": "spreadsheetId",
+                "fieldType": "text",
+                "helptext": "E.g. if your spreadsheet's web address is https://docs.google.com/spreadsheets/d/<strong>1j3fc9BNW1yQIJ758izRH3fOyLgFndLjoIEUD-rjPsxwe</strong>/edit#gid=0 then your Spreadsheet Id would be <strong>1j3fc9BNW1yQIJ758izRH3fOyLgFndLjoIEUD-rjPsxwe</strong>"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },{
+            "label": "Range",
+            "properties": {
+                "parameter": "range",
+                "fieldType": "text",
+                "default": "Sheet1!A1:B1",
+                "helptext": "The <strong>A1 notation</strong> of a range to search for a logical table of data. Values will be appended after the last row of the table. E.g. Sheet1!A1:E1"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },{
+            "label": "Values",
+            "properties": {
+                "parameter": "values",
+                "fieldType": "textarea",
+                "helptext": "A list of values to be inserted into the spreadsheet. Values are separated by <strong>,</strong> (comma)."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },{
+            "label": "Rows or Columns?",
+            "properties": {
+                "parameter": "majorDimension",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "ROWS", "value": "Rows"},
+                    {"key": "COLUMNS", "value": "Columns"}
+                ],
+                "default": "ROWS",
+                "classes": "inline",
+                "helptext": "Is the data a row or column in the spreadsheet?"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },{
+            "label": "How should input data be interpreted?",
+            "properties": {
+                "parameter": "valueInputOption",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "RAW", "value": "Store all values as-is"},
+                    {"key": "USER_ENTERED", "value": "Parse the values"}
+                ],
+                "default": "RAW",
+                "classes": "inline",
+                "helptext": "More details on <a href='https://developers.google.com/sheets/api/reference/rest/v4/ValueInputOption' target='_blank'>how the input data should be interpreted</a>."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },{
+            "label": "How should input data be inserted into the sheet?",
+            "properties": {
+                "parameter": "insertDataOption",
+                "fieldType": "radio",
+                "choices": [
+                    {"key": "OVERWRITE", "value": "New data overwrites existing data"},
+                    {"key": "INSERT_ROWS", "value": "New rows are inserted for new data"}
+                ],
+                "default": "OVERWRITE",
+                "classes": "inline",
+                "helptext": "More details on <a href='https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets.values/append#InsertDataOption' target='_blank'>how the input data should be inserted</a>."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
+    "method": "POST",
+    "endpoint": "/{field.spreadsheetId}/values/{field.range}:append?valueInputOption={field.valueInputOption}&insertDataOption={field.insertDataOption}",
+    "request": {
+        "range": "{field.range}",
+        "majorDimension": "{field.majorDimension}",
+        "values": ["{comma_to_array(field.values)}"]
+    },
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}

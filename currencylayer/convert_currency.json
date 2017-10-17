@@ -1,0 +1,47 @@
+{
+    "name": "Convert a currency",
+    "description": "Single currency conversion.",
+    "documentation": "https://currencylayer.com/documentation#currency_conversion",
+    "fields": [
+        {
+            "label": "Convert from",
+            "properties": {
+                "parameter": "from",
+                "fieldType": "text",
+                "helptext": "Specify the currency you want to do the conversion from e.g. 'USD'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Convert to",
+            "properties": {
+                "parameter": "to",
+                "fieldType": "text",
+                "helptext": "Specify the currency you want to convert to e.g. 'GBP'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Amount to convert",
+            "properties": {
+                "parameter": "amount",
+                "fieldType": "text",
+                "helptext": "Enter the amount you want to convert e.g. '1254'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/convert?access_key={auth.field.accessKey}&from={field.from}&to={field.to}&amount={field.amount}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

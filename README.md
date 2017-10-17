@@ -62,6 +62,8 @@ Helper tags for when you need to transform data or prep auth details:
 - **`{base64_encode_username_password(auth.field.username:auth.field.password)}`**  [(example)](/segment/track.json#L88)
 - **`{encode_uri(field.webhook_url)}`**  [(example)](/webhook/json.json#L63)
 - **`{string_to_boolean(field.javascript)}`**  [(example)](/docraptor/new_document.json#L118)
+- **`{string_to_number(field.number)}`**
+- **`{string_to_number_or_null(field.number)}`**
 - **`{string_to_hash(field.mergeFields)}`**  [(example)](/mailchimp/add_or_update_list_member.json#L154)
 - **`{string_to_hash_or_null(field.payload)}`**  [(example)](/webhook/json.json#L64)
 - **`{string_to_md5(field.emailAddress)}`**  [(example)](/mailchimp/add_or_update_list_member.json#L149)

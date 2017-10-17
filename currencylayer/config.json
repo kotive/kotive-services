@@ -1,0 +1,20 @@
+{
+  "name": "Currency layer",
+  "description": "Foreign exchange rates and currency conversion",
+  "auth": {
+        "method": "Custom",
+        "fields": [
+            {
+                "label": "API Key",
+                "properties": {
+                    "parameter": "accessKey",
+                    "fieldType": "text"
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+        ]
+    },
+  "domain": "https://apilayer.net/api"
+}

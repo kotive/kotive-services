@@ -1,0 +1,55 @@
+{
+  "name": "Convert a list of dates",
+  "description": "Convert a list of dates from one to another format.",
+  "documentation": "http://www.kotive.com/how-to/integrate/dateutilities/",
+  "fields": [
+    {
+      "label": "Dates",
+      "properties": {
+        "parameter": "dates",
+        "fieldType": "textarea",
+        "helptext": "A list of key-value pair dates.<br/>The key is anything you want to name it and the value is the date.<br/>Note that all the dates should be in the same `current format` you specify below.",
+        "default": "{\n  \"createdAt\": \"1 January, 2000\",\n  \"updatedAt\": \"17 February, 2001\"\n }"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Current format of the dates",
+      "properties": {
+        "parameter": "fromFormat",
+        "fieldType": "text",
+        "helptext": "E.g. The format for <strong>7 December, 2000</strong> would be <strong>D MMMM, YYYY</strong>.<br/>Refer to <a href='http://momentjs.com/docs/#/displaying/format/' target='_blank'>date formats</a> for more info.",
+        "default": "D MMM, YYYY"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Convert all dates to this format",
+      "properties": {
+        "parameter": "toFormat",
+        "fieldType": "text",
+        "default": "YYYY-MM-DD"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{auth.taasApiKey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/convertDates",
+  "request": {
+    "dates": "{string_to_hash(field.dates)}",
+    "fromFormat": "{field.fromFormat}",
+    "toFormat": "{field.toFormat}"
+  },
+  "response": {}
+}

@@ -1,0 +1,11 @@
+{
+    "name": "Google Sheets v4",
+    "description": "Read, write, and format data in Sheets.",
+    "auth": {
+        "method": "OAuth2",
+        "target_service": "Google",
+        "required_scope": "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/spreadsheets"
+    },
+    "domain": "https://sheets.googleapis.com/v4/spreadsheets",
+    "version": 4
+}

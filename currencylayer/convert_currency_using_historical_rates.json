@@ -1,0 +1,58 @@
+{
+    "name": "Convert a currency using historical rates",
+    "description": "Single currency conversion using historical exchange rates.",
+    "documentation": "https://currencylayer.com/documentation#currency_conversion",
+    "fields": [
+        {
+            "label": "Convert from",
+            "properties": {
+                "parameter": "from",
+                "fieldType": "text",
+                "helptext": "Specify the currency you want to do the conversion from e.g. 'USD'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Convert to",
+            "properties": {
+                "parameter": "to",
+                "fieldType": "text",
+                "helptext": "Specify the currency you want to convert for e.g. 'GBP'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Amount to convert",
+            "properties": {
+                "parameter": "amount",
+                "fieldType": "text",
+                "helptext": "Enter the amount you want to convert e.g. '1254'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Date of exchange rate",
+            "properties": {
+                "parameter": "date",
+                "fieldType": "text",
+                "helptext": "Enter the date you wish to see the exchange rates for e.g. '2014-03-22'."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "method": "GET",
+    "endpoint": "/convert?access_key={auth.field.accessKey}&from={field.from}&to={field.to}&amount={field.amount}&date={field.date}",
+    "request": {},
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}

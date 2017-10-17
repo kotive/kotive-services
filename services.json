@@ -13,8 +13,12 @@
             "service": "aweber"
         },
         {
-            "name": "Basecamp 2",
+            "name": "Basecamp v2",
             "service": "basecamp2"
+        },
+        {
+            "name": "Calculator",
+            "service": "calculator"
         },
         {
             "name": "Campaign Monitor",
@@ -27,6 +31,14 @@
         {
             "name": "Constant Contact",
             "service": "constantcontact"
+        },
+        {
+            "name": "Currency layer",
+            "service": "currencylayer"
+        },
+        {
+            "name": "Date utilities",
+            "service": "dateutilities"
         },
         {
             "name": "Desk",
@@ -65,8 +77,12 @@
             "service": "googlecontacts"
         },
         {
+            "name": "Google Drive",
+            "service": "googledrive3"
+        },
+        {
             "name": "Google Sheets",
-            "service": "googlesheets"
+            "service": "googlesheets4"
         },
         {
             "name": "Hacker News",
@@ -97,6 +113,10 @@
             "service": "kissmetrics"
         },
         {
+            "name": "Kotive",
+            "service": "kotive"
+        },
+        {
             "name": "Mailboxlayer",
             "service": "mailboxlayer"
         },
@@ -119,6 +139,10 @@
         {
             "name": "PDF",
             "service": "pdf"
+        },
+        {
+            "name": "Reply",
+            "service": "reply"
         },
         {
             "name": "Salesforce",
@@ -153,6 +177,10 @@
             "service": "stripe"
         },
         {
+            "name": "Text utilities",
+            "service": "textutilities"
+        },
+        {
             "name": "Trello",
             "service": "trello"
         },
@@ -167,6 +195,10 @@
         {
             "name": "Webhook",
             "service": "webhook"
+        },
+        {
+            "name": "Woodpecker",
+            "service": "woodpecker"
         }
     ]
 }

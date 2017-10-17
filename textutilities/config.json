@@ -1,0 +1,8 @@
+{
+  "name": "Text utilities",
+  "description": "Utilities to manipulate and transform text",
+  "auth": {
+    "method": "none"
+  },
+  "domain": "https://2trqnzb7y1.execute-api.us-east-1.amazonaws.com/production/text-utilities"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Delete a file",
+    "description": "Permanently deletes a file owned by the user without moving it to the trash.",
+    "documentation": "https://developers.google.com/drive/v3/reference/files/delete",
+    "fields": [
+        {
+            "label": "File's Id",
+            "properties": {
+                "parameter": "fileId",
+                "fieldType": "text",
+                "helptext": "The ID of the file to be deleted."
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer {auth.oauth2Token}"
+    },
+    "method": "DELETE",
+    "endpoint": "/files/{field.fileId}",
+    "request": {},
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Calculator",
+  "description": "Evaluate mathematical expressions",
+  "auth": {
+    "method": "none"
+  },
+  "domain": "https://fclz33bigi.execute-api.us-east-1.amazonaws.com/production/maths"
+}
