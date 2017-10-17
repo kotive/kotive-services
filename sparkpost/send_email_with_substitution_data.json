@@ -39,7 +39,8 @@
       "label": "Subject",
       "properties": {
         "parameter": "subject",
-        "fieldType": "text"
+        "fieldType": "text",
+        "helptext": "When using substitution data (below) you need to double the number of curly brackets, e.g. <strong>{{ firstname }}</strong> should be <strong>{{{{ firstname }}}}</strong>."
       },
       "readonly": false,
       "required": true,
@@ -50,7 +51,7 @@
       "properties": {
         "parameter": "message",
         "fieldType": "textarea",
-        "helptext": "Message can contain HTML for formatting"
+        "helptext": "Message can contain HTML for formatting.<br/>When using substitution data (below) you need to double the number of curly brackets, e.g. <strong>{{ if customerType == \"vip\" }}</strong> should be <strong>{{{{ if customerType == \"vip\" }}}}</strong>."
       },
       "readonly": false,
       "required": true,
