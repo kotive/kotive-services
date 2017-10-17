@@ -1,0 +1,95 @@
+{
+  "name": "Send an email with substitution data",
+  "description": "Send a new transactional email and include substitution data.",
+  "documentation": "https://developers.sparkpost.com/api/substitutions-reference",
+  "fields": [
+    {
+      "label": "From name",
+      "properties": {
+        "parameter": "fromName",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "From email",
+      "properties": {
+        "parameter": "fromEmail",
+        "fieldType": "email",
+        "helptext": "The email address to send this notification from"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "To",
+      "properties": {
+        "parameter": "to",
+        "fieldType": "text",
+        "helptext": "A comma separated list of email addresses"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Subject",
+      "properties": {
+        "parameter": "subject",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Message",
+      "properties": {
+        "parameter": "message",
+        "fieldType": "textarea",
+        "helptext": "Message can contain HTML for formatting"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Substitution data",
+      "properties": {
+        "parameter": "substitutionData",
+        "fieldType": "textarea",
+        "helptext": "Key/value pairs of data to be substituted in the email.<br/>Refer to the <a href='https://developers.sparkpost.com/api/substitutions-reference' target='_blank'>substitutions reference</a> for more detail on how to use it in your email.",
+        "default": "{}"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/transmissions",
+  "request": {
+    "recipients": "{comma_to_hash_array(field.to, address)}",
+    "content": {
+      "from": {
+        "email": "{field.fromEmail}",
+        "name": "{field.fromName} (via Kotive)"
+      },
+      "subject": "{field.subject}",
+      "html": "{field.message}"
+    },
+    "substitution_data": "{string_to_hash(field.substitutionData)}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
