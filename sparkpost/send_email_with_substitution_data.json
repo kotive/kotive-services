@@ -51,7 +51,7 @@
       "properties": {
         "parameter": "message",
         "fieldType": "textarea",
-        "helptext": "Message can contain HTML for formatting.<br/>When using substitution data (below) you need to double the number of curly brackets, e.g. <strong>{{ if customerType == \"vip\" }}</strong> should be <strong>{{{{ if customerType == \"vip\" }}}}</strong>."
+        "helptext": "Message can contain HTML for formatting.<br/>When using substitution data (below) you need to double the number of curly brackets, e.g. <strong>{{ if customerType == 'vip' }}</strong> should be <strong>{{{{ if customerType == 'vip' }}}}</strong>.<br/><strong>Note: </strong><em>use single quotes in 'if then else' syntax instead of double quotes, e.g. {{ if customerType == 'vip' }} instead of {{ if customerType == \"vip\" }}.</em>"
       },
       "readonly": false,
       "required": true,
