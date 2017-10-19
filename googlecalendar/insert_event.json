@@ -147,7 +147,7 @@
     "attendees": "{comma_to_hash_array(field.attendees, email)}",
     "reminders": {
       "useDefault": "{string_to_boolean(field.reminders)}"
-    },
+    }
   },
   "response": {
       "success": {},

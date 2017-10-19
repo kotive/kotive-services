@@ -46,7 +46,7 @@
       "readonly": false,
       "required": false,
       "visible": true
-    },
+    }
   ],
   "headers": {
     "Authorization": "Bearer {auth.oauth2Token}"
