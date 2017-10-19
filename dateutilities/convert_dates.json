@@ -20,7 +20,7 @@
       "properties": {
         "parameter": "fromFormat",
         "fieldType": "text",
-        "helptext": "E.g. The format for <strong>7 December, 2000</strong> would be <strong>D MMMM, YYYY</strong>.<br/>Refer to <a href='http://momentjs.com/docs/#/displaying/format/' target='_blank'>date formats</a> for more info.",
+        "helptext": "E.g. The format for <strong>7 Dec, 2000</strong> would be <strong>D MMM, YYYY</strong>.<br/>Refer to <a href='http://momentjs.com/docs/#/displaying/format/' target='_blank'>date formats</a> for more info.",
         "default": "D MMM, YYYY"
       },
       "readonly": false,
