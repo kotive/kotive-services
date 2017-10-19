@@ -18,8 +18,8 @@
       "label": "Text",
       "properties": {
           "parameter": "text",
-          "fieldType": "text",
-          "helptext": "The text describing the event to be created."
+          "fieldType": "textarea",
+          "helptext": "The text describing the event to be created. E.g. Appointment with John Smith at Smart street 7 on June 3rd 10am-10:25am."
       },
       "readonly": false,
       "required": true,
@@ -36,10 +36,10 @@
         ],
         "default": "false",
         "classes": "inline",
-        "helptext": "Should notifications of the creation of this event be sent?"
+        "helptext": "Send a notification when a new event is added to the calendar."
       },
       "readonly": false,
-      "required": false,
+      "required": true,
       "visible": true
     }
   ],
@@ -47,10 +47,9 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "POST",
-  "endpoint": "/calendars/{field.calendarId}/events/quickAdd",
+  "endpoint": "/calendars/{field.calendarId}/events/quickAdd?sendNotifications={field.sendNotifications}",
   "request": {
-    "text": "{field.text}",
-    "sendNotifications": "{string_to_boolean(field.sendNotifications)}"
+    "text": "{field.text}"
   },
   "response": {
       "success": {},

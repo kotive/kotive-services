@@ -26,31 +26,98 @@
       "visible": true
     },
     {
-      "label": "Always include email?",
+      "label": "Summary of event",
       "properties": {
-        "parameter": "alwaysIncludeEmail",
+          "parameter": "summary",
+          "fieldType": "text",
+          "helptext": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Description",
+      "properties": {
+          "parameter": "description",
+          "fieldType": "textarea",
+          "helptext": "Descriptive details about the event."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Location",
+      "properties": {
+          "parameter": "location",
+          "fieldType": "text",
+          "helptext": "Location of the event."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Start date & time",
+      "properties": {
+          "parameter": "start",
+          "fieldType": "text",
+          "helptext": "The date & time that the event starts. In the format <strong>2017-10-19T17:00:00</strong>."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "End date & time",
+      "properties": {
+          "parameter": "end",
+          "fieldType": "text",
+          "helptext": "The date & time that the event ends. In the format <strong>2017-10-19T17:00:00</strong>."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Timezone",
+      "properties": {
+          "parameter": "timezone",
+          "fieldType": "text",
+          "helptext": "The timezone the event occurs in.<br/>Formatted as an <a href='https://en.wikipedia.org/wiki/List_of_tz_database_time_zones' target='_blank'>IANA Time Zone Database</a> name, e.g. 'Europe/Zurich' or 'America/New_York'.",
+          "default": "Europe/London"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Attendees",
+      "properties": {
+          "parameter": "attendees",
+          "fieldType": "text",
+          "helptext": "A comma separated list of email addresses of attendees, e.g. joesmith@example.com,jamesmith@example.com"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Reminders",
+      "properties": {
+        "parameter": "reminders",
         "fieldType": "radio",
         "choices": [
             {"key": "true", "value": "Yes"},
             {"key": "false", "value": "No"}
         ],
-        "default": "false",
+        "default": "true",
         "classes": "inline",
-        "helptext": "Whether to always include a value in the email field for the organizer, creator and attendees, even if no real email is available (i.e. a generated, non-working value will be provided)."
+        "helptext": "Do the default reminders of the calendar apply to the event?"
       },
       "readonly": false,
-      "required": false,
-      "visible": true
-    },
-    {
-      "label": "Maximum attendees",
-      "properties": {
-          "parameter": "maxAttendees",
-          "fieldType": "number",
-          "helptext": "The maximum number of attendees to include in the response."
-      },
-      "readonly": false,
-      "required": false,
+      "required": true,
       "visible": true
     },
     {
@@ -64,27 +131,10 @@
         ],
         "default": "false",
         "classes": "inline",
-        "helptext": "Should notifications of the update of the event be sent?"
+        "helptext": "Send a notification when a new event is added to the calendar."
       },
       "readonly": false,
-      "required": false,
-      "visible": true
-    },
-    {
-      "label": "Support attachments?",
-      "properties": {
-        "parameter": "supportsAttachments",
-        "fieldType": "radio",
-        "choices": [
-            {"key": "true", "value": "Yes"},
-            {"key": "false", "value": "No"}
-        ],
-        "default": "false",
-        "classes": "inline",
-        "helptext": "Whether API client performing operation supports event attachments."
-      },
-      "readonly": false,
-      "required": false,
+      "required": true,
       "visible": true
     }
   ],
@@ -92,12 +142,23 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "PUT",
-  "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}",
+  "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}?sendNotifications={field.sendNotifications}",
   "request": {
-    "alwaysIncludeEmail": "{string_to_boolean(field.alwaysIncludeEmail)}",
-    "maxAttendees": "{string_to_int(field.maxAttendees)}",
-    "sendNotifications": "{string_to_boolean(field.sendNotifications)}",
-    "supportsAttachments": "{string_to_boolean(field.supportsAttachments)}"
+    "summary": "{field.summary}",
+    "description": "{field.description}",
+    "location": "{field.location}",
+    "start": {
+      "dateTime": "{field.start}",
+      "timeZone": "{field.timezone}"
+    },
+    "end": {
+      "dateTime": "{field.end}",
+      "timeZone": "{field.timezone}"
+    },
+    "attendees": "{comma_to_hash_array(field.attendees, email)}",
+    "reminders": {
+      "useDefault": "{string_to_boolean(field.reminders)}"
+    }
   },
   "response": {
       "success": {},

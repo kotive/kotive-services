@@ -26,22 +26,11 @@
       "visible": true
     },
     {
-      "label": "Maximum attendees",
-      "properties": {
-          "parameter": "maxAttendees",
-          "fieldType": "number",
-          "helptext": "The maximum number of attendees to include in the response."
-      },
-      "readonly": false,
-      "required": false,
-      "visible": true
-    },
-    {
       "label": "Time zone",
       "properties": {
           "parameter": "timeZone",
           "fieldType": "text",
-          "helptext": "The time zone of the calendar. Formatted as an IANA Time Zone Database name, e.g. 'EST'."
+          "helptext": "The timezone to respond in. Leave empty to default to the calendar's timezone.<br/>Formatted as an <a href='https://en.wikipedia.org/wiki/List_of_tz_database_time_zones' target='_blank'>IANA Time Zone Database</a> name, e.g. 'Europe/Zurich' or 'America/New_York'."
       },
       "readonly": false,
       "required": false,
@@ -53,8 +42,7 @@
   },
   "method": "GET",
   "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}?maxAttendees={field.maxAttendees}&timeZone={field.timeZone}",
-  "request": {
-  },
+  "request": {},
   "response": {
       "success": {},
       "error": {}
