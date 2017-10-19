@@ -1,5 +1,5 @@
 {
-  "name": "Add an event",
+  "name": "Add a detailed event",
   "description": "Add a detailed new event to a Google Calendar.",
   "documentation": "https://developers.google.com/google-apps/calendar/v3/reference/events/insert",
   "fields": [
@@ -51,8 +51,8 @@
       "label": "Start date & time",
       "properties": {
           "parameter": "start",
-          "fieldType": "datetime",
-          "helptext": "The date & time that the event starts."
+          "fieldType": "text",
+          "helptext": "The date & time that the event starts. In the format <strong>2017-10-19T17:00:00</strong>."
       },
       "readonly": false,
       "required": true,
@@ -62,8 +62,8 @@
       "label": "End date & time",
       "properties": {
           "parameter": "end",
-          "fieldType": "datetime",
-          "helptext": "The date & time that the event ends."
+          "fieldType": "text",
+          "helptext": "The date & time that the event ends. In the format <strong>2017-10-19T17:00:00</strong>."
       },
       "readonly": false,
       "required": true,
@@ -73,8 +73,9 @@
       "label": "Timezone",
       "properties": {
           "parameter": "timezone",
-          "fieldType": "select",
-          "helptext": "The timezone the event occurs in."
+          "fieldType": "text",
+          "helptext": "The timezone the event occurs in.<br/>Formatted as an <a href='https://en.wikipedia.org/wiki/List_of_tz_database_time_zones' target='_blank'>IANA Time Zone Database</a> name, e.g. 'Europe/Zurich' or 'America/New_York'.",
+          "default": "Europe/London"
       },
       "readonly": false,
       "required": true,
@@ -136,14 +137,13 @@
     "description": "{field.description}",
     "location": "{field.location}",
     "start": {
-      "dateTime": "{field.start}-{field.timezone}"
+      "dateTime": "{field.start}",
+      "timeZone": "{field.timezone}"
     },
     "end": {
-      "dateTime": "{field.end}-{field.timezone}"
+      "dateTime": "{field.end}",
+      "timeZone": "{field.timezone}"
     },
-    "recurrence": [
-      "RRULE:FREQ=DAILY;COUNT=2"
-    ],
     "attendees": "{comma_to_hash_array(field.attendees, email)}",
     "reminders": {
       "useDefault": "{string_to_boolean(field.reminders)}"
