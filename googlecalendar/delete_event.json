@@ -44,7 +44,8 @@
     }
   ],
   "headers": {
-    "Authorization": "Bearer {auth.oauth2Token}"
+    "Authorization": "Bearer {auth.oauth2Token}",
+    "Content-Type": "application/json"
   },
   "method": "DELETE",
   "endpoint": "/calendars/{field.calendarId}/events/{field.eventId}?sendNotifications={field.sendNotifications}",

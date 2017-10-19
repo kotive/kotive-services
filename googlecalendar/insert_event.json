@@ -128,7 +128,8 @@
     }
   ],
   "headers": {
-    "Authorization": "Bearer {auth.oauth2Token}"
+    "Authorization": "Bearer {auth.oauth2Token}",
+    "Content-Type": "application/json"
   },
   "method": "POST",
   "endpoint": "/calendars/{field.calendarId}/events?sendNotifications={field.sendNotifications}",
