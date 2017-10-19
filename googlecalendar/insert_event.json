@@ -1,6 +1,6 @@
 {
-  "name": "Insert an event",
-  "description": "Insert a detailed new event in Google Calendar.",
+  "name": "Add an event",
+  "description": "Add a detailed new event to a Google Calendar.",
   "documentation": "https://developers.google.com/google-apps/calendar/v3/reference/events/insert",
   "fields": [
     {
@@ -15,12 +15,94 @@
       "visible": true
     },
     {
-      "label": "Maximum attendees",
+      "label": "Summary of event",
       "properties": {
-          "parameter": "maxAttendees",
-          "fieldType": "number",
-          "helptext": "The maximum number of attendees to include in the response.",
-          "default": "1"
+          "parameter": "summary",
+          "fieldType": "text",
+          "helptext": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Description",
+      "properties": {
+          "parameter": "description",
+          "fieldType": "textarea",
+          "helptext": "Descriptive details about the event."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Location",
+      "properties": {
+          "parameter": "location",
+          "fieldType": "text",
+          "helptext": "Location of the event."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Start date & time",
+      "properties": {
+          "parameter": "start",
+          "fieldType": "datetime",
+          "helptext": "The date & time that the event starts."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "End date & time",
+      "properties": {
+          "parameter": "end",
+          "fieldType": "datetime",
+          "helptext": "The date & time that the event ends."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Timezone",
+      "properties": {
+          "parameter": "timezone",
+          "fieldType": "select",
+          "helptext": "The timezone the event occurs in."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Attendees",
+      "properties": {
+          "parameter": "attendees",
+          "fieldType": "text",
+          "helptext": "A comma separated list of email addresses of attendees, e.g. joesmith@example.com,jamesmith@example.com"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Reminders",
+      "properties": {
+        "parameter": "reminders",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "true", "value": "Yes"},
+            {"key": "false", "value": "No"}
+        ],
+        "default": "true",
+        "classes": "inline",
+        "helptext": "Do the default reminders of the calendar apply to the event?"
       },
       "readonly": false,
       "required": true,
@@ -37,7 +119,7 @@
         ],
         "default": "false",
         "classes": "inline",
-        "helptext": "Whether to send notifications about the creation of the new event."
+        "helptext": "Send a notification when a new event is added to the calendar."
       },
       "readonly": false,
       "required": true,
@@ -48,25 +130,23 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "POST",
-  "endpoint": "/calendars/{field.calendarId}/events?maxAttendees={string_to_int(field.maxAttendees)}&sendNotifications={string_to_boolean(field.sendNotifications)}",
+  "endpoint": "/calendars/{field.calendarId}/events?sendNotifications={string_to_boolean(field.sendNotifications)}",
   "request": {
     "summary": "{field.summary}",
-    "location": "{field.location}",
     "description": "{field.description}",
+    "location": "{field.location}",
     "start": {
-      "dateTime": "2015-05-28T09:00:00-07:00",
-      "timeZone": "America/Los_Angeles",
+      "dateTime": "{field.start}-{field.timezone}"
     },
     "end": {
-      "dateTime": "2015-05-28T17:00:00-07:00",
-      "timeZone": "America/Los_Angeles",
+      "dateTime": "{field.end}-{field.timezone}"
     },
     "recurrence": [
       "RRULE:FREQ=DAILY;COUNT=2"
     ],
     "attendees": "{comma_to_hash_array(field.attendees, email)}",
     "reminders": {
-      "useDefault": true
+      "useDefault": "{string_to_boolean(field.reminders)}"
     },
   },
   "response": {
