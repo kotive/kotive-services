@@ -131,7 +131,7 @@
     "Authorization": "Bearer {auth.oauth2Token}"
   },
   "method": "POST",
-  "endpoint": "/calendars/{field.calendarId}/events?sendNotifications={string_to_boolean(field.sendNotifications)}",
+  "endpoint": "/calendars/{field.calendarId}/events?sendNotifications={field.sendNotifications}",
   "request": {
     "summary": "{field.summary}",
     "description": "{field.description}",
