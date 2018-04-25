@@ -44,7 +44,8 @@
     "method": "POST",
     "endpoint": "/{field.baseId}/{encode_uri(field.baseName)}",
     "request": {
-        "fields": "{string_to_hash(field.fields)}"
+        "fields": "{string_to_hash(field.fields)}",
+        "typecast": true
     },
     "response": {
         "success": "",
