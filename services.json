@@ -1,6 +1,10 @@
 {
     "services": [
         {
+            "name": "Airtable",
+            "service": "airtable"
+        },
+        {
             "name": "Amplitude",
             "service": "amplitude"
         },

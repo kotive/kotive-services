@@ -1,0 +1,20 @@
+{
+  "name": "Airtable",
+  "description": "Part spreadsheet, part database, and entirely flexible",
+  "auth": {
+        "method": "Custom",
+        "fields": [
+            {
+                "label": "API Key",
+                "properties": {
+                    "parameter": "apiKey",
+                    "fieldType": "text"
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+        ]
+    },
+  "domain": "https://api.airtable.com/v0"
+}

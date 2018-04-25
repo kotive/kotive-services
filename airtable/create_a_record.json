@@ -1,0 +1,42 @@
+{
+    "name": "Create a record",
+    "description": "Create a new record in one of your bases.",
+    "documentation": "https://airtable.com/api",
+    "fields": [
+        {
+            "label": "Base ID",
+            "properties": {
+                "parameter": "baseId",
+                "fieldType": "text",
+                "helptext": "E.g. appMwueITyKtni7w"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Fields",
+            "properties": {
+                "parameter": "fields",
+                "fieldType": "textarea",
+                "helptext": "Only data for fields whose names are in this list will be included in the records. E.g. `{{\"Name\": \"John Smith\",\"Purchase amount\": \"101\",\"Email\": \"john.smith@gmail.com\"}}`.<br/>Find your base's field names in its  <a href='https://airtable.com/api' target='_blank'>relevant API documentation</a>.",
+                "default": "{}"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "headers": {
+        "Authorization": "Bearer {auth.field.apiKey}"
+    },
+    "method": "POST",
+    "endpoint": "/{field.baseId}/{encode_uri(field.baseLabel)}",
+    "request": {
+        "fields": "{string_to_hash(field.fields)}"
+    },
+    "response": {
+        "success": "",
+        "error": ""
+    }
+}
