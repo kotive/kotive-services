@@ -1,0 +1,70 @@
+{
+  "name": "Adjust time",
+  "description": "Add or subtract time from a date and/or time.",
+  "documentation": "http://www.kotive.com/how-to/integrate/dateutilities/",
+  "fields": [
+    {
+      "label": "Date & time",
+      "properties": {
+        "parameter": "date",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "The date's format",
+      "properties": {
+        "parameter": "format",
+        "fieldType": "text",
+        "helptext": "E.g. December 17, 2000 - <strong>MMMM D, YYYY</strong><br/>December 17, 2000 10:25 AM - <strong>MMMM D, YYYY H:mm A</strong><br/>Refer to <a href='http://momentjs.com/docs/#/displaying/format/' target='_blank'>date formats</a> for more info.",
+        "default": "MMMM D, YYYY"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Would you like to add or subtract time?",
+      "properties": {
+        "parameter": "manipulation",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "add", "value": "Add time"},
+          {"key": "subtract", "value": "Subtract time"}
+        ],
+        "default": "add"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Amount of time",
+      "properties": {
+        "parameter": "amount",
+        "fieldType": "text",
+        "helptext": "E.g. <strong>7 minutes</strong> <em>or</em> <strong>7 hours</strong> <em>or</em> <strong>7 days</strong> etc.",
+        "default": "1 month"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{auth.taasApiKey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/adjustTime",
+  "request": {
+    "date": "{field.date}",
+    "format": "{field.format}",
+    "manipulation": "{field.manipulation}",
+    "amount": "{field.amount}"
+  },
+  "response": {}
+}

@@ -1,6 +1,6 @@
 {
   "name": "Date utilities",
-  "description": "Utilities to manipulate, convert and parse dates",
+  "description": "Utilities to manipulate, convert and parse dates, and adjust time",
   "auth": {
     "method": "none"
   },
