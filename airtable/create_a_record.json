@@ -4,11 +4,22 @@
     "documentation": "https://airtable.com/api",
     "fields": [
         {
-            "label": "Base ID",
+            "label": "Base's ID",
             "properties": {
                 "parameter": "baseId",
                 "fieldType": "text",
                 "helptext": "E.g. appMwueITyKtni7w"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Base's name",
+            "properties": {
+                "parameter": "baseName",
+                "fieldType": "text",
+                "helptext": "E.g. Job Recruiting"
             },
             "readonly": false,
             "required": true,
@@ -31,7 +42,7 @@
         "Authorization": "Bearer {auth.field.apiKey}"
     },
     "method": "POST",
-    "endpoint": "/{field.baseId}/{encode_uri(field.baseLabel)}",
+    "endpoint": "/{field.baseId}/{encode_uri(field.baseName)}",
     "request": {
         "fields": "{string_to_hash(field.fields)}"
     },
