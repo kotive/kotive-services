@@ -15,11 +15,11 @@
             "visible": true
         },
         {
-            "label": "Base's name",
+            "label": "Table's name",
             "properties": {
-                "parameter": "baseName",
+                "parameter": "table",
                 "fieldType": "text",
-                "helptext": "E.g. Job Recruiting"
+                "helptext": "E.g. Applicants"
             },
             "readonly": false,
             "required": true,
@@ -42,7 +42,7 @@
         "Authorization": "Bearer {auth.field.apiKey}"
     },
     "method": "POST",
-    "endpoint": "/{field.baseId}/{encode_uri(field.baseName)}",
+    "endpoint": "/{field.baseId}/{encode_uri(field.table)}",
     "request": {
         "fields": "{string_to_hash(field.fields)}",
         "typecast": true
