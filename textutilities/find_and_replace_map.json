@@ -8,7 +8,7 @@
       "properties": {
         "parameter": "map",
         "fieldType": "textarea",
-        "helptext": "Find each item in the list and replace it with its corresponding value. E.g. (in JSON format), e.g. {{\"Added\": \"New record\"}, {\"Updated\": \"Edited record\"}}"
+        "helptext": "Find each item in the list and replace it with its corresponding value. E.g. (in JSON format), e.g. {{\"Added\": \"New record\", \"Updated\": \"Edited record\"}}"
       },
       "readonly": false,
       "required": true,
