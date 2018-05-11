@@ -1,0 +1,41 @@
+{
+  "name": "Find and replace in bulk",
+  "description": "Find and replace needles in a haystack.",
+  "documentation": "http://www.kotive.com/how-to/integrate/textutilities/",
+  "fields": [
+    {
+      "label": "Find and Replace Map (JSON)...",
+      "properties": {
+        "parameter": "map",
+        "fieldType": "textarea",
+        "helptext": "Find each item in the list and replace it with its corresponding value. E.g. (in JSON format), e.g. {{\"Added\": \"New record\"}, {\"Updated\": \"Edited record\"}}"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "In",
+      "properties": {
+        "parameter": "in",
+        "fieldType": "textarea",
+        "helptext": "The text in which to find and replace."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "x-api-key": "{auth.taasApiKey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/findAndReplaceMap",
+  "request": {
+      "map": "{field.map}",
+      "in": "{field.in}"
+  },
+  "response": {}
+}
