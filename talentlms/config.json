@@ -1,0 +1,20 @@
+{
+  "name": "TalentLMS",
+  "description": "Build a smarter organization with the training platform designed to help great teams grow.",
+  "auth":{
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "TalentLMS API key",
+        "properties": {
+          "parameter": "talentlmsApikey",
+          "fieldType": "text"
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://webapp.kotive.com/bespoke/kotive-services/talentlms/"
+}

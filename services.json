@@ -185,6 +185,10 @@
             "service": "stripe"
         },
         {
+            "name": "TalentLMS",
+            "service": "talentlms"
+        },
+        {
             "name": "Text utilities",
             "service": "textutilities"
         },

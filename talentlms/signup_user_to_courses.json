@@ -1,0 +1,81 @@
+{
+    "name": "Signup user to courses",
+    "description": "Signup a new or existing user to courses",
+    "documentation": "https://www.talentlms.com/pages/docs/TalentLMS-API-Documentation.pdf",
+    "fields": [
+        {
+            "label": "Domain name",
+            "properties": {
+                "parameter": "domain",
+                "fieldType": "text",
+                "helptext": "Your custom TalentLMS sub-domain name (exclude '.talentlms.com')"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "User's firstname",
+            "properties": {
+                "parameter": "firstname",
+                "fieldType": "text",
+                "helptext": ""
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "User's lastname",
+            "properties": {
+                "parameter": "lastname",
+                "fieldType": "text",
+                "helptext": ""
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "User's email address",
+            "properties": {
+                "parameter": "email",
+                "fieldType": "email",
+                "helptext": ""
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        },
+        {
+            "label": "Ids of courses",
+            "properties": {
+                "parameter": "courseIds",
+                "fieldType": "text",
+                "helptext": "A comma separated list of course ids, e.g. <strong>127,118,98</strong><br/>The user will be signed up to all these courses"
+            },
+            "readonly": false,
+            "required": true,
+            "visible": true
+        }
+    ],
+    "headers": {
+        "Authorization": "Basic {base64_encode_username_password(auth.field.talentlmsApikey:)}",
+        "x-api-key": "{auth.bespokeApiKey}",
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    "method": "POST",
+    "endpoint": "/signup-user-to-courses",
+    "request": {
+        "domain":"{field.domain}",
+        "firstname":"{field.firstname}",
+        "lastname":"{field.lastname}",
+        "email":"{field.email}",
+        "courseIds": "{comma_to_array(field.courseIds)}"
+    },
+    "response": {
+        "success": {},
+        "error": {}
+    }
+}
