@@ -1,0 +1,155 @@
+{
+  "name": "Show payment form",
+  "description": "Show the form to process a Payfast payment.",
+  "documentation": "https://developers.payfast.co.za/docs",
+  "fields": [
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": "The customer's firstname."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": "The customer's lastname."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Email address",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "The customer's email address.<br/><strong>Required</strong> if no mobile number is provided."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Mobile number",
+      "properties": {
+        "parameter": "mobile",
+        "fieldType": "text",
+        "helptext": "The customer's mobile number.<br/><strong>Required</strong> if no email address is provided."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Unique payment ID on the merchant's own system",
+      "properties": {
+        "parameter": "mPaymentId",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Amount",
+      "properties": {
+        "parameter": "amount",
+        "fieldType": "text",
+        "helptext": "The amount (including cents) which the payer must pay in ZAR, e.g. <strong>199.00</strong>."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Item name",
+      "properties": {
+        "parameter": "itemName",
+        "fieldType": "text",
+        "helptext": "The name of the item being charged for, or in the case of multiple items the order number."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Item description",
+      "properties": {
+        "parameter": "itemDescription",
+        "fieldType": "text",
+        "helptext": "The description of the item being charged for, or in the case of multiple items the order description."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Notify merchant of payment?",
+      "properties": {
+          "parameter": "emailConfirmation",
+          "fieldType": "radio",
+          "choices": [
+              {"key": "1", "value": "Yes"},
+              {"key": "0", "value": "No"}
+          ],
+          "default": "false",
+          "classes": "inline",
+          "helptext": "Whether to send an email confirmation to the merchant of the transaction."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Confirmation email address",
+      "properties": {
+        "parameter": "confirmationAddress",
+        "fieldType": "email",
+        "helptext": "The email address to send the confirmation email to. Using this field will override the global value set in your account for this transaction."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Track when links in this email are clicked",
+      "properties": {
+          "parameter": "trackLinks",
+          "fieldType": "radio",
+          "choices": [
+              {"key": "HtmlAndText", "value": "Yes"},
+              {"key": "None", "value": "No"}
+          ],
+          "default": "None",
+          "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "endpoint": "/form",
+  "request": {
+    "HtmlBody":"{field.message}",
+    "Subject":"{field.subject}",
+    "From":"{field.fromName} <{field.fromEmail}>",
+    "To": "{field.to}",
+    "ReplyTo": "{field.replyToEmail}",
+    "Tag": "{field.tag}",
+    "TrackOpens": "{string_to_boolean(field.trackOpens)}",
+    "TrackLinks": "{field.trackLinks}"
+  },
+  "response": {}
+}
