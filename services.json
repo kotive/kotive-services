@@ -141,6 +141,10 @@
             "service": "numverify"
         },
         {
+            "name": "Payfast",
+            "service": "payfast"
+        },
+        {
             "name": "PDF",
             "service": "pdf"
         },
