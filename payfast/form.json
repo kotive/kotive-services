@@ -1,0 +1,156 @@
+{
+  "name": "Show payment form",
+  "description": "Show the form to process a Payfast payment.",
+  "documentation": "https://developers.payfast.co.za/docs",
+  "fields": [
+    {
+        "label": "",
+        "properties": {
+            "fieldType": "paragraph",
+            "default": "<strong>Important:</strong> This task needs to be '<strong>published</strong>' in order to be shown to a public, anonymous user."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+    },
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": "The customer's firstname."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": "The customer's lastname."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Email address",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "The customer's email address.<br/><strong>Required</strong> if no mobile number is provided."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Mobile number",
+      "properties": {
+        "parameter": "mobile",
+        "fieldType": "text",
+        "helptext": "The customer's mobile number.<br/><strong>Required</strong> if no email address is provided."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Unique payment ID on the merchant's own system",
+      "properties": {
+        "parameter": "mPaymentId",
+        "fieldType": "text"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Amount",
+      "properties": {
+        "parameter": "amount",
+        "fieldType": "text",
+        "helptext": "The amount (including cents) which the payer must pay in ZAR, e.g. <strong>199.00</strong>."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Item name",
+      "properties": {
+        "parameter": "itemName",
+        "fieldType": "text",
+        "helptext": "The name of the item being charged for, or in the case of multiple items the order number."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Item description",
+      "properties": {
+        "parameter": "itemDescription",
+        "fieldType": "text",
+        "helptext": "The description of the item being charged for, or in the case of multiple items the order description."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Notify merchant of payment?",
+      "properties": {
+          "parameter": "emailConfirmation",
+          "fieldType": "radio",
+          "choices": [
+              {"key": "1", "value": "Yes"},
+              {"key": "0", "value": "No"}
+          ],
+          "default": "false",
+          "classes": "inline",
+          "helptext": "Whether to send an email confirmation to the merchant of the transaction."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Confirmation email address",
+      "properties": {
+        "parameter": "confirmationAddress",
+        "fieldType": "email",
+        "helptext": "The email address to send the confirmation email to. Using this field will override the global value set in your account for this transaction."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "endpoint": "/pre",
+  "request": {
+    "groupId": "{group.id}",
+    "processId": "{taskflow.id}",
+    "merchant_id": "{auth.field.merchantId}",
+    "merchant_key": "{auth.field.merchantId}",
+    "merchant_id": "{auth.field.merchantId}",
+    "first_name":"{field.firstname}",
+    "last_name":"{field.lastname}",
+    "email_address":"{field.email}",
+    "cell_number": "{field.mobile}",
+    "m_payment_id": "{field.mPaymentId}",
+    "amount": "{field.amount}",
+    "item_name": "{field.itemName}",
+    "item_description": "{field.itemDescription}",
+    "email_confirmation": "{field.emailConfirmation}",
+    "confirmation_address": "{field.confirmationAddress}"
+  },
+  "response": {}
+}

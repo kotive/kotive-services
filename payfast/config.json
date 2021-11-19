@@ -1,0 +1,43 @@
+{
+    "name": "PayFast",
+    "description": "PayFast enables you to accept payments in multiple ways.",
+    "auth": {
+        "method": "Custom",
+        "fields": [
+            {
+                "label": "Merchant ID",
+                "properties": {
+                    "parameter": "merchantId",
+                    "fieldType": "text",
+                    "helptext": "This can be found on the merchant's settings page in Payfast."
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            },
+            {
+                "label": "Merchant Key",
+                "properties": {
+                    "parameter": "merchantKey",
+                    "fieldType": "text",
+                    "helptext": "This can be found on the merchant's settings page in Payfast."
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            },
+            {
+                "label": "Security passphrase",
+                "properties": {
+                    "parameter": "passphrase",
+                    "fieldType": "text",
+                    "helptext": "This can be found on the merchant's developer settings page in Payfast."
+                },
+                "readonly": false,
+                "required": true,
+                "visible": true
+            }
+        ]
+    },
+    "domain": "https://webapp.kotive.com/hub/payments/payfast"
+}
