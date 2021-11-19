@@ -14,28 +14,6 @@
         "visible": true
     },
     {
-      "label": "Merchant ID",
-      "properties": {
-        "parameter": "merchantId",
-        "fieldType": "text",
-        "helptext": "This can be found on the merchant's settings page in Payfast."
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
-    {
-      "label": "Merchant Key",
-      "properties": {
-        "parameter": "merchantKey",
-        "fieldType": "text",
-        "helptext": "This can be found on the merchant's settings page in Payfast."
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
-    {
       "label": "Firstname",
       "properties": {
         "parameter": "firstname",
@@ -156,16 +134,23 @@
     "Content-Type": "application/json",
     "Accept": "application/json"
   },
-  "endpoint": "/form",
+  "endpoint": "/pre",
   "request": {
-    "HtmlBody":"{field.message}",
-    "Subject":"{field.subject}",
-    "From":"{field.fromName} <{field.fromEmail}>",
-    "To": "{field.to}",
-    "ReplyTo": "{field.replyToEmail}",
-    "Tag": "{field.tag}",
-    "TrackOpens": "{string_to_boolean(field.trackOpens)}",
-    "TrackLinks": "{field.trackLinks}"
+    "groupId": "{group.id}",
+    "processId": "{taskflow.id}",
+    "merchant_id": "{auth.field.merchantId}",
+    "merchant_key": "{auth.field.merchantId}",
+    "merchant_id": "{auth.field.merchantId}",
+    "first_name":"{field.firstname}",
+    "last_name":"{field.lastname}",
+    "email_address":"{field.email}",
+    "cell_number": "{field.mobile}",
+    "m_payment_id": "{field.mPaymentId}",
+    "amount": "{field.amount}",
+    "item_name": "{field.itemName}",
+    "item_description": "{field.itemDescription}",
+    "email_confirmation": "{field.emailConfirmation}",
+    "confirmation_address": "{field.confirmationAddress}"
   },
   "response": {}
 }
