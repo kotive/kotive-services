@@ -11,7 +11,7 @@
         },
         "readonly": false,
         "required": false,
-        "visible": true
+        "visible": false
     },
     {
       "label": "Firstname",
@@ -22,7 +22,7 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Lastname",
@@ -33,7 +33,7 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Email address",
@@ -44,7 +44,7 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Mobile number",
@@ -55,7 +55,7 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Unique payment ID on the merchant's own system",
@@ -65,7 +65,7 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Amount",
@@ -76,7 +76,7 @@
       },
       "readonly": false,
       "required": true,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Item name",
@@ -87,7 +87,7 @@
       },
       "readonly": false,
       "required": true,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Item description",
@@ -98,7 +98,7 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Notify merchant of payment?",
@@ -115,7 +115,7 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
     },
     {
       "label": "Confirmation email address",
@@ -126,7 +126,18 @@
       },
       "readonly": false,
       "required": false,
-      "visible": true
+      "visible": false
+    },
+    {
+      "label": "UUID",
+      "properties": {
+        "parameter": "uuid",
+        "fieldType": "text",
+        "helptext": "UUID for the payment retrieved from Payfast. Auto-retrieved by Kotive."
+      },
+      "readonly": true,
+      "required": true,
+      "visible": false
     }
   ],
   "method": "POST",
@@ -139,8 +150,8 @@
     "groupId": "{group.id}",
     "processId": "{taskflow.id}",
     "merchant_id": "{auth.field.merchantId}",
-    "merchant_key": "{auth.field.merchantId}",
-    "merchant_id": "{auth.field.merchantId}",
+    "merchant_key": "{auth.field.merchantKey}",
+    "passphrase": "{auth.field.passphrase}",
     "first_name":"{field.firstname}",
     "last_name":"{field.lastname}",
     "email_address":"{field.email}",
