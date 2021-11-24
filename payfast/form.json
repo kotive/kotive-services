@@ -129,7 +129,7 @@
       "visible": false
     },
     {
-      "label": "UUID",
+      "label": "service_response_uuid",
       "properties": {
         "parameter": "uuid",
         "fieldType": "text",
