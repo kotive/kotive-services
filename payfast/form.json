@@ -171,6 +171,7 @@
   "request": {
     "groupId": "{group.id}",
     "processId": "{taskflow.id}",
+    "taskId": "{task.id}",
     "passphrase": "{auth.field.passphrase}",
     "merchant_id": "{auth.field.merchantId}",
     "merchant_key": "{auth.field.merchantKey}",
