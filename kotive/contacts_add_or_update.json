@@ -82,7 +82,8 @@
               {"key": "inactive", "value": "Inactive"},
               {"key": "forget", "value": "Forget"}
             ],
-            "default": "active"
+            "default": "active",
+            "classes": "inline"
         },
         "readonly": false,
         "required": true,
