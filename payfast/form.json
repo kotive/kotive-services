@@ -21,7 +21,7 @@
         "helptext": "The customer's firstname."
       },
       "readonly": false,
-      "required": false,
+      "required": true,
       "visible": false
     },
     {
@@ -32,7 +32,7 @@
         "helptext": "The customer's lastname."
       },
       "readonly": false,
-      "required": false,
+      "required": true,
       "visible": false
     },
     {
