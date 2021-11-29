@@ -1,0 +1,115 @@
+{
+  "name": "Add or update a Contact",
+  "description": "Add a new or update an existing Contact in Kotive",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+        "label": "Contact's firstname",
+        "properties": {
+            "parameter": "firstname",
+            "fieldType": "text",
+            "helptext": ""
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+    },
+    {
+        "label": "Contact's lastname",
+        "properties": {
+            "parameter": "lastname",
+            "fieldType": "text",
+            "helptext": ""
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+    },
+    {
+        "label": "Contact's email address",
+        "properties": {
+            "parameter": "email",
+            "fieldType": "email",
+            "helptext": "This email address will be used to identify the Contact as existing or new."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+    },
+    {
+        "label": "Contact's mobile",
+        "properties": {
+            "parameter": "mobile",
+            "fieldType": "text",
+            "helptext": "Include the country code if possible, e.g. +27116542354"
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+    },
+    {
+        "label": "Contact's unique ID",
+        "properties": {
+            "parameter": "uniqueId",
+            "fieldType": "text",
+            "helptext": "A unique ID associated with the Contact, e.g. student number, employee number, ID in another system, etc."
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+    },
+    {
+      "label": "Properties",
+      "properties": {
+        "parameter": "properties",
+        "fieldType": "textarea",
+        "helptext": "Custom properties in JSON format to be merged into the Contact's existing properties.<br/>If a key exists, it will be overwritten with the value of the provided key. If a key does not exist, it will be added to the properties.",
+        "default": "{}"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+        "label": "Status",
+        "properties": {
+            "parameter": "status",
+            "fieldType": "radio",
+            "choices": [
+              {"key": "signedup", "value": "Signed-up"},
+              {"key": "active", "value": "Active"},
+              {"key": "unsubscribed", "value": "Unsubscribed"},
+              {"key": "inactive", "value": "Inactive"},
+              {"key": "forget", "value": "Forget"}
+            ],
+            "default": "active"
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/apiv3/contacts/{group.id}",
+  "request": [
+    {
+      "groupId": "{string_to_number(group.id)}",
+      "firstname": "{field.firstname}",
+      "lastname": "{field.lastname}",
+      "email": "{field.email}",
+      "mobile": "{field.mobile}",
+      "uniqueId": "{field.uniqueId}",
+      "properties": "{string_to_hash_or_null(field.properties)}",
+      "status": "{field.status}"
+    }
+  ],
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
