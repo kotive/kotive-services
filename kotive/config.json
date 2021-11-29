@@ -9,7 +9,7 @@
         "properties": {
           "parameter": "username",
           "fieldType": "text",
-          "helptext": "The email address you use to login to Kotive.<br/><strong>Important:</strong> at a minimum the 'User administrator' role should be assigned to this account."
+          "helptext": "The email address you use to login to Kotive.<br/><strong>Important:</strong> at a minimum the 'User Administrator' role should be assigned to this account.<br/>For integrating with Contacts, the 'Contacts Administrator' role needs to be assigned to this account."
         },
         "readonly": false,
         "required": true,
