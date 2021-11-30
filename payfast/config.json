@@ -39,5 +39,5 @@
             }
         ]
     },
-    "domain": "http://127.0.0.1:9000/hub/payments/payfast"
+    "domain": "https://webapp.kotive.com/hub/payments/payfast"
 }
