@@ -60,7 +60,7 @@
         }
     ],
     "headers": {
-        "Authorization": "Basic {base64_encode_username_password(auth.field.talentlmsApikey:)}",
+        "Authorization": "Basic {base64_encode_username_password(auth.field.talentlmsApikey:X)}",
         "x-api-key": "{auth.bespokeApiKey}",
         "Content-Type": "application/json",
         "Accept": "application/json"
