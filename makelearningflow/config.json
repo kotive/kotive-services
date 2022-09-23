@@ -1,0 +1,41 @@
+{
+  "name": "Make Learning Flow",
+  "description": "Include MakeLearningFlow related tasks as tasks in your taskflows...",
+  "auth":{
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "Email address",
+        "properties": {
+          "parameter": "username",
+          "fieldType": "text",
+          "helptext": "The email address you use to login to Kotive.<br/><strong>Important:</strong> at a minimum the 'User Administrator' and 'Contacts Administrator' roles should be assigned to this account."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },{
+        "label": "Password",
+        "properties": {
+          "parameter": "password",
+          "fieldType": "text",
+          "helptext": "The password you use to login to Kotive."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      },{
+        "label": "HUB X-API key",
+        "properties": {
+          "parameter": "xapikey",
+          "fieldType": "text",
+          "helptext": "Kotive HUB's X-API key"
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://webapp.kotive.com"
+}

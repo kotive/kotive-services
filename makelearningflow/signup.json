@@ -1,0 +1,127 @@
+{
+  "name": "Signup to a course",
+  "description": "Signup a person to a course in Kotive's MakeLearning Flow",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Firstname of person to be signed up",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Lastname of person to be signed up",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Email address of person to be signed up",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "This email address will be used by the person to access the course."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mobile of person to be signed up",
+      "properties": {
+        "parameter": "mobile",
+        "fieldType": "text",
+        "helptext": "Include the country code if possible, e.g. +27116542354"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Course ID",
+      "properties": {
+        "parameter": "workflowId",
+        "fieldType": "text",
+        "helptext": "The workflow ID of the course in Kotive."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Signup task ID",
+      "properties": {
+        "parameter": "taskId",
+        "fieldType": "text",
+        "helptext": "The ID of the first task where the person is signed up."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Signup field ID",
+      "properties": {
+        "parameter": "fieldId",
+        "fieldType": "text",
+        "helptext": "The ID of the 'Contact ID' field in the first task."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Should the person be notified by email?",
+      "properties": {
+        "parameter": "notify",
+        "fieldType": "radio",
+        "choices": [
+          { "key": "true", "value": "Yes" },
+          { "key": "false", "value": "No" }
+        ],
+        "default": "false",
+        "helptext": "An email with the secure link will be emailed to the person.",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "X-API-KEY": "{auth.field.xapikey}"
+  },
+  "method": "POST",
+  "endpoint": "/hub/q/add/learnSubscriptions",
+  "request": [
+    {
+      "uriParams": "gid={group.id}&cid={field.workflowId}&fid={field.taskId}_{field.fieldId}&notify={field.notify}",
+      "payload": [
+        {
+          "groupId": "{string_to_number(group.id)}",
+          "firstname": "{field.firstname}",
+          "lastname": "{field.lastname}",
+          "email": "{field.email}",
+          "mobile": "{field.mobile}"
+        }
+      ]
+    }
+  ],
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

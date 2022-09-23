@@ -129,6 +129,10 @@
             "service": "mailchimp"
         },
         {
+            "name": "Make Learning Flow",
+            "service": "makelearningflow"
+        },
+        {
             "name": "Mandrill",
             "service": "mandrill"
         },
