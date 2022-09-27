@@ -1,0 +1,175 @@
+{
+  "name": "Create a certificate",
+  "description": "Create a certificate when a person completes a course in Kotive's MakeLearning Flow",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Unique ID",
+      "properties": {
+        "parameter": "uniqueId",
+        "fieldType": "text",
+        "helptext": "This is a unique ID to be displayed on the certificate.<br/>It could be the person's ID, passport, membership or student number."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Name of the certificate template",
+      "properties": {
+        "parameter": "templateName",
+        "fieldType": "text",
+        "helptext": "The name of the template in Make-Learning-Flow"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Name of the course",
+      "properties": {
+        "parameter": "courseName",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Description of course - line 1",
+      "properties": {
+        "parameter": "courseDescription01",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Description of course - line 3",
+      "properties": {
+        "parameter": "courseDescription02",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Description of course - line 3",
+      "properties": {
+        "parameter": "courseDescription03",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Primary logo url",
+      "properties": {
+        "parameter": "logo01Url",
+        "fieldType": "text",
+        "helptext": "The absolute url of the primary logo to be displayed on the certificate."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Secondary logo url",
+      "properties": {
+        "parameter": "logo02Url",
+        "fieldType": "text",
+        "helptext": "The absolute url of the secondary logo to be displayed on the certificate."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Decoration url",
+      "properties": {
+        "parameter": "ribbonUrl",
+        "fieldType": "text",
+        "helptext": "The absolute url of an decorative image to be displayed on the certificate."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Signature url",
+      "properties": {
+        "parameter": "signatureUrl",
+        "fieldType": "text",
+        "helptext": "The absolute url of the signature to displayed on the certificate."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Date of Certificate",
+      "properties": {
+        "parameter": "date",
+        "fieldType": "text",
+        "helptext": "The date when the certificate is issued. Leave blank if today.<br/>Format e.g.: <strong>27 Sep 2022</strong>"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/bespoke/make-learning-flow/certificate/create/{group.id}/{field.templateName}/true",
+  "request": {
+    "firstname": "{field.firstname}",
+    "lastname": "{field.lastname}",
+    "uniqueId": "{field.uniqueId}",
+    "courseName": "{field.courseName}",
+    "courseDescription01": "{field.courseDescription01}",
+    "courseDescription02": "{field.courseDescription02}",
+    "courseDescription03": "{field.courseDescription03}",
+    "logo01Url": "{field.logo01Url}",
+    "logo02Url": "{field.logo02Url}",
+    "ribbonUrl": "{field.ribbonUrl}",
+    "date": "{field.date}",
+    "signatureUrl": "{field.uniqueId}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
