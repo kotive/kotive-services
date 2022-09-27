@@ -1,0 +1,123 @@
+{
+  "name": "Add a new User",
+  "description": "Add a new User to a group in Kotive",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "User's firstname",
+      "properties": {
+        "parameter": "firstname",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "User's lastname",
+      "properties": {
+        "parameter": "lastname",
+        "fieldType": "text",
+        "helptext": ""
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "User's email address",
+      "properties": {
+        "parameter": "email",
+        "fieldType": "email",
+        "helptext": "This email address will be used to identify the User."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "User's mobile",
+      "properties": {
+        "parameter": "mobile",
+        "fieldType": "text",
+        "helptext": "Include the country code if possible, e.g. +27116542354"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Group ID",
+      "properties": {
+        "parameter": "groupId",
+        "fieldType": "text",
+        "helptext": "The ID of the group the User should be added to.<br/>If the User already belongs to the group, no changes will be made."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Role IDs",
+      "properties": {
+        "parameter": "roleIds",
+        "fieldType": "text",
+        "helptext": "A comma separated list of Role IDs that should be assigned to this new User. Will be ignored if User exists."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Tags",
+      "properties": {
+        "parameter": "tags",
+        "fieldType": "text",
+        "helptext": "A comma separated list of Tags that should be assigned to this User."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Send invitation email",
+      "properties": {
+        "parameter": "invite",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "false", "value": "No"},
+            {"key": "true", "value": "Yes"}
+        ],
+        "default": "false",
+        "helptext": "Should the new User be sent an invitation email to login to Kotive?"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/apiv3/users/{field.groupId}",
+  "request": [
+    {
+      "groupId": "{string_to_number(field.groupId)}",
+      "firstname": "{field.firstname}",
+      "lastname": "{field.lastname}",
+      "email": "{field.email}",
+      "mobile": "{field.mobile}",
+      "roleIds": "{{comma_to_array(field.roleIds)}",
+      "tags": "{comma_to_array(field.tags)}",
+      "invite": "{string_to_boolean(field.invite)}"
+    }
+  ],
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
