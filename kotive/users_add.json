@@ -86,8 +86,8 @@
         "parameter": "invite",
         "fieldType": "radio",
         "choices": [
-            {"key": "false", "value": "No"},
-            {"key": "true", "value": "Yes"}
+          { "key": "false", "value": "No" },
+          { "key": "true", "value": "Yes" }
         ],
         "default": "false",
         "helptext": "Should the new User be sent an invitation email to login to Kotive?"
@@ -95,7 +95,7 @@
       "readonly": false,
       "required": true,
       "visible": true
-    },
+    }
   ],
   "headers": {
     "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
