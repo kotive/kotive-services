@@ -1,0 +1,58 @@
+{
+  "name": "Get progress and grade",
+  "description": "Get the progress and grade for a person in Kotive's MakeLearning Flow",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Course ID",
+      "properties": {
+        "parameter": "workflowId",
+        "fieldType": "text",
+        "helptext": "The ID of the course for which the person is signed up."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Contact ID",
+      "properties": {
+        "parameter": "contactId",
+        "fieldType": "text",
+        "helptext": "The ID of the Contact doing the course."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Subscription details required",
+      "properties": {
+        "parameter": "details",
+        "fieldType": "radio",
+        "choices": [
+          { "key": "minimal", "value": "Minimal" },
+          { "key": "full", "value": "Full" }
+        ],
+        "default": "minimal",
+        "helptext": "The subscription details that should be retrieved.",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "GET",
+  "endpoint": "/api/group/{group.id}/learn/course/{field.workflowId}/subscriptions?contactId={field.contactId}&details={field.details}",
+  "request": [],
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
