@@ -4,6 +4,18 @@
   "documentation": "http://www.kotive.com/how-to/integrate/kotive",
   "fields": [
     {
+      "label": "Group ID",
+      "properties": {
+        "parameter": "groupId",
+        "fieldType": "text",
+        "helptext": "ID of the group in which to start the workflow.<br>Important: the authenticated user needs to have access to this group.",
+        "default": "{group.id}"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
       "label": "Workflow ID",
       "properties": {
         "parameter": "workflowId",
@@ -36,7 +48,7 @@
   "endpoint": "/hub/q/add/processes",
   "request": [
     {
-      "uri": "/group/{group.id}/processes/{field.workflowId}",
+      "uri": "/group/{field.groupId}/processes/{field.workflowId}",
       "payload": "{field.payload}"
     }
   ],

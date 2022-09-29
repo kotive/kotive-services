@@ -90,7 +90,8 @@
           { "key": "true", "value": "Yes" }
         ],
         "default": "false",
-        "helptext": "Should the new User be sent an invitation email to login to Kotive?"
+        "helptext": "Should the new User be sent an invitation email to login to Kotive?",
+        "classes": "inline"
       },
       "readonly": false,
       "required": true,
