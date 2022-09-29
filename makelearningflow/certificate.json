@@ -70,7 +70,7 @@
       "visible": true
     },
     {
-      "label": "Description of course - line 3",
+      "label": "Description of course - line 2",
       "properties": {
         "parameter": "courseDescription02",
         "fieldType": "text",
@@ -166,7 +166,7 @@
     "logo02Url": "{field.logo02Url}",
     "ribbonUrl": "{field.ribbonUrl}",
     "date": "{field.date}",
-    "signatureUrl": "{field.uniqueId}"
+    "signatureUrl": "{field.signatureUrl}"
   },
   "response": {
     "success": {},

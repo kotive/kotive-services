@@ -48,6 +48,17 @@
       "visible": true
     },
     {
+      "label": "Unique ID of person to be signed up",
+      "properties": {
+        "parameter": "uniqueId",
+        "fieldType": "text",
+        "helptext": "It could be the person's ID, passport, membership or student number."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
       "label": "Course ID",
       "properties": {
         "parameter": "workflowId",
@@ -126,7 +137,8 @@
           "firstname": "{field.firstname}",
           "lastname": "{field.lastname}",
           "email": "{field.email}",
-          "mobile": "{field.mobile}"
+          "mobile": "{field.mobile}",
+          "uniqueId": "{field.uniqueId}"
         }
       ]
     }
