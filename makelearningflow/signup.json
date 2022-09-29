@@ -81,6 +81,17 @@
       "visible": true
     },
     {
+      "label": "Extra signup parameters",
+      "properties": {
+        "parameter": "extraParams",
+        "fieldType": "text",
+        "helptext": "E.g. <strong>100_1000=Full</strong>&<strong>100_1001=Yes</strong>&<strong>100_1002=Expanded</strong><br/>Format of each parameter: taskId_fieldId=value"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
       "label": "Should the person be notified by email?",
       "properties": {
         "parameter": "notify",
@@ -108,7 +119,7 @@
   "endpoint": "/hub/q/add/learnSubscriptions",
   "request": [
     {
-      "uriParams": "gid={group.id}&cid={field.workflowId}&fid={field.taskId}_{field.fieldId}&notify={field.notify}",
+      "uriParams": "gid={group.id}&cid={field.workflowId}&fid={field.taskId}_{field.fieldId}&notify={field.notify}&{field.extraParams}",
       "payload": [
         {
           "groupId": "{string_to_number(group.id)}",
