@@ -112,7 +112,7 @@
       "lastname": "{field.lastname}",
       "email": "{field.email}",
       "mobile": "{field.mobile}",
-      "roleIds": "{comma_to_array(field.roleIds)}",
+      "roleIds": "{comma_to_array_of_numbers(field.roleIds)}",
       "tags": "{comma_to_array(field.tags)}",
       "invite": "{string_to_boolean(field.invite)}"
     }
