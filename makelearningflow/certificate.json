@@ -151,7 +151,7 @@
     "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "X-API-KEY": "{auth.field.xapikey}"
+    "x-api-key": "{auth.bespokeApiKey}"
   },
   "method": "POST",
   "endpoint": "/bespoke/make-learning-flow/certificate/create/{group.id}/{field.templateName}/true",

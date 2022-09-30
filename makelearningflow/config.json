@@ -24,16 +24,6 @@
         "readonly": false,
         "required": true,
         "visible": true
-      },{
-        "label": "HUB X-API key",
-        "properties": {
-          "parameter": "xapikey",
-          "fieldType": "text",
-          "helptext": "Kotive HUB's X-API key"
-        },
-        "readonly": false,
-        "required": true,
-        "visible": true
       }
     ]
   },
