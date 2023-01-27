@@ -1,0 +1,20 @@
+{
+  "name": "Sendy",
+  "description": "Send newsletters, 100x cheaper",
+  "auth": {
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "Sendy API key",
+        "properties": {
+          "parameter": "api_key",
+          "fieldType": "text"
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://webapp.kotive.com/bespoke/kotive-services/sendy"
+}

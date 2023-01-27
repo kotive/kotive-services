@@ -1,0 +1,69 @@
+{
+  "name": "Signup subscriber to list",
+  "description": "Signup a new or existing subscriber to list",
+  "documentation": "https://sendy.co/api",
+  "fields": [
+      {
+          "label": "Domain",
+          "properties": {
+              "parameter": "domain",
+              "fieldType": "text",
+              "helptext": "The full domain where Sendy is hosted. E.g. https://mysendy.example.com"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+      },
+      {
+          "label": "List ID",
+          "properties": {
+              "parameter": "list",
+              "fieldType": "text",
+              "helptext": "The list id you want to subscribe a user to. This encrypted and hashed ID can be found under 'View all lists' section named ID."
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+      },
+      {
+        "label": "Subscriber's name",
+        "properties": {
+            "parameter": "name",
+            "fieldType": "text",
+            "helptext": ""
+        },
+        "readonly": false,
+        "required": false,
+        "visible": true
+      },
+      {
+          "label": "Subscriber's email address",
+          "properties": {
+              "parameter": "email",
+              "fieldType": "email",
+              "helptext": ""
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
+      }
+  ],
+  "headers": {
+      "x-api-key": "{auth.bespokeApiKey}",
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/subscribe",
+  "request": {
+      "api_key":"{auth.field.api_key}",
+      "domain":"{field.domain}",
+      "list": "{field.list}",
+      "name":"{field.name}",
+      "email":"{field.email}"
+  },
+  "response": {
+      "success": {},
+      "error": {}
+  }
+}
