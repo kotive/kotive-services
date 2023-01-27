@@ -173,6 +173,10 @@
             "service": "sendgrid"
         },
         {
+            "name": "Sendy",
+            "service": "sendy"
+        },
+        {
             "name": "Shippo",
             "service": "shippo"
         },
