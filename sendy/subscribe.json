@@ -46,6 +46,18 @@
           "readonly": false,
           "required": true,
           "visible": true
+      },
+      {
+          "label": "Custom fields",
+          "properties": {
+              "parameter": "fields",
+              "fieldType": "textarea",
+              "default": "{}",
+              "helptext": "You can also pass values into custom fields or update them by adding them in JSON format, e.g. {{\"Birthday\": \"1 Aug 1950\"}}"
+          },
+          "readonly": false,
+          "required": true,
+          "visible": true
       }
   ],
   "headers": {
@@ -56,11 +68,12 @@
   "method": "POST",
   "endpoint": "/subscribe",
   "request": {
-      "api_key":"{auth.field.api_key}",
-      "domain":"{field.domain}",
-      "list": "{field.list}",
-      "name":"{field.name}",
-      "email":"{field.email}"
+      "api_key": "{auth.field.api_key}",
+      "domain": "{field.domain}",
+      "list":  "{field.list}",
+      "name": "{field.name}",
+      "email": "{field.email}",
+      "fields": "{string_to_hash(field.fields)}"
   },
   "response": {
       "success": {},
