@@ -1,0 +1,61 @@
+{
+  "name": "Assign a To-do to People",
+  "description": "Assign a To-do to specific people",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "People",
+      "properties": {
+        "parameter": "peopleIds",
+        "fieldType": "text",
+        "helptext": "A list of the people in the current organisation who will be assigned this To-do (separated by <strong>,</strong>)."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "To-do",
+      "properties": {
+        "parameter": "todo",
+        "fieldType": "textarea",
+        "helptext": "The To-do to be assigned..."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Due date",
+      "properties": {
+        "parameter": "dueAt",
+        "fieldType": "text",
+        "helptext": "The due date of the To-do"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/api/group/{group.id}/todos",
+  "request": [
+    {
+      "groupId": "{string_to_number(group.id)}",
+      "label": "{field.todo}",
+      "inform": "assignedTo",
+      "status": "incomplete",
+      "assignedTo": "{comma_to_array(field.peopleIds)}",
+      "dueAt": "{string_to_number(field.dueAt)}"
+    }
+  ],
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

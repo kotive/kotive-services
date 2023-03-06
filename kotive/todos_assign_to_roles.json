@@ -1,0 +1,59 @@
+{
+  "name": "Assign a To-do to Roles",
+  "description": "Assign a To-do to all people who have these Roles",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Roles",
+      "properties": {
+        "parameter": "roleIds",
+        "fieldType": "text",
+        "helptext": "A list of the roles who will be assigned this To-do (separated by <strong>,</strong>).<br/><strong>Important</strong>: all people who have at least one of these roles, in the current group and all its child groups, will be assigned the To-do."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "To-do",
+      "properties": {
+        "parameter": "todo",
+        "fieldType": "textarea",
+        "helptext": "The To-do to be assigned..."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Due date",
+      "properties": {
+        "parameter": "dueAt",
+        "fieldType": "text",
+        "helptext": "The due date of the To-do"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/api/group/{group.id}/todos/assign?include_children=true",
+  "request": {
+    "roleIds": "{comma_to_array(field.roleIds)}",
+    "todo": {
+      "label": "{field.todo}",
+      "dueAt": "{string_to_number(field.dueAt)}",
+      "inform": "assignedTo"
+    }
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
