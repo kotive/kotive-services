@@ -49,8 +49,7 @@
     "todo": {
       "label": "{field.todo}",
       "dueAt": "{date_to_timestamp(field.dueAt)}",
-      "inform": "assignedTo",
-      "properties": "{}"
+      "inform": "assignedTo"
     }
   },
   "response": {
