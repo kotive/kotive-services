@@ -45,10 +45,10 @@
   "method": "POST",
   "endpoint": "/api/group/{group.id}/todos/assign?include_children=true",
   "request": {
-    "roleIds": "{comma_to_array(field.roleIds)}",
+    "roleIds": "{kappie_to_array_of_numbers(field.roleIds)}",
     "todo": {
       "label": "{field.todo}",
-      "dueAt": "{string_to_number(field.dueAt)}",
+      "dueAt": "{date_to_timestamp(field.dueAt)}",
       "inform": "assignedTo"
     }
   },

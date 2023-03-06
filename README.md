@@ -73,6 +73,7 @@ Helper tags for when you need to transform data or prep auth details:
 - **`{json_to_xml(field.xmlpayload)}`**  [(example)](/googlesheets/add_row.json#L48)
 - **`{generate_uuid_v4}`**  [(example)](/googleanalytics/track_event.json#L63)
 - **`{find_and_replace(field.to|find|replacewith)}`** [(example)](/kotive/messages_send_to_roles.json#L52)
+- **`{date_to_timestamp(field.dueAt)}`** [(example)](/kotive/todos_assign_to_roles.json)
 
 _You can add many tasks in your `/awesomeapp/` folder by creating a copy of this task config, renaming it and updating its properties._
 

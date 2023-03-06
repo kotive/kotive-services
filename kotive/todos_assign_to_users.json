@@ -50,8 +50,8 @@
       "label": "{field.todo}",
       "inform": "assignedTo",
       "status": "incomplete",
-      "assignedTo": "{comma_to_array(field.peopleIds)}",
-      "dueAt": "{string_to_number(field.dueAt)}"
+      "assignedTo": "{kappie_to_array_of_numbers(field.peopleIds)}",
+      "dueAt": "{date_to_timestamp(field.dueAt)}"
     }
   ],
   "response": {
