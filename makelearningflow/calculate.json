@@ -1,6 +1,6 @@
 {
-  "name": "Get progress and grade",
-  "description": "Get the progress and grade for a person in Kotive's Make Learning Flow",
+  "name": "Calculate progress and grade",
+  "description": "Calculate the progress and grade for a person in Kotive's Make Learning Flow",
   "documentation": "http://www.kotive.com/how-to/integrate/kotive",
   "fields": [
     {
@@ -9,6 +9,28 @@
         "parameter": "workflowId",
         "fieldType": "text",
         "helptext": "The ID of the course for which the person is signed up."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Signup form ID",
+      "properties": {
+        "parameter": "taskId",
+        "fieldType": "text",
+        "helptext": "The ID of the signup task (1st task)."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Sign field ID",
+      "properties": {
+        "parameter": "fieldId",
+        "fieldType": "text",
+        "helptext": "The ID of the signup field (usually the 'Contact ID' field in the 1st task)."
       },
       "readonly": false,
       "required": true,
@@ -24,23 +46,6 @@
       "readonly": false,
       "required": true,
       "visible": true
-    },
-    {
-      "label": "Subscription details required",
-      "properties": {
-        "parameter": "details",
-        "fieldType": "radio",
-        "choices": [
-          { "key": "minimal", "value": "Minimal" },
-          { "key": "full", "value": "Full" }
-        ],
-        "default": "minimal",
-        "helptext": "The subscription details that should be retrieved.",
-        "classes": "inline"
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
     }
   ],
   "headers": {
@@ -49,7 +54,7 @@
     "Accept": "application/json"
   },
   "method": "GET",
-  "endpoint": "/api/group/{group.id}/learn/course/{field.workflowId}/subscriptions?contactId={field.contactId}&details={field.details}",
+  "endpoint": "/hub/learn/courses/progress/{group.id}/{field.workflowId}/{field.taskId}_{field.fieldId}/{field.contactId}",
   "request": [],
   "response": {
     "success": {},
