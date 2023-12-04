@@ -1,0 +1,41 @@
+{
+  "name": "Redeem a referral code",
+  "description": "Redeem a referral code",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Contact ID",
+      "properties": {
+        "parameter": "contactId",
+        "fieldType": "text",
+        "helptext": "ID of the Contact who is redeeming the referral code"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Referral code",
+      "properties": {
+        "parameter": "code",
+        "fieldType": "text",
+        "helptext": "The referral code to be redeemed"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "GET",
+  "endpoint": "/apiv3/contacts/referral/redeem/{group.id}/{field.contactId}/{field.code}",
+  "request": "",
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

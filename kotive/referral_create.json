@@ -1,0 +1,41 @@
+{
+  "name": "Create a new referral code",
+  "description": "Create a new referral code for an existing contact",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Referral code key",
+      "properties": {
+        "parameter": "key",
+        "fieldType": "text",
+        "helptext": "The key of the referral code to be created"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Contact ID",
+      "properties": {
+        "parameter": "contactId",
+        "fieldType": "text",
+        "helptext": "ID of the Contact this referral code belongs to"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "GET",
+  "endpoint": "/apiv3/contacts/referral/issue/{group.id}/{field.key}/{field.contactId}",
+  "request": "",
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
