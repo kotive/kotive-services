@@ -147,7 +147,7 @@
   "endpoint": "/hub/q/add/learnSubscriptions",
   "request": [
     {
-      "uriParams": "gid={group.id}&cid={field.workflowId}&fid={field.taskId}_{field.fieldId}&notify={field.notify}&{field.extraParams}",
+      "uriParams": "gid={group.id}&cid={field.workflowId}&fid={field.taskId}_{field.fieldId}&resubscribe={field.resubscribe}&notify={field.notify}&{field.extraParams}",
       "payload": [
         {
           "groupId": "{string_to_number(group.id)}",
