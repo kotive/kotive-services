@@ -103,6 +103,23 @@
       "visible": true
     },
     {
+      "label": "Resubscribe to the course?",
+      "properties": {
+        "parameter": "resubscribe",
+        "fieldType": "radio",
+        "choices": [
+          { "key": "true", "value": "Yes" },
+          { "key": "false", "value": "No" }
+        ],
+        "default": "false",
+        "helptext": "Should the person be resubscribed if they have previously subscribed to the course?",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
       "label": "Should the person be notified by email?",
       "properties": {
         "parameter": "notify",
