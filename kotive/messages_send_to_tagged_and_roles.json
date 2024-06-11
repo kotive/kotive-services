@@ -1,0 +1,78 @@
+{
+  "name": "Send a Message to Tagged and Roles",
+  "description": "Send a Message to all people who have these Roles but only if the person or their groups is tagged with any of the tags",
+  "documentation": "http://www.kotive.com/how-to/integrate/kotive",
+  "fields": [
+    {
+      "label": "Tag Ids",
+      "properties": {
+        "parameter": "tags",
+        "fieldType": "text",
+        "helptext": "In groups (current group and all its child groups) tagged with any of these tag IDs (separated by <strong>^</strong>)."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Roles",
+      "properties": {
+        "parameter": "roles",
+        "fieldType": "text",
+        "helptext": "A list of the roles who will receive this message (separated by <strong>^</strong>).<br/><strong>Important</strong>: all people who have at least one of these roles, in the tagged groups, will receive the Message."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Type of Message",
+      "properties": {
+        "parameter": "inform",
+        "fieldType": "radio",
+        "choices": [
+            {"key": "email", "value": "Email only"},
+            {"key": "display", "value": "Display in profile only"},
+            {"key": "all", "value": "Email and display in profile"}
+        ],
+        "default": "all",
+        "helptext": "Should the Message be distributed as an email only, displayed in the UI or both."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Message",
+      "properties": {
+        "parameter": "message",
+        "fieldType": "textarea",
+        "helptext": "The message to be sent..."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "headers": {
+    "Authorization": "Basic {base64_encode_username_password(auth.field.username:auth.field.password)}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "method": "POST",
+  "endpoint": "/api/group/{group.id}/messages?linkedRoles={find_and_replace(field.roles|^|,)}&tags={find_and_replace(field.tags|^|,)}",
+  "request": [
+    {
+      "groupId": "{string_to_number(group.id)}",
+      "topic": "notifications",
+      "content": "{field.message}",
+      "updatedAt": "{string_to_number(0)}",
+      "updatedBy": "{string_to_number(1)}",
+      "inform": "{field.inform}"
+    }
+  ],
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
