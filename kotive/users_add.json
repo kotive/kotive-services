@@ -104,7 +104,7 @@
     "Accept": "application/json"
   },
   "method": "POST",
-  "endpoint": "/apiv3/users/{field.groupId}",
+  "endpoint": "/apiv3/user/{field.groupId}",
   "request": [
     {
       "groupId": "{string_to_number(field.groupId)}",
