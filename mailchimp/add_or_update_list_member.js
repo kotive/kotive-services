@@ -6,6 +6,7 @@
  */
 
 const crypto = require('crypto');
+const https = require('https');
 
 /**
  * Convert email to MD5 hash for Mailchimp subscriber hash
@@ -44,6 +45,61 @@ function stringToHash(value) {
     }
   }
   return {};
+}
+
+/**
+ * Make HTTPS request
+ * @param {string} url - Full URL to request
+ * @param {object} options - Request options (method, headers, body)
+ * @returns {Promise<object>} Response object with status and data
+ */
+function makeRequest(url, options) {
+  return new Promise((resolve, reject) => {
+    const urlObj = new URL(url);
+    
+    const requestOptions = {
+      hostname: urlObj.hostname,
+      port: urlObj.port || 443,
+      path: urlObj.pathname + urlObj.search,
+      method: options.method || 'GET',
+      headers: options.headers || {}
+    };
+
+    const req = https.request(requestOptions, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(data);
+          resolve({
+            status: res.statusCode,
+            ok: res.statusCode >= 200 && res.statusCode < 300,
+            data: parsed
+          });
+        } catch (e) {
+          resolve({
+            status: res.statusCode,
+            ok: res.statusCode >= 200 && res.statusCode < 300,
+            data: data
+          });
+        }
+      });
+    });
+
+    req.on('error', (error) => {
+      reject(error);
+    });
+
+    if (options.body) {
+      req.write(options.body);
+    }
+
+    req.end();
+  });
 }
 
 /**
@@ -134,45 +190,27 @@ async function execute(params, auth) {
     requestBody.location = stringToHash(params.location);
   }
 
-  // Check if subscriber exists by attempting to GET
-  let subscriberExists = false;
-  try {
-    const getResponse = await fetch(endpoint, {
-      method: 'GET',
-      headers: headers
-    });
-    
-    if (getResponse.ok) {
-      subscriberExists = true;
-    }
-  } catch (error) {
-    // Subscriber doesn't exist or error occurred, will create new
-    subscriberExists = false;
-  }
-
   // Use PUT to add or update the subscriber
   // PUT is idempotent and will create if not exists or update if exists
   try {
-    const response = await fetch(endpoint, {
+    const response = await makeRequest(endpoint, {
       method: 'PUT',
       headers: headers,
       body: JSON.stringify(requestBody)
     });
-
-    const responseData = await response.json();
 
     if (!response.ok) {
       // Return error response in expected format
       return {
         status: 'error',
         code: response.status,
-        name: responseData.title || 'Request_Failed',
-        error: responseData.detail || responseData.error || 'An error occurred processing your request'
+        name: response.data.title || 'Request_Failed',
+        error: response.data.detail || response.data.error || 'An error occurred processing your request'
       };
     }
 
     // Return success response
-    return responseData;
+    return response.data;
     
   } catch (error) {
     // Return error in expected format
