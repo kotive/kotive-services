@@ -66,6 +66,7 @@ function stringToNumberOrNull(value) {
  * @returns {object} Parsed object or empty object
  */
 function stringToHash(value) {
+  if (value === null || value === undefined) return {};
   if (typeof value === 'object') return value;
   if (typeof value === 'string' && value.trim()) {
     try {
