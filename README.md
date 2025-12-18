@@ -78,6 +78,51 @@ Helper tags for when you need to transform data or prep auth details:
 _You can add many tasks in your `/awesomeapp/` folder by creating a copy of this task config, renaming it and updating its properties._
 
 
+Using JavaScript endpoints for advanced logic
+---------------------------------------------------------
+
+For more complex integrations that require custom logic (e.g., conditional checks, multiple API calls, or data transformations), you can use a JavaScript file instead of a JSON configuration.
+
+To use a JavaScript endpoint:
+
+1. Create a `.js` file in your service directory (e.g., `/awesomeapp/my_action.js`)
+2. In your JSON configuration file, set the `"endpoint"` to point to the `.js` file: `"endpoint": "/awesomeapp/my_action.js"`
+3. Implement an async `execute()` function in your JavaScript file
+
+**JavaScript endpoint structure:**
+
+```javascript
+/**
+ * Execute function that will be called by the Kotive API
+ * @param {object} params - Field parameters from the JSON configuration
+ * @param {object} auth - Authentication fields from config.json
+ * @returns {Promise<object>} Response object
+ */
+async function execute(params, auth) {
+  // Your custom logic here
+  // Access field values via params.fieldName
+  // Access auth values via auth.fieldName
+  
+  // Return response object
+  return {
+    // Your response data
+  };
+}
+
+module.exports = { execute };
+```
+
+**Working example:**
+- [Add or update a Mailchimp list member](/mailchimp/add_or_update_list_member.js) - Checks if subscriber exists, then adds or updates accordingly
+
+**Key points:**
+- The `execute()` function must be fully async/await
+- Helper functions can be included in the same file
+- The function receives `params` (field values) and `auth` (authentication credentials)
+- Return error responses in the format: `{ status: 'error', code: -99, name: 'Error_Name', error: 'Error message' }`
+- You can use Node.js built-in modules (e.g., `crypto`, `fs`, `path`)
+
+
 Submit for testing
 ------------------
 
