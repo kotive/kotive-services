@@ -27,12 +27,12 @@
       "visible": true
     },
     {
-      "label": "Payload",
+      "label": "Fields payload",
       "properties": {
         "parameter": "payload",
         "fieldType": "textarea",
-        "helptext": "JSON data to start a Workflow. The <strong>id_t</strong> needs to be updated with the above <em>Workflow ID</em>.",
-        "default": "{{\"id\": -1, \"id_process\": 0, \"id_owning_process\": -1, \"id_t\": 0, \"fields\": [{{ \"id\": \"-1_..._...\", \"value\": \"\"}}]}}"
+        "helptext": "JSON data for fields to start a Workflow.",
+        "default": "[{{ \"id\": \"-1_..._...\", \"value\": \"\"}}]"
       },
       "readonly": false,
       "required": true,
@@ -45,11 +45,12 @@
     "Accept": "application/json"
   },
   "method": "POST",
-  "endpoint": "/hub/q/add/processes",
+  "endpoint": "/apiv3/q/add/flow",
   "request": [
     {
-      "uri": "/group/{field.groupId}/processes/{field.workflowId}",
-      "payload": "{field.payload}"
+      "groupId": "{field.groupId}",
+      "workflowId": "{field.workflowId}",
+      "fields": "{string_to_hash(field.payload)}"
     }
   ],
   "response": {
