@@ -6,7 +6,8 @@
   "method": "GET",
   "headers": {
     "x-api-key": "{auth.field.apikey}",
-    "Accept": "application/json"
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
   },
   "endpoint": "/my_credits",
   "request": {},
