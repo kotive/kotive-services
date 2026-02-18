@@ -146,7 +146,7 @@
       "Content-Type": "application/json"
     },
     "method": "PUT",
-    "endpoint": "/lists/{field.listId}/members/{string_to_md5(field.emailAddress)}",
+    "endpoint": "mailchimp/add_or_update_list_member.js",
     "request": {
         "email_type": "{field.emailType}",
         "status": "{field.status}",

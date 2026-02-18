@@ -10,6 +10,74 @@ Each service in kotive-services is organized as a folder containing:
 - `icon.png` - Service icon (200x200 pixels)
 - `icon32x32.png` - Small service icon (32x32 pixels)
 - `*.json` - Task files (one file per API endpoint/task)
+- `*.js` - (Optional) JavaScript action files for tasks that need custom logic
+
+## JavaScript Action Files
+
+A task can optionally be executed via a JavaScript file instead of the declarative JSON
+request/response approach. This is useful when the API interaction requires conditional
+logic, multiple sequential requests, or custom data transformations.
+
+### How it works
+
+1. Create a `.js` file alongside the existing `.json` task file (same base name).
+2. In the `.json` file, change the `endpoint` value to point to the `.js` file
+   (e.g. `"endpoint": "mailchimp/add_or_update_list_member.js"`).
+3. When the api-v3 runtime detects that the endpoint value ends with `.js`, it
+   loads and calls the module's `execute()` function instead of building an HTTP
+   request from the JSON definition.
+
+### Module contract
+
+The `.js` file **must** export a single async function called `execute`:
+
+```js
+async function execute(auth, fields) {
+    // auth   – contains auth.field.<parameter> values from config.json
+    // fields – contains fields.field.<parameter> values from the task JSON
+    //
+    // Return a success object:
+    //   { success: true, data: { ... } }
+    //
+    // Return an error object:
+    //   { success: false, error: { message: '...', status: 0, code: 'ERROR_CODE', detail: null } }
+}
+
+module.exports = { execute: execute };
+```
+
+### Error reporting structure
+
+All `.js` action files should return errors in the following standardised format
+so the API can understand what went wrong:
+
+```json
+{
+    "success": false,
+    "error": {
+        "message": "Human-readable error description",
+        "status": 400,
+        "code": "MACHINE_READABLE_CODE",
+        "detail": null
+    }
+}
+```
+
+| Field     | Type             | Description                                              |
+| --------- | ---------------- | -------------------------------------------------------- |
+| `message` | string           | A human-readable description of the error                |
+| `status`  | number           | HTTP status code from the remote API (0 for local errors)|
+| `code`    | string           | Machine-readable error code (e.g. `AUTH_MISSING`)        |
+| `detail`  | any &#124; null  | Optional additional context (API response body, etc.)    |
+
+### Example
+
+See `mailchimp/add_or_update_list_member.js` for a complete reference implementation that:
+
+- Validates required auth and field inputs
+- Queries the Mailchimp API to check if a subscriber exists
+- Updates or adds the subscriber accordingly
+- Returns a standardised success or error response
 
 ## Step-by-Step Guide
 
