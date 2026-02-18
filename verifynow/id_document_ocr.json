@@ -1,6 +1,6 @@
 {
   "name": "ID Document OCR",
-  "description": "Extract data from ID documents using OCR. Supports ID cards, passports, and driver's licenses. 6 credits.",
+  "description": "Extract data from ID documents using OCR. Supports ID cards, passports, and driver's licenses.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
