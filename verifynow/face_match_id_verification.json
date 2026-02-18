@@ -1,0 +1,69 @@
+{
+  "name": "Face Match + ID Verification",
+  "description": "Combine face matching with ID verification. Compares selfie against Home Affairs photo and verifies ID details. 10 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "ID Number",
+      "properties": {
+        "parameter": "idNumber",
+        "fieldType": "text",
+        "helptext": "The South African ID number (13 digits)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "First Name",
+      "properties": {
+        "parameter": "firstName",
+        "fieldType": "text",
+        "helptext": "First name to verify"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Last Name",
+      "properties": {
+        "parameter": "lastName",
+        "fieldType": "text",
+        "helptext": "Last name/surname to verify"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Selfie Image (Base64)",
+      "properties": {
+        "parameter": "selfieImage",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded selfie image to compare against Home Affairs photo"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/face-match-id-verification",
+  "request": {
+    "idNumber": "{field.idNumber}",
+    "firstName": "{field.firstName}",
+    "lastName": "{field.lastName}",
+    "selfieImage": "{field.selfieImage}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

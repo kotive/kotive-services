@@ -1,0 +1,57 @@
+{
+  "name": "Credit Score",
+  "description": "Retrieve the credit score and credit report summary for a South African consumer. 8 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "ID Number",
+      "properties": {
+        "parameter": "idNumber",
+        "fieldType": "text",
+        "helptext": "The South African ID number (13 digits)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "First Name",
+      "properties": {
+        "parameter": "firstName",
+        "fieldType": "text",
+        "helptext": "First name of the person"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Last Name",
+      "properties": {
+        "parameter": "lastName",
+        "fieldType": "text",
+        "helptext": "Last name/surname of the person"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/credit-score",
+  "request": {
+    "idNumber": "{field.idNumber}",
+    "firstName": "{field.firstName}",
+    "lastName": "{field.lastName}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

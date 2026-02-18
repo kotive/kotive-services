@@ -1,0 +1,33 @@
+{
+  "name": "ID Verification + Photo",
+  "description": "Verify a South African ID number and retrieve the photo from Home Affairs records. Returns the person's details and official photo. 5 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "ID Number",
+      "properties": {
+        "parameter": "idNumber",
+        "fieldType": "text",
+        "helptext": "The South African ID number to verify (13 digits)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/id-verification-photo",
+  "request": {
+    "idNumber": "{field.idNumber}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

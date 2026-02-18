@@ -1,0 +1,45 @@
+{
+  "name": "Face Match (Standard)",
+  "description": "Compare two photos to determine if they are of the same person. 4 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "First Image (Base64)",
+      "properties": {
+        "parameter": "image1",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded first image for comparison"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Second Image (Base64)",
+      "properties": {
+        "parameter": "image2",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded second image for comparison"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/face-match",
+  "request": {
+    "image1": "{field.image1}",
+    "image2": "{field.image2}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

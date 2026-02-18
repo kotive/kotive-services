@@ -1,0 +1,33 @@
+{
+  "name": "Phone Lookup (Reverse)",
+  "description": "Perform a reverse phone lookup to find information associated with a phone number. 2 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Phone Number",
+      "properties": {
+        "parameter": "phoneNumber",
+        "fieldType": "text",
+        "helptext": "The phone number to look up (South African format, e.g., 0821234567 or +27821234567)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/phone-lookup",
+  "request": {
+    "phoneNumber": "{field.phoneNumber}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

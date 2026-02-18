@@ -1,0 +1,33 @@
+{
+  "name": "Passive Liveness Detection",
+  "description": "Detect if a photo is of a live person or a spoofed image (e.g., printed photo, screen display). 3 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Image (Base64)",
+      "properties": {
+        "parameter": "image",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded image to check for liveness"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/passive-liveness",
+  "request": {
+    "image": "{field.image}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "ID Document OCR",
+  "description": "Extract text and data from South African ID documents using Optical Character Recognition (OCR). 4 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Document Image (Base64)",
+      "properties": {
+        "parameter": "documentImage",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded image of the ID document (ID card, passport, or driver's license)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Document Type",
+      "properties": {
+        "parameter": "documentType",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "id_card", "value": "ID Card"},
+          {"key": "passport", "value": "Passport"},
+          {"key": "drivers_license", "value": "Driver's License"}
+        ],
+        "default": "id_card",
+        "classes": "inline",
+        "helptext": "The type of document being scanned"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/id-document-ocr",
+  "request": {
+    "documentImage": "{field.documentImage}",
+    "documentType": "{field.documentType}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

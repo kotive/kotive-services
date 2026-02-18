@@ -1,0 +1,45 @@
+{
+  "name": "Face Match (Home Affairs)",
+  "description": "Compare a selfie photo against the official Home Affairs photo for a given ID number. 8 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "ID Number",
+      "properties": {
+        "parameter": "idNumber",
+        "fieldType": "text",
+        "helptext": "The South African ID number (13 digits)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Selfie Image (Base64)",
+      "properties": {
+        "parameter": "selfieImage",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded image of the selfie to compare against the Home Affairs photo"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/v1/face-match-home-affairs",
+  "request": {
+    "idNumber": "{field.idNumber}",
+    "selfieImage": "{field.selfieImage}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
