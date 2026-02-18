@@ -1,0 +1,63 @@
+{
+  "name": "Face Match (Standard)",
+  "description": "Compare two photos for face similarity. Provide a selfie and a reference image to check if they are the same person. 3 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Selfie Image (Base64)",
+      "properties": {
+        "parameter": "selfie_image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded selfie image. Max image size: 10 MB."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Reference Image (Base64)",
+      "properties": {
+        "parameter": "reference_image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded reference image to compare against. Max image size: 10 MB."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/facematch",
+  "request": {
+    "bundle": "facematch_standard",
+    "selfie_image_base64": "{field.selfie_image_base64}",
+    "reference_image_base64": "{field.reference_image_base64}",
+    "mode": "{field.mode}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

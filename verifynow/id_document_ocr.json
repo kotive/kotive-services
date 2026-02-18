@@ -1,0 +1,87 @@
+{
+  "name": "ID Document OCR",
+  "description": "Extract data from ID documents using OCR. Supports ID cards, passports, and driver's licenses. 6 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Front Image (Base64)",
+      "properties": {
+        "parameter": "front_image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded front image of the ID document"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Back Image (Base64)",
+      "properties": {
+        "parameter": "back_image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded back image of the ID document (optional)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Document Type",
+      "properties": {
+        "parameter": "document_type",
+        "fieldType": "text",
+        "helptext": "Hint for document type, e.g. id_card, passport, drivers_license (optional)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Issuing Country",
+      "properties": {
+        "parameter": "issuing_country",
+        "fieldType": "text",
+        "helptext": "3-letter ISO country code, e.g. ZAF, USA, GBR (optional)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/id-document-verify",
+  "request": {
+    "bundle": "id_document_verification",
+    "front_image_base64": "{field.front_image_base64}",
+    "back_image_base64": "{field.back_image_base64}",
+    "document_type": "{field.document_type}",
+    "issuing_country": "{field.issuing_country}",
+    "mode": "{field.mode}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

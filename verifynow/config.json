@@ -1,0 +1,21 @@
+{
+  "name": "VerifyNow",
+  "description": "South Africa's identity verification and compliance API. Verify IDs, screen for AML/PEP, and more.",
+  "auth": {
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "API Key",
+        "properties": {
+          "parameter": "apikey",
+          "fieldType": "text",
+          "helptext": "Your VerifyNow API key. Found in your VerifyNow dashboard. Never expose your API key in client-side code."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://www.verifynow.co.za/api/external"
+}

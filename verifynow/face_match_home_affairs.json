@@ -1,0 +1,63 @@
+{
+  "name": "Face Match (Home Affairs)",
+  "description": "Compare a selfie against the official Home Affairs ID photo. Just send the selfie and ID number. 5 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Selfie Image (Base64)",
+      "properties": {
+        "parameter": "selfie_image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded selfie image. Max image size: 10 MB."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "ID Number",
+      "properties": {
+        "parameter": "id_number",
+        "fieldType": "text",
+        "helptext": "13-digit South African ID number"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/facematch",
+  "request": {
+    "bundle": "facematch",
+    "selfie_image_base64": "{field.selfie_image_base64}",
+    "id_number": "{field.id_number}",
+    "mode": "{field.mode}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
