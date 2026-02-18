@@ -31,7 +31,7 @@ function createError(message, status, code, detail) {
  * @returns {string}
  */
 function md5(value) {
-    return crypto.createHash('md5').update(value.toLowerCase().trim()).digest('hex');
+    return crypto.createHash('md5').update(String(value).toLowerCase().trim()).digest('hex');
 }
 
 /**
@@ -68,6 +68,7 @@ function request(options, payload) {
  * @returns {object}
  */
 function buildRequestOptions(auth, method, path) {
+    // Mailchimp Basic Auth ignores the username; any non-empty string is accepted.
     var token = Buffer.from('anystring:' + auth.field.apikey).toString('base64');
     return {
         hostname: auth.field.district + '.api.mailchimp.com',
@@ -176,12 +177,14 @@ async function execute(auth, fields) {
     var action;
     var response;
 
+    var payload = '';
+
     try {
         if (subscriberExists) {
             // --- Step 3a: UPDATE existing subscriber (PATCH) ---------------------
             action = 'updated';
             var patchOpts = buildRequestOptions(auth, 'PATCH', memberPath);
-            var payload = JSON.stringify(body);
+            payload = JSON.stringify(body);
             response = await request(patchOpts, payload);
         } else {
             // --- Step 3b: ADD new subscriber (POST) -----------------------------
@@ -189,7 +192,7 @@ async function execute(auth, fields) {
             if (f.statusIfNew) { body.status = f.statusIfNew; }
             var postPath = '/lists/' + f.listId + '/members';
             var postOpts = buildRequestOptions(auth, 'POST', postPath);
-            var payload = JSON.stringify(body);
+            payload = JSON.stringify(body);
             response = await request(postOpts, payload);
         }
     } catch (err) {
