@@ -1,0 +1,18 @@
+{
+  "name": "My Credits",
+  "description": "Check your current VerifyNow credit balance. 0 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [],
+  "method": "GET",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/my_credits",
+  "request": {},
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

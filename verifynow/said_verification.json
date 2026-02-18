@@ -1,0 +1,51 @@
+{
+  "name": "SAID Verification",
+  "description": "Basic South African ID number validation against Home Affairs. Returns ID validity and basic details. 2 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "ID Number",
+      "properties": {
+        "parameter": "idNumber",
+        "fieldType": "text",
+        "helptext": "13-digit South African ID number"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/verify",
+  "request": {
+    "reportType": "said_verification",
+    "idNumber": "{field.idNumber}",
+    "mode": "{field.mode}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

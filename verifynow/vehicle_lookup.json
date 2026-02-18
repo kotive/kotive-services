@@ -1,0 +1,63 @@
+{
+  "name": "Vehicle Lookup",
+  "description": "Look up vehicle details using a registration number or VIN. Returns vehicle make, model, year, and other details. 5 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Registration Number",
+      "properties": {
+        "parameter": "registration_number",
+        "fieldType": "text",
+        "helptext": "Vehicle registration number. Either this or VIN number is required."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "VIN Number",
+      "properties": {
+        "parameter": "vin_number",
+        "fieldType": "text",
+        "helptext": "Vehicle Identification Number. Either this or registration number is required."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/vehicle",
+  "request": {
+    "bundle": "vehicle_lookup",
+    "registration_number": "{field.registration_number}",
+    "vin_number": "{field.vin_number}",
+    "mode": "{field.mode}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

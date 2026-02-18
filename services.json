@@ -217,6 +217,10 @@
             "service": "verticalresponse"
         },
         {
+            "name": "VerifyNow",
+            "service": "verifynow"
+        },
+        {
             "name": "Webhook",
             "service": "webhook"
         },

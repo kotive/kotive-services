@@ -1,0 +1,102 @@
+{
+  "name": "AML/PEP Screening",
+  "description": "Screen individuals or companies against global sanctions lists, PEP databases, and crime/adverse media records. 5 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Name",
+      "properties": {
+        "parameter": "name",
+        "fieldType": "text",
+        "helptext": "Full name or business name to screen"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Entity Type",
+      "properties": {
+        "parameter": "entity",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "0", "value": "Person"},
+          {"key": "1", "value": "Company"},
+          {"key": "2", "value": "Organization"},
+          {"key": "3", "value": "Legal Entity"},
+          {"key": "6", "value": "Airplane"},
+          {"key": "7", "value": "Vessel"}
+        ],
+        "default": "0",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Country",
+      "properties": {
+        "parameter": "country",
+        "fieldType": "text",
+        "helptext": "2-letter ISO country code, e.g. za, us, gb"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Dataset",
+      "properties": {
+        "parameter": "dataset",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "all", "value": "All"},
+          {"key": "sanctions", "value": "Sanctions"},
+          {"key": "peps", "value": "PEPs"},
+          {"key": "crime", "value": "Crime"}
+        ],
+        "default": "all",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/aml-screening",
+  "request": {
+    "name": "{field.name}",
+    "entity": "{string_to_number(field.entity)}",
+    "country": "{field.country}",
+    "dataset": "{field.dataset}",
+    "mode": "{field.mode}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

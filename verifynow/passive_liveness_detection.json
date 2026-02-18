@@ -1,0 +1,50 @@
+{
+  "name": "Passive Liveness Detection",
+  "description": "Check if an image is a real person and not a photo of a photo, mask, or deepfake. 3 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [
+    {
+      "label": "Image (Base64)",
+      "properties": {
+        "parameter": "image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded image to check for liveness. Max image size: 10 MB."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "x-api-key": "{auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Idempotency-Key": "{generate_uuid_v4}"
+  },
+  "endpoint": "/passive-liveness",
+  "request": {
+    "image_base64": "{field.image_base64}",
+    "mode": "{field.mode}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
