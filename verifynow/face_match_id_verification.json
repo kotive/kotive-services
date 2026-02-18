@@ -1,36 +1,14 @@
 {
   "name": "Face Match + ID Verification",
-  "description": "Combine face matching with ID verification. Compares selfie against Home Affairs photo and verifies ID details. 10 credits.",
+  "description": "Combined face match plus SAID verification. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
       "label": "ID Number",
       "properties": {
-        "parameter": "idNumber",
+        "parameter": "id_number",
         "fieldType": "text",
-        "helptext": "The South African ID number (13 digits)"
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
-    {
-      "label": "First Name",
-      "properties": {
-        "parameter": "firstName",
-        "fieldType": "text",
-        "helptext": "First name to verify"
-      },
-      "readonly": false,
-      "required": true,
-      "visible": true
-    },
-    {
-      "label": "Last Name",
-      "properties": {
-        "parameter": "lastName",
-        "fieldType": "text",
-        "helptext": "Last name/surname to verify"
+        "helptext": "13-digit South African ID number"
       },
       "readonly": false,
       "required": true,
@@ -39,9 +17,37 @@
     {
       "label": "Selfie Image (Base64)",
       "properties": {
-        "parameter": "selfieImage",
+        "parameter": "selfie_image_base64",
         "fieldType": "textarea",
-        "helptext": "Base64-encoded selfie image to compare against Home Affairs photo"
+        "helptext": "Base64-encoded selfie image (max 10MB)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Reference Image (Base64)",
+      "properties": {
+        "parameter": "reference_image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded reference image (max 10MB)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -50,17 +56,17 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/face-match-id-verification",
+  "endpoint": "/facematch",
   "request": {
-    "idNumber": "{field.idNumber}",
-    "firstName": "{field.firstName}",
-    "lastName": "{field.lastName}",
-    "selfieImage": "{field.selfieImage}"
+    "bundle": "facematch_verified",
+    "selfie_image_base64": "{field.selfie_image_base64}",
+    "reference_image_base64": "{field.reference_image_base64}",
+    "id_number": "{field.id_number}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

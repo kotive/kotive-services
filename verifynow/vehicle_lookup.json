@@ -1,14 +1,42 @@
 {
   "name": "Vehicle Lookup",
-  "description": "Look up vehicle registration information. Returns owner details, vehicle specifications, and registration status. 4 credits.",
+  "description": "Look up vehicle details using registration number or VIN. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
       "label": "Registration Number",
       "properties": {
-        "parameter": "registrationNumber",
+        "parameter": "registration_number",
         "fieldType": "text",
-        "helptext": "The vehicle registration number (license plate)"
+        "helptext": "Vehicle registration number (license plate)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "VIN Number",
+      "properties": {
+        "parameter": "vin_number",
+        "fieldType": "text",
+        "helptext": "Vehicle VIN number (provide either registration or VIN)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -17,14 +45,16 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/vehicle-lookup",
+  "endpoint": "/vehicle",
   "request": {
-    "registrationNumber": "{field.registrationNumber}"
+    "bundle": "vehicle_lookup",
+    "registration_number": "{field.registration_number}",
+    "vin_number": "{field.vin_number}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

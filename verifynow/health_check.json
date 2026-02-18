@@ -1,0 +1,14 @@
+{
+  "name": "Health Check",
+  "description": "Check if the VerifyNow API is operational. No authentication required. 0 credits.",
+  "documentation": "https://www.verifynow.co.za/api-docs",
+  "fields": [],
+  "method": "GET",
+  "headers": {},
+  "endpoint": "/health",
+  "request": {},
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

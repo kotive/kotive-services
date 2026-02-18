@@ -1,25 +1,42 @@
 {
   "name": "Face Match (Standard)",
-  "description": "Compare two photos to determine if they are of the same person. 4 credits.",
+  "description": "Compare two photos for face similarity. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
-      "label": "First Image (Base64)",
+      "label": "Selfie Image (Base64)",
       "properties": {
-        "parameter": "image1",
+        "parameter": "selfie_image_base64",
         "fieldType": "textarea",
-        "helptext": "Base64-encoded first image for comparison"
+        "helptext": "Base64-encoded selfie image (max 10MB)"
       },
       "readonly": false,
       "required": true,
       "visible": true
     },
     {
-      "label": "Second Image (Base64)",
+      "label": "Reference Image (Base64)",
       "properties": {
-        "parameter": "image2",
+        "parameter": "reference_image_base64",
         "fieldType": "textarea",
-        "helptext": "Base64-encoded second image for comparison"
+        "helptext": "Base64-encoded reference image to compare against (max 10MB)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -28,15 +45,16 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/face-match",
+  "endpoint": "/facematch",
   "request": {
-    "image1": "{field.image1}",
-    "image2": "{field.image2}"
+    "bundle": "facematch_standard",
+    "selfie_image_base64": "{field.selfie_image_base64}",
+    "reference_image_base64": "{field.reference_image_base64}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

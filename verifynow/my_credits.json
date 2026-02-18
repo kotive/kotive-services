@@ -5,10 +5,9 @@
   "fields": [],
   "method": "GET",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
-    "Accept": "application/json"
+    "x-api-key": "{auth.field.apikey}"
   },
-  "endpoint": "/v1/credits",
+  "endpoint": "/my_credits",
   "request": {},
   "response": {
     "success": {},

@@ -1,14 +1,31 @@
 {
   "name": "Phone Lookup (Reverse)",
-  "description": "Perform a reverse phone lookup to find information associated with a phone number. 2 credits.",
+  "description": "Reverse phone lookup - find out who owns a phone number. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
-      "label": "Phone Number",
+      "label": "Contact Number",
       "properties": {
-        "parameter": "phoneNumber",
+        "parameter": "contactNumber",
         "fieldType": "text",
-        "helptext": "The phone number to look up (South African format, e.g., 0821234567 or +27821234567)"
+        "helptext": "10-digit South African phone number starting with 0 (e.g., 0821234567)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -17,14 +34,15 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/phone-lookup",
+  "endpoint": "/verify",
   "request": {
-    "phoneNumber": "{field.phoneNumber}"
+    "bundle": "contact_enquiry",
+    "contactNumber": "{field.contactNumber}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

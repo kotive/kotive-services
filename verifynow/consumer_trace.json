@@ -1,6 +1,6 @@
 {
   "name": "Consumer Trace (All-in-One)",
-  "description": "Comprehensive consumer tracing service. Returns address history, contact details, employment information, and more. 10 credits.",
+  "description": "One-stop endpoint for consumer data. Returns address history, employment data, phone numbers, and ID verification details. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
@@ -8,47 +8,41 @@
       "properties": {
         "parameter": "idNumber",
         "fieldType": "text",
-        "helptext": "The South African ID number of the person to trace (13 digits)"
+        "helptext": "13-digit South African ID number"
       },
       "readonly": false,
       "required": true,
       "visible": true
     },
     {
-      "label": "First Name",
+      "label": "Mode",
       "properties": {
-        "parameter": "firstName",
-        "fieldType": "text",
-        "helptext": "First name of the person (optional, improves accuracy)"
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
-      "required": false,
-      "visible": true
-    },
-    {
-      "label": "Last Name",
-      "properties": {
-        "parameter": "lastName",
-        "fieldType": "text",
-        "helptext": "Last name/surname of the person (optional, improves accuracy)"
-      },
-      "readonly": false,
-      "required": false,
+      "required": true,
       "visible": true
     }
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/consumer-trace",
+  "endpoint": "/verify",
   "request": {
+    "reportType": "consumer_trace",
     "idNumber": "{field.idNumber}",
-    "firstName": "{field.firstName}",
-    "lastName": "{field.lastName}"
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

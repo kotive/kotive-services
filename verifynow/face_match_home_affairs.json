@@ -1,14 +1,14 @@
 {
   "name": "Face Match (Home Affairs)",
-  "description": "Compare a selfie photo against the official Home Affairs photo for a given ID number. 8 credits.",
+  "description": "Compare a selfie against the official Home Affairs ID photo. Just send the selfie and ID number. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
       "label": "ID Number",
       "properties": {
-        "parameter": "idNumber",
+        "parameter": "id_number",
         "fieldType": "text",
-        "helptext": "The South African ID number (13 digits)"
+        "helptext": "13-digit South African ID number"
       },
       "readonly": false,
       "required": true,
@@ -17,9 +17,26 @@
     {
       "label": "Selfie Image (Base64)",
       "properties": {
-        "parameter": "selfieImage",
+        "parameter": "selfie_image_base64",
         "fieldType": "textarea",
-        "helptext": "Base64-encoded image of the selfie to compare against the Home Affairs photo"
+        "helptext": "Base64-encoded selfie image (max 10MB)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -28,15 +45,16 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/face-match-home-affairs",
+  "endpoint": "/facematch",
   "request": {
-    "idNumber": "{field.idNumber}",
-    "selfieImage": "{field.selfieImage}"
+    "bundle": "facematch",
+    "selfie_image_base64": "{field.selfie_image_base64}",
+    "id_number": "{field.id_number}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

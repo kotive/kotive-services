@@ -1,66 +1,99 @@
 {
   "name": "AML/PEP Screening",
-  "description": "Screen an individual against Anti-Money Laundering (AML) and Politically Exposed Persons (PEP) databases. 5 credits.",
+  "description": "Screen individuals or companies against global sanctions lists, PEP databases, and crime/adverse media records. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
-      "label": "First Name",
+      "label": "Name",
       "properties": {
-        "parameter": "firstName",
+        "parameter": "name",
         "fieldType": "text",
-        "helptext": "First name of the person to screen"
+        "helptext": "Full name or business name to screen"
       },
       "readonly": false,
       "required": true,
       "visible": true
     },
     {
-      "label": "Last Name",
+      "label": "Entity Type",
       "properties": {
-        "parameter": "lastName",
-        "fieldType": "text",
-        "helptext": "Last name/surname of the person to screen"
+        "parameter": "entity",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "0", "value": "Person"},
+          {"key": "1", "value": "Company"},
+          {"key": "2", "value": "Organization"},
+          {"key": "3", "value": "Legal Entity"}
+        ],
+        "default": "0",
+        "classes": "inline",
+        "helptext": "Type of entity being screened"
       },
       "readonly": false,
       "required": true,
       "visible": true
     },
     {
-      "label": "ID Number",
+      "label": "Country",
       "properties": {
-        "parameter": "idNumber",
+        "parameter": "country",
         "fieldType": "text",
-        "helptext": "South African ID number (optional, improves accuracy)"
+        "helptext": "2-letter ISO country code (e.g., za, us, gb)"
       },
       "readonly": false,
-      "required": false,
+      "required": true,
       "visible": true
     },
     {
-      "label": "Date of Birth",
+      "label": "Dataset",
       "properties": {
-        "parameter": "dateOfBirth",
-        "fieldType": "date",
-        "helptext": "Date of birth (optional, improves accuracy)"
+        "parameter": "dataset",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "all", "value": "All"},
+          {"key": "sanctions", "value": "Sanctions only"},
+          {"key": "peps", "value": "PEPs only"},
+          {"key": "crime", "value": "Crime only"}
+        ],
+        "default": "all",
+        "classes": "inline",
+        "helptext": "Search scope for screening"
       },
       "readonly": false,
-      "required": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
+      },
+      "readonly": false,
+      "required": true,
       "visible": true
     }
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/aml-pep-screening",
+  "endpoint": "/aml-screening",
   "request": {
-    "firstName": "{field.firstName}",
-    "lastName": "{field.lastName}",
-    "idNumber": "{field.idNumber}",
-    "dateOfBirth": "{field.dateOfBirth}"
+    "name": "{field.name}",
+    "entity": "{field.entity}",
+    "country": "{field.country}",
+    "dataset": "{field.dataset}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

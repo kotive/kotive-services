@@ -1,32 +1,64 @@
 {
   "name": "ID Document OCR",
-  "description": "Extract text and data from South African ID documents using Optical Character Recognition (OCR). 4 credits.",
+  "description": "Extract data from ID documents using OCR. Supports ID cards, passports, and driver's licenses. 6 credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
-      "label": "Document Image (Base64)",
+      "label": "Front Image (Base64)",
       "properties": {
-        "parameter": "documentImage",
+        "parameter": "front_image_base64",
         "fieldType": "textarea",
-        "helptext": "Base64-encoded image of the ID document (ID card, passport, or driver's license)"
+        "helptext": "Base64-encoded image of the document front"
       },
       "readonly": false,
       "required": true,
       "visible": true
     },
     {
+      "label": "Back Image (Base64)",
+      "properties": {
+        "parameter": "back_image_base64",
+        "fieldType": "textarea",
+        "helptext": "Base64-encoded image of the document back (optional)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
       "label": "Document Type",
       "properties": {
-        "parameter": "documentType",
+        "parameter": "document_type",
+        "fieldType": "text",
+        "helptext": "Hint for document type (optional)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Issuing Country",
+      "properties": {
+        "parameter": "issuing_country",
+        "fieldType": "text",
+        "helptext": "3-letter ISO country code (optional)"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
         "fieldType": "radio",
         "choices": [
-          {"key": "id_card", "value": "ID Card"},
-          {"key": "passport", "value": "Passport"},
-          {"key": "drivers_license", "value": "Driver's License"}
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
         ],
-        "default": "id_card",
+        "default": "sandbox",
         "classes": "inline",
-        "helptext": "The type of document being scanned"
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -35,15 +67,18 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/id-document-ocr",
+  "endpoint": "/id-document-verify",
   "request": {
-    "documentImage": "{field.documentImage}",
-    "documentType": "{field.documentType}"
+    "bundle": "id_document_verification",
+    "front_image_base64": "{field.front_image_base64}",
+    "back_image_base64": "{field.back_image_base64}",
+    "document_type": "{field.document_type}",
+    "issuing_country": "{field.issuing_country}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

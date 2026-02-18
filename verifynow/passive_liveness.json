@@ -1,14 +1,31 @@
 {
   "name": "Passive Liveness Detection",
-  "description": "Detect if a photo is of a live person or a spoofed image (e.g., printed photo, screen display). 3 credits.",
+  "description": "Check if an image is a real person (not a photo of a photo, mask, or deepfake). Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
       "label": "Image (Base64)",
       "properties": {
-        "parameter": "image",
+        "parameter": "image_base64",
         "fieldType": "textarea",
-        "helptext": "Base64-encoded image to check for liveness"
+        "helptext": "Base64-encoded image to check for liveness (max 10MB)"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -17,14 +34,14 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/passive-liveness",
+  "endpoint": "/passive-liveness",
   "request": {
-    "image": "{field.image}"
+    "image_base64": "{field.image_base64}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

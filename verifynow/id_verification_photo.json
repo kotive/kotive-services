@@ -1,6 +1,6 @@
 {
-  "name": "ID Verification + Photo",
-  "description": "Verify a South African ID number and retrieve the photo from Home Affairs records. Returns the person's details and official photo. 5 credits.",
+  "name": "Home Affairs ID Photo",
+  "description": "Get the official Home Affairs ID photo for a person. Dynamic credits.",
   "documentation": "https://www.verifynow.co.za/api-docs",
   "fields": [
     {
@@ -8,7 +8,24 @@
       "properties": {
         "parameter": "idNumber",
         "fieldType": "text",
-        "helptext": "The South African ID number to verify (13 digits)"
+        "helptext": "13-digit South African ID number"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Mode",
+      "properties": {
+        "parameter": "mode",
+        "fieldType": "radio",
+        "choices": [
+          {"key": "sandbox", "value": "Sandbox (testing)"},
+          {"key": "production", "value": "Production"}
+        ],
+        "default": "sandbox",
+        "classes": "inline",
+        "helptext": "Use sandbox for testing without using credits"
       },
       "readonly": false,
       "required": true,
@@ -17,14 +34,15 @@
   ],
   "method": "POST",
   "headers": {
-    "Authorization": "Bearer {auth.field.apikey}",
+    "x-api-key": "{auth.field.apikey}",
     "Content-Type": "application/json",
-    "Accept": "application/json",
     "Idempotency-Key": "{generate_uuid_v4}"
   },
-  "endpoint": "/v1/id-verification-photo",
+  "endpoint": "/verify",
   "request": {
-    "idNumber": "{field.idNumber}"
+    "reportType": "home_affairs_id_photo",
+    "idNumber": "{field.idNumber}",
+    "mode": "{field.mode}"
   },
   "response": {
     "success": {},

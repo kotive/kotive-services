@@ -9,7 +9,7 @@
         "properties": {
           "parameter": "apikey",
           "fieldType": "text",
-          "helptext": "Your VerifyNow API key. Find this in your VerifyNow dashboard under API Settings."
+          "helptext": "Your VerifyNow API key (starts with vn_live_ or vn_test_). Find this in your VerifyNow dashboard."
         },
         "readonly": false,
         "required": true,
@@ -17,5 +17,5 @@
       }
     ]
   },
-  "domain": "https://api.verifynow.co.za"
+  "domain": "https://www.verifynow.co.za/api/external"
 }

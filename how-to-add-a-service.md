@@ -181,6 +181,11 @@ Each API endpoint/task gets its own JSON file. The filename should be descriptiv
 
 ### Authentication Headers
 
+**API Key in Custom Header (e.g., x-api-key):**
+```json
+"x-api-key": "{auth.field.apikey}"
+```
+
 **Bearer Token:**
 ```json
 "Authorization": "Bearer {auth.field.apikey}"
@@ -321,3 +326,4 @@ For additional examples, refer to these existing services:
 - `kotive/` - Multiple tasks with Basic Auth
 - `hunter/` - GET requests with query parameters
 - `webhook/` - Service with no authentication
+- `verifynow/` - South African ID verification with x-api-key auth and sandbox/production modes
