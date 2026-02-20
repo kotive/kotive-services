@@ -1,0 +1,21 @@
+{
+  "name": "OpenRouter",
+  "description": "A unified API for accessing leading AI models. Route requests to hundreds of LLMs with a single API key.",
+  "auth": {
+    "method": "Custom",
+    "fields": [
+      {
+        "label": "API Key",
+        "properties": {
+          "parameter": "apikey",
+          "fieldType": "text",
+          "helptext": "Your OpenRouter API key. Found at https://openrouter.ai/settings/keys. Never expose your API key in client-side code."
+        },
+        "readonly": false,
+        "required": true,
+        "visible": true
+      }
+    ]
+  },
+  "domain": "https://openrouter.ai"
+}

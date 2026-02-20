@@ -145,6 +145,10 @@
             "service": "numverify"
         },
         {
+            "name": "OpenRouter",
+            "service": "openrouter"
+        },
+        {
             "name": "Payfast",
             "service": "payfast"
         },
