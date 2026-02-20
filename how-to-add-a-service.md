@@ -327,6 +327,10 @@ for f in servicename/*.json; do python3 -m json.tool "$f" > /dev/null && echo "$
 python3 -m json.tool services.json > /dev/null && echo "services.json: OK"
 ```
 
+## Create document
+
+Create a readme.md in the new service's folder with details on the config, and all the tasks included in the service, with examples of how to use them.
+
 ## Reference Services
 
 For additional examples, refer to these existing services:
