@@ -1,0 +1,97 @@
+{
+  "name": "Chat Completion",
+  "description": "Send a chat completion request to an AI model via OpenRouter. Supports hundreds of models from providers like OpenAI, Anthropic, Google, Meta, and more.",
+  "documentation": "https://openrouter.ai/docs/api-reference/chat-completions",
+  "fields": [
+    {
+      "label": "Model",
+      "properties": {
+        "parameter": "model",
+        "fieldType": "text",
+        "helptext": "The model to use for the completion, e.g. openai/gpt-4o, anthropic/claude-sonnet-4, google/gemini-2.5-pro, meta-llama/llama-4-maverick. See https://openrouter.ai/models for available models."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Messages",
+      "properties": {
+        "parameter": "messages",
+        "fieldType": "textarea",
+        "helptext": "A JSON array of message objects. Each message must have a 'role' (system, user, or assistant) and 'content'. Example: [{\"role\": \"user\", \"content\": \"Hello!\"}]"
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Temperature",
+      "properties": {
+        "parameter": "temperature",
+        "fieldType": "text",
+        "helptext": "Sampling temperature between 0 and 2. Lower values make output more focused, higher values make it more random. Default: 1"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Max Tokens",
+      "properties": {
+        "parameter": "max_tokens",
+        "fieldType": "text",
+        "helptext": "The maximum number of tokens to generate in the response."
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Top P",
+      "properties": {
+        "parameter": "top_p",
+        "fieldType": "text",
+        "helptext": "Nucleus sampling parameter. Only consider tokens with top_p cumulative probability. Between 0 and 1. Default: 1"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    },
+    {
+      "label": "Stream",
+      "properties": {
+        "parameter": "stream",
+        "fieldType": "radio",
+        "choices": [
+          { "key": "false", "value": "No" },
+          { "key": "true", "value": "Yes" }
+        ],
+        "default": "false",
+        "classes": "inline"
+      },
+      "readonly": false,
+      "required": false,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "endpoint": "/api/v1/chat/completions",
+  "request": {
+    "model": "{field.model}",
+    "messages": "{string_to_hash(field.messages)}",
+    "temperature": "{field.temperature}",
+    "max_tokens": "{field.max_tokens}",
+    "top_p": "{field.top_p}",
+    "stream": "{string_to_boolean(field.stream)}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}

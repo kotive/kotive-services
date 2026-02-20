@@ -1,0 +1,44 @@
+{
+  "name": "Create Embedding",
+  "description": "Submit an embedding request to generate vector representations of text. Useful for semantic search, clustering, and similarity comparisons.",
+  "documentation": "https://openrouter.ai/docs/api-reference/embeddings",
+  "fields": [
+    {
+      "label": "Model",
+      "properties": {
+        "parameter": "model",
+        "fieldType": "text",
+        "helptext": "The embedding model to use, e.g. openai/text-embedding-3-small, openai/text-embedding-3-large. See https://openrouter.ai/models?type=embedding for available embedding models."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Input",
+      "properties": {
+        "parameter": "input",
+        "fieldType": "textarea",
+        "helptext": "The text to generate an embedding for. Can be a single string or a JSON array of strings for batch processing."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "endpoint": "/api/v1/embeddings",
+  "request": {
+    "model": "{field.model}",
+    "input": "{field.input}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
