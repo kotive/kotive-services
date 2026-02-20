@@ -26,8 +26,5 @@
     "load-grunt-tasks": "3.4.1",
     "time-grunt": "1.3.0",
     "underscore": "1.8.3"
-  },
-  "dependencies": {
-    "grunt-cli": "^1.5.0"
   }
 }
