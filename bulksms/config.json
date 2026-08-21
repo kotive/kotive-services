@@ -1,7 +1,7 @@
 {
   "name": "Bulksms",
   "description": "Get your message across. A leading provider of business messaging solutions offering two-way SMS communication from anywhere at any time.",
-  "auth":{
+  "auth": {
     "method": "Custom",
     "fields": [
       {
@@ -14,7 +14,8 @@
         "readonly": false,
         "required": true,
         "visible": true
-      },{
+      },
+      {
         "label": "Token Secret",
         "properties": {
           "parameter": "secret",
@@ -26,5 +27,5 @@
       }
     ]
   },
-  "domain": "https://api.bulksms.com/v1"
+  "domain": "https://webapp.kotive.com/bespoke/kotive-services/bulksms"
 }
