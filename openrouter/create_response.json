@@ -1,0 +1,44 @@
+{
+  "name": "Create Response",
+  "description": "Create a response using the OpenRouter Responses API. This endpoint supports multi-turn conversations with built-in tool use, web search, and file handling.",
+  "documentation": "https://openrouter.ai/docs/api-reference/responses",
+  "fields": [
+    {
+      "label": "Model",
+      "properties": {
+        "parameter": "model",
+        "fieldType": "text",
+        "helptext": "The model to use for the response, e.g. openai/gpt-4o, anthropic/claude-sonnet-4, google/gemini-2.5-pro. See https://openrouter.ai/models for available models."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    },
+    {
+      "label": "Input",
+      "properties": {
+        "parameter": "input",
+        "fieldType": "textarea",
+        "helptext": "The input to generate a response for. Can be a simple text string or a JSON array of message objects for multi-turn conversations."
+      },
+      "readonly": false,
+      "required": true,
+      "visible": true
+    }
+  ],
+  "method": "POST",
+  "headers": {
+    "Authorization": "Bearer {auth.field.apikey}",
+    "Content-Type": "application/json",
+    "Accept": "application/json"
+  },
+  "endpoint": "/api/v1/responses",
+  "request": {
+    "model": "{field.model}",
+    "input": "{field.input}"
+  },
+  "response": {
+    "success": {},
+    "error": {}
+  }
+}
